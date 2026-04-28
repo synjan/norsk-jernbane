@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[10.2876069, 63.0557031], [10.2871671, 63.0543731]]}, "properties": {"electrified": "contact_line", "name": "Vaskehall", "railway": "rail", "ref": "10", "service": "workshop", "tunnel": "building_passage", "length_km": 0.15}}]}

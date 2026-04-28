@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tog — Norsk jernbane</title>
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-route page-tog">
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="mark">▮▮</span>
+      <span>Norsk jernbane</span>
+    </a>
+    <nav class="topnav" aria-label="Hovednavigasjon">
+      <a href="index.html" class="nav-link" data-page="index.html">Kart</a>
+      <a href="dashboard.html" class="nav-link" data-page="dashboard.html">Dashbord</a>
+      <button type="button" class="nav-link nav-baner-toggle" aria-haspopup="true" aria-expanded="false">
+        Baner <span aria-hidden="true">▾</span>
+      </button>
+      <div class="bane-dropdown" role="menu" aria-label="Velg bane">
+        <input type="search" class="bane-search" placeholder="Søk bane …" />
+        <div class="bane-list"></div>
+      </div>
+    </nav>
+    <div class="topbar-spacer"></div>
+  </header>
+
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div class="titles">
+        <nav class="breadcrumbs" aria-label="Brødsmuler">
+          <a href="index.html">Kart</a>
+          <span class="sep">›</span>
+          <span>Live tog</span>
+          <span class="sep">›</span>
+          <span id="crumb-current">—</span>
+        </nav>
+        <h1 id="tog-h1">—</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container" id="tog-content">
+    <div class="loading-inline">
+      <div class="spinner"></div>
+      <div class="label">Henter live togdata…</div>
+    </div>
+  </main>
+
+  <footer class="dash-footer page-container">
+    <p>Sanntid: <a href="https://developer.entur.org/" target="_blank" rel="noopener">Entur Vehicles GraphQL</a> · Polling hvert 10. sekund · Sist generert <span id="footer-date">—</span></p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  <script src="helpers.js"></script>
+  <script src="entur.js"></script>
+  <script src="tog.js"></script>
+  <script src="topbar.js"></script>
+</body>
+</html>

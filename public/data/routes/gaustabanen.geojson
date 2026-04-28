@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[8.6694722, 59.8520822], [8.6696224, 59.8520725]]}, "properties": {"name": "Gaustabanen", "railway": "narrow_gauge", "tunnel": "yes", "length_km": 0.008}}]}

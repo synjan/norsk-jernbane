@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Norsk jernbane — dashbord</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-dashboard">
+
+  <!-- Top bar (samme markup som index.html) -->
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="mark">▮▮</span>
+      <span>Norsk jernbane</span>
+    </a>
+
+    <nav class="topnav" aria-label="Hovednavigasjon">
+      <a href="index.html" class="nav-link" data-page="index.html">Kart</a>
+      <a href="dashboard.html" class="nav-link" data-page="dashboard.html">Dashbord</a>
+      <button type="button" class="nav-link nav-baner-toggle" aria-haspopup="true" aria-expanded="false">
+        Baner <span aria-hidden="true">▾</span>
+      </button>
+      <div class="bane-dropdown" role="menu" aria-label="Velg bane">
+        <input type="search" class="bane-search" placeholder="Søk bane …" />
+        <div class="bane-list"></div>
+      </div>
+    </nav>
+
+    <div class="topbar-spacer"></div>
+  </header>
+
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div class="titles">
+        <nav class="breadcrumbs" aria-label="Brødsmuler">
+          <a href="index.html">Kart</a> <span class="sep">›</span> <span>Dashbord</span>
+        </nav>
+        <h1>Norsk jernbane — oversikt</h1>
+        <p class="page-subtitle">Aggregerte tall basert på OpenStreetMap-data per <span id="data-date">—</span>.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+
+    <!-- Hero: 5 store nøkkeltall -->
+    <section class="dash-hero" aria-label="Nøkkeltall">
+      <div class="card dash-hero-card">
+        <span class="num" id="hero-km">—</span>
+        <span class="desc">Total banelengde (km)</span>
+      </div>
+      <div class="card dash-hero-card">
+        <span class="num" id="hero-elec">—</span>
+        <span class="desc">Elektrifisert</span>
+      </div>
+      <div class="card dash-hero-card">
+        <span class="num" id="hero-coverage">—</span>
+        <span class="desc">Innen 2 km fra stasjon</span>
+      </div>
+      <div class="card dash-hero-card">
+        <span class="num" id="hero-stations">—</span>
+        <span class="desc">Stasjoner / holdeplasser</span>
+      </div>
+      <div class="card dash-hero-card">
+        <span class="num" id="hero-routes">—</span>
+        <span class="desc">Navngitte baner</span>
+      </div>
+    </section>
+
+    <!-- Lead-narrativ: leser hovedtallene høyt med kontekst -->
+    <section id="dash-narrative" class="dash-narrative" aria-label="Hovedinnsikt"></section>
+
+    <!-- Kart-bridge: "fra rapport til utforskning" -->
+    <a class="dash-map-bridge" href="index.html" aria-label="Åpne interaktivt kart">
+      <img src="img/map-thumbnail.png" alt="" class="dash-map-thumb" loading="lazy" />
+      <div class="dash-map-bridge-text">
+        <strong>Utforsk på interaktivt kart</strong>
+        <span>Søk, filtrer og se enkeltsegmenter — fargekoding etter elektrifisering, hastighet eller spor.</span>
+      </div>
+      <span class="dash-map-bridge-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <!-- Hovedgrid med kort -->
+    <section class="dashboard-grid">
+
+      <article class="card dash-card">
+        <h2 class="section-title">Elektrifisering</h2>
+        <div class="dash-chart"><canvas id="dash-chart-electrification"></canvas></div>
+        <ul id="dash-voltage-list" class="micro-list"></ul>
+      </article>
+
+      <article class="card dash-card dash-card-callout">
+        <h2 class="section-title">Klima-fotavtrykk</h2>
+        <div id="dash-co2"></div>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Til sammenligning</h2>
+        <p class="dash-card-intro">Norge mot naboland (km jernbane).</p>
+        <div id="dash-comparison"></div>
+        <p class="estimate-note">Kilder: Trafikverket, BAV, DB Netz, Banedanmark (2023).</p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Banetyper (km)</h2>
+        <div class="dash-chart"><canvas id="dash-chart-types"></canvas></div>
+        <p id="dash-types-takeaway" class="dash-card-takeaway"></p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Hastighetsfordeling</h2>
+        <div class="dash-chart"><canvas id="dash-chart-speed"></canvas></div>
+        <p id="dash-speed-takeaway" class="dash-card-takeaway"></p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Spor-kapasitet</h2>
+        <div class="dash-chart"><canvas id="dash-chart-tracks"></canvas></div>
+        <p id="dash-tracks-takeaway" class="dash-card-takeaway"></p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Datakvalitet — hva vi ikke vet</h2>
+        <p class="dash-card-intro">Hvor pålitelige er tallene over? OSM er crowdsourced — noen tags er godt dekket, andre mangler.</p>
+        <ul id="dash-quality" class="micro-list"></ul>
+        <p class="estimate-note">Lavere prosent = større usikkerhet i tilhørende stats.</p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Befolkningsdekning</h2>
+        <div id="dash-population"></div>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Topp 10 raskeste baner</h2>
+        <ol id="dash-fastest" class="dash-link-list"></ol>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Hvem driver nettet</h2>
+        <p class="dash-card-intro">Operatør-fordeling basert på tagget eierskap (km).</p>
+        <div id="dash-operators"></div>
+        <p class="estimate-note" id="dash-operators-note"></p>
+      </article>
+
+    </section>
+
+    <!-- Største baner — full-bredde, viser alle 15 i kompakte kolonner -->
+    <section class="card dash-card dash-largest-section">
+      <h2 class="section-title">Største baner (km)</h2>
+      <ol id="dash-largest" class="dash-link-list dash-largest-grid"></ol>
+    </section>
+
+    <footer class="dash-footer">
+      <p>Data: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-bidragsytere · Sanntid: <a href="https://developer.entur.org/" target="_blank" rel="noopener">Entur</a> · Sist generert <span id="footer-date">—</span></p>
+    </footer>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="helpers.js"></script>
+  <script src="charts.js"></script>
+  <script src="dashboard.js"></script>
+  <script src="topbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[7.9379807, 58.3208339], [7.9373726, 58.3212482], [7.9368461, 58.3216565]]}, "properties": {"gauge": "1067", "name": "L\u00f8yning tunnel", "railway": "narrow_gauge", "tunnel": "yes", "length_km": 0.113}}]}

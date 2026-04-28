@@ -1,0 +1,25 @@
+[out:json][timeout:300];
+
+// Norge som område (ISO-kode). Bruker admin_level=2 grensen.
+area["ISO3166-1"="NO"][admin_level=2]->.norge;
+
+(
+  // Prosjektet er fokusert på "ekte" jernbane / tog. Vi henter:
+  //   - "rail"         = vanlige tog (hovedspor)
+  //   - "narrow_gauge" = smalspor (Setesdalsbanen, Krøderbanen)
+  //   - "preserved"    = museumsbaner (er fortsatt tog, bare historiske)
+  // Vi henter IKKE: light_rail (bybane), subway (T-bane), tram (trikk),
+  // funicular (kabelbane), monorail, miniature.
+  way["railway"~"^(rail|narrow_gauge|preserved)$"](area.norge);
+
+  // Stasjoner, holdeplasser, stop-noder. Trikkeholdeplasser (tram_stop)
+  // er bevisst utelatt.
+  node["railway"~"^(station|halt|stop)$"](area.norge);
+
+  // Togruter som relasjoner — gir oss "Bergensbanen", "L1 Spikkestad-Lillestrøm"
+  // som logiske enheter, separat fra de fysiske sporene over.
+  // Dette tillater visning av "ruter som stopper på X" på stasjonssiden.
+  relation["route"="train"](area.norge);
+);
+
+out geom;

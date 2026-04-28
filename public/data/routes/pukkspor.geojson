@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[11.1235478, 59.2820812], [11.1233171, 59.2822141], [11.1229377, 59.2824582], [11.1224212, 59.2828321], [11.1223595, 59.2828786]]}, "properties": {"gauge": "1435", "name": "Pukkspor", "railway": "rail", "service": "spur", "length_km": 0.112}}]}

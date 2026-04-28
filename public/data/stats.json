@@ -1,0 +1,4360 @@
+{
+  "generated_at": "2026-04-28T12:16:29+00:00",
+  "total_km": 5377.5,
+  "electrified_km": 3532.7,
+  "electrified_pct": 65.7,
+  "non_electrified_km": 1844.7,
+  "diesel_co2_estimate": {
+    "tonnes_per_year": 84166,
+    "assumption_text": "10 tog/døgn × 250 t × 0.05 kg CO₂/GTK"
+  },
+  "voltage_breakdown_km": {
+    "15000 V / 16.67 Hz": 3502.3,
+    "6800 V / 25 Hz": 21.9,
+    "ukjent V": 8.1,
+    "ukjent V / 16.67 Hz": 0.3,
+    "15000 V": 0.0
+  },
+  "operator_breakdown_km": {
+    "Bane NOR": 4356.2,
+    "ukjent": 1001.3,
+    "Norske Skog": 6.5,
+    "(Private)": 4.3,
+    "Trafikverket": 3.2,
+    "Flytoget": 2.7,
+    "Vy": 1.5,
+    "Borregaard": 1.1,
+    "Auto Transport Service": 0.7
+  },
+  "type_breakdown_km": {
+    "rail": 5315.3,
+    "narrow_gauge": 58.6,
+    "preserved": 3.6
+  },
+  "fastest_sections": [
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 2.02
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.488
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.065
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 5.837
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.064
+    },
+    {
+      "name": "Romeriksporten",
+      "maxspeed_kmh": 210.0,
+      "length_km": 12.129
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.122
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.036
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 1.336
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.037
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.056
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 1.159
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.057
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 2.021
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.122
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.081
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.08
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.055
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.055
+    },
+    {
+      "name": "Gardermobanen",
+      "maxspeed_kmh": 210.0,
+      "length_km": 0.58
+    }
+  ],
+  "speed_distribution_km": {
+    "<80": 530.9,
+    "80–130": 2421.9,
+    "130–160": 741.7,
+    "160–200": 164.9,
+    "200+": 272.8,
+    "Ukjent": 433.4
+  },
+  "track_capacity_km": {
+    "Enkeltspor": 3439.5,
+    "Dobbeltspor": 654.8,
+    "Multispor (3+)": 65.4,
+    "Ikke tagget": 405.7
+  },
+  "routes": [
+    {
+      "name": "Nordlandsbanen",
+      "slug": "nordlandsbanen",
+      "total_km": 756.93,
+      "segments": 1150,
+      "electrified_km": 33.26,
+      "electrified_pct": 4.4,
+      "max_speed_kmh": 130.0,
+      "mean_speed_kmh": 95.9,
+      "double_track_km": 4.13,
+      "double_track_pct": 0.6,
+      "track_tag_coverage_pct": 99.8,
+      "speed_distribution_km": {
+        "<80": 16.6,
+        "80–130": 587.8,
+        "130–160": 120.6,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 1.1
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Sørlandsbanen",
+      "slug": "sorlandsbanen",
+      "total_km": 584.81,
+      "segments": 1600,
+      "electrified_km": 584.62,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 160.0,
+      "mean_speed_kmh": 91.4,
+      "double_track_km": 57.21,
+      "double_track_pct": 10.2,
+      "track_tag_coverage_pct": 99.2,
+      "speed_distribution_km": {
+        "<80": 16.5,
+        "80–130": 446.2,
+        "130–160": 59.3,
+        "160–200": 17.2,
+        "200+": 0.0,
+        "Ukjent": 25.1
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Dovrebanen",
+      "slug": "dovrebanen",
+      "total_km": 535.17,
+      "segments": 974,
+      "electrified_km": 533.48,
+      "electrified_pct": 99.7,
+      "max_speed_kmh": 200.0,
+      "mean_speed_kmh": 100.9,
+      "double_track_km": 49.69,
+      "double_track_pct": 10.0,
+      "track_tag_coverage_pct": 95.7,
+      "speed_distribution_km": {
+        "<80": 37.2,
+        "80–130": 295.1,
+        "130–160": 127.7,
+        "160–200": 0.0,
+        "200+": 44.0,
+        "Ukjent": 12.8
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Bergensbanen",
+      "slug": "bergensbanen",
+      "total_km": 398.88,
+      "segments": 935,
+      "electrified_km": 398.44,
+      "electrified_pct": 99.9,
+      "max_speed_kmh": 160.0,
+      "mean_speed_kmh": 82.6,
+      "double_track_km": 7.12,
+      "double_track_pct": 2.1,
+      "track_tag_coverage_pct": 87.9,
+      "speed_distribution_km": {
+        "<80": 95.4,
+        "80–130": 178.2,
+        "130–160": 63.6,
+        "160–200": 30.7,
+        "200+": 0.0,
+        "Ukjent": 11.8
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Rørosbanen",
+      "slug": "rorosbanen",
+      "total_km": 385.33,
+      "segments": 573,
+      "electrified_km": 3.91,
+      "electrified_pct": 1.0,
+      "max_speed_kmh": 130.0,
+      "mean_speed_kmh": 94.6,
+      "double_track_km": 1.32,
+      "double_track_pct": 0.3,
+      "track_tag_coverage_pct": 99.9,
+      "speed_distribution_km": {
+        "<80": 52.0,
+        "80–130": 241.8,
+        "130–160": 81.9,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 7.1
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Østfoldbanen",
+      "slug": "ostfoldbanen",
+      "total_km": 241.28,
+      "segments": 523,
+      "electrified_km": 241.28,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 160.0,
+      "mean_speed_kmh": 96.6,
+      "double_track_km": 120.45,
+      "double_track_pct": 56.5,
+      "track_tag_coverage_pct": 93.2,
+      "speed_distribution_km": {
+        "<80": 13.6,
+        "80–130": 90.7,
+        "130–160": 58.1,
+        "160–200": 43.7,
+        "200+": 0.0,
+        "Ukjent": 22.6
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Vestfoldbanen",
+      "slug": "vestfoldbanen",
+      "total_km": 200.26,
+      "segments": 332,
+      "electrified_km": 199.17,
+      "electrified_pct": 99.5,
+      "max_speed_kmh": 200.0,
+      "mean_speed_kmh": 142.2,
+      "double_track_km": 117.53,
+      "double_track_pct": 66.3,
+      "track_tag_coverage_pct": 91.9,
+      "speed_distribution_km": {
+        "<80": 7.5,
+        "80–130": 28.0,
+        "130–160": 40.0,
+        "160–200": 15.6,
+        "200+": 94.7,
+        "Ukjent": 7.1
+      },
+      "operators": [
+        "Bane NOR",
+        "Vy"
+      ],
+      "types": [
+        "preserved",
+        "rail"
+      ]
+    },
+    {
+      "name": "Gjøvikbanen",
+      "slug": "gjovikbanen",
+      "total_km": 140.33,
+      "segments": 384,
+      "electrified_km": 140.33,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 130.0,
+      "mean_speed_kmh": 83.3,
+      "double_track_km": 27.87,
+      "double_track_pct": 20.5,
+      "track_tag_coverage_pct": 99.8,
+      "speed_distribution_km": {
+        "<80": 26.9,
+        "80–130": 105.3,
+        "130–160": 2.2,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 2.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Kongsvingerbanen",
+      "slug": "kongsvingerbanen",
+      "total_km": 127.3,
+      "segments": 257,
+      "electrified_km": 127.12,
+      "electrified_pct": 99.9,
+      "max_speed_kmh": 130.0,
+      "mean_speed_kmh": 100.9,
+      "double_track_km": 14.26,
+      "double_track_pct": 12.2,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 2.8,
+        "80–130": 41.1,
+        "130–160": 65.9,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 7.3
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Raumabanen",
+      "slug": "raumabanen",
+      "total_km": 115.23,
+      "segments": 413,
+      "electrified_km": 0.66,
+      "electrified_pct": 0.6,
+      "max_speed_kmh": 130.0,
+      "mean_speed_kmh": 107.4,
+      "double_track_km": 1.37,
+      "double_track_pct": 1.2,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 7.3,
+        "80–130": 58.8,
+        "130–160": 47.2,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 1.3
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Gardermobanen",
+      "slug": "gardermobanen",
+      "total_km": 104.92,
+      "segments": 243,
+      "electrified_km": 104.88,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 210.0,
+      "mean_speed_kmh": 169.1,
+      "double_track_km": 92.58,
+      "double_track_pct": 95.6,
+      "track_tag_coverage_pct": 96.6,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 3.4,
+        "130–160": 1.0,
+        "160–200": 13.3,
+        "200+": 74.1,
+        "Ukjent": 8.3
+      },
+      "operators": [
+        "Bane NOR",
+        "Flytoget"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Hovedbanen",
+      "slug": "hovedbanen",
+      "total_km": 100.52,
+      "segments": 253,
+      "electrified_km": 100.52,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 130.0,
+      "mean_speed_kmh": 96.2,
+      "double_track_km": 56.7,
+      "double_track_pct": 59.8,
+      "track_tag_coverage_pct": 95.6,
+      "speed_distribution_km": {
+        "<80": 9.5,
+        "80–130": 52.1,
+        "130–160": 32.7,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 4.9
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Solørbanen",
+      "slug": "solorbanen",
+      "total_km": 94.08,
+      "segments": 88,
+      "electrified_km": 0.56,
+      "electrified_pct": 0.6,
+      "max_speed_kmh": 100.0,
+      "mean_speed_kmh": 88.1,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 15.0,
+        "80–130": 74.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 5.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Østfoldbanen Østre linje",
+      "slug": "ostfoldbanen-ostre-linje",
+      "total_km": 83.91,
+      "segments": 102,
+      "electrified_km": 83.91,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 2.79,
+      "double_track_pct": 3.5,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 79.2
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Drammenbanen",
+      "slug": "drammenbanen",
+      "total_km": 78.44,
+      "segments": 221,
+      "electrified_km": 78.44,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 130.0,
+      "mean_speed_kmh": 90.7,
+      "double_track_km": 74.56,
+      "double_track_pct": 100.0,
+      "track_tag_coverage_pct": 95.3,
+      "speed_distribution_km": {
+        "<80": 2.5,
+        "80–130": 42.3,
+        "130–160": 28.8,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 4.6
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Meråkerbanen",
+      "slug": "merakerbanen",
+      "total_km": 72.44,
+      "segments": 113,
+      "electrified_km": 71.55,
+      "electrified_pct": 98.8,
+      "max_speed_kmh": 90.0,
+      "mean_speed_kmh": 82.6,
+      "double_track_km": 0.22,
+      "double_track_pct": 0.3,
+      "track_tag_coverage_pct": 99.0,
+      "speed_distribution_km": {
+        "<80": 11.0,
+        "80–130": 54.9,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 5.6
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Randsfjordbanen",
+      "slug": "randsfjordbanen",
+      "total_km": 54.82,
+      "segments": 102,
+      "electrified_km": 54.82,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 130.0,
+      "mean_speed_kmh": 97.5,
+      "double_track_km": 0.16,
+      "double_track_pct": 0.3,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 5.2,
+        "80–130": 37.4,
+        "130–160": 8.2,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 2.5
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Ofotbanen",
+      "slug": "ofotbanen",
+      "total_km": 48.9,
+      "segments": 142,
+      "electrified_km": 48.7,
+      "electrified_pct": 99.6,
+      "max_speed_kmh": 70.0,
+      "mean_speed_kmh": 61.4,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 88.3,
+      "speed_distribution_km": {
+        "<80": 40.7,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Bratsbergbanen",
+      "slug": "bratsbergbanen",
+      "total_km": 47.54,
+      "segments": 176,
+      "electrified_km": 47.54,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 110.0,
+      "mean_speed_kmh": 80.1,
+      "double_track_km": 3.04,
+      "double_track_pct": 6.8,
+      "track_tag_coverage_pct": 99.8,
+      "speed_distribution_km": {
+        "<80": 13.8,
+        "80–130": 30.6,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.3
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Follobanen",
+      "slug": "follobanen",
+      "total_km": 46.79,
+      "segments": 47,
+      "electrified_km": 46.79,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 200.0,
+      "mean_speed_kmh": 160.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.1,
+        "80–130": 0.0,
+        "130–160": 2.3,
+        "160–200": 4.5,
+        "200+": 34.9,
+        "Ukjent": 4.4
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Tinnosbanen",
+      "slug": "tinnosbanen",
+      "total_km": 41.29,
+      "segments": 85,
+      "electrified_km": 41.29,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 90.0,
+      "mean_speed_kmh": 60.6,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 12.8,
+      "speed_distribution_km": {
+        "<80": 11.8,
+        "80–130": 3.2,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 23.9
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Arendalsbanen",
+      "slug": "arendalsbanen",
+      "total_km": 35.25,
+      "segments": 45,
+      "electrified_km": 35.25,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 90.0,
+      "mean_speed_kmh": 65.3,
+      "double_track_km": 0.06,
+      "double_track_pct": 0.2,
+      "track_tag_coverage_pct": 99.7,
+      "speed_distribution_km": {
+        "<80": 25.9,
+        "80–130": 8.4,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.9
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Askerbanen",
+      "slug": "askerbanen",
+      "total_km": 32.42,
+      "segments": 41,
+      "electrified_km": 32.42,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 160.0,
+      "mean_speed_kmh": 119.4,
+      "double_track_km": 32.42,
+      "double_track_pct": 100.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 4.6,
+        "130–160": 0.0,
+        "160–200": 25.2,
+        "200+": 0.0,
+        "Ukjent": 2.7
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Roa-Hønefossbanen",
+      "slug": "roa-honefossbanen",
+      "total_km": 31.89,
+      "segments": 88,
+      "electrified_km": 31.78,
+      "electrified_pct": 99.7,
+      "max_speed_kmh": 100.0,
+      "mean_speed_kmh": 74.0,
+      "double_track_km": 0.24,
+      "double_track_pct": 0.7,
+      "track_tag_coverage_pct": 99.8,
+      "speed_distribution_km": {
+        "<80": 14.1,
+        "80–130": 13.5,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 4.2
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Romeriksporten",
+      "slug": "romeriksporten",
+      "total_km": 30.97,
+      "segments": 18,
+      "electrified_km": 30.97,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 210.0,
+      "mean_speed_kmh": 164.3,
+      "double_track_km": 28.8,
+      "double_track_pct": 98.8,
+      "track_tag_coverage_pct": 94.1,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 2.9,
+        "130–160": 0.0,
+        "160–200": 1.5,
+        "200+": 25.1,
+        "Ukjent": 1.5
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Numedalsbanen",
+      "slug": "numedalsbanen",
+      "total_km": 30.62,
+      "segments": 23,
+      "electrified_km": 0.05,
+      "electrified_pct": 0.2,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 30.6,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Krøderbanen",
+      "slug": "kroderbanen",
+      "total_km": 26.99,
+      "segments": 25,
+      "electrified_km": 0.03,
+      "electrified_pct": 0.1,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0.2,
+      "double_track_pct": 0.8,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 26.2
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Thamshavnbanen",
+      "slug": "thamshavnbanen",
+      "total_km": 22.11,
+      "segments": 31,
+      "electrified_km": 21.95,
+      "electrified_pct": 99.3,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 22.1
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge"
+      ]
+    },
+    {
+      "name": "Gamle Vossebanen",
+      "slug": "gamle-vossebanen",
+      "total_km": 21.51,
+      "segments": 66,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 21.3
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Flåmsbana",
+      "slug": "flamsbana",
+      "total_km": 20.97,
+      "segments": 75,
+      "electrified_km": 20.97,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 23.1,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 2.9,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 17.7
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Flekkefjordbanen",
+      "slug": "flekkefjordbanen",
+      "total_km": 17.27,
+      "segments": 70,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 70.0,
+      "mean_speed_kmh": 50.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 16.7,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.3
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spikkestadbanen",
+      "slug": "spikkestadbanen",
+      "total_km": 14.27,
+      "segments": 33,
+      "electrified_km": 14.27,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 110.0,
+      "mean_speed_kmh": 81.2,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 29.2,
+      "speed_distribution_km": {
+        "<80": 3.5,
+        "80–130": 9.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 1.4
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Brevikbanen",
+      "slug": "brevikbanen",
+      "total_km": 9.66,
+      "segments": 35,
+      "electrified_km": 9.66,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 80.0,
+      "mean_speed_kmh": 59.4,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 99.8,
+      "speed_distribution_km": {
+        "<80": 8.6,
+        "80–130": 1.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Kirkenes–Bjørnevatnbanen",
+      "slug": "kirkenesbjornevatnbanen",
+      "total_km": 8.6,
+      "segments": 8,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 8.6
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Setesdalsbanen",
+      "slug": "setesdalsbanen",
+      "total_km": 8.47,
+      "segments": 16,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 8.2
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge",
+        "rail"
+      ]
+    },
+    {
+      "name": "Treungenbanen",
+      "slug": "treungenbanen",
+      "total_km": 8.43,
+      "segments": 23,
+      "electrified_km": 0.16,
+      "electrified_pct": 1.9,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 31.4,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 8.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Stavne - Leangenbanen",
+      "slug": "stavne-leangenbanen",
+      "total_km": 6.86,
+      "segments": 35,
+      "electrified_km": 6.84,
+      "electrified_pct": 99.7,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0.07,
+      "double_track_pct": 1.2,
+      "track_tag_coverage_pct": 90.1,
+      "speed_distribution_km": {
+        "<80": 6.9,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Loenga–Alnabrulinjen",
+      "slug": "loengaalnabrulinjen",
+      "total_km": 6.51,
+      "segments": 36,
+      "electrified_km": 6.51,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 60.0,
+      "mean_speed_kmh": 52.7,
+      "double_track_km": 3.16,
+      "double_track_pct": 87.9,
+      "track_tag_coverage_pct": 55.2,
+      "speed_distribution_km": {
+        "<80": 1.9,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 4.6
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Fiborgtangen sidespor",
+      "slug": "fiborgtangen-sidespor",
+      "total_km": 6.48,
+      "segments": 12,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 20.0,
+      "mean_speed_kmh": 20.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Norske Skog"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Christian VII stoll",
+      "slug": "christian-vii-stoll",
+      "total_km": 5.62,
+      "segments": 8,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 5.6
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge"
+      ]
+    },
+    {
+      "name": "Oslotunnelen",
+      "slug": "oslotunnelen",
+      "total_km": 5.19,
+      "segments": 26,
+      "electrified_km": 5.19,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 80.0,
+      "mean_speed_kmh": 46.5,
+      "double_track_km": 3.27,
+      "double_track_pct": 100.0,
+      "track_tag_coverage_pct": 63.1,
+      "speed_distribution_km": {
+        "<80": 2.8,
+        "80–130": 1.6,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.7
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Underbergstollen",
+      "slug": "underbergstollen",
+      "total_km": 4.9,
+      "segments": 3,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 4.9
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge"
+      ]
+    },
+    {
+      "name": "Borregård industrispor",
+      "slug": "borregard-industrispor",
+      "total_km": 4.27,
+      "segments": 16,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Borregaard"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Fagerneslinja",
+      "slug": "fagerneslinja",
+      "total_km": 4.05,
+      "segments": 11,
+      "electrified_km": 3.38,
+      "electrified_pct": 83.5,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 37.3,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 83.5,
+      "speed_distribution_km": {
+        "<80": 4.1,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Alnabanen",
+      "slug": "alnabanen",
+      "total_km": 3.87,
+      "segments": 17,
+      "electrified_km": 3.87,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 98.2,
+      "speed_distribution_km": {
+        "<80": 0.1,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 3.8
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Hardangerbana",
+      "slug": "hardangerbana",
+      "total_km": 3.54,
+      "segments": 20,
+      "electrified_km": 0.21,
+      "electrified_pct": 6.1,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Urskog–Hølandsbanen",
+      "slug": "urskogholandsbanen",
+      "total_km": 3.53,
+      "segments": 13,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 3.5
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge",
+        "preserved"
+      ]
+    },
+    {
+      "name": "Muruvik sidespor",
+      "slug": "muruvik-sidespor",
+      "total_km": 3.39,
+      "segments": 5,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Kvalaberg verksted",
+      "slug": "kvalaberg-verksted",
+      "total_km": 3.22,
+      "segments": 14,
+      "electrified_km": 2.79,
+      "electrified_pct": 86.8,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Oppstillingsspor",
+      "slug": "oppstillingsspor",
+      "total_km": 3.22,
+      "segments": 6,
+      "electrified_km": 3.22,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 60.0,
+      "mean_speed_kmh": 60.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Värmlandsbanan",
+      "slug": "vrmlandsbanan",
+      "total_km": 3.13,
+      "segments": 1,
+      "electrified_km": 3.13,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 160.0,
+      "mean_speed_kmh": 160.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 3.1,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Trafikverket"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Ålgårdbanen",
+      "slug": "algardbanen",
+      "total_km": 2.78,
+      "segments": 8,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 2.8
+      },
+      "operators": [],
+      "types": [
+        "preserved"
+      ]
+    },
+    {
+      "name": "Lastespor",
+      "slug": "lastespor",
+      "total_km": 2.65,
+      "segments": 8,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Verdal industrispor",
+      "slug": "verdal-industrispor",
+      "total_km": 2.48,
+      "segments": 3,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Soknabruket sidespor",
+      "slug": "soknabruket-sidespor",
+      "total_km": 2.42,
+      "segments": 3,
+      "electrified_km": 1.49,
+      "electrified_pct": 61.4,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Skøyen-Filipstadlinjen",
+      "slug": "skoyen-filipstadlinjen",
+      "total_km": 2.39,
+      "segments": 7,
+      "electrified_km": 2.39,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 50.0,
+      "mean_speed_kmh": 50.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Grohei tunnel",
+      "slug": "grohei-tunnel",
+      "total_km": 1.99,
+      "segments": 1,
+      "electrified_km": 1.99,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 130.0,
+      "mean_speed_kmh": 130.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 2.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Vestmo tømmerterminal",
+      "slug": "vestmo-tommerterminal",
+      "total_km": 1.62,
+      "segments": 2,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Tangenkai sidespor",
+      "slug": "tangenkai-sidespor",
+      "total_km": 1.6,
+      "segments": 6,
+      "electrified_km": 0.84,
+      "electrified_pct": 52.3,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Sørlandsbanen nordre tilsving Dalane",
+      "slug": "sorlandsbanen-nordre-tilsving-dalane",
+      "total_km": 1.47,
+      "segments": 7,
+      "electrified_km": 1.47,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 1.5,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Hamnebane nord 3",
+      "slug": "hamnebane-nord-3",
+      "total_km": 1.43,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Revet sidespor",
+      "slug": "revet-sidespor",
+      "total_km": 1.4,
+      "segments": 2,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 1.4,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Tømmerspor",
+      "slug": "tommerspor",
+      "total_km": 1.27,
+      "segments": 3,
+      "electrified_km": 0.78,
+      "electrified_pct": 61.7,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Gruvetunnel",
+      "slug": "gruvetunnel",
+      "total_km": 1.24,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "(Private)"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Gropa grustak",
+      "slug": "gropa-grustak",
+      "total_km": 1.2,
+      "segments": 2,
+      "electrified_km": 0.71,
+      "electrified_pct": 59.1,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Lierstranda",
+      "slug": "lierstranda",
+      "total_km": 1.19,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Lierstranda Tømmerterminal",
+      "slug": "lierstranda-tommerterminal",
+      "total_km": 1.17,
+      "segments": 2,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Midtsandan",
+      "slug": "midtsandan",
+      "total_km": 1.12,
+      "segments": 3,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "7",
+      "slug": "7",
+      "total_km": 1.02,
+      "segments": 2,
+      "electrified_km": 1.02,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Kasa sidespor",
+      "slug": "kasa-sidespor",
+      "total_km": 0.98,
+      "segments": 3,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Narvik Driftsbanegård",
+      "slug": "narvik-driftsbanegard",
+      "total_km": 0.96,
+      "segments": 4,
+      "electrified_km": 0.96,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "3",
+      "slug": "3",
+      "total_km": 0.96,
+      "segments": 3,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Barbu tunnel",
+      "slug": "barbu-tunnel",
+      "total_km": 0.88,
+      "segments": 1,
+      "electrified_km": 0.88,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 70.0,
+      "mean_speed_kmh": 70.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.9,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 5",
+      "slug": "spor-5",
+      "total_km": 0.88,
+      "segments": 3,
+      "electrified_km": 0.88,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.4
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "5",
+      "slug": "5",
+      "total_km": 0.84,
+      "segments": 2,
+      "electrified_km": 0.45,
+      "electrified_pct": 53.3,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Sefrivatn pukkverk",
+      "slug": "sefrivatn-pukkverk",
+      "total_km": 0.81,
+      "segments": 3,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Lommedalsbanen",
+      "slug": "lommedalsbanen",
+      "total_km": 0.72,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.7
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge"
+      ]
+    },
+    {
+      "name": "Spor 6",
+      "slug": "spor-6",
+      "total_km": 0.71,
+      "segments": 2,
+      "electrified_km": 0.71,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.3
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 7",
+      "slug": "spor-7",
+      "total_km": 0.68,
+      "segments": 2,
+      "electrified_km": 0.68,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.3
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Vatnestrøm sidespor",
+      "slug": "vatnestrom-sidespor",
+      "total_km": 0.67,
+      "segments": 2,
+      "electrified_km": 0.27,
+      "electrified_pct": 40.1,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Simonstad sidespor",
+      "slug": "simonstad-sidespor",
+      "total_km": 0.65,
+      "segments": 4,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Jærbanen",
+      "slug": "jaerbanen",
+      "total_km": 0.59,
+      "segments": 3,
+      "electrified_km": 0.02,
+      "electrified_pct": 3.5,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0.02,
+      "double_track_pct": 100.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Tarven grustak",
+      "slug": "tarven-grustak",
+      "total_km": 0.57,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "6",
+      "slug": "6",
+      "total_km": 0.56,
+      "segments": 2,
+      "electrified_km": 0.45,
+      "electrified_pct": 80.0,
+      "max_speed_kmh": 80.0,
+      "mean_speed_kmh": 80.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 3",
+      "slug": "spor-3",
+      "total_km": 0.56,
+      "segments": 3,
+      "electrified_km": 0.56,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.6
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Platon sidespor",
+      "slug": "platon-sidespor",
+      "total_km": 0.53,
+      "segments": 2,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Øvre bakkespor",
+      "slug": "ovre-bakkespor",
+      "total_km": 0.52,
+      "segments": 3,
+      "electrified_km": 0.52,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Nodehei tunnel",
+      "slug": "nodehei-tunnel",
+      "total_km": 0.51,
+      "segments": 1,
+      "electrified_km": 0.51,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 100.0,
+      "mean_speed_kmh": 100.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.5,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Kragerøbanen",
+      "slug": "kragerobanen",
+      "total_km": 0.5,
+      "segments": 2,
+      "electrified_km": 0.33,
+      "electrified_pct": 66.4,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "8",
+      "slug": "8",
+      "total_km": 0.5,
+      "segments": 1,
+      "electrified_km": 0.5,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "II",
+      "slug": "ii",
+      "total_km": 0.47,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "9",
+      "slug": "9",
+      "total_km": 0.47,
+      "segments": 1,
+      "electrified_km": 0.47,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 1",
+      "slug": "spor-1",
+      "total_km": 0.46,
+      "segments": 3,
+      "electrified_km": 0.46,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.5
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Helleland",
+      "slug": "helleland",
+      "total_km": 0.46,
+      "segments": 1,
+      "electrified_km": 0.46,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 12",
+      "slug": "spor-12",
+      "total_km": 0.45,
+      "segments": 2,
+      "electrified_km": 0.45,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.5
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 4",
+      "slug": "spor-4",
+      "total_km": 0.44,
+      "segments": 2,
+      "electrified_km": 0.44,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.4
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Nedre bakkespor",
+      "slug": "nedre-bakkespor",
+      "total_km": 0.43,
+      "segments": 1,
+      "electrified_km": 0.43,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Midtre bakkespor",
+      "slug": "midtre-bakkespor",
+      "total_km": 0.42,
+      "segments": 1,
+      "electrified_km": 0.42,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Heskestad fjernstyrt kryssingsspor",
+      "slug": "heskestad-fjernstyrt-kryssingsspor",
+      "total_km": 0.42,
+      "segments": 1,
+      "electrified_km": 0.42,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 14",
+      "slug": "spor-14",
+      "total_km": 0.41,
+      "segments": 1,
+      "electrified_km": 0.41,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.4,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 15",
+      "slug": "spor-15",
+      "total_km": 0.41,
+      "segments": 1,
+      "electrified_km": 0.41,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.4,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 11",
+      "slug": "spor-11",
+      "total_km": 0.41,
+      "segments": 2,
+      "electrified_km": 0.41,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.4
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 17",
+      "slug": "spor-17",
+      "total_km": 0.4,
+      "segments": 1,
+      "electrified_km": 0.4,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.4,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Bjørntvedt sidespor",
+      "slug": "bjorntvedt-sidespor",
+      "total_km": 0.4,
+      "segments": 5,
+      "electrified_km": 0.4,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 30.0,
+      "mean_speed_kmh": 30.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Lastegate",
+      "slug": "lastegate",
+      "total_km": 0.4,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 18",
+      "slug": "spor-18",
+      "total_km": 0.37,
+      "segments": 1,
+      "electrified_km": 0.37,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.4,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 19",
+      "slug": "spor-19",
+      "total_km": 0.37,
+      "segments": 1,
+      "electrified_km": 0.37,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.4,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 2",
+      "slug": "spor-2",
+      "total_km": 0.37,
+      "segments": 2,
+      "electrified_km": 0.37,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.4
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Markøya pukkverk sidespor",
+      "slug": "markoya-pukkverk-sidespor",
+      "total_km": 0.36,
+      "segments": 2,
+      "electrified_km": 0.21,
+      "electrified_pct": 57.8,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 13",
+      "slug": "spor-13",
+      "total_km": 0.35,
+      "segments": 1,
+      "electrified_km": 0.35,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.3
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Rieber & Søn sidespor",
+      "slug": "rieber-son-sidespor",
+      "total_km": 0.35,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Ørvik sidespor",
+      "slug": "orvik-sidespor",
+      "total_km": 0.34,
+      "segments": 2,
+      "electrified_km": 0.2,
+      "electrified_pct": 59.5,
+      "max_speed_kmh": 30.0,
+      "mean_speed_kmh": 30.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 16",
+      "slug": "spor-16",
+      "total_km": 0.33,
+      "segments": 1,
+      "electrified_km": 0.33,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.3,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Svene Pukkverk sidespor",
+      "slug": "svene-pukkverk-sidespor",
+      "total_km": 0.33,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Klungeland tunnel",
+      "slug": "klungeland-tunnel",
+      "total_km": 0.32,
+      "segments": 1,
+      "electrified_km": 0.32,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 100.0,
+      "mean_speed_kmh": 100.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.3,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Grønvollfoss sidespor",
+      "slug": "gronvollfoss-sidespor",
+      "total_km": 0.31,
+      "segments": 1,
+      "electrified_km": 0.31,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "611",
+      "slug": "611",
+      "total_km": 0.29,
+      "segments": 2,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 10",
+      "slug": "spor-10",
+      "total_km": 0.29,
+      "segments": 2,
+      "electrified_km": 0.29,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.3
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Tjennebakken (349 m)",
+      "slug": "tjennebakken-349-m",
+      "total_km": 0.29,
+      "segments": 1,
+      "electrified_km": 0.29,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 85.0,
+      "mean_speed_kmh": 85.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.3,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 8",
+      "slug": "spor-8",
+      "total_km": 0.28,
+      "segments": 2,
+      "electrified_km": 0.28,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.3
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Spor 9",
+      "slug": "spor-9",
+      "total_km": 0.28,
+      "segments": 1,
+      "electrified_km": 0.28,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.3
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Verkstedspor",
+      "slug": "verkstedspor",
+      "total_km": 0.28,
+      "segments": 2,
+      "electrified_km": 0.28,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.3
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "609",
+      "slug": "609",
+      "total_km": 0.26,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "610",
+      "slug": "610",
+      "total_km": 0.24,
+      "segments": 2,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Begna sidespor",
+      "slug": "begna-sidespor",
+      "total_km": 0.24,
+      "segments": 2,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Kranspor",
+      "slug": "kranspor",
+      "total_km": 0.23,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "4",
+      "slug": "4",
+      "total_km": 0.23,
+      "segments": 3,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Hensettingsspor",
+      "slug": "hensettingsspor",
+      "total_km": 0.23,
+      "segments": 2,
+      "electrified_km": 0.23,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Hedmark treimpregnering sidespor",
+      "slug": "hedmark-treimpregnering-sidespor",
+      "total_km": 0.23,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Nidelv jernbanebru",
+      "slug": "nidelv-jernbanebru",
+      "total_km": 0.21,
+      "segments": 3,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 30.0,
+      "mean_speed_kmh": 30.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "612",
+      "slug": "612",
+      "total_km": 0.21,
+      "segments": 2,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Havnebane nord (til Skoltegrunnskaien)",
+      "slug": "havnebane-nord-til-skoltegrunnskaien",
+      "total_km": 0.2,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "14",
+      "slug": "14",
+      "total_km": 0.2,
+      "segments": 1,
+      "electrified_km": 0.2,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "R10",
+      "slug": "r10",
+      "total_km": 0.19,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Neslandsvatn omformerstasjons sidespor",
+      "slug": "neslandsvatn-omformerstasjons-sidespor",
+      "total_km": 0.19,
+      "segments": 3,
+      "electrified_km": 0.19,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "70",
+      "slug": "70",
+      "total_km": 0.17,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.2
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Inntrekkshallen i Fløen",
+      "slug": "inntrekkshallen-i-floen",
+      "total_km": 0.17,
+      "segments": 1,
+      "electrified_km": 0.17,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Sole tunnel",
+      "slug": "sole-tunnel",
+      "total_km": 0.15,
+      "segments": 2,
+      "electrified_km": 0.15,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 85.0,
+      "mean_speed_kmh": 85.0,
+      "double_track_km": 0.15,
+      "double_track_pct": 100.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.1
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Holmen sidespor",
+      "slug": "holmen-sidespor",
+      "total_km": 0.15,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Vaskehall",
+      "slug": "vaskehall",
+      "total_km": 0.15,
+      "segments": 1,
+      "electrified_km": 0.15,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.1
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Slettebø tunnel",
+      "slug": "slettebo-tunnel",
+      "total_km": 0.13,
+      "segments": 1,
+      "electrified_km": 0.13,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 95.0,
+      "mean_speed_kmh": 95.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Skytterhuset tunnel",
+      "slug": "skytterhuset-tunnel",
+      "total_km": 0.13,
+      "segments": 1,
+      "electrified_km": 0.13,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 85.0,
+      "mean_speed_kmh": 85.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Namsosbanen",
+      "slug": "namsosbanen",
+      "total_km": 0.11,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Løyning tunnel",
+      "slug": "loyning-tunnel",
+      "total_km": 0.11,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.1
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge"
+      ]
+    },
+    {
+      "name": "Pukkspor",
+      "slug": "pukkspor",
+      "total_km": 0.11,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Løvold tunnel",
+      "slug": "lovold-tunnel",
+      "total_km": 0.11,
+      "segments": 1,
+      "electrified_km": 0.11,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 100.0,
+      "mean_speed_kmh": 100.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Larvik omformerstasjon sidespor",
+      "slug": "larvik-omformerstasjon-sidespor",
+      "total_km": 0.1,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Alfred Andersen sidespor",
+      "slug": "alfred-andersen-sidespor",
+      "total_km": 0.1,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.1,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Øygaren tunnel",
+      "slug": "oygaren-tunnel",
+      "total_km": 0.1,
+      "segments": 1,
+      "electrified_km": 0.1,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 90.0,
+      "mean_speed_kmh": 90.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Valryggen jernbanebru",
+      "slug": "valryggen-jernbanebru",
+      "total_km": 0.07,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 110.0,
+      "mean_speed_kmh": 110.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Malmbanan",
+      "slug": "malmbanan",
+      "total_km": 0.06,
+      "segments": 1,
+      "electrified_km": 0.06,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 80.0,
+      "mean_speed_kmh": 80.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Trafikverket"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Herrebø tunnel",
+      "slug": "herrebo-tunnel",
+      "total_km": 0.06,
+      "segments": 1,
+      "electrified_km": 0.06,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 80.0,
+      "mean_speed_kmh": 80.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Kjerran tunnel",
+      "slug": "kjerran-tunnel",
+      "total_km": 0.05,
+      "segments": 1,
+      "electrified_km": 0.05,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": 85.0,
+      "mean_speed_kmh": 85.0,
+      "double_track_km": 0,
+      "double_track_pct": 0.0,
+      "track_tag_coverage_pct": 100.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.1,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Paulen bro",
+      "slug": "paulen-bro",
+      "total_km": 0.05,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.1
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge"
+      ]
+    },
+    {
+      "name": "Otterdals sidespor",
+      "slug": "otterdals-sidespor",
+      "total_km": 0.05,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge"
+      ]
+    },
+    {
+      "name": "Løpende elg",
+      "slug": "lopende-elg",
+      "total_km": 0.05,
+      "segments": 2,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.1
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "T-banesporet",
+      "slug": "t-banesporet",
+      "total_km": 0.03,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": 40.0,
+      "mean_speed_kmh": 40.0,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Nord-Norgebanen",
+      "slug": "nord-norgebanen",
+      "total_km": 0.01,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Gaustabanen",
+      "slug": "gaustabanen",
+      "total_km": 0.01,
+      "segments": 1,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.0
+      },
+      "operators": [],
+      "types": [
+        "narrow_gauge"
+      ]
+    }
+  ],
+  "station_count": 1261,
+  "railway_segment_count": 13180,
+  "population_coverage": {
+    "total_population": 5440807,
+    "place_count": 1167,
+    "rail_station_count": 393,
+    "bands_population": {
+      "≤2 km": 3756540,
+      "2–5 km": 249115,
+      "5–10 km": 387937,
+      "10–25 km": 290019,
+      ">25 km": 757196
+    },
+    "bands_pct": {
+      "≤2 km": 69.0,
+      "2–5 km": 4.6,
+      "5–10 km": 7.1,
+      "10–25 km": 5.3,
+      ">25 km": 13.9
+    },
+    "largest_unserved": [
+      {
+        "name": "Ålesund",
+        "population": 56330,
+        "distance_km": 79.9
+      },
+      {
+        "name": "Haugesund",
+        "population": 47346,
+        "distance_km": 56.6
+      },
+      {
+        "name": "Tromsø",
+        "population": 43368,
+        "distance_km": 140.5
+      },
+      {
+        "name": "Molde",
+        "population": 22666,
+        "distance_km": 33.3
+      },
+      {
+        "name": "Harstad",
+        "population": 21602,
+        "distance_km": 54.1
+      },
+      {
+        "name": "Kristiansund",
+        "population": 18479,
+        "distance_km": 60.8
+      },
+      {
+        "name": "Tromsdalen - Romssavággi",
+        "population": 18371,
+        "distance_km": 140.2
+      },
+      {
+        "name": "Alta",
+        "population": 16382,
+        "distance_km": 267.9
+      },
+      {
+        "name": "Leirvik",
+        "population": 14767,
+        "distance_km": 61.0
+      },
+      {
+        "name": "Kopervik",
+        "population": 12006,
+        "distance_km": 43.0
+      }
+    ],
+    "note": "Basert på OSM place-noder med population-tag. Total ≈ Norges befolkning. Bare jernbanestasjoner og holdeplasser teller (t-bane/trikk ekskludert)."
+  }
+}

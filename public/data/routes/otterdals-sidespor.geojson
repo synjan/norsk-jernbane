@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[7.919287, 58.3349987], [7.9185355, 58.3352326]]}, "properties": {"gauge": "1067", "name": "Otterdals sidespor", "railway": "narrow_gauge", "service": "spur", "length_km": 0.051}}]}

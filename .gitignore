@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Cached raw data — large, regeneratable
+data/raw.json
+data/cache/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Node
+node_modules/
+
+# Test artifacts (regenerable, large)
+tests/screenshots/

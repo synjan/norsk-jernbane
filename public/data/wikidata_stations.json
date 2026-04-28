@@ -1,0 +1,3603 @@
+{
+  "Sandvika": {
+    "qid": "Q1280378",
+    "name": "Sandvika stasjon",
+    "heritage": [],
+    "architects": [
+      "Arne Henriksen"
+    ],
+    "opened": "1872-10-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sandvika%20Railway%20station%20TRS%20070407%20001.jpg",
+    "ra_id": null,
+    "distance_m": 61
+  },
+  "Høvik": {
+    "qid": "Q1393850",
+    "name": "Høvik stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1873-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B8vik%20stasjon%20anno%202017.jpg",
+    "ra_id": null,
+    "distance_m": 100
+  },
+  "Oslo S": {
+    "qid": "Q308313",
+    "name": "Østbanestasjonen",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Heinrich Ernst Schirmer",
+      "Wilhelm von Hanno",
+      "Georg Andreas Bull"
+    ],
+    "opened": "1854-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%98stbanestasjonen%20A-70091%20Ua%200003%20318.jpg",
+    "ra_id": null,
+    "distance_m": 115
+  },
+  "Stabekk": {
+    "qid": "Q1530887",
+    "name": "Stabekk stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1884-05-29",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stabekk%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 6
+  },
+  "Hvalstad": {
+    "qid": "Q1765148",
+    "name": "Hvalstad stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1872-10-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hvalstad%20Railway%20Station%20TRS%20061104%20015.jpg",
+    "ra_id": null,
+    "distance_m": 14
+  },
+  "Heia": {
+    "qid": "Q1777492",
+    "name": "Heia stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": "1896-07-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Heia%20stasjon3.jpg",
+    "ra_id": null,
+    "distance_m": 85
+  },
+  "Hauketo": {
+    "qid": "Q1777504",
+    "name": "Hauketo stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1925-02-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hauketo%20stasjon%20-%202011-09-10%20at%2015-43-50.jpg",
+    "ra_id": null,
+    "distance_m": 42
+  },
+  "Myrvoll": {
+    "qid": "Q1777534",
+    "name": "Myrvoll stasjon",
+    "heritage": [],
+    "architects": [
+      "NSB Arkitektkontor"
+    ],
+    "opened": "1919-07-08",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Myrvoll%20holdeplass.jpg",
+    "ra_id": null,
+    "distance_m": 68
+  },
+  "Moss": {
+    "qid": "Q1777558",
+    "name": "Moss stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/MossTrainStation.JPG",
+    "ra_id": null,
+    "distance_m": 13
+  },
+  "Sarpsborg": {
+    "qid": "Q1777653",
+    "name": "Sarpsborg stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sarpsborg%20stasjon%20TRS%20061031%20018.jpg",
+    "ra_id": null,
+    "distance_m": 44
+  },
+  "Langhus": {
+    "qid": "Q1777678",
+    "name": "Langhus stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1919-05-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Langhus%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 69
+  },
+  "Eidsberg": {
+    "qid": "Q1777687",
+    "name": "Eidsberg stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1882-11-24",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eidsberg%20stasjon%20TRS.jpg",
+    "ra_id": null,
+    "distance_m": 68
+  },
+  "Slitu": {
+    "qid": "Q1777696",
+    "name": "Slitu stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1882-11-24",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Slitu%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 39
+  },
+  "Spydeberg": {
+    "qid": "Q1777743",
+    "name": "Spydeberg stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1882-11-24",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Spydeberg%20stasjon%20TRS%20070804%20057.jpg",
+    "ra_id": null,
+    "distance_m": 6
+  },
+  "Kolbotn": {
+    "qid": "Q1777750",
+    "name": "Kolbotn stasjon",
+    "heritage": [],
+    "architects": [
+      "Harald Kaas"
+    ],
+    "opened": "1895-06-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kolbotn%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 12
+  },
+  "Rakkestad": {
+    "qid": "Q1777766",
+    "name": "Rakkestad stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1882-11-24",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Rakkestad%20stasjon%201%20TRS.jpg",
+    "ra_id": null,
+    "distance_m": 8
+  },
+  "Knapstad": {
+    "qid": "Q1777767",
+    "name": "Knapstad stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": "1912-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Knapstad%20Stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 205
+  },
+  "Fredrikstad": {
+    "qid": "Q1777898",
+    "name": "Fredrikstad stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/FredrikstadTrainStation.JPG",
+    "ra_id": null,
+    "distance_m": 21
+  },
+  "Askim": {
+    "qid": "Q1777912",
+    "name": "Askim stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1882-11-24",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Askim%20stasjon.jpeg",
+    "ra_id": null,
+    "distance_m": 9
+  },
+  "Kambo": {
+    "qid": "Q1777930",
+    "name": "Kambo stasjon",
+    "heritage": [],
+    "architects": [
+      "NSB Arkitektkontor"
+    ],
+    "opened": "1898-10-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kambo%20stasjon%20TRS%20061129%20010.jpg",
+    "ra_id": null,
+    "distance_m": 18
+  },
+  "Nordstrand": {
+    "qid": "Q1777943",
+    "name": "Nordstrand stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1880-05-31",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nordstrand%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 24
+  },
+  "Skotbu": {
+    "qid": "Q1777993",
+    "name": "Skotbu stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": "1908-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Skotbu%20hp.jpg",
+    "ra_id": null,
+    "distance_m": 115
+  },
+  "Mysen": {
+    "qid": "Q1778011",
+    "name": "Mysen stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1882-11-24",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mysen%20stasjon%20en%20typisk%20ettermiddag%202019.4.12.jpg",
+    "ra_id": null,
+    "distance_m": 51
+  },
+  "Hunderfossen": {
+    "qid": "Q1778420",
+    "name": "Hunderfossen holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1986-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hunderfossen%20holdeplass.JPG",
+    "ra_id": null,
+    "distance_m": 45
+  },
+  "Moelv": {
+    "qid": "Q1778817",
+    "name": "Moelv stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Arne Henriksen"
+    ],
+    "opened": "1894-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Moelv%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 53
+  },
+  "Stange": {
+    "qid": "Q1778822",
+    "name": "Stange stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1880-11-08",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stange%20railway%20station.jpg",
+    "ra_id": null,
+    "distance_m": 77
+  },
+  "Ringebu": {
+    "qid": "Q1778830",
+    "name": "Ringebu stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1896-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ringebu%20skysstasjon.JPG",
+    "ra_id": null,
+    "distance_m": 28
+  },
+  "Støren": {
+    "qid": "Q1778879",
+    "name": "Støren stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1864-08-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Storen%20stasjon%20Rorosbanen%202008.JPG",
+    "ra_id": null,
+    "distance_m": 18
+  },
+  "Råde": {
+    "qid": "Q1778903",
+    "name": "Råde stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/R%C3%A5de%20stasjon%2002%20480px.jpg",
+    "ra_id": null,
+    "distance_m": 60
+  },
+  "Vestby": {
+    "qid": "Q1778918",
+    "name": "Vestby stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vestby%20stasjon%20TRS%20070403%20002.jpg",
+    "ra_id": null,
+    "distance_m": 45
+  },
+  "Tomter": {
+    "qid": "Q1778930",
+    "name": "Tomter stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1882-11-24",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tomter%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 8
+  },
+  "Ljan": {
+    "qid": "Q1778948",
+    "name": "Ljan stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ljan%20013.jpg",
+    "ra_id": null,
+    "distance_m": 27
+  },
+  "Kråkstad": {
+    "qid": "Q1778956",
+    "name": "Kråkstad stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1882-11-24",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kr%C3%A5kstad%20stasjon%20TRS%20070804%20033.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Halden": {
+    "qid": "Q1778979",
+    "name": "Halden stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Halden%20jernbanestasjon.JPG",
+    "ra_id": null,
+    "distance_m": 57
+  },
+  "Rygge": {
+    "qid": "Q1778999",
+    "name": "Rygge stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/RyggeTrainStation.jpg",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Ski": {
+    "qid": "Q1779005",
+    "name": "Ski stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ski%20Stasjon%202020.png",
+    "ra_id": null,
+    "distance_m": 62
+  },
+  "Hell": {
+    "qid": "Q1781011",
+    "name": "Hell stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1881-10-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hell%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 97
+  },
+  "Bodø - Bådåddjo": {
+    "qid": "Q1781685",
+    "name": "Bodø stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "NSB Arkitektkontor"
+    ],
+    "opened": "1962-02-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bod%C3%B8%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 27
+  },
+  "Haugastøl": {
+    "qid": "Q1783002",
+    "name": "Haugastøl stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1908-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Haugast%C3%B8l%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 35
+  },
+  "Voss": {
+    "qid": "Q1783061",
+    "name": "Voss stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Voss%20Station.jpg",
+    "ra_id": null,
+    "distance_m": 15
+  },
+  "Nordagutu": {
+    "qid": "Q1783261",
+    "name": "Nordagutu stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Niels Winge Grimnes"
+    ],
+    "opened": "1916-12-04",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nordagutu%20stasjon%202015.jpg",
+    "ra_id": null,
+    "distance_m": 24
+  },
+  "Trengereid": {
+    "qid": "Q1783861",
+    "name": "Trengereid stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Trengereid%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 11
+  },
+  "Arna": {
+    "qid": "Q1783876",
+    "name": "Arna stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1964-08-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Arna%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 21
+  },
+  "Vaksdal": {
+    "qid": "Q1785058",
+    "name": "Vaksdal stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vaksdal%20stasjon%20ubb-dju-p-0357%20sm.jpg",
+    "ra_id": null,
+    "distance_m": 27
+  },
+  "Upsete": {
+    "qid": "Q1786176",
+    "name": "Upsete stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1908-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Upsete%20stasjon.jpeg",
+    "ra_id": null,
+    "distance_m": 55
+  },
+  "Dale": {
+    "qid": "Q1786200",
+    "name": "Dale stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Dale%20stasjon%202.JPG",
+    "ra_id": null,
+    "distance_m": 36
+  },
+  "Røra": {
+    "qid": "Q1798118",
+    "name": "Røra stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1905-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Rora%20Station%201.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Lunner": {
+    "qid": "Q1799130",
+    "name": "Lunner stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1900-12-20",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lunner%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 51
+  },
+  "Bulken": {
+    "qid": "Q1801807",
+    "name": "Bulken stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/541.%20Vossebanen%2C%20Bulken%20Station%20-%20no-nb%20digifoto%2020151106%2000111%20bldsa%20AL0541%20%28cropped%29.jpg",
+    "ra_id": null,
+    "distance_m": 100
+  },
+  "Stanghelle": {
+    "qid": "Q1801822",
+    "name": "Stanghelle stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stanghelle%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 28
+  },
+  "Bolstadøyri": {
+    "qid": "Q1801824",
+    "name": "Bolstadøyri stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bolstad%C3%B8yri%20stasjon%202017.jpg",
+    "ra_id": null,
+    "distance_m": 20
+  },
+  "Evanger": {
+    "qid": "Q1801850",
+    "name": "Evanger stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Evanger%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 19
+  },
+  "Holmlia": {
+    "qid": "Q130342575",
+    "name": "Holmlia stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1987-10-28",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 436
+  },
+  "Skøyen": {
+    "qid": "Q1965557",
+    "name": "Skøyen stasjon",
+    "heritage": [],
+    "architects": [
+      "Eivind Gleditsch"
+    ],
+    "opened": "1872-10-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sk%C3%B8yen%20stasjon%20-%202009-05-01%20at%2013-13-31.jpg",
+    "ra_id": null,
+    "distance_m": 32
+  },
+  "Lysaker": {
+    "qid": "Q1966229",
+    "name": "Lysaker stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1872-10-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lysaker%20stasjon%20-%202010-05-02%20at%2013-38-06.jpg",
+    "ra_id": null,
+    "distance_m": 66
+  },
+  "Grovane": {
+    "qid": "Q3387780",
+    "name": "Grovane stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1895-11-26",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Grovane%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 34
+  },
+  "Tinnoset": {
+    "qid": "Q7808394",
+    "name": "Tinnoset stasjon",
+    "heritage": [],
+    "architects": [
+      "Thorvald Astrup"
+    ],
+    "opened": "1909-08-09",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tinnoset%202004%20SRS.jpg",
+    "ra_id": null,
+    "distance_m": 18
+  },
+  "Flåm": {
+    "qid": "Q3096451",
+    "name": "Flåm stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1940-08-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fl%C3%A5msbana%20train%20at%20Fl%C3%A5m%20Station.jpg",
+    "ra_id": null,
+    "distance_m": 31
+  },
+  "Bergen": {
+    "qid": "Q3267413",
+    "name": "Bergen stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Jens Zetlitz Monrad Kielland"
+    ],
+    "opened": "1913-05-26",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bergen%20station%2C%202019%20%2801%29.jpg",
+    "ra_id": null,
+    "distance_m": 2
+  },
+  "Ler": {
+    "qid": "Q652324",
+    "name": "Ler stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1864-08-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ler%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 100
+  },
+  "Hovin": {
+    "qid": "Q652333",
+    "name": "Hovin stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1864-08-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hovin%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 164
+  },
+  "Lundamo": {
+    "qid": "Q652344",
+    "name": "Lundamo stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1864-08-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lundamo%20stasjon%201.JPG",
+    "ra_id": null,
+    "distance_m": 37
+  },
+  "Myrdal": {
+    "qid": "Q671729",
+    "name": "Myrdal stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1908-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Myrdal%20Station%20with%20Fl%C3%A5msbana%20train.jpg",
+    "ra_id": null,
+    "distance_m": 12
+  },
+  "Spikkestad": {
+    "qid": "Q313156",
+    "name": "Spikkestad stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1885-02-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Spikkestad%20stasjon%20TRS%20070330%20024.jpg",
+    "ra_id": null,
+    "distance_m": 161
+  },
+  "Kvam": {
+    "qid": "Q335749",
+    "name": "Kvam stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1896-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kvam%20stasjon%202019.jpg",
+    "ra_id": null,
+    "distance_m": 26
+  },
+  "Lesjaverk": {
+    "qid": "Q388792",
+    "name": "Lesjaverk stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1921-11-19",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lesjaverk%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 39
+  },
+  "Lesja": {
+    "qid": "Q402118",
+    "name": "Lesja stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1921-11-19",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lesja%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 15
+  },
+  "Dombås": {
+    "qid": "Q402540",
+    "name": "Dombås stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1913-12-06",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Dombaas%20railway%20station.jpg",
+    "ra_id": null,
+    "distance_m": 86
+  },
+  "Otta": {
+    "qid": "Q403207",
+    "name": "Otta stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1896-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Otta%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 10
+  },
+  "Dovre": {
+    "qid": "Q403211",
+    "name": "Dovre stasjon",
+    "heritage": [],
+    "architects": [
+      "Arnstein Arneberg"
+    ],
+    "opened": "1913-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Dovre%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 85
+  },
+  "Bjorli": {
+    "qid": "Q403701",
+    "name": "Bjorli stasjon",
+    "heritage": [],
+    "architects": [
+      "Gerhard Fischer",
+      "Gudmund Hoel"
+    ],
+    "opened": "1921-11-19",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bjorli%20Station%202009.jpg",
+    "ra_id": null,
+    "distance_m": 55
+  },
+  "Stoa": {
+    "qid": "Q41756",
+    "name": "Stoa holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "2008-08-18",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stoa%20holdeplass.jpg",
+    "ra_id": null,
+    "distance_m": 21
+  },
+  "Reitan": {
+    "qid": "Q63797",
+    "name": "Reitan stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1877-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Reitan%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 3
+  },
+  "Singsås": {
+    "qid": "Q63799",
+    "name": "Singsås stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1876-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sings%C3%A5s%20Station.JPG",
+    "ra_id": null,
+    "distance_m": 29
+  },
+  "Glåmos": {
+    "qid": "Q63803",
+    "name": "Glåmos stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1877-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gl%C3%A5mos%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 11
+  },
+  "Røros": {
+    "qid": "Q63804",
+    "name": "Røros stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1877-10-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Roeros%20railway%20station.jpg",
+    "ra_id": null,
+    "distance_m": 9
+  },
+  "Ålen": {
+    "qid": "Q63806",
+    "name": "Ålen stoppested",
+    "heritage": [],
+    "architects": [
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1901-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%85len%20hp.jpg",
+    "ra_id": null,
+    "distance_m": 174
+  },
+  "Os": {
+    "qid": "Q63808",
+    "name": "Os stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1877-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Os%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Bellingmo": {
+    "qid": "Q74255",
+    "name": "Bellingmo holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1898-08-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bellingmo%20holdeplass%20R%C3%B8rosbanen%202008.JPG",
+    "ra_id": null,
+    "distance_m": 21
+  },
+  "Atna": {
+    "qid": "Q74261",
+    "name": "Atna stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1877-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Atna%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 47
+  },
+  "Hanestad": {
+    "qid": "Q74265",
+    "name": "Hanestad stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1877-11-08",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hanestad%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 14
+  },
+  "Koppang": {
+    "qid": "Q81956",
+    "name": "Koppang stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1875-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Koppang%20stasjon.jpeg",
+    "ra_id": null,
+    "distance_m": 26
+  },
+  "Stai": {
+    "qid": "Q81958",
+    "name": "Stai stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1875-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stai%20stasjon%20Stor-Elvdal.jpg",
+    "ra_id": null,
+    "distance_m": 45
+  },
+  "Evenstad": {
+    "qid": "Q82422",
+    "name": "Evenstad stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": null,
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Evenstad%20holdeplass.JPG",
+    "ra_id": null,
+    "distance_m": 14
+  },
+  "Steinvik": {
+    "qid": "Q94457",
+    "name": "Steinvik stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1875-12-14",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Steinvik%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 29
+  },
+  "Elverum": {
+    "qid": "Q94462",
+    "name": "Elverum stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1862-06-23",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Elverum%20stasjon%202019.jpg",
+    "ra_id": null,
+    "distance_m": 33
+  },
+  "Hamar": {
+    "qid": "Q94466",
+    "name": "Hamar stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1862-06-23",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hamar%20Railway%20Station.jpg",
+    "ra_id": null,
+    "distance_m": 48
+  },
+  "Rena": {
+    "qid": "Q94470",
+    "name": "Rena stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1871-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Rena%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 44
+  },
+  "Opphus": {
+    "qid": "Q94475",
+    "name": "Opphus stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1876-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/20220623%20Opphus%20st.jpg",
+    "ra_id": null,
+    "distance_m": 27
+  },
+  "Ilseng": {
+    "qid": "Q94479",
+    "name": "Ilseng stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1862-06-23",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ilseng%20station.jpg",
+    "ra_id": null,
+    "distance_m": 15
+  },
+  "Lillehammer": {
+    "qid": "Q94523",
+    "name": "Lillehammer stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1894-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lillehammer%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 42
+  },
+  "Løten": {
+    "qid": "Q94942",
+    "name": "Løten stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1862-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Loeten%20railway%20station%20front.jpg",
+    "ra_id": null,
+    "distance_m": 162
+  },
+  "Lillestrøm": {
+    "qid": "Q172289",
+    "name": "Lillestrøm stasjon",
+    "heritage": [],
+    "architects": [
+      "Arne Henriksen"
+    ],
+    "opened": "1854-09-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lillestr%C3%B8m%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 56
+  },
+  "Arendal": {
+    "qid": "Q195377",
+    "name": "Arendal stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1908-11-23",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Arendal%20Jernbanest%2001.JPG",
+    "ra_id": null,
+    "distance_m": 30
+  },
+  "Eidsvoll": {
+    "qid": "Q195406",
+    "name": "Eidsvoll stasjon",
+    "heritage": [],
+    "architects": [
+      "Arne Henriksen"
+    ],
+    "opened": "1998-09-27",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eidsvoll%20stasjon%20TRS%20070721%2000.jpg",
+    "ra_id": null,
+    "distance_m": 40
+  },
+  "Drammen": {
+    "qid": "Q196058",
+    "name": "Drammen stasjon",
+    "heritage": [],
+    "architects": [
+      "Arne Henriksen"
+    ],
+    "opened": "1866-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Drammen%20stasjon%20hovedinngangen.jpg",
+    "ra_id": null,
+    "distance_m": 39
+  },
+  "Gjøvik": {
+    "qid": "Q211592",
+    "name": "Gjøvik stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1902-11-28",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gjoevik%20Railway%20Station.jpg",
+    "ra_id": null,
+    "distance_m": 23
+  },
+  "Katterat": {
+    "qid": "Q245786",
+    "name": "Katterat stasjon",
+    "heritage": [],
+    "architects": [
+      "NSB Arkitektkontor"
+    ],
+    "opened": "1902-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Katterat%20%28971151580%29.jpg",
+    "ra_id": null,
+    "distance_m": 19
+  },
+  "Bøylestad": {
+    "qid": "Q246294",
+    "name": "Bøylestad stoppested",
+    "heritage": [],
+    "architects": [
+      "Harald Kaas"
+    ],
+    "opened": "1910-12-18",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B8ylestad%20stoppested.jpg",
+    "ra_id": null,
+    "distance_m": 148
+  },
+  "Flaten": {
+    "qid": "Q246306",
+    "name": "Flaten stoppested",
+    "heritage": [],
+    "architects": [
+      "Harald Kaas"
+    ],
+    "opened": "1910-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Flaten%20holdeplass.jpg",
+    "ra_id": null,
+    "distance_m": 357
+  },
+  "Bjørnfjell": {
+    "qid": "Q247039",
+    "name": "Bjørnfjell stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1925-10-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/20190630%20150129%20Bjoernfjell%20Norway.jpg",
+    "ra_id": null,
+    "distance_m": 3
+  },
+  "Bråstad": {
+    "qid": "Q251221",
+    "name": "Bråstad stoppested",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1908-11-23",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Br%C3%A5stad%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Tangen": {
+    "qid": "Q251415",
+    "name": "Tangen stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1880-11-08",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tangen%20station.jpg",
+    "ra_id": null,
+    "distance_m": 23
+  },
+  "Neslandsvatn": {
+    "qid": "Q257532",
+    "name": "Neslandsvatn stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1927-12-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Neslandsvatn%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 50
+  },
+  "Froland": {
+    "qid": "Q276834",
+    "name": "Froland stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1908-11-23",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Froland.jpg",
+    "ra_id": null,
+    "distance_m": 43
+  },
+  "Kvål": {
+    "qid": "Q723224",
+    "name": "Kvål holdeplass",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1864-08-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kv%C3%A5l%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 118
+  },
+  "Marienborg": {
+    "qid": "Q723326",
+    "name": "Marienborg holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "2001-01-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Marienborg%20Station.JPG",
+    "ra_id": null,
+    "distance_m": 155
+  },
+  "Leangen": {
+    "qid": "Q723487",
+    "name": "Leangen stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1882-05-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Leangen%20station%20building.jpg",
+    "ra_id": null,
+    "distance_m": 169
+  },
+  "Heimdal": {
+    "qid": "Q723495",
+    "name": "Heimdal stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull",
+      "NSB Arkitektkontor"
+    ],
+    "opened": "1864-08-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Heimdal%20stasjon%201024px.jpg",
+    "ra_id": null,
+    "distance_m": 11
+  },
+  "Ås": {
+    "qid": "Q728979",
+    "name": "Ås stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1879-01-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%85s%20stasjon%20TRS%20070804%20006.jpg",
+    "ra_id": null,
+    "distance_m": 29
+  },
+  "Haugenstua": {
+    "qid": "Q762314",
+    "name": "Haugenstua holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1937-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Haugenstua%20station%20%282023%29.jpg",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Bryn": {
+    "qid": "Q764143",
+    "name": "Bryn stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [],
+    "opened": "1854-09-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bryn%20stasjon%20TRS%20070730%20003.jpg",
+    "ra_id": null,
+    "distance_m": 28
+  },
+  "Brumunddal": {
+    "qid": "Q787112",
+    "name": "Brumunddal stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1894-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Brumunddal%20stasjon%202022.jpg",
+    "ra_id": null,
+    "distance_m": 23
+  },
+  "Dal": {
+    "qid": "Q798535",
+    "name": "Dal stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Heinrich Ernst Schirmer",
+      "Wilhelm von Hanno"
+    ],
+    "opened": "1854-09-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Dal%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 57
+  },
+  "Nordby": {
+    "qid": "Q798537",
+    "name": "Nordby holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1932-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nordby%20stasjon%202.jpg",
+    "ra_id": null,
+    "distance_m": 69
+  },
+  "Hauerseter": {
+    "qid": "Q798543",
+    "name": "Hauerseter stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1894-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hauerseter%20statsjon2%28crop%29.jpg",
+    "ra_id": null,
+    "distance_m": 66
+  },
+  "Finse": {
+    "qid": "Q800755",
+    "name": "Finse stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1908-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/BM69-train%20at%20Finse%20%2816590148917%29.jpg",
+    "ra_id": null,
+    "distance_m": 18
+  },
+  "Kongsvoll": {
+    "qid": "Q501006",
+    "name": "Kongsvoll stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Erik Glosimodt"
+    ],
+    "opened": "1921-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kongsvoll%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 26
+  },
+  "Hjerkinn": {
+    "qid": "Q501232",
+    "name": "Hjerkinn stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Erik Glosimodt"
+    ],
+    "opened": "1921-09-20",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hjerkinn%202009%20%289050542622%29.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Marnardal": {
+    "qid": "Q586393",
+    "name": "Marnardal stasjon",
+    "heritage": [],
+    "architects": [
+      "NSB Arkitektkontor"
+    ],
+    "opened": "1943-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Marnardal%20Stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 32
+  },
+  "Selsbakk": {
+    "qid": "Q591002",
+    "name": "Selsbakk stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Jens Ludvig Paul Flor"
+    ],
+    "opened": "1890-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Selsbakk%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 365
+  },
+  "Kjelsås": {
+    "qid": "Q607303",
+    "name": "Kjelsås stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1900-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kjels%C3%A5s%20stasjon%20TRS%20070501%20007.jpg",
+    "ra_id": null,
+    "distance_m": 54
+  },
+  "Oppdal": {
+    "qid": "Q611313",
+    "name": "Oppdal stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Jens Ludvig Paul Flor"
+    ],
+    "opened": "1921-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Oppdal%20Bahnhof%20Winter.jpg",
+    "ra_id": null,
+    "distance_m": 69
+  },
+  "Fjellhamar": {
+    "qid": "Q891917",
+    "name": "Fjellhamar stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1931-06-22",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fjellhamar%20holdeplass.JPG",
+    "ra_id": null,
+    "distance_m": 11
+  },
+  "Leirsund": {
+    "qid": "Q891923",
+    "name": "Leirsund stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1859-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Leirsund%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 45
+  },
+  "Hanaborg": {
+    "qid": "Q891927",
+    "name": "Hanaborg holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1956-10-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hanaborg%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 12
+  },
+  "Alna": {
+    "qid": "Q4734047",
+    "name": "Alnabru stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [],
+    "opened": "1902-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/1489%20Alnabru%20Station%2C%20ca%201922.jpg",
+    "ra_id": null,
+    "distance_m": 367
+  },
+  "Strømmen": {
+    "qid": "Q892095",
+    "name": "Strømmen stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1854-09-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Str%C3%B8mmen%20stasjon%20%282009%29.jpg",
+    "ra_id": null,
+    "distance_m": 86
+  },
+  "Grorud": {
+    "qid": "Q892345",
+    "name": "Grorud stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1854-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Grorud%20Jernbanestasjon%20TRS%20070730%20006.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Sagdalen": {
+    "qid": "Q892350",
+    "name": "Sagdalen holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1938-07-12",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sagdalen%20holdeplass.JPG",
+    "ra_id": null,
+    "distance_m": 63
+  },
+  "Nyland": {
+    "qid": "Q892712",
+    "name": "Nyland holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1961-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nyland%20stasjon%20TRS%20070801%20002.jpg",
+    "ra_id": null,
+    "distance_m": 10
+  },
+  "Stjørdal": {
+    "qid": "Q950136",
+    "name": "Stjørdal stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1902-10-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stjoerdal%20railway%20station.jpg",
+    "ra_id": null,
+    "distance_m": 14
+  },
+  "Høybråten": {
+    "qid": "Q978711",
+    "name": "Høybråten stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1921-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/H%C3%B8ybr%C3%A5ten%20stasjon%20%28april%202024%29.jpg",
+    "ra_id": null,
+    "distance_m": 12
+  },
+  "Jessheim": {
+    "qid": "Q979157",
+    "name": "Jessheim stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Henrik Bull"
+    ],
+    "opened": "1854-09-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Jessheim%20railway%20station.jpg",
+    "ra_id": null,
+    "distance_m": 65
+  },
+  "Frogner": {
+    "qid": "Q866539",
+    "name": "Frogner stasjon",
+    "heritage": [],
+    "architects": [
+      "Heinrich Ernst Schirmer",
+      "Wilhelm von Hanno"
+    ],
+    "opened": "1854-09-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Frogner%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 37
+  },
+  "Kløfta": {
+    "qid": "Q867310",
+    "name": "Kløfta stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1854-09-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Drone%20photo%20of%20Kl%C3%B8fta%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 64
+  },
+  "Billingstad": {
+    "qid": "Q1101066",
+    "name": "Billingstad stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1919-03-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Billingstad%20holdeplass.JPG",
+    "ra_id": null,
+    "distance_m": 51
+  },
+  "Asker": {
+    "qid": "Q2037995",
+    "name": "Asker stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1872-10-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Asker%20stasjon%20TRS%20070412%20003.jpg",
+    "ra_id": null,
+    "distance_m": 23
+  },
+  "Brakerøya": {
+    "qid": "Q2038007",
+    "name": "Brakerøya stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1873-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Braker%C3%B8ya%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 7
+  },
+  "Drevvatn": {
+    "qid": "Q1841713",
+    "name": "Drevvatn stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1941-03-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/20220628%20Drevvatn%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Heggedal": {
+    "qid": "Q2160599",
+    "name": "Heggedal stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1874-03-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Heggedal%20Train%20station%2C%20norway.jpg",
+    "ra_id": null,
+    "distance_m": 47
+  },
+  "Kristiansand": {
+    "qid": "Q2454239",
+    "name": "Kristiansand stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1895-11-26",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kristiansand%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 15
+  },
+  "Kongsberg": {
+    "qid": "Q2268853",
+    "name": "Kongsberg stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Niels Winge Grimnes"
+    ],
+    "opened": "1917-09-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kongsberg%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 9
+  },
+  "Darbu": {
+    "qid": "Q2270756",
+    "name": "Darbu stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1871-11-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Darbu%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 36
+  },
+  "Vestfossen": {
+    "qid": "Q2376789",
+    "name": "Vestfossen stasjon",
+    "heritage": [],
+    "architects": [
+      "Harald Kaas"
+    ],
+    "opened": "1871-11-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vestfossen%20stasjon%20TRS%20061106%20009.jpg",
+    "ra_id": null,
+    "distance_m": 12
+  },
+  "Hokksund": {
+    "qid": "Q2378145",
+    "name": "Hokksund stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1866-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hokksund%20Railway%20Station%20TRS%20061213%20006.jpg",
+    "ra_id": null,
+    "distance_m": 36
+  },
+  "Bø": {
+    "qid": "Q2753937",
+    "name": "Bø stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1924-12-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B8%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 18
+  },
+  "Trondheim S": {
+    "qid": "Q3095584",
+    "name": "Trondheim sentralstasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1881-10-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Train%20Station%20in%20Trondheim.jpg",
+    "ra_id": null,
+    "distance_m": 58
+  },
+  "Alvdal": {
+    "qid": "Q3095621",
+    "name": "Alvdal stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1877-10-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Alvdal%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 28
+  },
+  "Auma": {
+    "qid": "Q3095698",
+    "name": "Auma stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1877-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/715%20Auma%20Station%20-%20no-nb%20digifoto%2020150807%2000220%20bldsa%20PK29685.jpg",
+    "ra_id": null,
+    "distance_m": 246
+  },
+  "Berkåk": {
+    "qid": "Q3095967",
+    "name": "Berkåk stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Jens Ludvig Paul Flor"
+    ],
+    "opened": "1921-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Berk%C3%A5k%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 126
+  },
+  "Røyknes": {
+    "qid": "Q2796938",
+    "name": "Røyknes stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1895-11-26",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/R%C3%B8yknes%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 15
+  },
+  "Narvik": {
+    "qid": "Q3097173",
+    "name": "Narvik stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1902-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Narvikstation1.jpg",
+    "ra_id": null,
+    "distance_m": 23
+  },
+  "Nelaug": {
+    "qid": "Q3097189",
+    "name": "Nelaug stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1935-11-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nelaug%20stasjon%20vinter.JPG",
+    "ra_id": null,
+    "distance_m": 65
+  },
+  "Rognes": {
+    "qid": "Q3097428",
+    "name": "Rognes stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1876-01-04",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Rognes%20stasjon%20i%202014.JPG",
+    "ra_id": null,
+    "distance_m": 33
+  },
+  "Tolga": {
+    "qid": "Q3097882",
+    "name": "Tolga stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1877-10-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tolga%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 30
+  },
+  "Tynset": {
+    "qid": "Q3097916",
+    "name": "Tynset stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1877-10-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tynset%20Stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 27
+  },
+  "Åndalsnes": {
+    "qid": "Q3098140",
+    "name": "Åndalsnes stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1924-11-30",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%85ndalsnes%20Stasjon%20anno%202023.jpg",
+    "ra_id": null,
+    "distance_m": 54
+  },
+  "Vennesla": {
+    "qid": "Q3181364",
+    "name": "Vennesla stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1895-11-26",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vennesla%20stasjon%203.JPG",
+    "ra_id": null,
+    "distance_m": 15
+  },
+  "Vegårshei": {
+    "qid": "Q3181371",
+    "name": "Vegårshei stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1935-11-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Veg%C3%A5rshei%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 40
+  },
+  "Gjerstad": {
+    "qid": "Q3181604",
+    "name": "Gjerstad stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1935-11-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gjerstad%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 49
+  },
+  "Drangedal": {
+    "qid": "Q3096407",
+    "name": "Drangedal stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1927-12-02",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Drangedal%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 119
+  },
+  "Lunde": {
+    "qid": "Q3096623",
+    "name": "Lunde stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1925-12-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lunde%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 27
+  },
+  "Kotsøy": {
+    "qid": "Q3096698",
+    "name": "Kotsøy holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1890-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kots%C3%B8y%20Station.jpg",
+    "ra_id": null,
+    "distance_m": 22
+  },
+  "Kvitfjell": {
+    "qid": "Q3096709",
+    "name": "Kvitfjell holdeplass",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1992-03-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kvitfjell%20holdeplass.JPG",
+    "ra_id": null,
+    "distance_m": 11
+  },
+  "Lørenskog": {
+    "qid": "Q3096943",
+    "name": "Lørenskog stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1857-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/L%C3%B8renskog%20stasjon%20%282017-04-02%29.jpg",
+    "ra_id": null,
+    "distance_m": 13
+  },
+  "Snippen": {
+    "qid": "Q4027020",
+    "name": "Snippen holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1945-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Snippen%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 75
+  },
+  "Breland": {
+    "qid": "Q3274726",
+    "name": "Breland stasjon",
+    "heritage": [],
+    "architects": [
+      "NSB Arkitektkontor"
+    ],
+    "opened": "1943-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Breland%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 55
+  },
+  "Nodeland": {
+    "qid": "Q3274729",
+    "name": "Nodeland stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1943-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nodeland%20stasjon%202021.jpg",
+    "ra_id": null,
+    "distance_m": 51
+  },
+  "Storekvina": {
+    "qid": "Q3274736",
+    "name": "Storekvina stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1943-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Storekvina%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 151
+  },
+  "Snartemo": {
+    "qid": "Q3275066",
+    "name": "Snartemo stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1943-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Snartemo%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 42
+  },
+  "Audnedal": {
+    "qid": "Q3275074",
+    "name": "Audnedal stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1943-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Audnedal%20Stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 21
+  },
+  "Gyland": {
+    "qid": "Q3275078",
+    "name": "Gyland stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1943-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gyland%20train%20station%2C%20Vest-Agder%2C%20Norway%2C%20in%20sun.jpg",
+    "ra_id": null,
+    "distance_m": 22
+  },
+  "Mjøndalen": {
+    "qid": "Q3330637",
+    "name": "Mjøndalen stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1866-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mj%C3%B8ndalen%20Railway%20Station%20TRS%20061106%20003.jpg",
+    "ra_id": null,
+    "distance_m": 73
+  },
+  "Gulskogen": {
+    "qid": "Q3330648",
+    "name": "Gulskogen stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull",
+      "Gudmund Hoel"
+    ],
+    "opened": "1868-01-27",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gulskogen%20stasjon%20TRS%20070330%20001.jpg",
+    "ra_id": null,
+    "distance_m": 5
+  },
+  "Sira": {
+    "qid": "Q3331464",
+    "name": "Sira stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1943-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sira%20stasjon%20%28417692218%29.jpg",
+    "ra_id": null,
+    "distance_m": 14
+  },
+  "Egersund": {
+    "qid": "Q3331470",
+    "name": "Egersund stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1944-05-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Egersund%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 26
+  },
+  "Stavanger": {
+    "qid": "Q3355141",
+    "name": "Stavanger stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stavanger%20stasjon%202013-04-28%2010.34.24.jpg",
+    "ra_id": null,
+    "distance_m": 44
+  },
+  "Oslo lufthavn": {
+    "qid": "Q3356558",
+    "name": "Oslo lufthavn stasjon",
+    "heritage": [],
+    "architects": [
+      "Aviaplan"
+    ],
+    "opened": "1998-09-27",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Oslo%20airport%20station%202.jpg",
+    "ra_id": null,
+    "distance_m": 222
+  },
+  "Urdland": {
+    "qid": "Q3363234",
+    "name": "Urdland stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1908-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Urdland%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Reimegrend": {
+    "qid": "Q3363965",
+    "name": "Reimegrend stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1908-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Reimegrend%20stasjon%20%E2%80%93%20Bergensbanen.jpg",
+    "ra_id": null,
+    "distance_m": 38
+  },
+  "Ygre": {
+    "qid": "Q3364032",
+    "name": "Ygre stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1908-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ygre%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 8
+  },
+  "Nærbø": {
+    "qid": "Q3366328",
+    "name": "Nærbø stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/N%C3%A6rb%C3%B8%20stasjon%20fra%20bygdebok.jpg",
+    "ra_id": null,
+    "distance_m": 52
+  },
+  "Bleiken": {
+    "qid": "Q3428017",
+    "name": "Bleiken stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1900-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bleiken%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 37
+  },
+  "Gran": {
+    "qid": "Q3428028",
+    "name": "Gran stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1900-12-20",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gran%20stasjon%20-%202012-09-30%20at%2012-50-38.jpg",
+    "ra_id": null,
+    "distance_m": 29
+  },
+  "Jaren": {
+    "qid": "Q3441070",
+    "name": "Jaren stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1900-12-20",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Jaren%20train%20station%2C%20Gran%2C%20Norway%2C%202008-06-06.jpg",
+    "ra_id": null,
+    "distance_m": 4
+  },
+  "Roa": {
+    "qid": "Q3441087",
+    "name": "Roa stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1909-12-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Roa%20stasjon%202009.JPG",
+    "ra_id": null,
+    "distance_m": 35
+  },
+  "Stryken": {
+    "qid": "Q3441283",
+    "name": "Stryken stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1917-11-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stryken%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 32
+  },
+  "Hakadal": {
+    "qid": "Q3443569",
+    "name": "Hakadal stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1900-12-20",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hakadal%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 5
+  },
+  "Åneby": {
+    "qid": "Q3443650",
+    "name": "Åneby stasjon",
+    "heritage": [],
+    "architects": [
+      "Gerhard Fischer"
+    ],
+    "opened": "1905-05-27",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%85neby%20stasjon%201.JPG",
+    "ra_id": null,
+    "distance_m": 111
+  },
+  "Bryne": {
+    "qid": "Q3460438",
+    "name": "Bryne stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bryne%20Stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 101
+  },
+  "Vigrestad": {
+    "qid": "Q3538463",
+    "name": "Vigrestad stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 26
+  },
+  "Brusand": {
+    "qid": "Q3538472",
+    "name": "Brusand stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Jens Ludvig Paul Flor"
+    ],
+    "opened": "1879-12-13",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 31
+  },
+  "Skeiane": {
+    "qid": "Q3538482",
+    "name": "Skeiane stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1955-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sandnes%20stasjon%202014%202014-04-03%2015-20.JPG",
+    "ra_id": null,
+    "distance_m": 42
+  },
+  "Sirevåg": {
+    "qid": "Q3538485",
+    "name": "Sirevåg stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": "1879-12-13",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sirev%C3%A5g%20Station.jpg",
+    "ra_id": null,
+    "distance_m": 20
+  },
+  "Ogna": {
+    "qid": "Q3538584",
+    "name": "Ogna stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ogna%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 13
+  },
+  "Hellvik": {
+    "qid": "Q3538930",
+    "name": "Hellvik stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hellvik%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 23
+  },
+  "Varhaug": {
+    "qid": "Q3538938",
+    "name": "Varhaug stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Varhaug%20stasjon%20T224%2001%200105.jpg",
+    "ra_id": null,
+    "distance_m": 31
+  },
+  "Klepp": {
+    "qid": "Q3539085",
+    "name": "Klepp stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Klepp%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 151
+  },
+  "Ganddal": {
+    "qid": "Q3560996",
+    "name": "Ganddal stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ganddal%20station.jpg",
+    "ra_id": null,
+    "distance_m": 35
+  },
+  "Hønefoss": {
+    "qid": "Q3577026",
+    "name": "Hønefoss stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1868-10-13",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Honefoss-stasjon-1tb.jpg",
+    "ra_id": null,
+    "distance_m": 58
+  },
+  "Grefsen": {
+    "qid": "Q3603459",
+    "name": "Grefsen stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1900-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Grefsen-stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 271
+  },
+  "Mariero": {
+    "qid": "Q3609390",
+    "name": "Mariero stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1881-01-01",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 144
+  },
+  "Tøyen": {
+    "qid": "Q3815297",
+    "name": "Tøyen jernbanestasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1862-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/T%C3%B8yen%20stasjon%2C%20Oslo.JPG",
+    "ra_id": null,
+    "distance_m": 18
+  },
+  "Nydalen": {
+    "qid": "Q3915455",
+    "name": "Nydalen holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1946-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nydalen%20holdeplass%202011.jpg",
+    "ra_id": null,
+    "distance_m": 163
+  },
+  "Nittedal": {
+    "qid": "Q4121006",
+    "name": "Nittedal stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1900-12-20",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nittedal%20jernbane%20stasjon%201.JPG",
+    "ra_id": null,
+    "distance_m": 51
+  },
+  "Movatn": {
+    "qid": "Q4121007",
+    "name": "Movatn stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1900-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Movatn%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 39
+  },
+  "Varingskollen": {
+    "qid": "Q4121012",
+    "name": "Varingskollen holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1932-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Varingskollen%20holdeplass.JPG",
+    "ra_id": null,
+    "distance_m": 50
+  },
+  "Eina": {
+    "qid": "Q4141236",
+    "name": "Eina stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1902-11-28",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eina.jpg",
+    "ra_id": null,
+    "distance_m": 22
+  },
+  "Reinsvoll": {
+    "qid": "Q4141614",
+    "name": "Reinsvoll stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1900-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Reinsvoll%20stasjon%20I.jpg",
+    "ra_id": null,
+    "distance_m": 36
+  },
+  "Raufoss": {
+    "qid": "Q4141743",
+    "name": "Raufoss stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1901-12-23",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Raufoss%20railroad%20station.jpg",
+    "ra_id": null,
+    "distance_m": 13
+  },
+  "Haga": {
+    "qid": "Q4562757",
+    "name": "Haga stasjon",
+    "heritage": [],
+    "architects": [
+      "Heinrich Ernst Schirmer",
+      "Wilhelm von Hanno"
+    ],
+    "opened": "1862-10-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Haga%20stasjon%20TRS.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Steinberg": {
+    "qid": "Q4566131",
+    "name": "Steinberg stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1906-12-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Steinberg%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 20
+  },
+  "Ustaoset": {
+    "qid": "Q4567675",
+    "name": "Ustaoset stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1909-06-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ustaoset%20stasjon.jpeg",
+    "ra_id": null,
+    "distance_m": 19
+  },
+  "Larvik": {
+    "qid": "Q4568545",
+    "name": "Larvik stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1881-12-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/LarvikStasjon.JPG",
+    "ra_id": null,
+    "distance_m": 12
+  },
+  "Kopperå": {
+    "qid": "Q4569000",
+    "name": "Kopperå stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1899-04-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kopper%C3%A5%20stasjon%2001.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Haltdalen": {
+    "qid": "Q4569032",
+    "name": "Haltdalen stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1877-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Haltdalen%20stasjon%20R%C3%B8rosbanen.JPG",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Snåsa - Snåase": {
+    "qid": "Q4569066",
+    "name": "Snåsa stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1926-10-30",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sn%C3%A5sa%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 55
+  },
+  "Hommelvik": {
+    "qid": "Q4569073",
+    "name": "Hommelvik stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1881-10-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hommelvik%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 23
+  },
+  "Grong": {
+    "qid": "Q4569114",
+    "name": "Grong stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1929-11-30",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Grong%20stasjonsbygning.jpg",
+    "ra_id": null,
+    "distance_m": 21
+  },
+  "Bergsgrav": {
+    "qid": "Q4570033",
+    "name": "Bergsgrav stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1938-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bergsgrav%20Station.jpg",
+    "ra_id": null,
+    "distance_m": 7
+  },
+  "Verdal": {
+    "qid": "Q4570335",
+    "name": "Verdal stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1904-11-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Verdal%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 30
+  },
+  "Gudå": {
+    "qid": "Q4570353",
+    "name": "Gudå stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1881-10-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gud%C3%A5%20stasjon%2001.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Ronglan": {
+    "qid": "Q4570382",
+    "name": "Ronglan stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1902-10-29",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ronglan%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 11
+  },
+  "Skogn": {
+    "qid": "Q4570472",
+    "name": "Skogn stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1902-10-29",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Skogn%20stasjon%202.jpg",
+    "ra_id": null,
+    "distance_m": 12
+  },
+  "Mo i Rana / Måefie": {
+    "qid": "Q4572163",
+    "name": "Mo i Rana stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1942-03-20",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Rana%20jernbanestasjon%20inngang%20A.JPG",
+    "ra_id": null,
+    "distance_m": 65
+  },
+  "Skatval": {
+    "qid": "Q4572624",
+    "name": "Skatval stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1902-10-29",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Skatval%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 145
+  },
+  "Steinkjer": {
+    "qid": "Q4578166",
+    "name": "Steinkjer stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1905-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Steinkjer%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 118
+  },
+  "Mjølfjell": {
+    "qid": "Q4580736",
+    "name": "Mjølfjell stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1908-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mj%C3%B8lfjell%20stasjon%20og%20plattform.jpg",
+    "ra_id": null,
+    "distance_m": 77
+  },
+  "Sandefjord": {
+    "qid": "Q4582035",
+    "name": "Sandefjord stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1881-12-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sandefjord%20Stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 32
+  },
+  "Berekvam": {
+    "qid": "Q4891238",
+    "name": "Berekvam stasjon",
+    "heritage": [],
+    "architects": [
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1940-08-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/BerekvamStation.jpg",
+    "ra_id": null,
+    "distance_m": 5
+  },
+  "Grua": {
+    "qid": "Q5239013",
+    "name": "Grua stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1901-09-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Grua%20stasjon.jpeg",
+    "ra_id": null,
+    "distance_m": 76
+  },
+  "Eidsvoll verk": {
+    "qid": "Q5348845",
+    "name": "Eidsvoll Verk holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1998-09-27",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Eidsvoll%20Verk%20stasjon%20Norway.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Fetsund": {
+    "qid": "Q4352324",
+    "name": "Fetsund stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Heinrich Ernst Schirmer",
+      "Wilhelm von Hanno"
+    ],
+    "opened": "1862-10-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fetsund%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 45
+  },
+  "Mosjøen": {
+    "qid": "Q5421796",
+    "name": "Mosjøen stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1940-07-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Mosj%C3%B8en%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 27
+  },
+  "Namsskogan": {
+    "qid": "Q5421845",
+    "name": "Namsskogan stasjon",
+    "heritage": [],
+    "architects": [
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1940-07-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/NSB%20Di%204%20653%20at%20Namskogan.jpg",
+    "ra_id": null,
+    "distance_m": 18
+  },
+  "Flå": {
+    "qid": "Q5463735",
+    "name": "Flå stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1907-12-21",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fl%C3%A5%20stasjon%20URN%20NBN%20no-nb%20digifoto%2020170206%2000174%20NB%20MIT%20GNR%2001480.jpg",
+    "ra_id": null,
+    "distance_m": 53
+  },
+  "Geilo": {
+    "qid": "Q5530140",
+    "name": "Geilo stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1907-12-21",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Geilo%20Station.jpg",
+    "ra_id": null,
+    "distance_m": 27
+  },
+  "Gol": {
+    "qid": "Q5578278",
+    "name": "Gol stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1907-12-21",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gol%20stasjon%20110812.jpg",
+    "ra_id": null,
+    "distance_m": 26
+  },
+  "Hallingskeid": {
+    "qid": "Q5643006",
+    "name": "Hallingskeid stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1908-06-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hallingskeid%20stasjon.jpeg",
+    "ra_id": null,
+    "distance_m": 33
+  },
+  "Blaker": {
+    "qid": "Q4474138",
+    "name": "Blaker stasjon",
+    "heritage": [],
+    "architects": [
+      "NSB Arkitektkontor"
+    ],
+    "opened": "1862-10-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Blaker%20stasjon%20TRS.jpg",
+    "ra_id": null,
+    "distance_m": 38
+  },
+  "Rånåfoss": {
+    "qid": "Q4474162",
+    "name": "Rånåsfoss stasjon",
+    "heritage": [],
+    "architects": [
+      "NSB Arkitektkontor"
+    ],
+    "opened": "1918-09-06",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/R%C3%A5n%C3%A5sfoss%20stasjon%20TRS%20070609%20008.jpg",
+    "ra_id": null,
+    "distance_m": 20
+  },
+  "Sørumsand": {
+    "qid": "Q4474171",
+    "name": "Sørumsand stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1892-12-22",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/S%C3%B8rumsand%20stasjon%202.jpg",
+    "ra_id": null,
+    "distance_m": 248
+  },
+  "Skarnes": {
+    "qid": "Q4474198",
+    "name": "Skarnes stasjon",
+    "heritage": [],
+    "architects": [
+      "Heinrich Ernst Schirmer",
+      "Wilhelm von Hanno"
+    ],
+    "opened": "1862-10-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Skarnes%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 21
+  },
+  "Årnes": {
+    "qid": "Q4474209",
+    "name": "Årnes stasjon",
+    "heritage": [],
+    "architects": [
+      "Heinrich Ernst Schirmer",
+      "Wilhelm von Hanno"
+    ],
+    "opened": "1862-10-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%85rnes%20stasjon%20TRS%20070609%20012.jpg",
+    "ra_id": null,
+    "distance_m": 60
+  },
+  "Bodung": {
+    "qid": "Q4474220",
+    "name": "Bodung stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": "1913-06-25",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bodung%20holdeplass.JPG",
+    "ra_id": null,
+    "distance_m": 145
+  },
+  "Kongsvinger": {
+    "qid": "Q4503384",
+    "name": "Kongsvinger stasjon",
+    "heritage": [],
+    "architects": [
+      "Heinrich Ernst Schirmer",
+      "Wilhelm von Hanno"
+    ],
+    "opened": "1862-10-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kongsvinger%20stasjon%20TRS%20070609%20026.jpg",
+    "ra_id": null,
+    "distance_m": 1
+  },
+  "Holmestrand": {
+    "qid": "Q5883698",
+    "name": "Holmestrand stasjon",
+    "heritage": [],
+    "architects": [
+      "Gottlieb Paludan Architects"
+    ],
+    "opened": "2016-12-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/HolmestrandSt2.jpg",
+    "ra_id": null,
+    "distance_m": 0
+  },
+  "Ingolfsland": {
+    "qid": "Q6032943",
+    "name": "Ingolfsland stasjon",
+    "heritage": [],
+    "architects": [
+      "Thorvald Astrup"
+    ],
+    "opened": "1913-01-30",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ingolfsland%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 25
+  },
+  "Miland": {
+    "qid": "Q6850760",
+    "name": "Miland stasjon",
+    "heritage": [],
+    "architects": [
+      "Thorvald Astrup"
+    ],
+    "opened": "1909-08-09",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 43
+  },
+  "Mæl": {
+    "qid": "Q6950028",
+    "name": "Mæl stasjon",
+    "heritage": [],
+    "architects": [
+      "Thorvald Astrup"
+    ],
+    "opened": "1909-08-09",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stationsgebaeude%20M%C3%A6l%202004%20SRS.jpg",
+    "ra_id": null,
+    "distance_m": 24
+  },
+  "Majavatn / Maajehjaevrie": {
+    "qid": "Q6362305",
+    "name": "Majavatn stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel",
+      "Bjarne Friis Baastad"
+    ],
+    "opened": "1940-07-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Majavatn%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 42
+  },
+  "Trofors": {
+    "qid": "Q6365025",
+    "name": "Trofors stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1940-07-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Trofors%20jernbanestasjon.jpg",
+    "ra_id": null,
+    "distance_m": 72
+  },
+  "Nesbyen": {
+    "qid": "Q6997199",
+    "name": "Nesbyen stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1907-12-21",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nesbyen%20stasjon%20fra%20s%C3%B8r.jpg",
+    "ra_id": null,
+    "distance_m": 45
+  },
+  "Nisterud": {
+    "qid": "Q7041149",
+    "name": "Nisterud stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1919-01-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Nisterud.jpg",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Levanger": {
+    "qid": "Q6534883",
+    "name": "Levanger stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1902-10-29",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Levanger%20stasjon%201.jpg",
+    "ra_id": null,
+    "distance_m": 19
+  },
+  "Porsgrunn": {
+    "qid": "Q7230415",
+    "name": "Porsgrunn stasjon",
+    "heritage": [],
+    "architects": [
+      "Arvid Sundby",
+      "Julia Kristiansen"
+    ],
+    "opened": "1882-11-24",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Porsgrunn%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 119
+  },
+  "Rjukan": {
+    "qid": "Q7339170",
+    "name": "Rjukan stasjon",
+    "heritage": [],
+    "architects": [
+      "Thorvald Astrup"
+    ],
+    "opened": "1909-08-09",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Rjukan%20stasjon%20i%202010.jpg",
+    "ra_id": null,
+    "distance_m": 167
+  },
+  "Skoppum": {
+    "qid": "Q7536303",
+    "name": "Skoppum stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1881-12-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Skoppum%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 38
+  },
+  "Snarum": {
+    "qid": "Q7547415",
+    "name": "Snarum stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1872-11-28",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Snarum.jpg",
+    "ra_id": null,
+    "distance_m": 24
+  },
+  "Stokke": {
+    "qid": "Q7618578",
+    "name": "Stokke stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1881-12-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Stokke%20stasjon%20TRS%20070725%20002.jpg",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Vikersund": {
+    "qid": "Q7929420",
+    "name": "Vikersund stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1866-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vikersund%20stasjon%20TRS%20070429%20030.jpg",
+    "ra_id": null,
+    "distance_m": 46
+  },
+  "Svorkmo": {
+    "qid": "Q7652789",
+    "name": "Svorkmo stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1908-07-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Svorkmo%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 156
+  },
+  "Tønsberg": {
+    "qid": "Q7862379",
+    "name": "Tønsberg stasjon",
+    "heritage": [],
+    "architects": [
+      "Gudmund Hoel"
+    ],
+    "opened": "1915-10-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Tonsbergjb1.jpg",
+    "ra_id": null,
+    "distance_m": 18
+  },
+  "Vikhammer": {
+    "qid": "Q9368710",
+    "name": "Vikhammer stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1893-06-19",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vikhammer%20Stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 11
+  },
+  "Åsen": {
+    "qid": "Q8077241",
+    "name": "Åsen stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1902-10-29",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%C3%85sen%20stasjon%202.jpg",
+    "ra_id": null,
+    "distance_m": 18
+  },
+  "Fauske / Fuossko": {
+    "qid": "Q9258173",
+    "name": "Fauske stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1958-12-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fauske%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 12
+  },
+  "Rognan": {
+    "qid": "Q9311803",
+    "name": "Rognan stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1958-12-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Rognan%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 35
+  },
+  "Skonseng": {
+    "qid": "Q9338062",
+    "name": "Skonseng stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1942-05-15",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 20
+  },
+  "Lassemoen": {
+    "qid": "Q11753068",
+    "name": "Lassemoen stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1940-07-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lassemoen%20railway%20station.jpg",
+    "ra_id": null,
+    "distance_m": 37
+  },
+  "Harran": {
+    "qid": "Q11708670",
+    "name": "Harran stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1940-07-05",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Harran%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 16
+  },
+  "Bingsfos": {
+    "qid": "Q11961055",
+    "name": "Bingsfos stasjon",
+    "heritage": [],
+    "architects": [
+      "Günther Schüssler"
+    ],
+    "opened": "1896-01-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bingsfos%20stasjon%201897.jpg",
+    "ra_id": null,
+    "distance_m": 10
+  },
+  "Bårdshaug": {
+    "qid": "Q11962788",
+    "name": "Bårdshaug stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": "1908-07-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A5rdshaug%20stasjon.jpeg",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Fossum": {
+    "qid": "Q11969773",
+    "name": "Fossum stasjon",
+    "heritage": [],
+    "architects": [
+      "Günther Schüssler"
+    ],
+    "opened": null,
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fossum%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 23
+  },
+  "Garnes": {
+    "qid": "Q11971583",
+    "name": "Garnes stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Gerhard Fischer"
+    ],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Garnes%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 10
+  },
+  "Hafjell": {
+    "qid": "Q11973620",
+    "name": "Hafjell holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1993-09-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hafjell%20holdeplass%201.jpg",
+    "ra_id": null,
+    "distance_m": 38
+  },
+  "Kløftefoss": {
+    "qid": "Q11981217",
+    "name": "Kløftefoss stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": "1891-06-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kl%C3%B8ftefoss%20stoppested.jpg",
+    "ra_id": null,
+    "distance_m": 331
+  },
+  "Krøderen": {
+    "qid": "Q11982277",
+    "name": "Krøderen stasjon",
+    "heritage": [],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1872-11-28",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Kr%C3%B8deren%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 82
+  },
+  "Sysle": {
+    "qid": "Q12004610",
+    "name": "Sysle stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1873-02-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sysle%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 10
+  },
+  "Ål": {
+    "qid": "Q12011493",
+    "name": "Ål stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Armin Due"
+    ],
+    "opened": "1907-12-21",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Small%20village%20train%20station%20in%20Al%2002.jpg",
+    "ra_id": null,
+    "distance_m": 41
+  },
+  "Løkken": {
+    "qid": "Q15243240",
+    "name": "Løkken stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1910-08-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/L%C3%B8kken%20stasjon.jpeg",
+    "ra_id": null,
+    "distance_m": 92
+  },
+  "Bjerka": {
+    "qid": "Q13164218",
+    "name": "Bjerka stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1942-02-20",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Bjerka%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Lønsdal / Luonosvágge (Lønsdalen)": {
+    "qid": "Q13580956",
+    "name": "Lønsdal stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1947-12-10",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lonsdal%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 33
+  },
+  "Dunderland": {
+    "qid": "Q16507985",
+    "name": "Dunderland stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1945-05-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Dunderland%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 2
+  },
+  "Ranheim": {
+    "qid": "Q17195009",
+    "name": "Ranheim stasjon",
+    "heritage": [],
+    "architects": [
+      "Peter Andreas Blix"
+    ],
+    "opened": "1881-10-17",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ranheim%20stasjon%202021%20002.jpg",
+    "ra_id": null,
+    "distance_m": 20
+  },
+  "Espeland": {
+    "qid": "Q17770073",
+    "name": "Espeland stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": "1899-08-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Espeland%20holdeplass.JPG",
+    "ra_id": null,
+    "distance_m": 96
+  },
+  "Haukeland": {
+    "qid": "Q19373796",
+    "name": "Haukeland stasjon",
+    "heritage": [],
+    "architects": [
+      "Balthazar Lange"
+    ],
+    "opened": "1883-07-11",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Haukeland%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 35
+  },
+  "Lindeberg": {
+    "qid": "Q19400892",
+    "name": "Lindeberg jernbanestasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1944-02-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lindeberg%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 19
+  },
+  "Oteråga": {
+    "qid": "Q23894012",
+    "name": "Oteråga stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1962-02-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/2022062%20Oteraaga%20st.jpg",
+    "ra_id": null,
+    "distance_m": 78
+  },
+  "Fannrem": {
+    "qid": "Q34605390",
+    "name": "Fannrem stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1908-07-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fannrem%20stasjon%20UBT-TO-075340%2001%201.jpg",
+    "ra_id": null,
+    "distance_m": 28
+  },
+  "Fløibanen, nedre stasjon": {
+    "qid": "Q130752072",
+    "name": "Fløibanen Sentrum stasjon",
+    "heritage": [],
+    "architects": [
+      "Einar Oscar Schou"
+    ],
+    "opened": null,
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/%22Die%20einzige%20Standseilbahn%20Norwegens%22.%2001.jpg",
+    "ra_id": null,
+    "distance_m": 17
+  },
+  "Beihøldalen": {
+    "qid": "Q131472680",
+    "name": "Beihøldalen stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1996-11-23",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 30
+  },
+  "Nationaltheatret": {
+    "qid": "Q1503126",
+    "name": "Vestbanestasjonen",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Georg Andreas Bull"
+    ],
+    "opened": "1872-10-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Vestbanen.JPG",
+    "ra_id": null,
+    "distance_m": 385
+  },
+  "Helsfyr": {
+    "qid": "Q5710410",
+    "name": "Helsfyr stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1966-05-22",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Helsfyr-T-banestasjon-09062015.JPG",
+    "ra_id": null,
+    "distance_m": 11
+  },
+  "Manglerud": {
+    "qid": "Q6749064",
+    "name": "Manglerud stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1957-04-28",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Manglerud-T-banestasjon-14052015.jpg",
+    "ra_id": null,
+    "distance_m": 66
+  },
+  "Ryen": {
+    "qid": "Q7385021",
+    "name": "Ryen stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1957-04-28",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Ryen%20stasjon%20%286.%20mars%202021%29.jpg",
+    "ra_id": null,
+    "distance_m": 49
+  },
+  "Trondheim lufthavn (Værnes)": {
+    "qid": "Q969807",
+    "name": "Trondheim lufthavn Værnes holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "1994-11-15",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/20210831Vaernes%20hpl.jpg",
+    "ra_id": null,
+    "distance_m": 23
+  },
+  "Torp": {
+    "qid": "Q7416096",
+    "name": "Torp holdeplass",
+    "heritage": [],
+    "architects": [],
+    "opened": "2008-01-21",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Raastad.JPG",
+    "ra_id": null,
+    "distance_m": 79
+  },
+  "Arneberg": {
+    "qid": "Q16167759",
+    "name": "Arneberg stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1893-11-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/446%20Arneberg%20st.%20-%20no-nb%20digifoto%2020150810%2000013%20bldsa%20PK30130.jpg",
+    "ra_id": null,
+    "distance_m": 31
+  },
+  "Fall stasjon": {
+    "qid": "Q17584227",
+    "name": "Fall stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1902-11-28",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Fall%20stasjon.JPG",
+    "ra_id": null,
+    "distance_m": 10
+  },
+  "Helldal": {
+    "qid": "Q19374043",
+    "name": "Helldal stoppested",
+    "heritage": [],
+    "architects": [],
+    "opened": "1887-01-01",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 168
+  },
+  "Namnå": {
+    "qid": "Q11990814",
+    "name": "Namnå stasjon",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1893-11-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Namn%C3%A5%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 197
+  },
+  "Notodden": {
+    "qid": "Q11992703",
+    "name": "Notodden gamle stasjon",
+    "heritage": [],
+    "architects": [
+      "Thorvald Astrup"
+    ],
+    "opened": "1909-08-09",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Notodden%20Station%201911.jpg",
+    "ra_id": null,
+    "distance_m": 428
+  },
+  "Roverud": {
+    "qid": "Q11998523",
+    "name": "Roverud stasjon",
+    "heritage": [
+      "kulturminnevern i Norge"
+    ],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1893-11-03",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Roverud%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 43
+  },
+  "Lademoen": {
+    "qid": "Q130251140",
+    "name": "Lademoen stoppested",
+    "heritage": [],
+    "architects": [
+      "Paul Due"
+    ],
+    "opened": "1904-05-15",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 58
+  },
+  "Sande": {
+    "qid": "Q130348197",
+    "name": "Sande stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1881-12-07",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Gamle%20Sande%20stasjon.jpg",
+    "ra_id": null,
+    "distance_m": 260
+  },
+  "Lier": {
+    "qid": "Q130372659",
+    "name": "Lieråsen stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1953-10-17",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 323
+  },
+  "Sandnes sentrum": {
+    "qid": "Q130394237",
+    "name": "Sandnes stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1878-03-01",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Sandnes%20-%20Fo30141603310195.jpg",
+    "ra_id": null,
+    "distance_m": 295
+  },
+  "Beihølen dam": {
+    "qid": "Q134238096",
+    "name": "Beihølen stasjon",
+    "heritage": [],
+    "architects": [],
+    "opened": "1964-06-24",
+    "image": null,
+    "ra_id": null,
+    "distance_m": 71
+  }
+}

@@ -1,0 +1,4969 @@
+{
+  "Åndalsnes": [
+    {
+      "name": "Raumabanen",
+      "ref": "R 65",
+      "operator": "SJ"
+    }
+  ],
+  "Bjorli": [
+    {
+      "name": "Raumabanen",
+      "ref": "R 65",
+      "operator": "SJ"
+    }
+  ],
+  "Lesja": [
+    {
+      "name": "Raumabanen",
+      "ref": "R 65",
+      "operator": "SJ"
+    }
+  ],
+  "Lesjaverk": [
+    {
+      "name": "Raumabanen",
+      "ref": "R 65",
+      "operator": "SJ"
+    }
+  ],
+  "Dombås": [
+    {
+      "name": "Raumabanen",
+      "ref": "R 65",
+      "operator": "SJ"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Evenstad": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Steinvik": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Ilseng": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Løten": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Elverum": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Rena": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Opphus": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Stai": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Koppang": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Hanestad": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Alvdal": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Tolga": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Os": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Røros": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Ålen": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Reitan": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Singsås": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Kotsøy": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    }
+  ],
+  "Støren": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Hamar": [
+    {
+      "name": "Rørosbanen",
+      "ref": "25",
+      "operator": "NSB"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    },
+    {
+      "name": "RE10",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Lerkendal": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Skansen": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Trondheim": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    },
+    {
+      "name": "R71 Trondheim S => Storlien",
+      "ref": "R71",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    },
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Lademoen": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Lilleby": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Leangen": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Rotvoll": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Vikhammer": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    },
+    {
+      "name": "R71 Trondheim S => Storlien",
+      "ref": "R71",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Hommelvik": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    },
+    {
+      "name": "R71 Trondheim S => Storlien",
+      "ref": "R71",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Trondheim lufthavn (Værnes)": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    },
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Stjørdal": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    },
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Skatval": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Åsen": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Ronglan": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Skogn": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Levanger": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    },
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Verdal": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    },
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Steinkjer": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    },
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Røstad": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    }
+  ],
+  "Hell": [
+    {
+      "name": "Trønderbanen",
+      "ref": "R 70",
+      "operator": "SJ Nord"
+    },
+    {
+      "name": "R71 Trondheim S => Storlien",
+      "ref": "R71",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Hegra": [
+    {
+      "name": "R71 Trondheim S => Storlien",
+      "ref": "R71",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Gudå": [
+    {
+      "name": "R71 Trondheim S => Storlien",
+      "ref": "R71",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Meråker": [
+    {
+      "name": "R71 Trondheim S => Storlien",
+      "ref": "R71",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Kopperå": [
+    {
+      "name": "R71 Trondheim S => Storlien",
+      "ref": "R71",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Storlien": [
+    {
+      "name": "R71 Trondheim S => Storlien",
+      "ref": "R71",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Notviken": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Sunderby sjukhus": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Boden C": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Murjek": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Nattavaara": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Gällivare": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Fjällåsen": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Kaitum": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Sjisjka": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Kiruna": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Abisko Östra": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Abisko Turiststation": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Björkliden": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Låktatjåkka": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Vassijaure": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Katterjåkk": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Riksgränsen": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Bjørnfjell": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Søsterbekk": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Katterat": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Rombak - Ruoppat": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    }
+  ],
+  "Narvik": [
+    {
+      "name": "F8 / 30",
+      "ref": "F8 / 30",
+      "operator": "Vy Tåg"
+    },
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Stockholm Central": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    },
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Arlanda central": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Uppsala C": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Gävle": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Söderhamn": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Hudiksvall": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Sundsvall C": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Härnösand": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Kramfors": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Örnsköldsvik": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Umeå Central": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Bastuträsk": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Jörn": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Älvsbyn": [
+    {
+      "name": "Nattåg 93: Stockholm => Narvik",
+      "ref": "93",
+      "operator": "SJ AB"
+    }
+  ],
+  "Halden": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Sarpsborg": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Fredrikstad": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Råde": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Rygge": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Moss": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R21",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ski": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R21",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R23",
+      "ref": "R23",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Oslo S": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R21",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Oslo S",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Oslo S → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Stabekk",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Stabekk → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Lillestrøm",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    },
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R23",
+      "ref": "R23",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Skøyen",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Skøyen → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "F4 Oslo S→Myrdal",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ed": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Öxnered": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Trollhättan": [
+    {
+      "name": "RE20",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Stabekk": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Stabekk",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Stabekk → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    }
+  ],
+  "Skøyen": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Stabekk",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Stabekk → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Skøyen",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Skøyen → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    }
+  ],
+  "Nationaltheatret": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Stabekk",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Stabekk → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Lillestrøm",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Skøyen",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Skøyen → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    }
+  ],
+  "Nordstrand": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ljan": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Hauketo": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Holmlia": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Rosenholm": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Solbråtan": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Myrvoll": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Greverud": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Oppegård": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Vevelstad": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Langhus": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Lysaker": [
+    {
+      "name": "L2",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Stabekk",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Lillestrøm": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Lillestrøm",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    },
+    {
+      "name": "RE10",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Sagdalen": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Strømmen": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Fjellhamar": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Hanaborg": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Lørenskog": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Høybråten": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Haugenstua": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Grorud": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Nyland": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Alna": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Høvik": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Blommenholm": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Sandvika": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Slependen": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Billingstad": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Vakås": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Høn": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Asker": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Lillestrøm → Oslo S → Asker",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Bondivann": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Gullhella": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Heggedal": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Røyken": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Spikkestad": [
+    {
+      "name": "L1 Lillestrøm → Oslo S → Spikkestad",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Hvalstad": [
+    {
+      "name": "L1 Spikkestad → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L1 Asker → Oslo S → Lillestrøm",
+      "ref": "L1",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ås": [
+    {
+      "name": "R21",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Vestby": [
+    {
+      "name": "R21",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Sonsveien": [
+    {
+      "name": "R21",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Kambo": [
+    {
+      "name": "R21",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Rakkestad": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Heia": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Eidsberg": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Mysen": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Slitu": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Askim": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Spydeberg": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Knapstad": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Tomter": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Skotbu": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Kråkstad": [
+    {
+      "name": "R22",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Drammen": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Brakerøya": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Lier": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Leirsund": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Frogner": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Lindeberg": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Kløfta": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Jessheim": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Nordby": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Hauerseter": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Dal": [
+    {
+      "name": "R13 Drammen → Oslo S → Dal",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R13 Dal → Oslo S → Drammen",
+      "ref": "R13",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Oslo Lufthavn": [
+    {
+      "name": "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+      "ref": "FLY1",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Oslo S",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Oslo S → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Stabekk",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Stabekk → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    },
+    {
+      "name": "RE10",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "FLY2 Oslo Lufthavn → Skøyen",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    },
+    {
+      "name": "FLY2 Skøyen → Oslo Lufthavn",
+      "ref": "FLY2",
+      "operator": "Flytoget"
+    }
+  ],
+  "Eidsvoll": [
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Eidsvoll verk": [
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Gulskogen": [
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Mjøndalen": [
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Steinberg": [
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Hokksund": [
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Vestfossen": [
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Darbu": [
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Kongsberg": [
+    {
+      "name": "R12 Eidsvoll → Kongsberg",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R12 Kongsberg → Eidsvoll",
+      "ref": "R12",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Nerdrum": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Svingen": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Sørumsand": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Blaker": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Rånåsfoss": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Auli": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Haga": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Årnes": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Skarnes": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Kongsvinger": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Tuen": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Bodung": [
+    {
+      "name": "R14",
+      "ref": "R14",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Lillehammer": [
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Moelv": [
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Brumunddal": [
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Stange": [
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Tangen": [
+    {
+      "name": "RE10 Lillehammer - Oslo S - Drammen",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10 Drammen - Oslo S - Lillehammer",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE10",
+      "ref": "RE10",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Porsgrunn": [
+    {
+      "name": "52",
+      "ref": "52",
+      "operator": "Vy"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Lillestrøm",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Skien": [
+    {
+      "name": "52",
+      "ref": "52",
+      "operator": "Vy"
+    },
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Lillestrøm",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Nordagutu": [
+    {
+      "name": "52",
+      "ref": "52",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Trykkerud": [
+    {
+      "name": "52",
+      "ref": "52",
+      "operator": "Vy"
+    }
+  ],
+  "Notodden stasjon": [
+    {
+      "name": "52",
+      "ref": "52",
+      "operator": "Vy"
+    }
+  ],
+  "Nisterud": [
+    {
+      "name": "52",
+      "ref": "52",
+      "operator": "Vy"
+    }
+  ],
+  "Tøyen": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Grefsen": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Nydalen": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Kjelsås": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Snippen": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Movatn": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Nittedal": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Åneby": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Varingskollen": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Hakadal": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Harestua": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Grua": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Roa": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Lunner": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Gran": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Jaren": [
+    {
+      "name": "R31",
+      "ref": "R31",
+      "operator": "Vy Gjøvikbanen"
+    },
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Gjøvik": [
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Raufoss": [
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Reinsvoll": [
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Eina": [
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Bleiken": [
+    {
+      "name": "RE30",
+      "ref": "RE30",
+      "operator": "Vy Gjøvikbanen"
+    }
+  ],
+  "Reli Safari": [
+    {
+      "name": "Reli Safari",
+      "ref": null,
+      "operator": null
+    }
+  ],
+  "Södertälje syd": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Katrineholm C": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Hallsberg": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Degerfors": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Kristinehamn": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Karlstad C": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Arvika station": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Väse": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Välsviken": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Kil": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Fagerås": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Lene": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Högboda": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Edane": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Arvika": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Ottebol": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Åmotfors": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Charlottenberg": [
+    {
+      "name": "F1;70",
+      "ref": "F1;70",
+      "operator": "SJ"
+    }
+  ],
+  "Sande": [
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Holmestrand": [
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Skoppum": [
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Tønsberg": [
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Lillestrøm",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Stokke": [
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Torp": [
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Sandefjord": [
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Lillestrøm",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Larvik": [
+    {
+      "name": "RE11 Eidsvoll → Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Eidsvoll",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Oslo S → Skien",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE11 Skien → Oslo S → Lillestrøm",
+      "ref": "RE11",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Hunderfossen": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Ringebu": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Vinstra": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Kvam": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Otta": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Dovre": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Hjerkinn": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Kongsvoll": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Oppdal": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Berkåk": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Heimdal": [
+    {
+      "name": "F6",
+      "ref": "F6",
+      "operator": "SJ"
+    }
+  ],
+  "Stavanger": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Jåttåvågen": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Sandnes sentrum": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Bryne": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Egersund": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Moi": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Sira": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Gyland": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Storekvina": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Snartemo": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Marnardal": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Nodeland": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Kristiansand": [
+    {
+      "name": "50",
+      "ref": "50",
+      "operator": "Vy"
+    },
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Vennesla": [
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Nelaug": [
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Vegårshei": [
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Gjerstad": [
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Neslandsvatn": [
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Drangedal": [
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Lunde": [
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Bø": [
+    {
+      "name": "F5 Kristiansand → Oslo sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    },
+    {
+      "name": "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+      "ref": "F5",
+      "operator": "Go-Ahead Norge"
+    }
+  ],
+  "Hønefoss": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Myrdal",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Flå": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Nesbyen": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Myrdal",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Gol": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Myrdal",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ål": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Myrdal",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Geilo": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Myrdal",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ustaoset": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Myrdal",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Finse": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Myrdal",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Hallingskeid": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Myrdal": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Myrdal→Flåm",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Flåm→Myrdal",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Oslo S→Myrdal",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Myrdal→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Voss": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Dale": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Arna": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L4",
+      "ref": "L4",
+      "operator": null
+    },
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Bergen": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L4",
+      "ref": "L4",
+      "operator": null
+    },
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Vikersund": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Haugastøl": [
+    {
+      "name": "F4 Oslo S→Bergen",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "F4 Bergen→Oslo S",
+      "ref": "F4",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Trengereid": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Vaksdal": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Stanghelle": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Bolstadøyri": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Evanger": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Seimsgrend": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Bulken": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Gjerdåker": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ygre": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Kløve": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Urdland": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Øyeflaten": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Skiple": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Reimegrend": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Mjølfjell": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ljosanbotn": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ørneberget": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Vieren": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Upsete": [
+    {
+      "name": "R40 Bergen→Myrdal",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R40 Myrdal→Bergen",
+      "ref": "R40",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Vatnahalsen": [
+    {
+      "name": "R45 Myrdal→Flåm",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Flåm→Myrdal",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Reinunga": [
+    {
+      "name": "R45 Myrdal→Flåm",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Flåm→Myrdal",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Kjosfossen": [
+    {
+      "name": "R45 Myrdal→Flåm",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Flåm→Myrdal",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Blomheller": [
+    {
+      "name": "R45 Myrdal→Flåm",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Flåm→Myrdal",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Berekvam": [
+    {
+      "name": "R45 Myrdal→Flåm",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Flåm→Myrdal",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Håreina": [
+    {
+      "name": "R45 Myrdal→Flåm",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Flåm→Myrdal",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Lunden": [
+    {
+      "name": "R45 Myrdal→Flåm",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Flåm→Myrdal",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Flåm": [
+    {
+      "name": "R45 Myrdal→Flåm",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R45 Flåm→Myrdal",
+      "ref": "R45",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Jørstad": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Snåsa - Snåase": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Grong": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Harran": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Lassemoen": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Namsskogan": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Majavatn / Maajehjaevrie": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Trofors": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Mosjøen": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Drevvatn": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Bjerka": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Mo i Rana / Måefie": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Skonseng": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Lønsdal / Luonosvágge (Lønsdalen)": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Røkland / Rævkka": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Rognan": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Bodø/Bådåddjo→Rognan",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Rognan→Bodø/Bådåddjo",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Fauske / Fuossko": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Bodø/Bådåddjo→Rognan",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Rognan→Bodø/Bådåddjo",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Mørkved": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Bodø/Bådåddjo→Rognan",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Rognan→Bodø/Bådåddjo",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Bodø - Bådåddjo": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Bodø/Bådåddjo→Rognan",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Rognan→Bodø/Bådåddjo",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Tverlandet": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Bodø/Bådåddjo→Rognan",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Rognan→Bodø/Bådåddjo",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Valnesfjord": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Bodø/Bådåddjo→Rognan",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R75 Rognan→Bodø/Bådåddjo",
+      "ref": "R75",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Dunderland": [
+    {
+      "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
+      "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ]
+}

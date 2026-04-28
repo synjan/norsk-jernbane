@@ -1,0 +1,13 @@
+[out:json][timeout:120];
+
+// Norge som område (ISO-kode).
+area["ISO3166-1"="NO"][admin_level=2]->.norge;
+
+// Befolkede steder med population-tag. Inkluderer city, town, village,
+// suburb og hamlet — alle bidrar til "hvor mye befolkning bor i nærheten
+// av en stasjon"-analysen. Krever population-tag for å bli med.
+(
+  node["place"~"^(city|town|village|suburb|hamlet|borough|quarter)$"]["population"](area.norge);
+);
+
+out body;

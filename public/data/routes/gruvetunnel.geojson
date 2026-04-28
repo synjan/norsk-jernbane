@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[14.7134924, 66.4095306], [14.714822, 66.4205944]]}, "properties": {"electrified": "no", "gauge": "1435", "name": "Gruvetunnel", "operator": "(Private)", "railway": "rail", "service": "spur", "tunnel": "yes", "length_km": 1.235}}]}

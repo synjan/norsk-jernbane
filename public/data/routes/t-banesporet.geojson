@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[10.7804877, 59.9406733], [10.7804327, 59.9407746], [10.7803788, 59.9408552], [10.7803135, 59.9409478]]}, "properties": {"gauge": "1435", "maxspeed": "40", "name": "T-banesporet", "railway": "rail", "service": "spur", "length_km": 0.032, "maxspeed_kmh": 40.0}}]}

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[7.9656473, 58.307398], [7.9663536, 58.307114]]}, "properties": {"bridge": "yes", "gauge": "1067", "name": "Paulen bro", "railway": "narrow_gauge", "length_km": 0.052}}]}

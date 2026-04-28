@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Norsk jernbane — onepager</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Onepager-spesifikk styling — print-vennlig A4-aktig layout. */
+    body.onepager {
+      background: #f8fafc;
+      font-family: var(--ff-sans, system-ui, sans-serif);
+      color: #0f172a;
+      margin: 0;
+    }
+    .op-page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: var(--sp-4) var(--sp-3);
+    }
+    .op-header {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+      padding-bottom: var(--sp-3);
+      border-bottom: 2px solid #1a3a52;
+    }
+    .op-mark {
+      font-size: 40px;
+      color: #1a3a52;
+      line-height: 1;
+    }
+    .op-title { flex: 1; }
+    .op-title h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #1a3a52;
+    }
+    .op-title .tagline {
+      margin: 4px 0 0;
+      color: var(--c-muted);
+      font-size: 14px;
+    }
+    .op-meta {
+      text-align: right;
+      font-size: 12px;
+      color: var(--c-muted);
+    }
+
+    .op-hero {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-2);
+      margin: var(--sp-3) 0;
+    }
+    .op-stat {
+      background: white;
+      border: 1px solid var(--c-border);
+      border-radius: 8px;
+      padding: var(--sp-3);
+      text-align: center;
+    }
+    .op-stat .num {
+      display: block;
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a3a52;
+      line-height: 1.1;
+    }
+    .op-stat .desc {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--c-muted);
+    }
+
+    .op-section {
+      background: white;
+      border: 1px solid var(--c-border);
+      border-radius: 8px;
+      padding: var(--sp-3);
+      margin-bottom: var(--sp-3);
+    }
+    .op-section h2 {
+      margin: 0 0 var(--sp-2) 0;
+      font-size: 16px;
+      color: #1a3a52;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .op-section p { margin: 0; line-height: 1.55; }
+
+    .op-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-2);
+    }
+    .op-feature {
+      display: flex;
+      gap: var(--sp-2);
+      padding: var(--sp-2);
+      background: #f8fafc;
+      border-radius: 6px;
+      border-left: 3px solid #1a3a52;
+    }
+    .op-feature .icon {
+      font-size: 24px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .op-feature h3 {
+      margin: 0 0 2px 0;
+      font-size: 14px;
+      color: #0f172a;
+    }
+    .op-feature p {
+      margin: 0;
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    .op-sources {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-2);
+      font-size: 12px;
+    }
+    .op-source {
+      padding: var(--sp-2);
+      border-left: 3px solid var(--c-warning, #d97706);
+      background: #fef3c7;
+      border-radius: 0 4px 4px 0;
+    }
+    .op-source strong { display: block; margin-bottom: 2px; }
+    .op-source .lic {
+      color: var(--c-muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .op-footer {
+      margin-top: var(--sp-3);
+      padding-top: var(--sp-2);
+      border-top: 1px solid var(--c-border);
+      font-size: 11px;
+      color: var(--c-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    .op-footer a { color: var(--c-primary); text-decoration: none; }
+
+    .op-pages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-2);
+    }
+    .op-page-card {
+      padding: var(--sp-2);
+      background: #f8fafc;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .op-page-card a {
+      color: #1a3a52;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .op-page-card .url {
+      display: block;
+      margin-top: 2px;
+      font-family: monospace;
+      font-size: 10px;
+      color: var(--c-muted);
+    }
+
+    @media print {
+      body.onepager { background: white; }
+      .op-page { padding: 12mm; max-width: none; }
+      .op-section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="onepager">
+  <div class="op-page">
+
+    <header class="op-header">
+      <span class="op-mark" aria-hidden="true">▮▮</span>
+      <div class="op-title">
+        <h1>Norsk jernbane — kart &amp; dashbord</h1>
+        <p class="tagline">Åpen visualisering av norsk jernbaneinfrastruktur, sanntid og kulturarv</p>
+      </div>
+      <div class="op-meta">
+        Statisk webapp · Leaflet + Chart.js<br>
+        Generert <span id="op-date">—</span>
+      </div>
+    </header>
+
+    <section class="op-hero">
+      <div class="op-stat">
+        <span class="num" id="stat-km">—</span>
+        <span class="desc">km jernbane</span>
+      </div>
+      <div class="op-stat">
+        <span class="num" id="stat-elec">—</span>
+        <span class="desc">% elektrifisert</span>
+      </div>
+      <div class="op-stat">
+        <span class="num" id="stat-stations">—</span>
+        <span class="desc">stasjoner</span>
+      </div>
+      <div class="op-stat">
+        <span class="num" id="stat-routes">—</span>
+        <span class="desc">baner</span>
+      </div>
+    </section>
+
+    <section class="op-section">
+      <h2>Hva er dette?</h2>
+      <p>
+        En åpen webapp som viser <strong>alle norske togtraséer</strong> hentet fra OpenStreetMap, beriket med
+        sanntid fra Entur og kulturminnedata fra Wikidata. Ingen byggesteg, ingen backend — bare statiske
+        filer servert direkte fra et CDN-vennlig <code>public/</code>-bibliotek. Pipeline i Python henter og
+        prosesserer data; frontend i ren JavaScript bruker Leaflet til kart og Chart.js til dashbord.
+      </p>
+    </section>
+
+    <section class="op-section">
+      <h2>Sider</h2>
+      <div class="op-pages">
+        <div class="op-page-card">
+          <a href="index.html">🗺 Kart</a>
+          <span class="url">/index.html</span>
+        </div>
+        <div class="op-page-card">
+          <a href="dashboard.html">📊 Dashbord</a>
+          <span class="url">/dashboard.html</span>
+        </div>
+        <div class="op-page-card">
+          <a href="bane.html?navn=Bergensbanen">🛤 Bane</a>
+          <span class="url">/bane.html?navn=…</span>
+        </div>
+        <div class="op-page-card">
+          <a href="stasjon.html?navn=Oslo+S">🚉 Stasjon</a>
+          <span class="url">/stasjon.html?navn=…</span>
+        </div>
+        <div class="op-page-card">
+          <a href="planovergang.html?id=80754222">⛗ Planovergang</a>
+          <span class="url">/planovergang.html?id=…</span>
+        </div>
+        <div class="op-page-card">
+          <a href="tog.html">🚂 Tog (live)</a>
+          <span class="url">/tog.html?id=…</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="op-section">
+      <h2>Funksjoner og integrasjoner</h2>
+      <div class="op-features">
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">🗺</span>
+          <div>
+            <h3>Interaktivt kart</h3>
+            <p>Filtrer på elektrifisering, hastighet, type, operatør. Tre fargemodi. URL-state for deling.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">⏱</span>
+          <div>
+            <h3>Live avganger (Entur)</h3>
+            <p>Klikk en stasjon → neste 5 togavganger med sanntidsforsinkelse fra Entur JourneyPlanner.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">⚠</span>
+          <div>
+            <h3>Driftsmeldinger (SIRI-SX)</h3>
+            <p>Innstilte tog og avvik vises i stasjons-popup og på stasjonsside, oppdateres hvert 5. min.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">🚂</span>
+          <div>
+            <h3>Live tog på kart</h3>
+            <p>Tog som glir i sanntid via Entur Vehicles GraphQL. Posisjon hentes hvert 15. sek, markøren animerer kontinuerlig mellom dem.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">🚉</span>
+          <div>
+            <h3>Stasjonssider</h3>
+            <p>Egen side per stasjon med kart, avganger, ruter som passerer, vernestatus og bilde.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">🛤</span>
+          <div>
+            <h3>Banesider</h3>
+            <p>Hver bane har en egen side med traseé, stasjonsliste og hastighetsprofil.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">⛗</span>
+          <div>
+            <h3>Planovergang-sider</h3>
+            <p>Detalj-side per NVDB-ID med kart, type, fareklasse, nærmeste stasjon og lenke til vegkart.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">🚂</span>
+          <div>
+            <h3>Tog-sider (live)</h3>
+            <p>Følg én avgang i sanntid: animert posisjon, forsinkelse, hastighet — polling hvert 10. sek.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">🏛</span>
+          <div>
+            <h3>Kulturarv (Wikidata)</h3>
+            <p>309 stasjoner berika med bilder, åpningsår og arkitekt. 39 stasjoner med fredningsstatus.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">⛗</span>
+          <div>
+            <h3>Planoverganger (NVDB)</h3>
+            <p>2086 jernbanekryssinger fra Statens vegvesen med veiref og fareinfo, toggle som overlay.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">🧭</span>
+          <div>
+            <h3>Reisetid-isokron</h3>
+            <p>Dijkstra fra valgt stasjon fargelegger sporene etter teoretisk reisetid.</p>
+          </div>
+        </div>
+        <div class="op-feature">
+          <span class="icon" aria-hidden="true">📊</span>
+          <div>
+            <h3>Dashbord</h3>
+            <p>Total km, elektrifiseringsgrad, befolkningsdekning, CO₂-anslag og sammenligning med naboland.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="op-section">
+      <h2>Datakilder</h2>
+      <div class="op-sources">
+        <div class="op-source">
+          <strong>OpenStreetMap</strong>
+          Spor, stasjoner, togrute-relasjoner via Overpass API.
+          <span class="lic">ODbL</span>
+        </div>
+        <div class="op-source">
+          <strong>Entur</strong>
+          JourneyPlanner GraphQL (avganger, SIRI-SX), Vehicles GraphQL (live posisjon).
+          <span class="lic">NLOD</span>
+        </div>
+        <div class="op-source">
+          <strong>Wikidata</strong>
+          Stasjonsbilder, åpningsår, arkitekt, fredningsstatus via SPARQL.
+          <span class="lic">CC0 / CC-BY</span>
+        </div>
+        <div class="op-source">
+          <strong>NVDB</strong>
+          Statens vegvesen — jernbanekryssinger som GeoJSON.
+          <span class="lic">NLOD</span>
+        </div>
+        <div class="op-source">
+          <strong>OSM tiles</strong>
+          Bakgrunnskart fra tile.openstreetmap.org.
+          <span class="lic">ODbL</span>
+        </div>
+        <div class="op-source">
+          <strong>Wikimedia Commons</strong>
+          Stasjonsbilder lenket fra Wikidata.
+          <span class="lic">CC-BY/SA</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="op-footer">
+      <span>
+        Tester med Playwright · Demo-video: <code>tests/videos/&lt;dato&gt;/demo.webm</code>
+      </span>
+      <span>
+        Lisens: ODbL / NLOD / CC ·
+        <a href="https://github.com/anthropics/claude-code/issues">Tilbakemelding</a>
+      </span>
+    </footer>
+
+  </div>
+
+  <script>
+    (async function () {
+      try {
+        const stats = await fetch("data/stats.json").then((r) => r.json());
+        const wikidata = await fetch("data/wikidata_stations.json").then((r) => r.json()).catch(() => ({}));
+        const stations = await fetch("data/stations.geojson").then((r) => r.json()).catch(() => null);
+
+        document.getElementById("stat-km").textContent =
+          stats.total_km != null ? Math.round(stats.total_km).toLocaleString("nb-NO") : "—";
+        document.getElementById("stat-elec").textContent =
+          stats.electrified_pct != null ? `${stats.electrified_pct.toFixed(0)}%` : "—";
+        document.getElementById("stat-routes").textContent =
+          (stats.routes || []).length || "—";
+
+        if (stations) {
+          const stationCount = stations.features.filter(
+            (f) => ["station", "halt"].includes(f.properties.railway)
+          ).length;
+          document.getElementById("stat-stations").textContent = stationCount.toLocaleString("nb-NO");
+        }
+
+        const dateEl = document.getElementById("op-date");
+        if (stats.generated_at) {
+          dateEl.textContent = new Date(stats.generated_at).toLocaleDateString("nb-NO", {
+            year: "numeric", month: "long", day: "numeric",
+          });
+        }
+      } catch (e) {
+        console.error("Onepager: kunne ikke laste stats:", e);
+      }
+    })();
+  </script>
+</body>
+</html>

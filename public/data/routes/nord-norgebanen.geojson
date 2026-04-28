@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[18.6108303, 69.1463975], [18.6110261, 69.1464003]]}, "properties": {"name": "Nord-Norgebanen", "railway": "rail", "length_km": 0.008}}]}

@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[5.7485271, 58.9472091], [5.7488206, 58.9470737], [5.7500862, 58.9464913], [5.7511714, 58.9459792], [5.7518632, 58.9456411]]}, "properties": {"railway": "rail", "ref": "609", "service": "spur", "length_km": 0.26}}]}

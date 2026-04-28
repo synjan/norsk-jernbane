@@ -1,0 +1,2110 @@
+/* ---------- Design system ---------- */
+
+:root {
+  /* Spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+
+  /* Color */
+  --c-bg: #f1f5f9;
+  --c-surface: #ffffff;
+  --c-surface-alt: #f8fafc;
+  --c-border: #e2e8f0;
+  --c-border-strong: #cbd5e1;
+  --c-text: #0f172a;
+  --c-muted: #64748b;
+  --c-muted-strong: #475569;
+  --c-primary: #0c4a6e;
+  --c-primary-hover: #0e5a83;
+  --c-primary-dark: #082f49;
+  --c-accent: #2563eb;
+  --c-accent-soft: #dbeafe;
+  --c-danger: #dc2626;
+  --c-warning: #d97706;
+  --c-warning-soft: #fef3c7;
+  --c-warning-border: #fde68a;
+  --c-success: #16a34a;
+
+  /* Type scale */
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-base: 13px;
+  --fs-md: 14px;
+  --fs-lg: 16px;
+  --fs-xl: 20px;
+  --fs-2xl: 24px;
+  --fs-3xl: 32px;
+
+  /* Layout */
+  --topbar-h: 52px;
+  --statusbar-h: 30px;
+  --panel-w: 320px;
+  --sidebar-w: var(--panel-w);
+  --stats-w: var(--panel-w);
+
+  /* Effects */
+  --shadow-sm: 0 1px 2px rgba(15,23,42,0.06);
+  --shadow-md: 0 2px 8px rgba(15,23,42,0.08);
+  --shadow-lg: 0 8px 24px rgba(15,23,42,0.12);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Type colors (railway types) — used in legend, charts, type-mode */
+  --t-rail: #1a3a52;
+  --t-narrow_gauge: #38a169;
+  --t-preserved: #9b2c2c;
+}
+
+* { box-sizing: border-box; }
+
+/* ---------- Buttons (komponentklasser) ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-1);
+  padding: 6px var(--sp-3);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--c-accent);
+  color: white;
+}
+.btn-primary:hover { background: var(--c-primary); }
+
+.btn-secondary {
+  background: var(--c-primary);
+  color: white;
+}
+.btn-secondary:hover { background: var(--c-primary-hover); }
+
+.btn-ghost {
+  background: var(--c-surface-alt);
+  border-color: var(--c-border-strong);
+  color: var(--c-muted-strong);
+}
+.btn-ghost:hover {
+  background: var(--c-accent-soft);
+  border-color: var(--c-accent);
+  color: var(--c-text);
+}
+
+.btn-sm {
+  padding: 3px var(--sp-2);
+  font-size: var(--fs-xs);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+/* ---------- Cards (komponentklasse) ---------- */
+
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+}
+
+/* ---------- Interaksjons-states (hover/focus) ---------- */
+
+/* Felles fokus-ring for tastaturbrukere — alle interaktive kort, lenker
+   og knapper utenfor .btn/.panel-toggle (som har egne) får denne. */
+a.card:focus-visible,
+button.card:focus-visible,
+.dash-route-head:focus-visible,
+.dash-bridge:focus-visible,
+.dash-map-bridge:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+/* Hover-feedback for klikkbare kort. Subtil border-shift som viser at
+   noe er klikkbart uten å rope. */
+a.card:hover,
+button.card:hover {
+  border-color: var(--c-primary);
+}
+
+/* Klikkbare radhoder i topp-/største-baner får mer markert hover */
+.dash-route-head:hover .dash-route-name {
+  text-decoration: underline;
+}
+
+/* ---------- Info-tooltip (?-knapp med popover) ---------- */
+
+.info-tip-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+}
+.info-tip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 1px solid var(--c-border-strong);
+  border-radius: 50%;
+  background: var(--c-surface);
+  color: var(--c-muted-strong);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.info-tip:hover,
+.info-tip[aria-expanded="true"] {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: white;
+}
+.info-tip:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 1px;
+}
+.info-tip-pop {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1500;
+  width: 260px;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--c-text);
+  color: white;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  font-size: var(--fs-xs);
+  font-weight: normal;
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: normal;
+}
+.info-tip-pop::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid var(--c-text);
+}
+
+/* ---------- Empty-state for kart-filter ---------- */
+
+/* Sentrert overlay som vises når filter resulterer i 0 segmenter. Skjules
+   automatisk ellers (også ved baseline der filter ikke er aktivt). */
+.filter-empty-state {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 500;
+}
+/* Egen [hidden]-regel kreves fordi `display: flex` over slår
+   browser-default `[hidden] { display: none }` (samme spesifisitet,
+   senere regel vinner). */
+.filter-empty-state[hidden] {
+  display: none;
+}
+.filter-empty-card {
+  pointer-events: auto;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-5) var(--sp-5);
+  max-width: 380px;
+  text-align: center;
+}
+.filter-empty-card strong {
+  display: block;
+  font-size: var(--fs-md);
+  margin-bottom: var(--sp-2);
+  color: var(--c-text);
+}
+.filter-empty-card p {
+  margin: 0 0 var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--c-muted-strong);
+  line-height: 1.5;
+}
+
+/* ---------- Section title (felles på panel/card-headere) ---------- */
+
+.section-title {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-muted-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 var(--sp-3) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+/* ---------- Pills / badges (komponentklasse) ---------- */
+
+.pill {
+  display: inline-block;
+  padding: 2px var(--sp-2);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-lg);
+  line-height: 1.4;
+}
+.pill-warning  { background: var(--c-warning);     color: white; }
+.pill-muted    { background: var(--c-surface-alt); color: var(--c-muted); }
+.pill-primary  { background: var(--c-primary);     color: white; }
+
+html, body { height: 100%; margin: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+               system-ui, sans-serif;
+  font-size: var(--fs-base);
+  color: var(--c-text);
+  background: var(--c-bg);
+  display: grid;
+  grid-template-rows: var(--topbar-h) auto 1fr var(--statusbar-h);
+  overflow: hidden;
+}
+
+/* ---------- Top bar ---------- */
+
+.topbar {
+  background: var(--c-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: 0 var(--sp-4);
+  min-height: var(--topbar-h);
+  border-bottom: 1px solid var(--c-primary-dark);
+  z-index: 1100;
+}
+
+.topbar .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-weight: 600;
+  font-size: var(--fs-md);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.topbar a.brand { text-decoration: none; color: inherit; }
+.topbar .brand .mark { font-size: var(--fs-xl); line-height: 1; }
+.topbar .brand .sep { color: rgba(255,255,255,0.4); margin: 0 var(--sp-2); }
+.topbar .brand .subtitle {
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+  font-size: var(--fs-sm);
+}
+
+/* ---------- Felles topnav (Kart / Dashbord / Baner ▾) ---------- */
+.topbar .topnav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  position: relative;
+}
+.topbar .topnav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.85);
+  background: none;
+  border: none;
+  text-decoration: none;
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.topbar .topnav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+.topbar .topnav .nav-link[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  font-weight: 600;
+}
+
+.topnav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 22px;
+  line-height: 1;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.topnav-toggle:hover { background: rgba(255, 255, 255, 0.12); }
+
+.bane-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 360px;
+  max-height: 480px;
+  background: var(--c-surface);
+  color: var(--c-text);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 1200;
+  overflow: hidden;
+  flex-direction: column;
+}
+.bane-dropdown.open {
+  display: flex;
+}
+.bane-dropdown .bane-search {
+  border: none;
+  border-bottom: 1px solid var(--c-border);
+  padding: var(--sp-2) var(--sp-3);
+  font: inherit;
+  font-size: var(--fs-sm);
+  outline: none;
+}
+.bane-dropdown .bane-search:focus {
+  border-bottom-color: var(--c-accent);
+}
+.bane-dropdown .bane-list {
+  overflow-y: auto;
+  padding: 4px 0;
+}
+.bane-dropdown .bane-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-2) var(--sp-3);
+  text-decoration: none;
+  color: var(--c-text);
+  font-size: var(--fs-sm);
+}
+.bane-dropdown .bane-row:hover {
+  background: var(--c-surface-alt);
+}
+.bane-dropdown .bane-row .meta {
+  color: var(--c-muted);
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+}
+.bane-dropdown .bane-empty {
+  padding: var(--sp-4);
+  color: var(--c-muted);
+  text-align: center;
+  font-size: var(--fs-sm);
+}
+
+/* Søkefelt i page-header */
+.page-header .search-wrap {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+}
+.page-header #search {
+  width: 100%;
+  height: 32px;
+  padding: 0 var(--sp-3) 0 32px;
+  border: 1px solid var(--c-border-strong);
+  background: var(--c-surface-alt);
+  color: var(--c-text);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  outline: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.page-header #search:focus {
+  background: var(--c-surface);
+  border-color: var(--c-accent);
+}
+.page-header .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--c-muted);
+  pointer-events: none;
+}
+.page-header #search-result {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  pointer-events: none;
+}
+.page-header #search-result:empty { display: none; }
+
+/* kbd-snippets inne i ghost-knapper i page-header */
+.btn kbd {
+  /* flat variant inne i knapper */
+  background: var(--c-border);
+  color: var(--c-muted-strong);
+  border: none;
+  box-shadow: none;
+  padding: 1px 5px;
+}
+
+/* ---------- Main grid: sidebar | map | stats ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr var(--stats-w);
+  overflow: hidden;
+  min-height: 0;
+  transition: grid-template-columns 0.18s ease;
+}
+
+/* Eksplisitt grid-tildeling sikrer at map-area blir i kolonne 2 selv om
+   sidebar har display:none (uten dette ville visible items "shiftet" inn i
+   første ledige cell og kart havnet i 0-bredden). */
+.sidebar { grid-column: 1; }
+.map-area { grid-column: 2; }
+.stats-panel { grid-column: 3; }
+
+/* Kollapset = tynn ikon-rail (ikke skjult). Bevarer tilgang til seksjoner
+   uten å gi opp kart-arealet. */
+:root { --rail-w: 44px; }
+
+body.sidebar-hidden .layout {
+  grid-template-columns: var(--rail-w) 1fr var(--stats-w);
+}
+body.stats-hidden .layout {
+  grid-template-columns: var(--sidebar-w) 1fr var(--rail-w);
+}
+body.sidebar-hidden.stats-hidden .layout {
+  grid-template-columns: var(--rail-w) 1fr var(--rail-w);
+}
+
+/* Icon-rail tilstand: skjul innhold, vis kun ikoner sentrert i smal rail. */
+body.sidebar-hidden .sidebar .live,
+body.sidebar-hidden .sidebar .group-body,
+body.stats-hidden .stats-panel .group-body {
+  display: none;
+}
+body.sidebar-hidden .sidebar .group-label,
+body.stats-hidden .stats-panel .group-label {
+  display: none;
+}
+body.sidebar-hidden .sidebar details.group > summary,
+body.stats-hidden .stats-panel details.group > summary {
+  padding: var(--sp-3) 0;
+  justify-content: center;
+}
+body.sidebar-hidden .sidebar details.group > summary::after,
+body.stats-hidden .stats-panel details.group > summary::after {
+  display: none;
+}
+body.sidebar-hidden .sidebar .group-icon,
+body.stats-hidden .stats-panel .group-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--c-primary);
+}
+body.sidebar-hidden .sidebar details.group > summary:hover .group-icon,
+body.stats-hidden .stats-panel details.group > summary:hover .group-icon {
+  color: var(--c-accent);
+}
+
+/* ---------- Left sidebar ---------- */
+
+.sidebar {
+  background: var(--c-surface);
+  border-right: 1px solid var(--c-border);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skjul/vis-knapp inni hvert panel (erstatter tidligere topbar-knapp).
+   Tydelig farget for at brukere skal oppfatte den som klikkbar. */
+.panel-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  background: var(--c-primary);
+  border: none;
+  border-bottom: 1px solid var(--c-primary-dark);
+  color: white;
+  cursor: pointer;
+  transition: background 0.15s;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+.panel-toggle:hover {
+  background: var(--c-primary-hover);
+}
+.panel-toggle:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: -2px;
+}
+.panel-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+/* Vis kun riktig retning på chevron basert på kollapset tilstand. */
+.panel-toggle .icon-expand { display: none; }
+body.sidebar-hidden #toggle-sidebar .icon-collapse,
+body.stats-hidden #toggle-stats .icon-collapse { display: none; }
+body.sidebar-hidden #toggle-sidebar .icon-expand,
+body.stats-hidden #toggle-stats .icon-expand { display: inline-block; }
+
+.sidebar details.group,
+.stats-panel details.group {
+  border-bottom: 1px solid var(--c-border);
+}
+.sidebar details.group > summary,
+.stats-panel details.group > summary {
+  cursor: pointer;
+  padding: 6px var(--sp-4);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-muted-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  /* Pin headers når panelet scroller — gjør det lettere å se hvor man er. */
+  position: sticky;
+  top: 0;
+  background: var(--c-surface);
+  z-index: 2;
+}
+.group-head {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+.group-icon {
+  color: var(--c-muted-strong);
+  flex-shrink: 0;
+}
+.group-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sidebar details.group > summary::-webkit-details-marker,
+.stats-panel details.group > summary::-webkit-details-marker { display: none; }
+.sidebar details.group > summary::after,
+.stats-panel details.group > summary::after {
+  content: "−";
+  color: var(--c-accent);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  line-height: 1;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface);
+  transition: background 0.15s, color 0.15s;
+}
+.sidebar details.group:not([open]) > summary::after,
+.stats-panel details.group:not([open]) > summary::after {
+  content: "+";
+}
+.sidebar details.group > summary:hover::after,
+.stats-panel details.group > summary:hover::after {
+  background: var(--c-accent);
+  color: white;
+  border-color: var(--c-accent);
+}
+.sidebar details.group > summary:hover,
+.stats-panel details.group > summary:hover { background: var(--c-surface-alt); }
+
+.sidebar .group-body,
+.stats-panel .group-body {
+  padding: var(--sp-1) var(--sp-4) var(--sp-3);
+}
+
+/* 2-kolonners layout for relaterte filtre (f.eks. Visning). */
+.sidebar .field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+}
+
+.sidebar label.field,
+.sidebar .field {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--c-muted-strong);
+  margin: var(--sp-1) 0 2px;
+}
+.sidebar label.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  padding: 1px 0;
+  cursor: pointer;
+  color: var(--c-text);
+  line-height: 1.4;
+}
+.sidebar label.row small { color: var(--c-muted); margin-left: auto; }
+
+.sidebar select {
+  width: 100%;
+  height: 28px;
+  padding: 0 var(--sp-2);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface);
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+  outline: none;
+}
+.sidebar select:focus { border-color: var(--c-accent); }
+
+.sidebar .bulk {
+  display: flex;
+  gap: var(--sp-1);
+  margin-bottom: var(--sp-2);
+}
+
+.sidebar .scroll-list {
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-1) var(--sp-2);
+  background: var(--c-surface-alt);
+}
+
+/* Hver operatør får en egen rad med navn til venstre og km høyrejustert.
+   Tidligere var de inline → wrap-flyt med rare linjebrudd ved lange navn. */
+.sidebar .scroll-list label {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 3px 4px;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sidebar .scroll-list label:hover {
+  background: var(--c-surface);
+}
+.sidebar .scroll-list label > input[type="checkbox"] {
+  margin: 0;
+}
+.sidebar .scroll-list label > small {
+  color: var(--c-muted);
+  font-variant-numeric: tabular-nums;
+  font-size: var(--fs-xs);
+}
+
+/* Live-stats: status-banner øverst i sidebaren (ikke et filter).
+   Sticky-headers under tar over når brukeren scroller. */
+.sidebar .live {
+  padding: var(--sp-3) var(--sp-4);
+  background: linear-gradient(135deg, var(--c-primary) 0%, #075985 100%);
+  color: white;
+  border-bottom: 1px solid var(--c-primary-dark);
+}
+.sidebar .live .big {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.sidebar .live .label {
+  font-size: 10px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.sidebar .live .meter {
+  height: 3px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  margin: var(--sp-1) 0 var(--sp-1);
+  overflow: hidden;
+}
+.sidebar .live .meter > div {
+  height: 100%;
+  background: #60a5fa;
+  transition: width 0.2s ease;
+}
+.sidebar .live .secondary {
+  font-size: var(--fs-xs);
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+/* ---------- Map area ---------- */
+
+.map-area {
+  position: relative;
+  min-width: 0;
+  background: #ddd;
+}
+#map { width: 100%; height: 100%; }
+
+#legend {
+  position: absolute;
+  bottom: var(--sp-3);
+  left: var(--sp-3);
+  z-index: 1000;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+  box-shadow: var(--shadow-md);
+  font-size: var(--fs-sm);
+  max-width: 220px;
+}
+#legend h3 {
+  margin: 0 0 var(--sp-2) 0;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  color: var(--c-muted);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+#legend .swatch {
+  display: inline-block;
+  width: 18px;
+  height: 3px;
+  vertical-align: middle;
+  margin-right: var(--sp-2);
+  border-radius: 1px;
+}
+#legend .row {
+  display: flex;
+  align-items: center;
+  margin: 2px 0;
+  font-size: var(--fs-xs);
+  color: var(--c-muted-strong);
+}
+#legend .gradient {
+  height: 8px;
+  width: 100%;
+  border-radius: 2px;
+  background: linear-gradient(to right, rgb(43,108,176), rgb(229,62,62));
+  margin: var(--sp-2) 0;
+}
+#legend .gradient-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--c-muted);
+}
+#legend .filtered-note {
+  background: var(--c-warning-soft);
+  color: var(--c-warning);
+  font-size: 10px;
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-sm);
+  margin-top: var(--sp-2);
+  display: inline-block;
+  border: 1px solid var(--c-warning-border);
+}
+
+/* ---------- Right stats panel ---------- */
+
+.stats-panel {
+  background: var(--c-surface);
+  border-left: 1px solid var(--c-border);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* "Se full statistikk →" — broen fra kartets summary til /dashboard.html.
+   Erstatter de fjernede chart-panelene som hørte til der dette pekes mot. */
+.dash-bridge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin: var(--sp-3) var(--sp-3) var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--c-surface-alt);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--c-text);
+  transition: border-color 120ms ease, background 120ms ease;
+}
+.dash-bridge:hover {
+  border-color: var(--c-primary);
+  background: var(--c-surface);
+}
+.dash-bridge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dash-bridge-text strong {
+  font-size: var(--fs-sm);
+  color: var(--c-primary);
+}
+.dash-bridge-sub {
+  font-size: var(--fs-xs);
+  color: var(--c-muted-strong);
+}
+.dash-bridge-arrow {
+  font-size: var(--fs-lg);
+  color: var(--c-primary);
+}
+
+/* Når statistikkpanelet er kollapset (smalt) skjuler vi tekstdelen og
+   sentrerer pilen — samme mønster som .group-body hides og .group-label
+   hides i kollapset tilstand. */
+body.stats-hidden .stats-panel .dash-bridge {
+  margin: var(--sp-3) auto;
+  padding: var(--sp-2);
+  justify-content: center;
+}
+body.stats-hidden .stats-panel .dash-bridge-text {
+  display: none;
+}
+.stats-panel h3 {
+  margin: var(--sp-4) 0 var(--sp-2) 0;
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+  font-weight: 600;
+}
+
+#stats-summary p {
+  margin: 0 0 var(--sp-2) 0;
+}
+.stat-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+.stat-card .stat {
+  background: var(--c-surface-alt);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border);
+}
+.stat .num {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--c-primary);
+  letter-spacing: -0.02em;
+  display: block;
+}
+.stat .desc {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+#fastest-list {
+  font-size: var(--fs-sm);
+  padding-left: var(--sp-4);
+  margin: var(--sp-2) 0 0;
+}
+#fastest-list li { margin-bottom: var(--sp-1); }
+
+/* ---------- Status bar ---------- */
+
+.statusbar {
+  background: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  padding: 0 var(--sp-4);
+  display: flex;
+  align-items: center;
+  font-size: var(--fs-xs);
+  color: var(--c-muted-strong);
+  gap: var(--sp-4);
+}
+.statusbar .metrics {
+  display: flex;
+  gap: var(--sp-4);
+}
+.statusbar .metric {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+.statusbar .metric strong {
+  color: var(--c-text);
+  font-weight: 600;
+}
+.statusbar .spacer { flex: 1; }
+.statusbar .meta {
+  display: flex;
+  gap: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+}
+
+/* ---------- Help modal ---------- */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.5);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-backdrop.open { display: flex; }
+.modal {
+  background: var(--c-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-5);
+  max-width: 520px;
+  width: calc(100% - var(--sp-6));
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.modal h2 {
+  margin: 0 0 var(--sp-3) 0;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+.modal .close {
+  float: right;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--fs-xl);
+  color: var(--c-muted);
+  line-height: 1;
+}
+.modal .close:hover { color: var(--c-text); }
+.modal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+.modal table td {
+  padding: var(--sp-1) var(--sp-2);
+  border-bottom: 1px solid var(--c-border);
+}
+.modal table td:first-child { width: 90px; }
+/* Standard kbd — physical-key affordance. Brukes i hjelpemodal og inline-tekst. */
+kbd {
+  font-family: ui-monospace, "Cascadia Code", "SF Mono", Menlo, monospace;
+  font-size: var(--fs-xs);
+  background: var(--c-surface-alt);
+  border: 1px solid var(--c-border-strong);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--c-text);
+  box-shadow: 0 1px 0 var(--c-border-strong);
+}
+
+/* ---------- Loading overlay ---------- */
+
+.loading {
+  position: fixed;
+  inset: 0;
+  background: var(--c-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.loading.hidden { display: none; }
+
+/* Inline-variant: fyller container i stedet for å overdekke skjermen.
+   Brukes der vi venter på data inne i en page-container. */
+.loading-inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-6) var(--sp-4);
+  color: var(--c-muted-strong);
+}
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--c-border);
+  border-top-color: var(--c-accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading .label {
+  font-size: var(--fs-sm);
+  color: var(--c-muted-strong);
+}
+
+/* ---------- Popups (Leaflet) ---------- */
+
+.leaflet-popup-content { font-size: var(--fs-sm); }
+.popup-tags table { border-collapse: collapse; }
+.popup-tags td { padding: 1px 6px 1px 0; vertical-align: top; font-size: var(--fs-xs); }
+.popup-tags td:first-child { color: var(--c-muted); }
+
+/* Avgangsliste i stasjons-popup */
+.departures {
+  margin-top: var(--sp-2);
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--c-border);
+  font-size: var(--fs-xs);
+  min-width: 240px;
+}
+.departures strong {
+  display: block;
+  margin-bottom: var(--sp-1);
+  color: var(--c-primary);
+  font-size: var(--fs-sm);
+}
+.dep-placeholder { color: var(--c-muted); font-style: italic; }
+.dep-status.muted { color: var(--c-muted); margin: 0; }
+.dep-status.error { color: var(--c-danger); margin: 0; }
+.dep-list { width: 100%; border-collapse: collapse; }
+.dep-list td {
+  padding: 2px 6px 2px 0;
+  vertical-align: top;
+  border-bottom: 1px dashed var(--c-border);
+}
+.dep-list tr:last-child td { border-bottom: none; }
+.dep-list .dep-line { font-weight: 600; color: var(--c-primary); white-space: nowrap; }
+.dep-list .dep-quay {
+  color: var(--c-muted);
+  white-space: nowrap;
+  text-align: right;
+  font-size: var(--fs-xs);
+}
+.dep-delayed { color: var(--c-danger); font-weight: 600; }
+.dep-realtime::before {
+  content: "● ";
+  color: var(--c-success);
+  font-size: 8px;
+  vertical-align: middle;
+}
+
+/* SIRI-SX driftsmeldinger i stasjons-popup. Vises over avgangslisten. */
+.situations:empty { display: none; }
+.situations {
+  margin-top: var(--sp-2);
+  padding: var(--sp-2);
+  background: var(--c-warning-soft);
+  border: 1px solid var(--c-warning-border);
+  border-radius: 4px;
+  font-size: var(--fs-xs);
+}
+.situations strong {
+  display: block;
+  margin-bottom: var(--sp-1);
+  color: var(--c-warning);
+  font-size: var(--fs-sm);
+}
+.sit-item {
+  margin-top: var(--sp-1);
+  padding-top: var(--sp-1);
+  border-top: 1px dashed var(--c-warning-border);
+}
+.sit-item:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+.sit-summary { font-weight: 600; color: #1f2937; }
+.sit-desc { color: #374151; margin-top: 2px; }
+.sit-advice { color: var(--c-warning); margin-top: 2px; font-style: italic; }
+.sit-severe .sit-summary,
+.sit-verySevere .sit-summary { color: var(--c-danger); }
+.situations-mini { margin-bottom: var(--sp-2); }
+
+/* ---------- Stasjonsside (stasjon.html) ---------- */
+
+.page-station #station-map {
+  height: 360px;
+  border-radius: 8px;
+  border: 1px solid var(--c-border);
+}
+.page-station .station-live-section { margin-top: var(--sp-3); }
+.page-station .station-live-section .departures {
+  margin-top: var(--sp-2);
+  padding-top: 0;
+  border-top: none;
+}
+.page-station .station-slot { margin-top: var(--sp-3); }
+.page-station .station-slot[hidden] { display: none; }
+
+.station-page-link {
+  margin-top: var(--sp-1);
+  text-decoration: none;
+  text-align: center;
+}
+.station-row-link {
+  position: absolute;
+  right: var(--sp-2);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--fs-xs);
+  color: var(--c-primary);
+  text-decoration: none;
+  padding: 2px 8px;
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  background: white;
+}
+.station-row-link:hover { background: var(--c-primary); color: white; }
+.station-row { position: relative; }
+
+/* Wikidata + kulturminne-seksjoner på stasjonsside */
+.wiki-wrap {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.wiki-image {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--c-border);
+}
+.wiki-facts { flex: 1; min-width: 200px; }
+.external-link {
+  display: inline-block;
+  margin-top: var(--sp-2);
+  color: var(--c-primary);
+  text-decoration: none;
+  font-size: var(--fs-sm);
+}
+.external-link:hover { text-decoration: underline; }
+
+/* Hjelpetekst i tilleggslag-seksjon */
+.muted-help {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  margin: var(--sp-1) 0 0 var(--sp-3);
+  font-style: italic;
+}
+
+.popup-planovergang { font-size: var(--fs-xs); }
+.popup-planovergang strong { color: var(--c-danger); }
+.popup-tog { font-size: var(--fs-xs); }
+.popup-tog strong { color: var(--c-success); font-size: var(--fs-sm); }
+.popup-action {
+  display: inline-block;
+  margin-top: var(--sp-1);
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+
+/* Planovergang-side */
+.page-planovergang #planovergang-map {
+  height: 360px;
+  border-radius: 8px;
+  border: 1px solid var(--c-border);
+}
+
+/* Tog-side (live) */
+.page-tog #tog-map {
+  height: 420px;
+  border-radius: 8px;
+  border: 1px solid var(--c-border);
+}
+.page-tog .tog-marker {
+  /* Pulserende grønn ring viser at toget er live. */
+  animation: tog-pulse 2s ease-in-out infinite;
+}
+@keyframes tog-pulse {
+  0%, 100% { stroke-opacity: 1; }
+  50% { stroke-opacity: 0.3; }
+}
+.tog-ended {
+  margin-top: var(--sp-3);
+  padding: var(--sp-3);
+  border-radius: 8px;
+  background: var(--c-warning-soft);
+  border: 1px solid var(--c-warning-border);
+  color: var(--c-warning);
+}
+.tog-ended strong { display: block; margin-bottom: 4px; font-size: var(--fs-md); }
+.tog-ended p { margin: 0; color: #475569; font-size: var(--fs-sm); }
+.tog-bearing { pointer-events: none; }
+
+/* Liten kulturminne-badge i hovedkart-popup */
+.popup-heritage-badge {
+  display: inline-block;
+  margin-bottom: var(--sp-1);
+  padding: 2px 8px;
+  background: var(--c-warning-soft);
+  border: 1px solid var(--c-warning-border);
+  border-radius: 12px;
+  font-size: var(--fs-xs);
+  color: var(--c-warning);
+  font-weight: 500;
+}
+
+/* ---------- Stats-panel charts ---------- */
+
+/* Chart.js skriver inline width/height på canvas etter mål av parent.
+   Uten eksplisitt høyde her tegner den 0 px når details først åpnes
+   inni overflow-y:auto-panelet. !important overstyrer Chart.js sin
+   inline-style. */
+.stats-panel .group-body canvas {
+  display: block;
+  width: 100% !important;
+  height: 220px !important;
+}
+.stats-panel .group-body canvas#chart-electrification { height: 200px !important; }
+.stats-panel .group-body canvas#chart-types { height: 220px !important; }
+.stats-panel .group-body canvas#chart-speed { height: 200px !important; }
+
+.micro-list {
+  list-style: none;
+  margin: var(--sp-2) 0 0 0;
+  padding: 0;
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+}
+.micro-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  padding: 2px 0;
+}
+.micro-list .km {
+  font-variant-numeric: tabular-nums;
+  color: var(--c-text);
+  white-space: nowrap;
+}
+
+.estimate-note {
+  margin: var(--sp-3) 0 0 0;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--c-surface-alt);
+  border-left: 3px solid var(--c-accent);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  color: var(--c-text);
+  line-height: 1.4;
+}
+.estimate-note .footnote {
+  display: block;
+  margin-top: var(--sp-1);
+  color: var(--c-muted);
+  font-size: var(--fs-xs);
+}
+.estimate-note code {
+  font-size: var(--fs-xs);
+  background: rgba(0, 0, 0, 0.06);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+#fastest-list { padding-left: var(--sp-4); margin: 0; }
+#fastest-list li { margin-bottom: 4px; }
+
+.route-toggle {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  border-radius: 3px;
+}
+.route-toggle:hover { background: var(--c-surface-alt, #f1f5f9); }
+.route-toggle .tail { color: var(--c-muted); }
+.route-toggle::after {
+  content: "›";
+  float: right;
+  margin-right: 6px;
+  color: var(--c-muted);
+  transition: transform 0.15s;
+}
+.route-toggle.open::after { transform: rotate(90deg); display: inline-block; }
+
+.route-detail {
+  margin: 6px 0 10px 0;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--c-surface-alt, #f8fafc);
+  border-radius: 4px;
+  border-left: 2px solid var(--c-accent, #2563eb);
+}
+.route-detail .subhead {
+  margin: var(--sp-3) 0 var(--sp-2) 0;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.route-page-link {
+  margin-top: var(--sp-3);
+}
+
+.speed-bar {
+  display: flex;
+  width: 100%;
+  height: 14px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--c-border);
+}
+.speed-bar .seg { display: block; height: 100%; }
+.speed-legend {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  font-size: 11px;
+  color: var(--c-muted);
+}
+.speed-legend span { display: inline-flex; align-items: center; gap: 4px; }
+.speed-legend i {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+
+.iso-btn {
+  margin: var(--sp-3) 0 var(--sp-2) 0;
+}
+
+/* ---------- Misc ---------- */
+
+.cursor-pointer canvas { cursor: pointer; }
+
+a { color: var(--c-accent); }
+
+.search-match { outline: 2px solid var(--c-warning); outline-offset: 1px; }
+
+/* Leaflet scale bar tweak */
+.leaflet-control-scale-line {
+  font-size: var(--fs-xs) !important;
+  background: var(--c-surface) !important;
+  border: 1px solid var(--c-border-strong) !important;
+  color: var(--c-text) !important;
+  padding: 2px 6px !important;
+}
+
+/* ============================================================
+   Felles for sub-sider (dashbord, bane) — bygd som "vanlige" sider
+   over kart-appen. Bruker samme topbar, men trenger egen layout.
+   ============================================================ */
+
+/* Sub-sider bruker normal blokk-flow, ikke kart-appens grid-layout. */
+body.page-dashboard,
+body.page-route {
+  display: block;
+  height: auto;
+  min-height: 100vh;
+  overflow: auto;
+  background: var(--c-bg, #f8fafc);
+  grid-template-rows: none;
+}
+
+.topbar-spacer { flex: 1; }
+
+/* ---------- Page header (felles på alle sider) ---------- */
+
+.page-header {
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+}
+.page-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--sp-3) var(--sp-4);
+  display: flex;
+  align-items: flex-end;
+  gap: var(--sp-4);
+}
+.page-header .titles {
+  flex: 1;
+  min-width: 0;
+}
+.page-header h1 {
+  margin: 0;
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.page-header .page-subtitle {
+  margin: var(--sp-1) 0 0 0;
+  color: var(--c-muted);
+  font-size: var(--fs-sm);
+}
+.page-header .actions {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+.breadcrumbs {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  margin-bottom: var(--sp-1);
+}
+.breadcrumbs a {
+  color: var(--c-muted);
+  text-decoration: none;
+}
+.breadcrumbs a:hover { color: var(--c-accent); text-decoration: underline; }
+.breadcrumbs .sep { margin: 0 var(--sp-2); color: var(--c-border-strong); }
+
+/* Full-bredde-variant for index (kartet trenger hele viewporten under) */
+.page-header.page-header-full .page-header-inner { max-width: none; }
+
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--sp-4);
+}
+
+/* ---------- Dashbord ---------- */
+
+.dash-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-3);
+  margin: var(--sp-4) 0;
+}
+.dash-hero-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+.dash-hero-card .num {
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  color: var(--c-primary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.dash-hero-card .desc {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+/* Lead-narrativ — full-bredde-blokk mellom hero og charts-grid. Leser
+   hovedinnsiktene høyt slik at brukere ikke trenger å tolke chartene
+   selv. Større typografi enn vanlig brødtekst. */
+.dash-narrative {
+  margin: var(--sp-4) 0 var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 4px solid var(--c-primary);
+  border-radius: var(--radius-md);
+}
+.dash-narrative .dash-lead {
+  margin: 0;
+  font-size: var(--fs-md);
+  line-height: 1.55;
+  color: var(--c-text);
+}
+.dash-narrative .dash-lead strong {
+  color: var(--c-primary);
+  font-weight: 600;
+}
+.dash-narrative .dash-lead-sub {
+  margin: var(--sp-2) 0 0;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--c-muted-strong);
+}
+.dash-narrative .dash-lead-city strong {
+  color: var(--c-text);
+}
+
+/* Callout-kort — store fremtrede tall som CO₂-anslaget. Skiller seg fra
+   vanlige .dash-card med større typografi-presentasjon. */
+.dash-card-callout .dash-callout-num {
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  color: var(--c-warning);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-top: var(--sp-2);
+}
+.dash-card-callout .dash-callout-unit {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--sp-3);
+}
+.dash-card-callout .dash-callout-ctx {
+  margin: 0 0 var(--sp-3);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--c-text);
+}
+.dash-card-callout .dash-callout-ctx strong {
+  color: var(--c-text);
+  font-weight: 600;
+}
+
+/* Bridge fra dashboard til interaktivt kart. Speiler .dash-bridge på
+   kart-siden, men i motsatt retning — "fra rapport til utforskning".
+   Liten kart-thumbnail gir visuell forankring uten å bryte rolledelingen
+   (kart-funksjonalitet hører hjemme på index.html). */
+.dash-map-bridge {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin: var(--sp-3) 0 var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-left: 4px solid var(--c-accent);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--c-text);
+  transition: border-color 120ms ease, background 120ms ease, transform 120ms ease;
+}
+.dash-map-bridge:hover {
+  border-color: var(--c-primary);
+  background: var(--c-surface-alt);
+}
+.dash-map-thumb {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--c-border);
+  flex-shrink: 0;
+}
+.dash-map-bridge-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  flex: 1;
+}
+.dash-map-bridge-text strong {
+  font-size: var(--fs-md);
+  color: var(--c-primary);
+}
+.dash-map-bridge-text span {
+  font-size: var(--fs-sm);
+  color: var(--c-muted-strong);
+  line-height: 1.5;
+}
+.dash-map-bridge-arrow {
+  font-size: var(--fs-2xl);
+  color: var(--c-primary);
+}
+
+/* Sammenligningskort — Norge vs naboland som horisontal-bar. Norge får
+   primærfarge, andre får dempet grå. */
+.compare-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.compare-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 90px;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+}
+.compare-label {
+  color: var(--c-muted-strong);
+  font-weight: 500;
+}
+.compare-row.is-norway .compare-label {
+  color: var(--c-primary);
+  font-weight: 700;
+}
+.compare-bar-wrap {
+  height: 14px;
+  background: var(--c-surface-alt);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.compare-bar {
+  display: block;
+  height: 100%;
+  background: var(--c-muted);
+  border-radius: 7px;
+  transition: width 0.3s ease;
+}
+.compare-row.is-norway .compare-bar {
+  background: var(--c-primary);
+}
+.compare-val {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-text);
+}
+
+/* Største baner får eget full-bredde-kort under main-grid. Innholdet
+   layoutes i 3 kolonner ved bred skjerm slik at 15 rader ikke gir lang
+   vertikal skjørt. */
+.dash-largest-section {
+  margin-top: var(--sp-3);
+}
+.dash-largest-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0 var(--sp-4);
+  counter-reset: largest-counter;
+}
+.dash-largest-grid > li {
+  counter-increment: largest-counter;
+  position: relative;
+}
+.dash-largest-grid > li::before {
+  content: counter(largest-counter) ".";
+  position: absolute;
+  left: -1.6em;
+  color: var(--c-muted);
+  font-variant-numeric: tabular-nums;
+}
+.dash-largest-grid > li {
+  padding-left: 1.6em;
+}
+
+/* Klikkbare rader i Topp 10 / Største baner. Header viser navn + meta;
+   klikk ekspanderer detaljer inline (uten å forlate dashbordet). */
+.dash-route-row {
+  list-style: none;
+  border-bottom: 1px solid var(--c-border);
+}
+.dash-route-row:last-child {
+  border-bottom: none;
+}
+.dash-route-head {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--sp-2) 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+}
+.dash-route-head:hover {
+  color: var(--c-primary);
+}
+.dash-route-head .dash-route-name {
+  font-weight: 600;
+  color: var(--c-accent);
+}
+.dash-route-head .tail {
+  flex: 1;
+  color: var(--c-muted-strong);
+  margin-left: var(--sp-1);
+}
+.dash-route-head .dash-route-chev {
+  color: var(--c-muted);
+  font-size: var(--fs-md);
+  transition: transform 0.2s ease;
+}
+.dash-route-head.open .dash-route-chev {
+  transform: rotate(180deg);
+}
+.dash-route-detail {
+  padding: var(--sp-3) 0 var(--sp-3) var(--sp-3);
+  background: var(--c-surface-alt);
+  border-radius: var(--radius-sm);
+  margin: var(--sp-1) 0 var(--sp-2);
+}
+
+/* Kort-introduksjon — kort beskrivelse mellom tittel og innhold når kortet
+   trenger en setning kontekst. Brukt i Datakvalitet-kortet. */
+.dash-card-intro {
+  margin: 0 0 var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--c-muted-strong);
+  line-height: 1.5;
+}
+
+/* Takeaway-setning under chart — leser dataene høyt og gir kontekst.
+   Litt mer fremtredende enn estimate-note (mørkere farge), men ikke
+   like dominerende som narrativ-paragrafen øverst. */
+.dash-card-takeaway {
+  margin: var(--sp-3) 0 0;
+  padding: var(--sp-2) 0 0;
+  border-top: 1px solid var(--c-border);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--c-text);
+}
+
+.dash-card {
+  break-inside: avoid;
+}
+.dash-chart {
+  height: 240px;
+  position: relative;
+}
+.dash-chart canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.dash-link-list {
+  margin: 0;
+  padding-left: var(--sp-5);
+  font-size: var(--fs-sm);
+}
+.dash-link-list li {
+  padding: 3px 0;
+}
+.dash-route-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--c-accent);
+}
+.dash-route-link:hover {
+  text-decoration: underline;
+}
+.dash-link-list .tail {
+  color: var(--c-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-footer {
+  margin-top: var(--sp-5);
+  padding: var(--sp-3) 0;
+  border-top: 1px solid var(--c-border);
+  color: var(--c-muted-strong);
+  font-size: var(--fs-xs);
+}
+.dash-footer p { margin: 0; }
+
+/* ---------- Bane-side ---------- */
+
+.route-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--sp-4);
+  margin-top: var(--sp-3);
+}
+@media (max-width: 900px) {
+  .route-grid { grid-template-columns: 1fr; }
+}
+
+#route-map {
+  height: 520px;
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.route-stations-section {
+  margin-top: var(--sp-4);
+}
+/* Stasjons-søk + gruppering på bane-siden. Lange ruter (Bergensbanen har
+   113 stasjoner) blir uoversiktlige uten dette. */
+.station-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+.station-search {
+  flex: 1;
+  height: 32px;
+  padding: 0 var(--sp-3);
+  font: inherit;
+  font-size: var(--fs-sm);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.station-search:focus {
+  border-color: var(--c-accent);
+}
+.station-search-counter {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.station-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.station-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  padding: var(--sp-2) 0;
+  border-bottom: 2px solid var(--c-border-strong);
+  margin-bottom: var(--sp-1);
+}
+.station-group-label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.station-group-count {
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.station-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.station-row {
+  border-top: 1px solid var(--c-border);
+  padding: var(--sp-2) 0;
+}
+.station-row:first-child { border-top: none; }
+.station-row .station-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--fs-sm);
+}
+.station-row .station-name { font-weight: 600; }
+.station-row .station-meta { color: var(--c-muted); font-size: var(--fs-xs); }
+.station-row .departures-slot {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+}
+
+.route-empty {
+  text-align: center;
+  padding: 60px var(--sp-4);
+  color: var(--c-muted);
+}
+.route-empty h1 { color: var(--c-text); margin: 0 0 var(--sp-2) 0; }
+
+/* ---------- Print-vennlig dashbord ---------- */
+@media print {
+  .topbar, .breadcrumbs, .dash-footer { display: none; }
+  body.page-dashboard { background: white; }
+  .dash-card { box-shadow: none; border: 1px solid #ccc; }
+  .page-container { max-width: none; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .topbar { gap: var(--sp-2); padding: 0 var(--sp-2); }
+  .topbar .actions { display: none; }
+  .topbar .search-wrap { display: none; }
+
+  /* Hamburger vises, topnav skjules som default og drawes ned ved open. */
+  .topnav-toggle { display: inline-flex; }
+  .topbar .topnav {
+    display: none;
+    position: absolute;
+    top: var(--topbar-h, 48px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--sp-2);
+    background: var(--c-primary);
+    border-top: 1px solid var(--c-primary-dark);
+    z-index: 1100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  .topbar .topnav.open { display: flex; }
+  .topbar .topnav .nav-link {
+    padding: 10px 12px;
+    font-size: var(--fs-sm);
+    border-radius: 4px;
+  }
+
+  /* Bane-dropdown skal ta full bredde av drawer i mobil-modus. */
+  .bane-dropdown {
+    position: static;
+    width: 100%;
+    max-height: 50vh;
+    margin-top: var(--sp-1);
+  }
+
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .dash-hero { grid-template-columns: 1fr 1fr; }
+  .dash-hero-card .num { font-size: var(--fs-2xl); }
+  .page-container { padding: var(--sp-2); }
+  .route-grid { grid-template-columns: 1fr; }
+  #route-map { height: 360px; }
+}
+
+/* ---------- Tilgjengelighet ---------- */
+
+/* Visually-hidden — innhold som er for skjermlesere men skjult visuelt.
+   Brukes til å gi tabular fallback for charts og lignende. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Print ---------- */
+
+/* Dashbord skal kunne printes som en lesbar A4-rapport. Skjul interaktive
+   elementer som ikke har verdi på papir, justér farger til høy kontrast
+   for utskrift, og prøv å holde kort samlet (ikke splittet over sidebrudd). */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  /* Skjul navigasjon og utforsknings-elementer */
+  .topbar,
+  .nav-baner-toggle,
+  .bane-dropdown,
+  .dash-map-bridge,
+  .dash-route-chev,
+  .dash-route-row .btn {
+    display: none !important;
+  }
+
+  /* Brødsmuler er overflødige når dokumentet skrives ut */
+  .breadcrumbs { display: none !important; }
+
+  /* Page-header kompakteres */
+  .page-header {
+    background: white;
+    border-bottom: 1px solid #999;
+  }
+  .page-header h1 {
+    font-size: 18pt;
+    margin: 0 0 4pt 0;
+  }
+  .page-subtitle {
+    font-size: 10pt;
+    margin: 0;
+  }
+
+  /* Hero blir 5 kolonner kompakt */
+  .dash-hero {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4pt;
+    margin: 8pt 0;
+  }
+  .dash-hero-card .num { font-size: 16pt; }
+  .dash-hero-card .desc { font-size: 7pt; }
+
+  /* Kort-grid blir 2 kolonner med tighter gap */
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6pt;
+  }
+
+  /* Hver dash-card prøver å holde seg samlet på én side */
+  .dash-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #999;
+    box-shadow: none;
+  }
+
+  /* Charts er bitmap canvas — de printer som de er, men begrens høyde */
+  .dash-chart { max-height: 200px; }
+
+  /* Accordion-detaljer åpnes alle for utskrift slik at all info synes */
+  .dash-route-detail[hidden] { display: block !important; }
+
+  /* Footer-lenker som tekst (URL-er er ikke nyttige på papir) */
+  .dash-footer a { text-decoration: none; color: black; }
+
+  /* Sider-størrelse + marg */
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+}
