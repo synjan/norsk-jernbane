@@ -68,6 +68,44 @@ npm start
 
 ---
 
+## 🤖 For deg som bruker Copilot eller Claude Code
+
+Dette prosjektet er bygget for å være lett å fortsette med ved hjelp av AI-assistenter. To verktøy passer godt:
+
+- **GitHub Copilot** — autocomplete + chat i VS Code. Trykk `Ctrl+I` for inline-forslag, eller åpne Copilot Chat for spørsmål.
+- **Claude Code** — kommandolinje-assistent fra Anthropic. Installer fra [claude.com/claude-code](https://claude.com/claude-code).
+
+### Hvorfor passer prosjektet godt for AI?
+
+To filer er skrevet spesielt for å gi AI-en god kontekst:
+
+- **[`CLAUDE.md`](CLAUDE.md)** — Claude Code leser denne automatisk når den starter. Den forklarer invarianter (regler som må holdes), navnekonvensjoner og hvor logikk bor.
+- **[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)** — modulkart og data-flyt. Begge AI-er kan lese denne.
+
+### Effektive prompts for vanlige oppgaver
+
+| Oppgave | Eksempel-prompt |
+|---------|-----------------|
+| Endre en farge | "Endre stasjons-markørene fra blå til grønn i `public/app.js` — sjekk også sidebar-swatches" |
+| Legg til ny statistikk | "Vis 'lengste tunnel-segment per bane' på dashbordet" |
+| Fiks en bug | "Når jeg klikker på Bergensbanen-segmentet kommer feil bane opp i popupen" |
+| Oppdater data | "Kjør fetch + process for å oppdatere alle data fra OSM" |
+| Forstå koden | "Forklar hvordan live-tog-animasjonen fungerer i `public/app.js`" |
+
+### Beste praksis
+
+1. **La AI-en lese `CLAUDE.md` først** — den inneholder regler som ikke er åpenbare fra koden (f.eks. py↔js paritet).
+2. **Kjør tester etter endringer** — `npm test`. AI kan gjøre feil; testene fanger dem.
+3. **Be om forklaring før godkjenning** — "Forklar hva denne endringen gjør og hvilke filer som påvirkes".
+4. **Bruk små, isolerte oppgaver** — én ting om gangen er enklere for både AI-en og deg å reviewe.
+5. **Test live-siden lokalt** — `npm start` og åpne `http://localhost:5174` før du pusher.
+
+### Når AI-en er usikker
+
+Hvis Claude/Copilot foreslår å bygge en demo-side (frittstående HTML) før integrasjon i hovedappen — det er et bevisst pattern i prosjektet. Se `public/leaflet-demo.html` som eksempel: vi prøvde 8 Leaflet-plugins der før vi bestemte hvilke vi ville bruke i hovedkartet.
+
+---
+
 ## 🛠 Vanlige oppgaver
 
 ### "Jeg vil endre en tekst eller farge"
