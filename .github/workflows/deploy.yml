@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+# Deploy public/ til https://synjan.github.io/norsk-jernbane/ ved push til main.
+# Pages-builden bruker artefakt-mønsteret (ingen byggesteg — bare laster opp
+# public/ som-er). Workflow_dispatch lar deg trigge manuelt fra Actions-fanen.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Kun én Pages-deploy om gangen. Køes (ikke avbrytes) for å sikre at siste
+# main-state alltid blir publisert.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload public/ som Pages-artefakt
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
