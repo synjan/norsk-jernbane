@@ -9,7 +9,7 @@ Interaktivt kart over norsk jernbane med:
 - Statistikk om elektrifisering, tunneler, broer, fart, dobbeltspor
 - Egen side per bane og per stasjon med bilder og historikk
 
-Alt er åpne data. Alt kjører i nettleseren. Live-siden oppdateres automatisk når noe endres.
+Alt er åpne data. Alt kjører i nettleseren. Live-siden oppdateres automatisk når noe endres — og dataene refreshes fra OSM, Wikidata og NVDB én gang i måneden helt på egenhånd.
 
 ---
 

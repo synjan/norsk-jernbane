@@ -1,0 +1,67 @@
+name: Live API health check
+
+# Kjører alle Entur-baserte tester en gang i uka mot live API. CI hopper
+# normalt over disse fordi de er flaky uten ekte API-svar — men en planlagt
+# kjøring fanger opp hvis Entur endrer schema/endepunkt.
+#
+# Hvis denne workflowen feiler: sjekk Entur-developer-docs for API-endringer,
+# og oppdater public/entur.js + relevante tester.
+
+on:
+  schedule:
+    - cron: '0 7 * * MON'  # mandager 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Node-avhengigheter
+        run: npm ci
+
+      - name: Install Playwright (chromium only)
+        run: npx playwright install --with-deps chromium
+
+      - name: Start statisk server
+        run: |
+          python3 -m http.server -d public 5174 >/tmp/server.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://localhost:5174/ >/dev/null 2>&1; then exit 0; fi
+            sleep 0.5
+          done
+          echo "Server startet ikke"; cat /tmp/server.log; exit 1
+
+      - name: Kjør Entur-baserte tester
+        env:
+          BASE_URL: http://localhost:5174
+        run: |
+          node tests/entur.test.js
+          node tests/entur-retry.test.js
+          node tests/entur-situations.test.js
+          node tests/live-trains.test.js
+          node tests/live-trains-lerp.test.js
+          node tests/tog-page.test.js
+          node tests/station-page.test.js
+
+      - name: Last opp skjermbilder ved feil
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failure-screenshots
+          path: tests/screenshots/
+          retention-days: 14

@@ -1,0 +1,35 @@
+version: 2
+
+# Dependabot åpner automatisk PR-er når avhengigheter har nye versjoner.
+# CI kjører på hver PR — passerer den, kan PR-en merges trygt.
+#
+# Strategi:
+#  - npm: ukentlig (Playwright får ofte oppdateringer)
+#  - pip: månedlig (Python-deps er stabile, vil ikke bråke uten grunn)
+#  - github-actions: månedlig (action-versjoner trenger sjelden raske bytter)
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore(npm)
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore(pip)
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore(ci)

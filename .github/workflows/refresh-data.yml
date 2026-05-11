@@ -1,0 +1,71 @@
+name: Refresh data
+
+# Henter fersk jernbanedata fra OpenStreetMap, Wikidata og Statens vegvesen
+# første dag hver måned. Hvis noe har endret seg, committes oppdaterte
+# filer til main — det trigger automatisk deploy via deploy.yml.
+#
+# Kan også kjøres manuelt fra Actions-fanen via workflow_dispatch.
+
+on:
+  schedule:
+    - cron: '0 4 1 * *'  # 04:00 UTC, første hver måned
+  workflow_dispatch:
+
+permissions:
+  contents: write   # for å pushe commit med oppdaterte data
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python-avhengigheter
+        run: pip install -r requirements.txt
+
+      - name: Hent fersk OSM-data (railways + stasjoner)
+        run: |
+          rm -f data/raw.json
+          python data/fetch.py
+
+      - name: Hent fersk OSM-data (tettsteder for befolkningsdekning)
+        run: |
+          rm -f data/places.json
+          python data/fetch_places.py
+
+      - name: Hent OSM togrute-relasjoner
+        run: python data/fetch_routes.py
+
+      - name: Hent Wikidata-stasjonsdata
+        run: python data/fetch_wikidata_stations.py
+
+      - name: Hent NVDB planoverganger
+        run: python data/fetch_planoverganger.py
+
+      - name: Prosesser til GeoJSON + stats
+        run: python data/process.py
+
+      - name: Commit hvis data endret seg
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/ data/places.json
+          if git diff --cached --quiet; then
+            echo "Ingen endringer i data."
+          else
+            git commit -m "$(cat <<'EOF'
+          chore(data): månedlig oppdatering fra OSM/Wikidata/NVDB
+
+          Automatisk refresh — kjør av .github/workflows/refresh-data.yml.
+          Trigger deploy.yml som publiserer endringene til live-siden.
+          EOF
+          )"
+            git push
+            echo "✅ Data oppdatert og pushet."
+          fi
