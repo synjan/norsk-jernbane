@@ -21,7 +21,15 @@ async function run() {
   const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
   const errors = [];
   page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
-  page.on("console", (m) => { if (m.type() === "error") errors.push(`console: ${m.text()}`); });
+  page.on("console", (m) => {
+    if (m.type() !== "error") return;
+    const txt = m.text();
+    // Ignorer "Failed to load resource" — typisk OSM-tile-server som 503-er
+    // til CI-IP-er. Det er ikke vår kode som feiler, og snap-logikken
+    // testes uavhengig av kart-tiles.
+    if (txt.startsWith("Failed to load resource")) return;
+    errors.push(`console: ${txt}`);
+  });
 
   console.log(`[step] Åpner ${BASE_URL}`);
   await page.goto(BASE_URL);
