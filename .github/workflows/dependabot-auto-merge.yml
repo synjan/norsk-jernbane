@@ -26,12 +26,10 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Approve PR (kun patch og minor)
-        if: steps.meta.outputs.update-type != 'version-update:semver-major'
-        run: gh pr review --approve "$PR_URL"
-        env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Approve-steget krever at "Allow GitHub Actions to approve pull
+      # requests" er aktivert i repo-innstillinger. Vi har ikke branch
+      # protection som krever review, så auto-merge fungerer uten approval.
+      # Steget hoppes derfor over for å unngå unødvendige check-failures.
 
       - name: Aktiver auto-merge
         if: steps.meta.outputs.update-type != 'version-update:semver-major'
