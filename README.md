@@ -1,19 +1,19 @@
 # Norsk jernbane — kart, sanntid og innsikt
 
-> 🌐 **Live versjon: [synjan.github.io/norsk-jernbane](https://synjan.github.io/norsk-jernbane/)**
+> 🌐 **Live: [synjan.github.io/norsk-jernbane](https://synjan.github.io/norsk-jernbane/)**
 
 Interaktivt kart over norsk jernbane med:
 
-- Alle spor, stasjoner, holdeplasser (fra OpenStreetMap)
+- Alle spor, stasjoner og holdeplasser (fra OpenStreetMap)
 - Sanntids togposisjoner og avganger (fra Entur)
 - Statistikk om elektrifisering, tunneler, broer, fart, dobbeltspor
 - Egen side per bane og per stasjon med bilder og historikk
 
-Alt er åpne data. Alt kjører i nettleseren — ingen backend, ingen brukere, ingen innlogging.
+Alt er åpne data. Alt kjører i nettleseren. Live-siden oppdateres automatisk når noe endres.
 
 ---
 
-## 🗺 For deg som bare vil se kartet
+## 🗺 Hvis du bare vil se kartet
 
 Åpne **[synjan.github.io/norsk-jernbane](https://synjan.github.io/norsk-jernbane/)**.
 
@@ -21,251 +21,113 @@ Du trenger ikke installere noe. Det fungerer på telefon, nettbrett og PC.
 
 ---
 
-## 👨‍💻 For deg som vil endre på prosjektet
+## 💬 Hvis du vil endre på prosjektet
 
-Hele prosjektet består av tre deler:
+**Du trenger ikke skrive kode.** Du beskriver hva du vil ha på vanlig norsk til en AI-assistent — den gjør resten.
 
-1. **Datainnsamling** (Python) — henter data fra OpenStreetMap og lagrer som filer.
-2. **Nettsider** (HTML + JavaScript) — viser dataene som kart og statistikk.
-3. **Sanntid** (Entur API) — henter togposisjoner direkte fra nettleseren.
+Det finnes to AI-assistenter som passer godt:
 
-Du trenger ikke forstå alt for å gjøre små endringer. De fleste endringer skjer i `public/`-mappen.
+- **GitHub Copilot** — innebygget i VS Code. Chat-vinduet kan endre filer for deg.
+- **Claude Code** — egen app fra Anthropic. [Last ned her](https://claude.com/claude-code).
 
-### Installer nødvendige verktøy
-
-Du må ha disse installert (gratis):
-
-- **[Python 3.11+](https://www.python.org/downloads/)** — for å oppdatere data
-- **[Node 20+](https://nodejs.org/)** — for å kjøre tester
-- **[Git](https://git-scm.com/downloads)** — for å lagre endringer
-
-På Windows får du Git Bash ved å installere Git. Bruk Git Bash som terminal under.
-
-### Sett opp prosjektet (én gang)
-
-```bash
-# Last ned koden
-git clone https://github.com/synjan/norsk-jernbane.git
-cd norsk-jernbane
-
-# Lag et eget Python-miljø for prosjektet
-python -m venv .venv
-. .venv/Scripts/activate          # Windows
-# . .venv/bin/activate            # Mac / Linux
-pip install -r requirements.txt
-
-# Installer Node-verktøy (brukes til tester)
-npm install
-```
-
-### Start nettsiden lokalt
-
-```bash
-npm start
-```
-
-Åpne `http://localhost:5174` i nettleseren. Endrer du en fil i `public/`, last siden på nytt for å se endringen — ingen omstart trengs.
+Begge kan brukes — Claude Code er litt sterkere på større oppgaver, Copilot integrerer godt med VS Code hvis du allerede bruker det.
 
 ---
 
-## 🤖 For deg som bruker Copilot eller Claude Code
+## 🎙 Hvordan snakke med AI-en
 
-Dette prosjektet er bygget for å være lett å fortsette med ved hjelp av AI-assistenter. To verktøy passer godt:
+### Eksempler på ting du kan be om
 
-- **GitHub Copilot** — autocomplete + chat i VS Code. Trykk `Ctrl+I` for inline-forslag, eller åpne Copilot Chat for spørsmål.
-- **Claude Code** — kommandolinje-assistent fra Anthropic. Installer fra [claude.com/claude-code](https://claude.com/claude-code).
+| Du vil... | Si noe sånt som... |
+|-----------|----------------|
+| Endre tekst på en side | *"Endre tittelen på dashbordet til 'Jernbane-innsikt'"* |
+| Endre farger | *"Endre stasjons-markørene fra blå til mørkegrønn"* |
+| Legge til en ny statistikk | *"Legg til 'lengste tunnel-segment' på innsikt-siden"* |
+| Fikse en feil du ser | *"Når jeg klikker på Bergensbanen-popupen viser den feil bane. Fiks det."* |
+| Forstå hva noe gjør | *"Forklar hvordan live-tog-animasjonen fungerer"* |
+| Oppdatere data | *"Hent fersk jernbanedata fra OpenStreetMap"* |
+| Publisere endringer | *"Test at alt fungerer og publiser til live-siden"* |
+| Lage en ny side | *"Lag en ny side som viser alle planoverganger på et kart"* |
+| Stille et spørsmål til dataene | *"Hvilken bane har flest tunneler?"* |
 
-### Hvorfor passer prosjektet godt for AI?
+### Tips for å få det du vil ha
 
-To filer er skrevet spesielt for å gi AI-en god kontekst:
-
-- **[`CLAUDE.md`](CLAUDE.md)** — Claude Code leser denne automatisk når den starter. Den forklarer invarianter (regler som må holdes), navnekonvensjoner og hvor logikk bor.
-- **[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)** — modulkart og data-flyt. Begge AI-er kan lese denne.
-
-### Effektive prompts for vanlige oppgaver
-
-| Oppgave | Eksempel-prompt |
-|---------|-----------------|
-| Endre en farge | "Endre stasjons-markørene fra blå til grønn i `public/app.js` — sjekk også sidebar-swatches" |
-| Legg til ny statistikk | "Vis 'lengste tunnel-segment per bane' på dashbordet" |
-| Fiks en bug | "Når jeg klikker på Bergensbanen-segmentet kommer feil bane opp i popupen" |
-| Oppdater data | "Kjør fetch + process for å oppdatere alle data fra OSM" |
-| Forstå koden | "Forklar hvordan live-tog-animasjonen fungerer i `public/app.js`" |
-
-### Beste praksis
-
-1. **La AI-en lese `CLAUDE.md` først** — den inneholder regler som ikke er åpenbare fra koden (f.eks. py↔js paritet).
-2. **Kjør tester etter endringer** — `npm test`. AI kan gjøre feil; testene fanger dem.
-3. **Be om forklaring før godkjenning** — "Forklar hva denne endringen gjør og hvilke filer som påvirkes".
-4. **Bruk små, isolerte oppgaver** — én ting om gangen er enklere for både AI-en og deg å reviewe.
-5. **Test live-siden lokalt** — `npm start` og åpne `http://localhost:5174` før du pusher.
-
-### Når AI-en er usikker
-
-Hvis Claude/Copilot foreslår å bygge en demo-side (frittstående HTML) før integrasjon i hovedappen — det er et bevisst pattern i prosjektet. Se `public/leaflet-demo.html` som eksempel: vi prøvde 8 Leaflet-plugins der før vi bestemte hvilke vi ville bruke i hovedkartet.
+1. **Vær konkret.** *"Endre stasjons-markørene fra blå til mørkegrønn"* er bedre enn *"fiks fargene"*.
+2. **Beskriv hva du SER, ikke hva du tror er galt.** *"Popupen viser '4. lengste' selv om jeg står på Bergensbanen"* er mer nyttig enn *"rangen er feil"*.
+3. **Be om forklaring først hvis du er usikker.** *"Forklar hva du vil gjøre før du endrer noe."*
+4. **Én ting om gangen.** Lettere å sjekke resultatet, lettere å rulle tilbake hvis du angrer.
+5. **Test live-siden etter publisering.** Åpne live-URL-en i en annen fane, hard-refresh (Ctrl+Shift+R), og sjekk at endringen din vises.
 
 ---
 
-## 🛠 Vanlige oppgaver
+## 🤖 Hva AI-en gjør for deg automatisk
 
-### "Jeg vil endre en tekst eller farge"
+Du trenger ikke tenke på dette — AI-en håndterer det:
 
-1. Finn fila i `public/`. F.eks. tekster på forsiden ligger i `public/index.html`, farger og layout i `public/style.css`.
-2. Endre, lagre, last siden på nytt.
-3. Når du er fornøyd: kjør `git commit` og `git push` (se nederst).
+- 🔍 Lete i koden for å finne riktig sted å endre
+- ✏️ Gjøre selve endringene
+- 🧪 Kjøre automatiske tester for å sjekke at ingenting brøt
+- 💾 Lagre endringene (git)
+- 🚀 Publisere til live-siden (tar ~30 sek etter at AI har lagret)
+- 📊 Hente og oppdatere data fra OpenStreetMap, Entur, Wikidata når du ber om det
 
-### "Jeg vil legge til en ny statistikk på innsikt-siden"
+## 🙋 Det du må gjøre selv
 
-1. Sjekk at tallet finnes i `public/data/stats.json` — åpne fila og søk.
-2. Hvis ja: legg til i `public/dashboard.js` etter mønster av andre `render*`-funksjoner. HTML-strukturen ligger i `public/dashboard.html`.
-3. Hvis nei: tallet må beregnes i Python-pipelinen — se "Oppdater data" nedenfor.
-
-### "Jeg vil oppdatere dataene (nyere stasjoner, nye spor)"
-
-Data hentes fra OpenStreetMap. OSM endrer seg hele tiden (folk legger til/endrer data). For å hente fersk versjon:
-
-```bash
-# Slett gammel rådata
-rm data/raw.json
-
-# Hent på nytt fra OpenStreetMap (tar 1-3 minutter)
-npm run fetch
-
-# Konverter til kart-format
-npm run process
-
-# Bonus: oppdater bilder og fredning-info fra Wikidata
-python data/fetch_wikidata_stations.py
-
-# Bonus: oppdater planoverganger fra Statens vegvesen
-python data/fetch_planoverganger.py
-```
-
-Etter dette har `public/data/`-mappen nye filer. Commit dem og push for å oppdatere live-siden.
-
-### "Jeg vil teste at jeg ikke ødela noe"
-
-```bash
-# I én terminal: start siden
-npm start
-
-# I en annen terminal: kjør tester
-npm test
-```
-
-Hvis alt sier "Alt OK" — du har ikke ødelagt noe. Hvis noe feiler, les feilmeldingen — den peker oftest til hvilken fil som har problemet.
-
-### "Jeg vil lagre endringer og publisere"
-
-Hver push til `main`-branchen oppdaterer live-siden automatisk (tar ~30 sekunder).
-
-```bash
-git add .                                   # marker alle endringer
-git commit -m "Beskriv hva du endret"       # lagre lokalt
-git push                                    # send til GitHub
-```
-
-Følg deployen på [Actions-fanen](https://github.com/synjan/norsk-jernbane/actions).
+- ✅ Beskriv hva du vil ha
+- ✅ Si ja eller nei når AI spør om bekreftelse på større endringer
+- ✅ Sjekk live-siden etter publisering for å være sikker på at det ble som du tenkte
+- ✅ Si fra hvis det ikke ble riktig — AI kan justere eller rulle tilbake
 
 ---
 
-## 🐛 Vanlige feilrapporter — hvor skal du lete?
+## 🐛 Når noe er rart
 
-| Symptom | Mest sannsynlig årsak | Filer å sjekke |
-|---------|----------------------|----------------|
-| Stasjon vises feil sted | OSM-data, ikke kode | Fiks i [OpenStreetMap](https://www.openstreetmap.org), kjør så `npm run fetch && npm run process` |
-| Live tog hopper rundt eller forsvinner | Snap-til-bane fallback eller Entur API endret | `public/app.js` — `currentLerpLatLng`, `refreshLiveTrains` |
-| Avganger lastes ikke i stasjons-popup | Entur API-feil eller endret schema | `public/entur.js` — sjekk browser console (F12) |
-| Bane-side krasjer for én bane | Manglende felt i `routes[]` | `public/bane.js` — `renderStatsCard`, sjekk `public/data/stats.json` |
-| Dashboard viser "—" overalt | `stats.json` mangler eller cachet gammel versjon | Kjør `npm run process`, hard-refresh nettleser |
-| Kart blir hvitt på mobil | Leaflet tile-loading-problem | Sjekk nettverk i DevTools (F12 → Network) |
-| Filter virker ikke som forventet | Ny OSM-tag som ikke håndteres | `public/app.js` — `featureVisible`, `data/process.py` — `ALLOWED_RAILWAY_TYPES` |
-| Stasjon i sidebar-liste duplikert | OSM tagger stasjon som flere noder | `public/bane.js` — `dedupeByName` (kan trenge tilpasning) |
+Be AI-en undersøke. Konkrete prompts som hjelper:
 
-**Generell debugging-strategi:**
-1. Åpne nettleserens konsoll (F12 → Console) — feilmeldinger der peker til fil + linje
-2. Slå på «Disable cache» i Network-fanen mens DevTools er åpen
-3. Sjekk om problemet vises på live-siden eller bare lokalt
-4. Kjør `npm test` — kanskje en eksisterende test fanger problemet
+- *"Live-siden viser fortsatt det gamle — sjekk om endringen er publisert"*
+- *"[X] krasjer når jeg gjør [Y]. Finn ut hvorfor og fiks det."*
+- *"Tallene på dashbordet ser feil ut. Sammenlign med stats.json og finn årsaken."*
+- *"Stasjoner vises på feil sted på kartet — er det data-feil eller kode-feil?"*
+
+Du kan også åpne nettleserens konsoll (F12 → Console-fanen) og kopiere feilmeldingen inn i AI-chat-en — den forteller AI-en mye om hva som er galt.
 
 ---
 
-## 🎯 Backlog — naturlige neste skritt
+## 🗃 Datakilder
 
-Idéer for videreutvikling, sortert etter innsats. Plukk det du synes virker interessant.
-
-### Quick wins (1-2 timer)
-- **Light/dark theme-toggle** — bytt på CSS-variabler i `style.css`. Bruker `prefers-color-scheme` som default.
-- **Print-CSS for bane-side** — slik onepager.html allerede har; lag A4-vennlig utskrift av en banes statistikk.
-- **Mobile-bottom-sheet** for popups — i dag åpner stasjons-popups som vanlige Leaflet-popups på mobil, ofte avskåret.
-- **Vis tunnel/bro-segmenter med eget mønster** på kartet (stiplet for tunnel) — utvider `styleForElectrification` osv.
-- **Lagre filterstate i `localStorage`** — i dag bare URL-hash; brukere kommer tilbake til samme visning.
-
-### Mellomstore (1-2 dager)
-- **Modulisering av `public/app.js`** (1700+ linjer) — bryt opp i `live-trains.js`, `search.js`, `popups.js`, `url-state.js`, `filters.js`. Ingen byggesteg, bare ES modules.
-- **Stasjons-side-utvidelser**: hent vær fra MET API, eller bilder fra Wikidata Commons.
-- **Bygg om dashboard-grid til fane-struktur** (Klima / Infrastruktur / Reise / Historie) — 24 seksjoner er mye på én side.
-- **A11y-revisjon** — sjekk med screen reader, fiks aria-labels, kontrast på popups.
-- **Service worker for offline-bruk** — cache `stats.json` + tiles for nylig besøkte områder.
-
-### Større prosjekter (uke+)
-- **PMTiles for `railways.geojson`** (8,4 MB → tile-basert) — bedre mobil-ytelse, men krever refaktor av filter-pipelinen.
-- **Snap-til-bane forbedring**: håndter cross-segment-tweens (i dag faller den tilbake til LERP når from/to er på forskjellige sporsegmenter).
-- **Høydedata fra Kartverket DEM** — stigning per km, åpner ny dimensjon for analyse.
-- **Multi-language** (norsk → engelsk) — krever i18n-infrastruktur.
-- **Historiske data** — sammenlign OSM-snapshots over tid, vis hvor mye jernbane som er bygget hver tiår.
-
-### Vedlikeholds-rutiner (jevnlig)
-- **Månedlig**: kjør `npm run fetch && npm run process`, commit oppdaterte filer. OSM endrer seg hele tiden.
-- **Når Entur endrer API**: sjekk `public/entur.js` mot [Entur API-docs](https://developer.entur.org/) — har skjedd noen ganger.
-- **Når Playwright-versjon oppdateres**: `npm update playwright`, kjør `npm test`. Browser-API-endringer kan bryte tester.
-- **Når Python-avhengigheter får sikkerhets-CVE-er**: `pip install --upgrade -r requirements.txt`, kjør pipelinen.
-
----
-
-## 📁 Hva ligger hvor?
-
-```
-norsk-jernbane/
-├── public/              ← nettsidene (HTML/JS/CSS)
-│   ├── index.html         hovedkart
-│   ├── dashboard.html     innsikt / statistikk
-│   ├── bane.html          én bane (Bergensbanen, Nordlandsbanen ...)
-│   ├── stasjon.html       én stasjon
-│   ├── tog.html           ett tog (sanntid)
-│   └── data/              genererte data-filer
-├── data/                ← Python-skript som lager dataene
-│   ├── fetch.py           henter spor og stasjoner fra OSM
-│   ├── process.py         lager kart-filene fra rådata
-│   └── fetch_*.py         hjelpe-skript for spesifikke kilder
-├── tests/               ← automatiske tester
-├── scripts/             ← verktøy (test-runner, skjermbilder)
-├── docs/                ← teknisk dokumentasjon
-└── README.md            ← du leser den nå
-```
-
-For utviklere som vil forstå mer, se:
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — modulkart og data-flyt
-- [`CLAUDE.md`](CLAUDE.md) — invarianter og navnekonvensjoner
-
----
-
-## 🗃 Datakilder og lisens
+Alle data er åpne og kan brukes — kildene har bare ulike attribusjons-krav. AI-en kjenner til kildene og håndterer attribusjonen.
 
 | Kilde | Hva |
 |-------|-----|
-| **OpenStreetMap** (ODbL) | Spor, stasjoner, signaler, sporveksler |
-| **Entur** (NLOD) | Togavganger og sanntids togposisjoner |
-| **Wikidata** (CC0) | Bilder, åpningsår, arkitekter, fredning |
-| **Statens vegvesen NVDB** (NLOD) | Jernbanekryssinger |
-
-Alle data er åpne og kan brukes — husk kildeattribusjon.
+| **OpenStreetMap** | Spor, stasjoner, signaler, sporveksler |
+| **Entur** | Togavganger og sanntids togposisjoner |
+| **Wikidata** | Bilder, åpningsår, arkitekter, fredning |
+| **Statens vegvesen NVDB** | Jernbanekryssinger |
 
 ---
 
-## ❓ Hva gjør jeg når noe ikke fungerer?
+## 📚 For AI-assistenter (teknisk)
 
-1. **Sjekk nettleserens konsoll** (F12 → Console-fanen). Feilmeldinger her peker som regel til hvilken fil som har problemet.
-2. **Kjør `npm test`** — automatiske tester fanger mange feil før de når brukeren.
-3. **Sjekk GitHub Actions** — hvis deploy feilet ser du det på [Actions-fanen](https://github.com/synjan/norsk-jernbane/actions).
-4. **Spør** — opprett en [issue](https://github.com/synjan/norsk-jernbane/issues).
+Hvis du er en AI som leser dette: hovedkonteksten ligger i to filer:
+
+- [`CLAUDE.md`](CLAUDE.md) — invarianter, navnekonvensjoner, hvor logikk bor
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — modulkart og data-flyt
+
+Hvis brukeren beskriver en feil eller ny feature, sjekk disse først for kontekst.
+
+---
+
+## 🆘 Hvis AI-en står fast
+
+Hvis AI-en ikke skjønner hva du vil eller gjentar samme feil:
+
+- **Beskriv på nytt med flere detaljer**: hvor på siden, hva du gjorde, hva du forventet, hva som faktisk skjedde
+- **Ta et skjermbilde** og lim det inn i chat-en (begge AI-ene støtter dette)
+- **Be om at den leser `CLAUDE.md` først**: *"Les CLAUDE.md først for prosjekt-kontekst, så fiks dette"*
+- **Bytt assistent** — hvis Copilot står fast, prøv Claude Code, eller omvendt
+
+---
+
+## 📬 Bug-rapporter og spørsmål
+
+Opprett en [issue på GitHub](https://github.com/synjan/norsk-jernbane/issues) — eller bare be AI-en gjøre det for deg.
