@@ -169,6 +169,60 @@ Følg deployen på [Actions-fanen](https://github.com/synjan/norsk-jernbane/acti
 
 ---
 
+## 🐛 Vanlige feilrapporter — hvor skal du lete?
+
+| Symptom | Mest sannsynlig årsak | Filer å sjekke |
+|---------|----------------------|----------------|
+| Stasjon vises feil sted | OSM-data, ikke kode | Fiks i [OpenStreetMap](https://www.openstreetmap.org), kjør så `npm run fetch && npm run process` |
+| Live tog hopper rundt eller forsvinner | Snap-til-bane fallback eller Entur API endret | `public/app.js` — `currentLerpLatLng`, `refreshLiveTrains` |
+| Avganger lastes ikke i stasjons-popup | Entur API-feil eller endret schema | `public/entur.js` — sjekk browser console (F12) |
+| Bane-side krasjer for én bane | Manglende felt i `routes[]` | `public/bane.js` — `renderStatsCard`, sjekk `public/data/stats.json` |
+| Dashboard viser "—" overalt | `stats.json` mangler eller cachet gammel versjon | Kjør `npm run process`, hard-refresh nettleser |
+| Kart blir hvitt på mobil | Leaflet tile-loading-problem | Sjekk nettverk i DevTools (F12 → Network) |
+| Filter virker ikke som forventet | Ny OSM-tag som ikke håndteres | `public/app.js` — `featureVisible`, `data/process.py` — `ALLOWED_RAILWAY_TYPES` |
+| Stasjon i sidebar-liste duplikert | OSM tagger stasjon som flere noder | `public/bane.js` — `dedupeByName` (kan trenge tilpasning) |
+
+**Generell debugging-strategi:**
+1. Åpne nettleserens konsoll (F12 → Console) — feilmeldinger der peker til fil + linje
+2. Slå på «Disable cache» i Network-fanen mens DevTools er åpen
+3. Sjekk om problemet vises på live-siden eller bare lokalt
+4. Kjør `npm test` — kanskje en eksisterende test fanger problemet
+
+---
+
+## 🎯 Backlog — naturlige neste skritt
+
+Idéer for videreutvikling, sortert etter innsats. Plukk det du synes virker interessant.
+
+### Quick wins (1-2 timer)
+- **Light/dark theme-toggle** — bytt på CSS-variabler i `style.css`. Bruker `prefers-color-scheme` som default.
+- **Print-CSS for bane-side** — slik onepager.html allerede har; lag A4-vennlig utskrift av en banes statistikk.
+- **Mobile-bottom-sheet** for popups — i dag åpner stasjons-popups som vanlige Leaflet-popups på mobil, ofte avskåret.
+- **Vis tunnel/bro-segmenter med eget mønster** på kartet (stiplet for tunnel) — utvider `styleForElectrification` osv.
+- **Lagre filterstate i `localStorage`** — i dag bare URL-hash; brukere kommer tilbake til samme visning.
+
+### Mellomstore (1-2 dager)
+- **Modulisering av `public/app.js`** (1700+ linjer) — bryt opp i `live-trains.js`, `search.js`, `popups.js`, `url-state.js`, `filters.js`. Ingen byggesteg, bare ES modules.
+- **Stasjons-side-utvidelser**: hent vær fra MET API, eller bilder fra Wikidata Commons.
+- **Bygg om dashboard-grid til fane-struktur** (Klima / Infrastruktur / Reise / Historie) — 24 seksjoner er mye på én side.
+- **A11y-revisjon** — sjekk med screen reader, fiks aria-labels, kontrast på popups.
+- **Service worker for offline-bruk** — cache `stats.json` + tiles for nylig besøkte områder.
+
+### Større prosjekter (uke+)
+- **PMTiles for `railways.geojson`** (8,4 MB → tile-basert) — bedre mobil-ytelse, men krever refaktor av filter-pipelinen.
+- **Snap-til-bane forbedring**: håndter cross-segment-tweens (i dag faller den tilbake til LERP når from/to er på forskjellige sporsegmenter).
+- **Høydedata fra Kartverket DEM** — stigning per km, åpner ny dimensjon for analyse.
+- **Multi-language** (norsk → engelsk) — krever i18n-infrastruktur.
+- **Historiske data** — sammenlign OSM-snapshots over tid, vis hvor mye jernbane som er bygget hver tiår.
+
+### Vedlikeholds-rutiner (jevnlig)
+- **Månedlig**: kjør `npm run fetch && npm run process`, commit oppdaterte filer. OSM endrer seg hele tiden.
+- **Når Entur endrer API**: sjekk `public/entur.js` mot [Entur API-docs](https://developer.entur.org/) — har skjedd noen ganger.
+- **Når Playwright-versjon oppdateres**: `npm update playwright`, kjør `npm test`. Browser-API-endringer kan bryte tester.
+- **Når Python-avhengigheter får sikkerhets-CVE-er**: `pip install --upgrade -r requirements.txt`, kjør pipelinen.
+
+---
+
 ## 📁 Hva ligger hvor?
 
 ```
