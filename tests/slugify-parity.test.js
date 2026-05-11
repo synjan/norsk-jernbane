@@ -3,9 +3,17 @@
 // som JS aldri finner — derfor er paritet kritisk.
 
 import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { chromium } from "playwright";
 
 const BASE_URL = process.env.BASE_URL || "http://localhost:5174";
+
+// Velg riktig Python: lokal venv hvis den finnes (rask + isolert), ellers
+// system-python (CI installerer requirements.txt mot system pip).
+const VENV_PY = process.platform === "win32"
+  ? ".venv/Scripts/python.exe"
+  : ".venv/bin/python";
+const PYTHON = existsSync(VENV_PY) ? VENV_PY : "python3";
 
 const SAMPLES = [
   "Bergensbanen",
@@ -30,11 +38,11 @@ import sys
 samples = ${JSON.stringify(SAMPLES)}
 print(json.dumps([slugify(s) for s in samples]))
 `;
-  const res = spawnSync(".venv/Scripts/python.exe", ["-c", code], {
+  const res = spawnSync(PYTHON, ["-c", code], {
     encoding: "utf-8",
   });
   if (res.status !== 0) {
-    throw new Error(`python slugify feilet: ${res.stderr}`);
+    throw new Error(`python slugify feilet (${PYTHON}): ${res.stderr || res.error?.message}`);
   }
   return JSON.parse(res.stdout);
 }
