@@ -1,6 +1,12 @@
 // Felles topbar-funksjoner: aktiv-side-markering + bane-velger-dropdown.
 // Topbar-HTML-en ligger i hver enkelt side så vi slipper en build-step
 // for komponentinkludering. Denne fila fyller bare inn dynamikken.
+//
+// Lastes av: alle toppnivå-sider (index, dashboard, bane, stasjon, tog,
+//            planovergang) — auto-initialiserer på DOMContentLoaded.
+// Krever: nav-lenker med `data-page="<filename>"`, og en `.bane-dropdown`
+//         med `.bane-list` + `.bane-search` for bane-velgeren.
+// Eksponerer: ingenting globalt — kun side-effekter på DOM.
 
 (function () {
   "use strict";

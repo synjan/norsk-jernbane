@@ -1,7 +1,7 @@
 // Demo-video: scripted gjennomgang av prosjektets integrasjoner.
 // Tar opp en .webm-video som viser alle funksjoner i bruk.
 //
-// Kjør: BASE_URL=http://localhost:5174 node tests/demo.mjs
+// Kjør: BASE_URL=http://localhost:5174 node scripts/demo.mjs
 // Output: tests/videos/<timestamp>/demo.webm
 //
 // Krever at en server kjører (default 5174). For HD-oppløsning brukes

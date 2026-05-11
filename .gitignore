@@ -17,6 +17,17 @@ data/cache/
 # Node
 node_modules/
 
-# Test artifacts (regenerable, large)
+# Test/script artifacts (regenerable, large)
 tests/screenshots/
 tests/videos/
+scripts/screenshots/
+scripts/videos/
+
+# Ad-hoc screenshot-artifacts i repo-rot (fra MCP-Playwright-sesjoner)
+/*.png
+
+# Playwright MCP cache
+.playwright-mcp/
+
+# Lokale verktøy-rester
+/Python/

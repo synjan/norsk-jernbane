@@ -1,0 +1,78 @@
+name: CI
+
+# Kjører tester som ikke krever Entur eller andre live APIer. Entur-baserte
+# tester (entur.test.js, entur-situations.test.js, live-trains.test.js,
+# tog-page.test.js) er ekskludert fordi de er flaky i CI uten et stabilt
+# fake-svar. De skal kjøres lokalt.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Install Playwright (chromium only)
+        run: npx playwright install --with-deps chromium
+
+      - name: Start static server
+        run: |
+          python3 -m http.server -d public 5174 >/tmp/server.log 2>&1 &
+          echo $! > /tmp/server.pid
+          for i in {1..30}; do
+            if curl -fsS http://localhost:5174/ >/dev/null 2>&1; then
+              echo "server ready after ${i} tries"
+              exit 0
+            fi
+            sleep 0.5
+          done
+          echo "server failed to start"; cat /tmp/server.log; exit 1
+
+      - name: Parity tests (py↔js consistency)
+        env:
+          BASE_URL: http://localhost:5174
+        run: |
+          node tests/slugify-parity.test.js
+          node tests/binning-parity.test.js
+
+      - name: UI smoketests
+        env:
+          BASE_URL: http://localhost:5174
+        run: |
+          node tests/overview-loading.test.js
+          node tests/filter.test.js
+          node tests/dashboard.test.js
+          node tests/live-trains-snap.test.js
+
+      - name: Stop server
+        if: always()
+        run: |
+          if [ -f /tmp/server.pid ]; then kill "$(cat /tmp/server.pid)" || true; fi
+
+      - name: Upload screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-screenshots
+          path: tests/screenshots/
+          retention-days: 7

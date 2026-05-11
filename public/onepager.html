@@ -6,120 +6,144 @@
   <title>Norsk jernbane — onepager</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Onepager-spesifikk styling — print-vennlig A4-aktig layout. */
+    /* Onepager-spesifikk styling — modern-minimal, print-vennlig A4-layout.
+       Arver design-tokens fra style.css, men har egen kompakt komponering
+       siden den skal kunne stå alene som rapport-eksport. */
     body.onepager {
-      background: #f8fafc;
-      font-family: var(--ff-sans, system-ui, sans-serif);
-      color: #0f172a;
+      background: var(--c-bg);
+      font-family: var(--font-body);
+      color: var(--c-text);
       margin: 0;
+      -webkit-font-smoothing: antialiased;
     }
     .op-page {
       max-width: 1080px;
       margin: 0 auto;
-      padding: var(--sp-4) var(--sp-3);
+      padding: var(--sp-5) var(--sp-4);
     }
     .op-header {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       gap: var(--sp-3);
-      padding-bottom: var(--sp-3);
-      border-bottom: 2px solid #1a3a52;
+      padding-bottom: var(--sp-4);
+      border-bottom: 1px solid var(--c-border);
     }
     .op-mark {
-      font-size: 40px;
-      color: #1a3a52;
+      font-size: 32px;
+      color: var(--c-accent);
       line-height: 1;
+      letter-spacing: -0.05em;
     }
     .op-title { flex: 1; }
     .op-title h1 {
       margin: 0;
+      font-family: var(--font-display);
       font-size: 28px;
-      color: #1a3a52;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--c-text);
     }
     .op-title .tagline {
       margin: 4px 0 0;
       color: var(--c-muted);
-      font-size: 14px;
+      font-size: 13px;
     }
     .op-meta {
       text-align: right;
-      font-size: 12px;
+      font-size: 11px;
       color: var(--c-muted);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.5;
     }
 
     .op-hero {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: var(--sp-2);
-      margin: var(--sp-3) 0;
+      margin: var(--sp-4) 0;
     }
     .op-stat {
-      background: white;
+      background: var(--c-surface);
       border: 1px solid var(--c-border);
-      border-radius: 8px;
-      padding: var(--sp-3);
-      text-align: center;
+      border-radius: var(--radius-md);
+      padding: var(--sp-3) var(--sp-3) var(--sp-3);
+      text-align: left;
     }
     .op-stat .num {
       display: block;
+      font-family: var(--font-display);
       font-size: 32px;
-      font-weight: 700;
-      color: #1a3a52;
-      line-height: 1.1;
+      font-weight: 600;
+      color: var(--c-text);
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.05;
     }
     .op-stat .desc {
       display: block;
-      margin-top: 4px;
-      font-size: 11px;
+      margin-top: 6px;
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.08em;
       color: var(--c-muted);
+      font-weight: 500;
     }
 
     .op-section {
-      background: white;
+      background: var(--c-surface);
       border: 1px solid var(--c-border);
-      border-radius: 8px;
-      padding: var(--sp-3);
+      border-radius: var(--radius-md);
+      padding: var(--sp-4);
       margin-bottom: var(--sp-3);
     }
     .op-section h2 {
-      margin: 0 0 var(--sp-2) 0;
-      font-size: 16px;
-      color: #1a3a52;
+      margin: 0 0 var(--sp-3) 0;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--c-muted-strong);
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.08em;
     }
-    .op-section p { margin: 0; line-height: 1.55; }
+    .op-section p { margin: 0; line-height: 1.6; font-size: 13px; }
+    .op-section code {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      background: var(--c-surface-alt);
+      padding: 1px 6px;
+      border-radius: 3px;
+      color: var(--c-text);
+    }
 
     .op-features {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--sp-2);
+      gap: var(--sp-3);
     }
     .op-feature {
       display: flex;
       gap: var(--sp-2);
-      padding: var(--sp-2);
-      background: #f8fafc;
-      border-radius: 6px;
-      border-left: 3px solid #1a3a52;
+      padding: var(--sp-3);
+      background: var(--c-surface-alt);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--c-border);
     }
     .op-feature .icon {
-      font-size: 24px;
-      line-height: 1;
+      font-size: 20px;
+      line-height: 1.2;
       flex-shrink: 0;
+      opacity: 0.85;
     }
     .op-feature h3 {
-      margin: 0 0 2px 0;
-      font-size: 14px;
-      color: #0f172a;
+      margin: 0 0 4px 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--c-text);
     }
     .op-feature p {
       margin: 0;
       font-size: 12px;
-      color: #475569;
-      line-height: 1.45;
+      color: var(--c-muted-strong);
+      line-height: 1.5;
     }
 
     .op-sources {
@@ -129,29 +153,29 @@
       font-size: 12px;
     }
     .op-source {
-      padding: var(--sp-2);
-      border-left: 3px solid var(--c-warning, #d97706);
-      background: #fef3c7;
-      border-radius: 0 4px 4px 0;
+      padding: var(--sp-3);
+      border: 1px solid var(--c-border);
+      background: var(--c-surface-alt);
+      border-radius: var(--radius-sm);
     }
-    .op-source strong { display: block; margin-bottom: 2px; }
+    .op-source strong { display: block; margin-bottom: 2px; color: var(--c-text); }
     .op-source .lic {
       color: var(--c-muted);
       font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.06em;
     }
 
     .op-footer {
-      margin-top: var(--sp-3);
-      padding-top: var(--sp-2);
+      margin-top: var(--sp-4);
+      padding-top: var(--sp-3);
       border-top: 1px solid var(--c-border);
       font-size: 11px;
       color: var(--c-muted);
       display: flex;
       justify-content: space-between;
     }
-    .op-footer a { color: var(--c-primary); text-decoration: none; }
+    .op-footer a { color: var(--c-accent); text-decoration: none; }
 
     .op-pages {
       display: grid;
@@ -159,21 +183,27 @@
       gap: var(--sp-2);
     }
     .op-page-card {
-      padding: var(--sp-2);
-      background: #f8fafc;
-      border-radius: 6px;
-      text-align: center;
+      padding: var(--sp-3);
+      background: var(--c-surface-alt);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-sm);
+      text-align: left;
+      transition: border-color 120ms ease, background 120ms ease;
+    }
+    .op-page-card:hover {
+      border-color: var(--c-border-strong);
+      background: var(--c-surface);
     }
     .op-page-card a {
-      color: #1a3a52;
+      color: var(--c-text);
       font-weight: 600;
       text-decoration: none;
       font-size: 13px;
     }
     .op-page-card .url {
       display: block;
-      margin-top: 2px;
-      font-family: monospace;
+      margin-top: 4px;
+      font-family: var(--font-mono);
       font-size: 10px;
       color: var(--c-muted);
     }
@@ -191,7 +221,7 @@
     <header class="op-header">
       <span class="op-mark" aria-hidden="true">▮▮</span>
       <div class="op-title">
-        <h1>Norsk jernbane — kart &amp; dashbord</h1>
+        <h1>Norsk jernbane — kart &amp; innsikt</h1>
         <p class="tagline">Åpen visualisering av norsk jernbaneinfrastruktur, sanntid og kulturarv</p>
       </div>
       <div class="op-meta">
@@ -220,12 +250,34 @@
     </section>
 
     <section class="op-section">
+      <h2>Nasjonale høydepunkter</h2>
+      <div class="op-hero" style="margin: 0;">
+        <div class="op-stat">
+          <span class="num" id="stat-tunnel">—</span>
+          <span class="desc">km tunnel</span>
+        </div>
+        <div class="op-stat">
+          <span class="num" id="stat-oldest">—</span>
+          <span class="desc">eldste stasjon</span>
+        </div>
+        <div class="op-stat">
+          <span class="num" id="stat-hub">—</span>
+          <span class="desc">ruter via Oslo S</span>
+        </div>
+        <div class="op-stat">
+          <span class="num" id="stat-unserved">—</span>
+          <span class="desc">største ubetjente by</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="op-section">
       <h2>Hva er dette?</h2>
       <p>
         En åpen webapp som viser <strong>alle norske togtraséer</strong> hentet fra OpenStreetMap, beriket med
         sanntid fra Entur og kulturminnedata fra Wikidata. Ingen byggesteg, ingen backend — bare statiske
         filer servert direkte fra et CDN-vennlig <code>public/</code>-bibliotek. Pipeline i Python henter og
-        prosesserer data; frontend i ren JavaScript bruker Leaflet til kart og Chart.js til dashbord.
+        prosesserer data; frontend i ren JavaScript bruker Leaflet til kart og Chart.js til innsiktssider.
       </p>
     </section>
 
@@ -237,7 +289,7 @@
           <span class="url">/index.html</span>
         </div>
         <div class="op-page-card">
-          <a href="dashboard.html">📊 Dashbord</a>
+          <a href="dashboard.html">📊 Innsikt</a>
           <span class="url">/dashboard.html</span>
         </div>
         <div class="op-page-card">
@@ -287,7 +339,7 @@
           <span class="icon" aria-hidden="true">🚂</span>
           <div>
             <h3>Live tog på kart</h3>
-            <p>Tog som glir i sanntid via Entur Vehicles GraphQL. Posisjon hentes hvert 15. sek, markøren animerer kontinuerlig mellom dem.</p>
+            <p>Tog som glir i sanntid via Entur Vehicles GraphQL. Posisjon hentes hvert 15. sek, og markøren følger faktisk skinnegeometri mellom rapportene — krummer med banen i stedet for å kutte over fjord og fjell.</p>
           </div>
         </div>
         <div class="op-feature">
@@ -342,8 +394,8 @@
         <div class="op-feature">
           <span class="icon" aria-hidden="true">📊</span>
           <div>
-            <h3>Dashbord</h3>
-            <p>Total km, elektrifiseringsgrad, befolkningsdekning, CO₂-anslag og sammenligning med naboland.</p>
+            <h3>Innsikt</h3>
+            <p>Nasjonale KPIs, infrastruktur (elektrifisering, hastighet, spor), topografi (tunnel/bro), historisk perspektiv, knutepunkter og potensial for økt togbruk.</p>
           </div>
         </div>
       </div>
@@ -416,6 +468,30 @@
             (f) => ["station", "halt"].includes(f.properties.railway)
           ).length;
           document.getElementById("stat-stations").textContent = stationCount.toLocaleString("nb-NO");
+        }
+
+        // Nasjonale høydepunkter — nye nøkkeltall fra utvidet stats.json.
+        const fmt = (v) => v != null ? Math.round(v).toLocaleString("nb-NO") : "—";
+        if (stats.topography) {
+          document.getElementById("stat-tunnel").textContent = fmt(stats.topography.tunnel_km);
+        }
+        if (stats.history?.oldest) {
+          document.getElementById("stat-oldest").textContent = String(stats.history.oldest.year);
+          const desc = document.querySelector("#stat-oldest + .desc");
+          if (desc) desc.textContent = `eldste: ${stats.history.oldest.name}`;
+        }
+        const topHub = stats.network?.hubs?.[0];
+        if (topHub) {
+          document.getElementById("stat-hub").textContent = String(topHub.route_count);
+          const desc = document.querySelector("#stat-hub + .desc");
+          if (desc) desc.textContent = `ruter via ${topHub.name}`;
+        }
+        const topUnserved = stats.population_coverage?.largest_unserved?.[0];
+        if (topUnserved) {
+          document.getElementById("stat-unserved").textContent =
+            `${Math.round(topUnserved.population / 1000)}k`;
+          const desc = document.querySelector("#stat-unserved + .desc");
+          if (desc) desc.textContent = `${topUnserved.name} — ${topUnserved.distance_km} km til tog`;
         }
 
         const dateEl = document.getElementById("op-date");

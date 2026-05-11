@@ -33,6 +33,18 @@ ALLOWED_STATION_TYPES = {"station", "halt", "stop"}
 
 # UTM 33N — egnet for Norge, gir avstand i meter.
 TO_UTM33 = Transformer.from_crs("EPSG:4326", "EPSG:25833", always_xy=True)
+TO_WGS84 = Transformer.from_crs("EPSG:25833", "EPSG:4326", always_xy=True)
+
+# Toleranse i meter for overview-versjonen av railways.geojson. 100 m er
+# usynlig ved zoom 5–9 (Norge-vid til regionalt nivå). Klienten bytter
+# til full-versjonen ved zoom-inn (>=10).
+OVERVIEW_SIMPLIFY_TOLERANCE_M = 100
+
+# Antall desimaler for lat/lon i overview-fila. 4 desimaler ≈ 11 m presisjon
+# ved ekvator, ~5 m i Norge — langt under simplifiseringsterskelen på 100 m.
+# Effekten på filstørrelse er beskjeden (~1%) fordi JSON-struktur og
+# properties dominerer, men kostnaden er null.
+OVERVIEW_COORD_DECIMALS = 4
 
 # Hvilke tags vi tar med videre til GeoJSON-en (resten kastes for å holde filen liten).
 RAILWAY_TAGS = {
@@ -77,6 +89,26 @@ def parse_speed_kmh(raw: str | None) -> float | None:
 def slim_properties(props: dict, allowed: set[str]) -> dict:
     """Behold kun tags vi bryr oss om, drop tomme."""
     return {k: v for k, v in props.items() if k in allowed and v not in (None, "")}
+
+
+def simplify_feature(feature: dict, tolerance_m: float, coord_decimals: int) -> dict:
+    """Returner kopi av feature med Douglas-Peucker-simplifisert geometri.
+
+    Simplifiserer i UTM33 (meter) for konsistent toleranse uavhengig av
+    breddegrad, runder deretter koordinatene for å redusere JSON-størrelse.
+    Properties beholdes urørt — `length_km` reflekterer full geometri."""
+    coords = feature["geometry"]["coordinates"]
+    line_utm = LineString([TO_UTM33.transform(x, y) for x, y in coords])
+    simplified = line_utm.simplify(tolerance_m, preserve_topology=False)
+    new_coords = [
+        [round(lon, coord_decimals), round(lat, coord_decimals)]
+        for lon, lat in (TO_WGS84.transform(x, y) for x, y in simplified.coords)
+    ]
+    return {
+        "type": "Feature",
+        "geometry": {"type": "LineString", "coordinates": new_coords},
+        "properties": feature["properties"],
+    }
 
 
 # Bøtte- og CO₂-helpers — speilet i public/helpers.js. Paritet håndheves
@@ -162,8 +194,11 @@ def slugify(name: str) -> str:
     return s or "uten-navn"
 
 
-def split_features(features: Iterable[dict]) -> tuple[list[dict], list[dict]]:
-    railways, stations = [], []
+def split_features(features: Iterable[dict]) -> tuple[list[dict], list[dict], list[dict], list[dict]]:
+    """Returner (railways, stations, signals, switches) som separate lister.
+    Signaler og sporveksler holdes som rå tag-dicts (vi trenger ikke
+    geometri-egenskaper utover punktet, og aggregeringen er det vi bryr oss om)."""
+    railways, stations, signals, switches = [], [], [], []
     for feat in features:
         geom = feat.get("geometry")
         props = feat.get("properties") or {}
@@ -199,7 +234,49 @@ def split_features(features: Iterable[dict]) -> tuple[list[dict], list[dict]]:
                 "geometry": geom,
                 "properties": slim,
             })
-    return railways, stations
+        elif gtype == "Point" and tags.get("railway") == "signal":
+            signals.append(tags)
+        elif gtype == "Point" and tags.get("railway") == "switch":
+            switches.append(tags)
+    return railways, stations, signals, switches
+
+
+def compute_signal_switch_stats(
+    signals: list[dict], switches: list[dict], total_km: float,
+) -> dict:
+    """Aggregerer total + per-100km-tetthet + signaltype-fordeling.
+    Signaltype hentes fra `railway:signal:<type>`-prefixede tagger (main,
+    distant, combined, speed_limit, form, shunting, ...). Et signal kan ha
+    flere subtagger; vi teller den første gyldige type-varianten."""
+    # `direction` og `position` er metadata på signalet, ikke en signaltype.
+    # OSM bruker både `railway:signal:direction=...` (frittstående) og
+    # `railway:signal:main:direction=...` (med signal-type-prefix) — vi må
+    # skippe begge formene.
+    NOISE_TYPES = {"direction", "position"}
+    subtype_counts: dict[str, int] = defaultdict(int)
+    for s in signals:
+        for k in s:
+            if not k.startswith("railway:signal:"):
+                continue
+            suffix = k.replace("railway:signal:", "")
+            # Topp-typen er alt før første kolon: "main:form" → "main".
+            top = suffix.split(":")[0]
+            if top in NOISE_TYPES:
+                continue
+            subtype_counts[top] += 1
+            break  # ett signal teller én gang, selv om det har flere typer
+
+    return {
+        "signals": {
+            "total": len(signals),
+            "per_100km": round(100 * len(signals) / total_km, 1) if total_km else 0,
+            "by_type": dict(sorted(subtype_counts.items(), key=lambda kv: -kv[1])),
+        },
+        "switches": {
+            "total": len(switches),
+            "per_100km": round(100 * len(switches) / total_km, 1) if total_km else 0,
+        },
+    }
 
 
 def normalize_operators(railways: list[dict]) -> int:
@@ -254,6 +331,219 @@ def track_capacity_km(railways: list[dict]) -> dict[str, float]:
             continue
         buckets[b] += props.get("length_km", 0)
     return {k: round(v, 1) for k, v in buckets.items()}
+
+
+def is_tunnel(props: dict) -> bool:
+    """OSM `tunnel`-tag kan være 'yes', 'culvert', 'building_passage', 'no'.
+    Alt unntatt 'no' og tomt regnes som tunnel (også 'culvert' — kort tunnel
+    teller fortsatt som ikke-åpen mark)."""
+    val = (props.get("tunnel") or "").strip().lower()
+    return bool(val) and val != "no"
+
+
+def is_bridge(props: dict) -> bool:
+    """OSM `bridge`-tag — 'yes', 'viaduct', 'culvert', 'no'. Alt unntatt 'no'
+    og tomt regnes som bro/viadukt. Tunnel har presedens hvis begge er satt
+    (sjelden i OSM)."""
+    val = (props.get("bridge") or "").strip().lower()
+    return bool(val) and val != "no"
+
+
+def topography_bucket(props: dict) -> str:
+    """Klassifiser segment som 'tunnel', 'bro' eller 'åpen mark'. Tunnel-tag
+    har presedens dersom begge skulle være satt — det er mer dominerende
+    visuelt og økonomisk."""
+    if is_tunnel(props):
+        return "tunnel"
+    if is_bridge(props):
+        return "bro"
+    return "åpen mark"
+
+
+def compute_topography(railways: list[dict]) -> dict[str, Any]:
+    """Aggregerer km i tunnel / på bro / åpen mark, både nasjonalt og per
+    rutenavn. Krever ingen ekstra eksterne data — bruker `tunnel`/`bridge`
+    OSM-tagene som allerede er beholdt på railways.geojson."""
+    buckets = {"tunnel": 0.0, "bro": 0.0, "åpen mark": 0.0}
+    longest_tunnel_km = 0.0
+    by_route: dict[str, dict[str, float]] = defaultdict(
+        lambda: {"tunnel": 0.0, "bro": 0.0, "åpen mark": 0.0, "total": 0.0}
+    )
+
+    for f in railways:
+        props = f["properties"]
+        # Sidespor (siding/yard/spur/crossover) ekskluderes — de er ofte
+        # korte og kan blåse opp tunnel-andelen kunstig (rangerings-tunneler).
+        if props.get("service") in EXCLUDED_SERVICE:
+            continue
+        length = props.get("length_km", 0)
+        bucket = topography_bucket(props)
+        buckets[bucket] += length
+        if bucket == "tunnel" and length > longest_tunnel_km:
+            longest_tunnel_km = length
+        name = props.get("name") or props.get("ref")
+        if name:
+            r = by_route[name]
+            r[bucket] += length
+            r["total"] += length
+
+    # Topp 5 baner med høyest tunnel-andel. Filtrer ut korte ruter (<50 km)
+    # for å unngå at en kort fjelltunnel-stub gir misvisende 100%.
+    top_tunnel = []
+    for name, r in by_route.items():
+        if r["total"] < 50:
+            continue
+        pct = 100 * r["tunnel"] / r["total"] if r["total"] else 0
+        top_tunnel.append({
+            "name": name,
+            "slug": slugify(name),
+            "tunnel_km": round(r["tunnel"], 1),
+            "total_km": round(r["total"], 1),
+            "tunnel_pct": round(pct, 1),
+        })
+    top_tunnel.sort(key=lambda r: r["tunnel_pct"], reverse=True)
+
+    return {
+        "tunnel_km": round(buckets["tunnel"], 1),
+        "bridge_km": round(buckets["bro"], 1),
+        "surface_km": round(buckets["åpen mark"], 1),
+        "longest_tunnel_segment_km": round(longest_tunnel_km, 2),
+        "top_tunnel_routes": top_tunnel[:5],
+        "by_route": {  # brukes til å berike compute_routes-output
+            name: {
+                "tunnel_km": round(r["tunnel"], 2),
+                "bridge_km": round(r["bro"], 2),
+                "surface_km": round(r["åpen mark"], 2),
+            }
+            for name, r in by_route.items()
+        },
+    }
+
+
+_OPENED_YEAR_RE = re.compile(r"(\d{4})")
+
+
+def parse_opened_year(raw: Any) -> int | None:
+    """Wikidata `opened` kan være '1854-01-01', '1854', '1854-09', eller
+    rart formatert. Vi tar første 4-siffer-gruppe som er gyldig år (1800–2100)."""
+    if not raw:
+        return None
+    m = _OPENED_YEAR_RE.search(str(raw))
+    if not m:
+        return None
+    year = int(m.group(1))
+    if 1800 <= year <= 2100:
+        return year
+    return None
+
+
+def compute_history(output_dir: Path) -> dict[str, Any] | None:
+    """Aggregerer Wikidata-stasjonsmetadata (åpningsår, fredning, arkitekter).
+    Returnerer None om wikidata_stations.json ikke finnes — frontend faller
+    tilbake til "ingen historiske data" i den seksjonen."""
+    src = output_dir / "wikidata_stations.json"
+    if not src.exists():
+        print(f"  (hopper over historikk — {src.name} mangler)")
+        return None
+
+    records = json.loads(src.read_text(encoding="utf-8"))
+    if not records:
+        return None
+
+    by_decade: dict[int, int] = defaultdict(int)
+    architects: dict[str, int] = defaultdict(int)
+    heritage_count = 0
+    oldest: tuple[int, str] | None = None  # (year, station_key)
+    newest: tuple[int, str] | None = None
+    matched_count = 0
+
+    for station_key, rec in records.items():
+        # Fredning og arkitekt er uavhengig av åpningsår — tell dem først
+        # så stasjoner uten `opened`-tag fortsatt bidrar. Tidligere lå disse
+        # inne i `if year is None: continue`-guarden, som undertelte fredet-
+        # antallet i dashboardet.
+        if rec.get("heritage"):
+            heritage_count += 1
+        for a in rec.get("architects") or []:
+            if a:
+                architects[a] += 1
+
+        year = parse_opened_year(rec.get("opened"))
+        if year is None:
+            continue
+        matched_count += 1
+        decade = (year // 10) * 10
+        by_decade[decade] += 1
+        if oldest is None or year < oldest[0]:
+            oldest = (year, station_key)
+        if newest is None or year > newest[0]:
+            newest = (year, station_key)
+
+    if not by_decade:
+        return None
+
+    # Bygg sammenhengende tiår-serie fra eldste til seneste tiår — gjør at
+    # frontend kan rendre x-aksen uten å hoppe over tomme tiår.
+    min_dec = min(by_decade.keys())
+    max_dec = max(by_decade.keys())
+    decades_series = [
+        {"decade": d, "label": f"{d}-tallet", "count": by_decade.get(d, 0)}
+        for d in range(min_dec, max_dec + 10, 10)
+    ]
+
+    top_architects = sorted(architects.items(), key=lambda kv: -kv[1])[:5]
+
+    return {
+        "stations_with_year": matched_count,
+        "by_decade": decades_series,
+        "oldest": {"year": oldest[0], "name": oldest[1]} if oldest else None,
+        "newest": {"year": newest[0], "name": newest[1]} if newest else None,
+        "heritage_count": heritage_count,
+        "top_architects": [
+            {"name": name, "count": count} for name, count in top_architects
+        ],
+        "note": "Basert på Wikidata SPARQL — noen stasjoner mangler åpningsår.",
+    }
+
+
+def compute_network_metrics(output_dir: Path) -> dict[str, Any] | None:
+    """Aggregerer knutepunkter (stasjoner med flest ruter). Leser
+    station_routes.json fra fetch_routes.py. Returnerer None om filen mangler.
+
+    NB: Stasjonstetthet PER trunkbane (km/stasjon på Bergensbanen osv.) ble
+    vurdert, men droppet — OSM `route=train`-relasjoner navngis etter
+    *service* (L1, RE10, Rauma-banen) og matcher sjelden trunkbane-`name`
+    fra railways.geojson. Tallene ble misvisende. Fix krever geo-buffer-match
+    av stasjoner mot rute-LineStrings — utenfor scope nå.
+    """
+    src = output_dir / "station_routes.json"
+    if not src.exists():
+        print(f"  (hopper over nettverk — {src.name} mangler)")
+        return None
+
+    station_routes: dict[str, list[dict]] = json.loads(src.read_text(encoding="utf-8"))
+    if not station_routes:
+        return None
+
+    # Knutepunkter: rangering på antall *unike* ruter per stasjon. Dedupe
+    # på rutenavn (fall-back ref) — samme rute tagget med to operator-varianter
+    # i OSM ville ellers vippet mindre stasjoner kunstig opp.
+    hub_scores: list[tuple[str, int, list[str]]] = []
+    for station, route_list in station_routes.items():
+        unique = {(r.get("name") or r.get("ref") or "?") for r in route_list}
+        if not unique:
+            continue
+        hub_scores.append((station, len(unique), sorted(unique)))
+    hub_scores.sort(key=lambda x: (-x[1], x[0]))
+    network_hubs = [
+        {"name": name, "route_count": count, "routes": route_names}
+        for name, count, route_names in hub_scores[:15]
+    ]
+
+    return {
+        "hubs": network_hubs,
+        "note": "Knutepunkt-score teller unike rutenavn fra OSM route=train-relasjoner.",
+    }
 
 
 def parse_population(raw: Any) -> int:
@@ -354,7 +644,10 @@ def estimate_diesel_co2_tonnes(non_electrified_km: float) -> dict[str, Any]:
     }
 
 
-def compute_stats(railways: list[dict], stations: list[dict]) -> dict[str, Any]:
+def compute_stats(
+    railways: list[dict], stations: list[dict],
+    signals: list[dict] | None = None, switches: list[dict] | None = None,
+) -> dict[str, Any]:
     total_km = sum(f["properties"].get("length_km", 0) for f in railways)
     elec_km = sum(
         f["properties"].get("length_km", 0)
@@ -402,6 +695,17 @@ def compute_stats(railways: list[dict], stations: list[dict]) -> dict[str, Any]:
     ]
 
     non_elec_km = total_km - elec_km
+
+    topography = compute_topography(railways)
+    routes = compute_routes(railways, topography["by_route"])
+    history = compute_history(OUTPUT_DIR)
+    network = compute_network_metrics(OUTPUT_DIR)
+    infra = compute_signal_switch_stats(signals or [], switches or [], total_km)
+
+    # `by_route` brukes bare internt for å berike compute_routes — fjern fra
+    # publisert payload for å holde stats.json mindre.
+    topography_public = {k: v for k, v in topography.items() if k != "by_route"}
+
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "total_km": round(total_km, 1),
@@ -418,19 +722,30 @@ def compute_stats(railways: list[dict], stations: list[dict]) -> dict[str, Any]:
         "fastest_sections": fastest_summary,
         "speed_distribution_km": compute_speed_distribution(railways),
         "track_capacity_km": track_capacity_km(railways),
-        "routes": compute_routes(railways),
+        "topography": topography_public,
+        "history": history,
+        "network": network,
+        "signals": infra["signals"],
+        "switches": infra["switches"],
+        "routes": routes,
         "station_count": len(stations),
         "railway_segment_count": len(railways),
         "population_coverage": compute_population_coverage(stations),
     }
 
 
-def compute_routes(railways: list[dict]) -> list[dict]:
+def compute_routes(
+    railways: list[dict],
+    topography_by_route: dict[str, dict[str, float]] | None = None,
+) -> list[dict]:
     """Grupper sporsegmenter på `name` (eller `ref` der navn mangler).
 
     En "rute" er logisk én jernbanelinje (Bergensbanen, Gardermobanen, osv.)
     som i OSM kan ligge som mange små segmenter. Vi samler dem her for
     bedre statistikk og søk.
+
+    Hvis `topography_by_route` sendes inn (fra compute_topography), blir
+    tunnel/bro-km lagt til på hver rute så bane.html kan vise det.
     """
     groups: dict[str, list[dict]] = defaultdict(list)
     for f in railways:
@@ -468,6 +783,7 @@ def compute_routes(railways: list[dict]) -> list[dict]:
             [{"properties": m} for m in members]
         )
 
+        topo = (topography_by_route or {}).get(name) or {}
         routes.append({
             "name": name,
             "slug": slugify(name),
@@ -481,6 +797,8 @@ def compute_routes(railways: list[dict]) -> list[dict]:
             "double_track_pct": round(100 * double_km / tagged_km, 1) if tagged_km else None,
             "track_tag_coverage_pct": round(100 * tagged_km / main_km, 1) if main_km else 0,
             "speed_distribution_km": route_speed_dist,
+            "tunnel_km": topo.get("tunnel_km", 0.0),
+            "bridge_km": topo.get("bridge_km", 0.0),
             "operators": operators,
             "types": railway_types,
         })
@@ -565,8 +883,9 @@ def main() -> int:
     print(f"  {len(features)} features fra Overpass")
 
     print("Splitter spor og stasjoner, beregner lengder…")
-    railways, stations = split_features(features)
-    print(f"  {len(railways)} sporsegmenter, {len(stations)} stasjoner")
+    railways, stations, signals, switches = split_features(features)
+    print(f"  {len(railways)} sporsegmenter, {len(stations)} stasjoner, "
+          f"{len(signals)} signaler, {len(switches)} sporveksler")
 
     changed = normalize_operators(railways)
     if changed:
@@ -578,13 +897,24 @@ def main() -> int:
         json.dumps({"type": "FeatureCollection", "features": railways}),
         encoding="utf-8",
     )
+
+    print(f"Skriver simplifisert overview ({OVERVIEW_SIMPLIFY_TOLERANCE_M} m)…")
+    overview = [
+        simplify_feature(f, OVERVIEW_SIMPLIFY_TOLERANCE_M, OVERVIEW_COORD_DECIMALS)
+        for f in railways
+    ]
+    (OUTPUT_DIR / "railways-overview.geojson").write_text(
+        json.dumps({"type": "FeatureCollection", "features": overview}),
+        encoding="utf-8",
+    )
+
     (OUTPUT_DIR / "stations.geojson").write_text(
         json.dumps({"type": "FeatureCollection", "features": stations}),
         encoding="utf-8",
     )
 
     print("Beregner statistikk…")
-    stats = compute_stats(railways, stations)
+    stats = compute_stats(railways, stations, signals, switches)
     (OUTPUT_DIR / "stats.json").write_text(
         json.dumps(stats, ensure_ascii=False, indent=2),
         encoding="utf-8",

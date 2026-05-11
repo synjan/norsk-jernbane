@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-04-28T12:16:29+00:00",
-  "total_km": 5377.5,
-  "electrified_km": 3532.7,
+  "generated_at": "2026-05-11T19:08:48+00:00",
+  "total_km": 5376.5,
+  "electrified_km": 3532.3,
   "electrified_pct": 65.7,
-  "non_electrified_km": 1844.7,
+  "non_electrified_km": 1844.1,
   "diesel_co2_estimate": {
-    "tonnes_per_year": 84166,
+    "tonnes_per_year": 84138,
     "assumption_text": "10 tog/døgn × 250 t × 0.05 kg CO₂/GTK"
   },
   "voltage_breakdown_km": {
     "15000 V / 16.67 Hz": 3502.3,
-    "6800 V / 25 Hz": 21.9,
+    "6800 V / 25 Hz": 21.6,
     "ukjent V": 8.1,
     "ukjent V / 16.67 Hz": 0.3,
     "15000 V": 0.0
   },
   "operator_breakdown_km": {
-    "Bane NOR": 4356.2,
-    "ukjent": 1001.3,
+    "Bane NOR": 4358.1,
+    "ukjent": 998.4,
     "Norske Skog": 6.5,
     "(Private)": 4.3,
     "Trafikverket": 3.2,
@@ -27,8 +27,8 @@
     "Auto Transport Service": 0.7
   },
   "type_breakdown_km": {
-    "rail": 5315.3,
-    "narrow_gauge": 58.6,
+    "rail": 5314.7,
+    "narrow_gauge": 58.2,
     "preserved": 3.6
   },
   "fastest_sections": [
@@ -134,40 +134,559 @@
     }
   ],
   "speed_distribution_km": {
-    "<80": 530.9,
-    "80–130": 2421.9,
-    "130–160": 741.7,
+    "<80": 532.0,
+    "80–130": 2423.0,
+    "130–160": 739.3,
     "160–200": 164.9,
     "200+": 272.8,
-    "Ukjent": 433.4
+    "Ukjent": 432.4
   },
   "track_capacity_km": {
     "Enkeltspor": 3439.5,
-    "Dobbeltspor": 654.8,
+    "Dobbeltspor": 654.2,
     "Multispor (3+)": 65.4,
-    "Ikke tagget": 405.7
+    "Ikke tagget": 405.3
+  },
+  "topography": {
+    "tunnel_km": 525.1,
+    "bridge_km": 62.1,
+    "surface_km": 3977.2,
+    "longest_tunnel_segment_km": 12.13,
+    "top_tunnel_routes": [
+      {
+        "name": "Vestfoldbanen",
+        "slug": "vestfoldbanen",
+        "tunnel_km": 72.3,
+        "total_km": 192.9,
+        "tunnel_pct": 37.5
+      },
+      {
+        "name": "Drammenbanen",
+        "slug": "drammenbanen",
+        "tunnel_km": 26.0,
+        "total_km": 78.2,
+        "tunnel_pct": 33.3
+      },
+      {
+        "name": "Bergensbanen",
+        "slug": "bergensbanen",
+        "tunnel_km": 102.8,
+        "total_km": 379.8,
+        "tunnel_pct": 27.1
+      },
+      {
+        "name": "Sørlandsbanen",
+        "slug": "sorlandsbanen",
+        "tunnel_km": 68.7,
+        "total_km": 564.3,
+        "tunnel_pct": 12.2
+      },
+      {
+        "name": "Nordlandsbanen",
+        "slug": "nordlandsbanen",
+        "tunnel_km": 53.2,
+        "total_km": 726.1,
+        "tunnel_pct": 7.3
+      }
+    ]
+  },
+  "history": {
+    "stations_with_year": 306,
+    "by_decade": [
+      {
+        "decade": 1850,
+        "label": "1850-tallet",
+        "count": 11
+      },
+      {
+        "decade": 1860,
+        "label": "1860-tallet",
+        "count": 23
+      },
+      {
+        "decade": 1870,
+        "label": "1870-tallet",
+        "count": 54
+      },
+      {
+        "decade": 1880,
+        "label": "1880-tallet",
+        "count": 37
+      },
+      {
+        "decade": 1890,
+        "label": "1890-tallet",
+        "count": 26
+      },
+      {
+        "decade": 1900,
+        "label": "1900-tallet",
+        "count": 59
+      },
+      {
+        "decade": 1910,
+        "label": "1910-tallet",
+        "count": 18
+      },
+      {
+        "decade": 1920,
+        "label": "1920-tallet",
+        "count": 17
+      },
+      {
+        "decade": 1930,
+        "label": "1930-tallet",
+        "count": 9
+      },
+      {
+        "decade": 1940,
+        "label": "1940-tallet",
+        "count": 26
+      },
+      {
+        "decade": 1950,
+        "label": "1950-tallet",
+        "count": 7
+      },
+      {
+        "decade": 1960,
+        "label": "1960-tallet",
+        "count": 6
+      },
+      {
+        "decade": 1970,
+        "label": "1970-tallet",
+        "count": 0
+      },
+      {
+        "decade": 1980,
+        "label": "1980-tallet",
+        "count": 2
+      },
+      {
+        "decade": 1990,
+        "label": "1990-tallet",
+        "count": 7
+      },
+      {
+        "decade": 2000,
+        "label": "2000-tallet",
+        "count": 3
+      },
+      {
+        "decade": 2010,
+        "label": "2010-tallet",
+        "count": 1
+      }
+    ],
+    "oldest": {
+      "year": 1854,
+      "name": "Oslo S"
+    },
+    "newest": {
+      "year": 2016,
+      "name": "Holmestrand"
+    },
+    "heritage_count": 39,
+    "top_architects": [
+      {
+        "name": "Gudmund Hoel",
+        "count": 37
+      },
+      {
+        "name": "Paul Due",
+        "count": 33
+      },
+      {
+        "name": "Paul Armin Due",
+        "count": 25
+      },
+      {
+        "name": "Peter Andreas Blix",
+        "count": 24
+      },
+      {
+        "name": "Georg Andreas Bull",
+        "count": 18
+      }
+    ],
+    "note": "Basert på Wikidata SPARQL — noen stasjoner mangler åpningsår."
+  },
+  "network": {
+    "hubs": [
+      {
+        "name": "Oslo S",
+        "route_count": 42,
+        "routes": [
+          "F1;70",
+          "F4 Bergen→Oslo S",
+          "F4 Myrdal→Oslo S",
+          "F4 Oslo S→Bergen",
+          "F4 Oslo S→Myrdal",
+          "F5 Kristiansand → Oslo sentralstasjon",
+          "F5 Oslo sentralstasjon → Kristiansand",
+          "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+          "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+          "F6",
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "FLY2 Oslo Lufthavn → Oslo S",
+          "FLY2 Oslo Lufthavn → Skøyen",
+          "FLY2 Oslo Lufthavn → Stabekk",
+          "FLY2 Oslo S → Oslo Lufthavn",
+          "FLY2 Skøyen → Oslo Lufthavn",
+          "FLY2 Stabekk → Oslo Lufthavn",
+          "L1 Asker → Oslo S → Lillestrøm",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L1 Spikkestad → Oslo S → Lillestrøm",
+          "L2",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "R14",
+          "R21",
+          "R22",
+          "R23",
+          "R31",
+          "RE10",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Oslo S → Skien",
+          "RE11 Skien → Oslo S",
+          "RE11 Skien → Oslo S → Eidsvoll",
+          "RE11 Skien → Oslo S → Lillestrøm",
+          "RE20",
+          "RE30"
+        ]
+      },
+      {
+        "name": "Nationaltheatret",
+        "route_count": 23,
+        "routes": [
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "FLY2 Oslo Lufthavn → Skøyen",
+          "FLY2 Oslo Lufthavn → Stabekk",
+          "FLY2 Skøyen → Oslo Lufthavn",
+          "FLY2 Stabekk → Oslo Lufthavn",
+          "L1 Asker → Oslo S → Lillestrøm",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L1 Spikkestad → Oslo S → Lillestrøm",
+          "L2",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "R14",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Oslo S → Skien",
+          "RE11 Skien → Oslo S",
+          "RE11 Skien → Oslo S → Eidsvoll",
+          "RE11 Skien → Oslo S → Lillestrøm"
+        ]
+      },
+      {
+        "name": "Asker",
+        "route_count": 21,
+        "routes": [
+          "F4 Bergen→Oslo S",
+          "F4 Oslo S→Bergen",
+          "F5 Kristiansand → Oslo sentralstasjon",
+          "F5 Oslo sentralstasjon → Kristiansand",
+          "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+          "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "L1 Asker → Oslo S → Lillestrøm",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L1 Spikkestad → Oslo S → Lillestrøm",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "R14",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Skien → Oslo S → Eidsvoll"
+        ]
+      },
+      {
+        "name": "Lysaker",
+        "route_count": 21,
+        "routes": [
+          "F5 Kristiansand → Oslo sentralstasjon",
+          "F5 Oslo sentralstasjon → Kristiansand",
+          "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+          "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "FLY2 Oslo Lufthavn → Stabekk",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L2",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "R14",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Oslo S → Skien",
+          "RE11 Skien → Oslo S",
+          "RE11 Skien → Oslo S → Eidsvoll"
+        ]
+      },
+      {
+        "name": "Skøyen",
+        "route_count": 20,
+        "routes": [
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "FLY2 Oslo Lufthavn → Skøyen",
+          "FLY2 Oslo Lufthavn → Stabekk",
+          "FLY2 Skøyen → Oslo Lufthavn",
+          "FLY2 Stabekk → Oslo Lufthavn",
+          "L1 Asker → Oslo S → Lillestrøm",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L1 Spikkestad → Oslo S → Lillestrøm",
+          "L2",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "R14",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Skien → Oslo S → Eidsvoll"
+        ]
+      },
+      {
+        "name": "Lillestrøm",
+        "route_count": 19,
+        "routes": [
+          "F1;70",
+          "F6",
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "L1 Asker → Oslo S → Lillestrøm",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L1 Spikkestad → Oslo S → Lillestrøm",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "R14",
+          "RE10",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Skien → Oslo S → Eidsvoll",
+          "RE11 Skien → Oslo S → Lillestrøm"
+        ]
+      },
+      {
+        "name": "Sandvika",
+        "route_count": 19,
+        "routes": [
+          "F4 Bergen→Oslo S",
+          "F4 Oslo S→Bergen",
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "L1 Asker → Oslo S → Lillestrøm",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L1 Spikkestad → Oslo S → Lillestrøm",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "R14",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Oslo S → Skien",
+          "RE11 Skien → Oslo S",
+          "RE11 Skien → Oslo S → Eidsvoll"
+        ]
+      },
+      {
+        "name": "Drammen",
+        "route_count": 18,
+        "routes": [
+          "F4 Bergen→Oslo S",
+          "F4 Oslo S→Bergen",
+          "F5 Kristiansand → Oslo sentralstasjon",
+          "F5 Oslo sentralstasjon → Kristiansand",
+          "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+          "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Oslo S → Skien",
+          "RE11 Skien → Oslo S",
+          "RE11 Skien → Oslo S → Eidsvoll"
+        ]
+      },
+      {
+        "name": "Oslo Lufthavn",
+        "route_count": 16,
+        "routes": [
+          "F6",
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "FLY2 Oslo Lufthavn → Oslo S",
+          "FLY2 Oslo Lufthavn → Skøyen",
+          "FLY2 Oslo Lufthavn → Stabekk",
+          "FLY2 Oslo S → Oslo Lufthavn",
+          "FLY2 Skøyen → Oslo Lufthavn",
+          "FLY2 Stabekk → Oslo Lufthavn",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "RE10",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Skien → Oslo S → Eidsvoll"
+        ]
+      },
+      {
+        "name": "Myrdal",
+        "route_count": 8,
+        "routes": [
+          "F4 Bergen→Oslo S",
+          "F4 Myrdal→Oslo S",
+          "F4 Oslo S→Bergen",
+          "F4 Oslo S→Myrdal",
+          "R40 Bergen→Myrdal",
+          "R40 Myrdal→Bergen",
+          "R45 Flåm→Myrdal",
+          "R45 Myrdal→Flåm"
+        ]
+      },
+      {
+        "name": "Eidsvoll",
+        "route_count": 7,
+        "routes": [
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "RE10",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Skien → Oslo S → Eidsvoll"
+        ]
+      },
+      {
+        "name": "Stabekk",
+        "route_count": 7,
+        "routes": [
+          "FLY2 Oslo Lufthavn → Stabekk",
+          "FLY2 Stabekk → Oslo Lufthavn",
+          "L1 Asker → Oslo S → Lillestrøm",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L1 Spikkestad → Oslo S → Lillestrøm",
+          "L2"
+        ]
+      },
+      {
+        "name": "Kongsberg",
+        "route_count": 6,
+        "routes": [
+          "F5 Kristiansand → Oslo sentralstasjon",
+          "F5 Oslo sentralstasjon → Kristiansand",
+          "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+          "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll"
+        ]
+      },
+      {
+        "name": "Porsgrunn",
+        "route_count": 6,
+        "routes": [
+          "52",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Oslo S → Skien",
+          "RE11 Skien → Oslo S",
+          "RE11 Skien → Oslo S → Eidsvoll",
+          "RE11 Skien → Oslo S → Lillestrøm"
+        ]
+      },
+      {
+        "name": "Skien",
+        "route_count": 6,
+        "routes": [
+          "52",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Oslo S → Skien",
+          "RE11 Skien → Oslo S",
+          "RE11 Skien → Oslo S → Eidsvoll",
+          "RE11 Skien → Oslo S → Lillestrøm"
+        ]
+      }
+    ],
+    "note": "Knutepunkt-score teller unike rutenavn fra OSM route=train-relasjoner."
+  },
+  "signals": {
+    "total": 1067,
+    "per_100km": 19.8,
+    "by_type": {
+      "distant": 248,
+      "speed_limit": 95,
+      "form": 77,
+      "main": 51,
+      "combined": 13,
+      "catenary_mast": 13,
+      "whistle": 2,
+      "main_repeated": 1
+    }
+  },
+  "switches": {
+    "total": 4202,
+    "per_100km": 78.2
   },
   "routes": [
     {
       "name": "Nordlandsbanen",
       "slug": "nordlandsbanen",
       "total_km": 756.93,
-      "segments": 1150,
+      "segments": 1154,
       "electrified_km": 33.26,
       "electrified_pct": 4.4,
       "max_speed_kmh": 130.0,
-      "mean_speed_kmh": 95.9,
+      "mean_speed_kmh": 95.3,
       "double_track_km": 4.13,
       "double_track_pct": 0.6,
       "track_tag_coverage_pct": 99.8,
       "speed_distribution_km": {
-        "<80": 16.6,
-        "80–130": 587.8,
-        "130–160": 120.6,
+        "<80": 17.8,
+        "80–130": 588.9,
+        "130–160": 118.3,
         "160–200": 0.0,
         "200+": 0.0,
         "Ukjent": 1.1
       },
+      "tunnel_km": 53.16,
+      "bridge_km": 6.63,
       "operators": [
         "Bane NOR"
       ],
@@ -195,6 +714,8 @@
         "200+": 0.0,
         "Ukjent": 25.1
       },
+      "tunnel_km": 68.74,
+      "bridge_km": 9.03,
       "operators": [
         "Bane NOR"
       ],
@@ -222,6 +743,8 @@
         "200+": 44.0,
         "Ukjent": 12.8
       },
+      "tunnel_km": 18.84,
+      "bridge_km": 6.39,
       "operators": [
         "Bane NOR"
       ],
@@ -232,12 +755,12 @@
     {
       "name": "Bergensbanen",
       "slug": "bergensbanen",
-      "total_km": 398.88,
-      "segments": 935,
+      "total_km": 398.89,
+      "segments": 937,
       "electrified_km": 398.44,
       "electrified_pct": 99.9,
       "max_speed_kmh": 160.0,
-      "mean_speed_kmh": 82.6,
+      "mean_speed_kmh": 82.8,
       "double_track_km": 7.12,
       "double_track_pct": 2.1,
       "track_tag_coverage_pct": 87.9,
@@ -249,6 +772,8 @@
         "200+": 0.0,
         "Ukjent": 11.8
       },
+      "tunnel_km": 102.76,
+      "bridge_km": 2.06,
       "operators": [
         "Bane NOR"
       ],
@@ -276,6 +801,8 @@
         "200+": 0.0,
         "Ukjent": 7.1
       },
+      "tunnel_km": 1.53,
+      "bridge_km": 2.57,
       "operators": [
         "Bane NOR"
       ],
@@ -303,6 +830,8 @@
         "200+": 0.0,
         "Ukjent": 22.6
       },
+      "tunnel_km": 10.99,
+      "bridge_km": 4.44,
       "operators": [
         "Bane NOR"
       ],
@@ -330,6 +859,8 @@
         "200+": 94.7,
         "Ukjent": 7.1
       },
+      "tunnel_km": 72.32,
+      "bridge_km": 5.91,
       "operators": [
         "Bane NOR",
         "Vy"
@@ -359,6 +890,8 @@
         "200+": 0.0,
         "Ukjent": 2.0
       },
+      "tunnel_km": 1.59,
+      "bridge_km": 1.4,
       "operators": [
         "Bane NOR"
       ],
@@ -386,6 +919,8 @@
         "200+": 0.0,
         "Ukjent": 7.3
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 1.54,
       "operators": [
         "Bane NOR"
       ],
@@ -413,6 +948,8 @@
         "200+": 0.0,
         "Ukjent": 1.3
       },
+      "tunnel_km": 2.41,
+      "bridge_km": 1.46,
       "operators": [
         "Bane NOR"
       ],
@@ -440,6 +977,8 @@
         "200+": 74.1,
         "Ukjent": 8.3
       },
+      "tunnel_km": 6.95,
+      "bridge_km": 4.1,
       "operators": [
         "Bane NOR",
         "Flytoget"
@@ -457,17 +996,19 @@
       "electrified_pct": 100.0,
       "max_speed_kmh": 130.0,
       "mean_speed_kmh": 96.2,
-      "double_track_km": 56.7,
-      "double_track_pct": 59.8,
-      "track_tag_coverage_pct": 95.6,
+      "double_track_km": 56.07,
+      "double_track_pct": 59.6,
+      "track_tag_coverage_pct": 95.5,
       "speed_distribution_km": {
         "<80": 9.5,
         "80–130": 52.1,
         "130–160": 32.7,
         "160–200": 0.0,
         "200+": 0.0,
-        "Ukjent": 4.9
+        "Ukjent": 4.3
       },
+      "tunnel_km": 0.83,
+      "bridge_km": 2.0,
       "operators": [
         "Bane NOR"
       ],
@@ -495,6 +1036,8 @@
         "200+": 0.0,
         "Ukjent": 5.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.66,
       "operators": [
         "Bane NOR"
       ],
@@ -522,6 +1065,8 @@
         "200+": 0.0,
         "Ukjent": 79.2
       },
+      "tunnel_km": 0.33,
+      "bridge_km": 0.98,
       "operators": [
         "Bane NOR"
       ],
@@ -549,6 +1094,8 @@
         "200+": 0.0,
         "Ukjent": 4.6
       },
+      "tunnel_km": 26.03,
+      "bridge_km": 3.17,
       "operators": [
         "Bane NOR"
       ],
@@ -576,6 +1123,8 @@
         "200+": 0.0,
         "Ukjent": 5.6
       },
+      "tunnel_km": 0.11,
+      "bridge_km": 0.53,
       "operators": [
         "Bane NOR"
       ],
@@ -603,6 +1152,8 @@
         "200+": 0.0,
         "Ukjent": 2.5
       },
+      "tunnel_km": 0.11,
+      "bridge_km": 0.93,
       "operators": [
         "Bane NOR"
       ],
@@ -630,6 +1181,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 9.74,
+      "bridge_km": 0.22,
       "operators": [
         "Bane NOR"
       ],
@@ -657,6 +1210,8 @@
         "200+": 0.0,
         "Ukjent": 0.3
       },
+      "tunnel_km": 2.98,
+      "bridge_km": 0.7,
       "operators": [
         "Bane NOR"
       ],
@@ -684,6 +1239,8 @@
         "200+": 34.9,
         "Ukjent": 4.4
       },
+      "tunnel_km": 41.48,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -711,6 +1268,8 @@
         "200+": 0.0,
         "Ukjent": 23.9
       },
+      "tunnel_km": 1.2,
+      "bridge_km": 0.47,
       "operators": [],
       "types": [
         "rail"
@@ -736,6 +1295,8 @@
         "200+": 0.0,
         "Ukjent": 0.9
       },
+      "tunnel_km": 0.12,
+      "bridge_km": 0.29,
       "operators": [],
       "types": [
         "rail"
@@ -761,6 +1322,8 @@
         "200+": 0.0,
         "Ukjent": 2.7
       },
+      "tunnel_km": 25.88,
+      "bridge_km": 0.71,
       "operators": [
         "Bane NOR"
       ],
@@ -788,6 +1351,8 @@
         "200+": 0.0,
         "Ukjent": 4.2
       },
+      "tunnel_km": 0.36,
+      "bridge_km": 0.46,
       "operators": [
         "Bane NOR"
       ],
@@ -815,6 +1380,8 @@
         "200+": 25.1,
         "Ukjent": 1.5
       },
+      "tunnel_km": 30.09,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -842,6 +1409,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.02,
+      "bridge_km": 0.06,
       "operators": [],
       "types": [
         "rail"
@@ -867,6 +1436,8 @@
         "200+": 0.0,
         "Ukjent": 26.2
       },
+      "tunnel_km": 0.06,
+      "bridge_km": 0.05,
       "operators": [],
       "types": [
         "rail"
@@ -875,9 +1446,9 @@
     {
       "name": "Thamshavnbanen",
       "slug": "thamshavnbanen",
-      "total_km": 22.11,
-      "segments": 31,
-      "electrified_km": 21.95,
+      "total_km": 21.72,
+      "segments": 30,
+      "electrified_km": 21.56,
       "electrified_pct": 99.3,
       "max_speed_kmh": null,
       "mean_speed_kmh": null,
@@ -890,8 +1461,10 @@
         "130–160": 0.0,
         "160–200": 0.0,
         "200+": 0.0,
-        "Ukjent": 22.1
+        "Ukjent": 21.7
       },
+      "tunnel_km": 0.15,
+      "bridge_km": 0.15,
       "operators": [],
       "types": [
         "narrow_gauge"
@@ -917,6 +1490,8 @@
         "200+": 0.0,
         "Ukjent": 21.3
       },
+      "tunnel_km": 0.2,
+      "bridge_km": 0.28,
       "operators": [],
       "types": [
         "rail"
@@ -942,6 +1517,8 @@
         "200+": 0.0,
         "Ukjent": 17.7
       },
+      "tunnel_km": 6.96,
+      "bridge_km": 0.01,
       "operators": [],
       "types": [
         "rail"
@@ -967,6 +1544,8 @@
         "200+": 0.0,
         "Ukjent": 0.3
       },
+      "tunnel_km": 5.6,
+      "bridge_km": 0.17,
       "operators": [],
       "types": [
         "rail"
@@ -992,6 +1571,8 @@
         "200+": 0.0,
         "Ukjent": 1.4
       },
+      "tunnel_km": 0.02,
+      "bridge_km": 0.17,
       "operators": [
         "Bane NOR"
       ],
@@ -1019,6 +1600,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.07,
       "operators": [],
       "types": [
         "rail"
@@ -1044,6 +1627,8 @@
         "200+": 0.0,
         "Ukjent": 8.6
       },
+      "tunnel_km": 0.41,
+      "bridge_km": 0.3,
       "operators": [],
       "types": [
         "rail"
@@ -1069,6 +1654,8 @@
         "200+": 0.0,
         "Ukjent": 8.2
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.03,
       "operators": [],
       "types": [
         "narrow_gauge",
@@ -1095,6 +1682,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.07,
+      "bridge_km": 0.04,
       "operators": [],
       "types": [
         "rail"
@@ -1120,6 +1709,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 2.84,
+      "bridge_km": 0.48,
       "operators": [
         "Bane NOR"
       ],
@@ -1147,6 +1738,8 @@
         "200+": 0.0,
         "Ukjent": 4.6
       },
+      "tunnel_km": 0.06,
+      "bridge_km": 0.37,
       "operators": [
         "Bane NOR"
       ],
@@ -1174,6 +1767,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Norske Skog"
       ],
@@ -1201,6 +1796,8 @@
         "200+": 0.0,
         "Ukjent": 5.6
       },
+      "tunnel_km": 5.49,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "narrow_gauge"
@@ -1226,6 +1823,8 @@
         "200+": 0.0,
         "Ukjent": 0.7
       },
+      "tunnel_km": 5.19,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -1253,6 +1852,8 @@
         "200+": 0.0,
         "Ukjent": 4.9
       },
+      "tunnel_km": 4.9,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "narrow_gauge"
@@ -1278,6 +1879,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Borregaard"
       ],
@@ -1305,6 +1908,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.04,
+      "bridge_km": 0.06,
       "operators": [
         "Bane NOR"
       ],
@@ -1332,6 +1937,8 @@
         "200+": 0.0,
         "Ukjent": 3.8
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.25,
       "operators": [
         "Bane NOR"
       ],
@@ -1359,6 +1966,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -1386,6 +1995,8 @@
         "200+": 0.0,
         "Ukjent": 3.5
       },
+      "tunnel_km": 0.03,
+      "bridge_km": 0.01,
       "operators": [],
       "types": [
         "narrow_gauge",
@@ -1412,6 +2023,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -1439,6 +2052,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1464,6 +2079,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1489,6 +2106,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Trafikverket"
       ],
@@ -1516,6 +2135,8 @@
         "200+": 0.0,
         "Ukjent": 2.8
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.06,
       "operators": [],
       "types": [
         "preserved"
@@ -1541,6 +2162,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1566,6 +2189,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1591,6 +2216,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1616,6 +2243,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1641,6 +2270,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 1.99,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -1668,6 +2299,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1693,6 +2326,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1718,6 +2353,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.15,
+      "bridge_km": 0.04,
       "operators": [],
       "types": [
         "rail"
@@ -1743,6 +2380,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1768,6 +2407,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1793,6 +2434,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1818,6 +2461,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "(Private)"
       ],
@@ -1845,6 +2490,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1870,6 +2517,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1895,6 +2544,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1907,8 +2558,8 @@
       "segments": 3,
       "electrified_km": 0,
       "electrified_pct": 0.0,
-      "max_speed_kmh": null,
-      "mean_speed_kmh": null,
+      "max_speed_kmh": 60.0,
+      "mean_speed_kmh": 60.0,
       "double_track_km": 0,
       "double_track_pct": null,
       "track_tag_coverage_pct": 0,
@@ -1920,6 +2571,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1945,6 +2598,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1970,6 +2625,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -1995,6 +2652,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2022,6 +2681,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2049,6 +2710,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.88,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2074,6 +2737,8 @@
         "200+": 0.0,
         "Ukjent": 0.4
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2101,6 +2766,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2126,6 +2793,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2153,6 +2822,8 @@
         "200+": 0.0,
         "Ukjent": 0.7
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "narrow_gauge"
@@ -2178,6 +2849,8 @@
         "200+": 0.0,
         "Ukjent": 0.3
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2205,6 +2878,8 @@
         "200+": 0.0,
         "Ukjent": 0.3
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2232,6 +2907,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2257,6 +2934,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2282,6 +2961,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2309,6 +2990,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2334,6 +3017,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2359,6 +3044,8 @@
         "200+": 0.0,
         "Ukjent": 0.6
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2386,6 +3073,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2411,6 +3100,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2436,6 +3127,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.51,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2463,6 +3156,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2488,6 +3183,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2513,6 +3210,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2538,6 +3237,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2563,6 +3264,8 @@
         "200+": 0.0,
         "Ukjent": 0.5
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2590,6 +3293,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2615,6 +3320,8 @@
         "200+": 0.0,
         "Ukjent": 0.5
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2642,6 +3349,8 @@
         "200+": 0.0,
         "Ukjent": 0.4
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2669,6 +3378,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2694,6 +3405,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2719,6 +3432,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2744,6 +3459,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2771,6 +3488,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2798,6 +3517,8 @@
         "200+": 0.0,
         "Ukjent": 0.4
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2825,6 +3546,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2852,6 +3575,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2877,6 +3602,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -2902,6 +3629,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2929,6 +3658,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2956,6 +3687,8 @@
         "200+": 0.0,
         "Ukjent": 0.4
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -2983,6 +3716,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3008,6 +3743,8 @@
         "200+": 0.0,
         "Ukjent": 0.3
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3035,6 +3772,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3060,6 +3799,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3085,6 +3826,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3112,6 +3855,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3137,6 +3882,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.32,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3164,6 +3911,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3189,6 +3938,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3214,6 +3965,8 @@
         "200+": 0.0,
         "Ukjent": 0.3
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3241,6 +3994,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.29,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3268,6 +4023,8 @@
         "200+": 0.0,
         "Ukjent": 0.3
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3295,6 +4052,8 @@
         "200+": 0.0,
         "Ukjent": 0.3
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3322,6 +4081,8 @@
         "200+": 0.0,
         "Ukjent": 0.3
       },
+      "tunnel_km": 0.28,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3347,6 +4108,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3372,6 +4135,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3397,6 +4162,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3422,6 +4189,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3447,6 +4216,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3472,6 +4243,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3497,6 +4270,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3522,6 +4297,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3549,6 +4326,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3574,6 +4353,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3601,6 +4382,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3628,6 +4411,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3655,6 +4440,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3680,6 +4467,8 @@
         "200+": 0.0,
         "Ukjent": 0.2
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3705,6 +4494,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3732,6 +4523,8 @@
         "200+": 0.0,
         "Ukjent": 0.1
       },
+      "tunnel_km": 0.15,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3759,6 +4552,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3784,6 +4579,8 @@
         "200+": 0.0,
         "Ukjent": 0.1
       },
+      "tunnel_km": 0.15,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3809,6 +4606,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.13,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3836,6 +4635,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.13,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3863,6 +4664,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3890,6 +4693,8 @@
         "200+": 0.0,
         "Ukjent": 0.1
       },
+      "tunnel_km": 0.11,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "narrow_gauge"
@@ -3915,6 +4720,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3940,6 +4747,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.11,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -3967,6 +4776,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -3992,6 +4803,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -4017,6 +4830,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.1,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -4044,6 +4859,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.07,
       "operators": [
         "Bane NOR"
       ],
@@ -4071,6 +4888,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.06,
+      "bridge_km": 0.0,
       "operators": [
         "Trafikverket"
       ],
@@ -4098,6 +4917,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.06,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -4125,6 +4946,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.05,
+      "bridge_km": 0.0,
       "operators": [
         "Bane NOR"
       ],
@@ -4152,6 +4975,8 @@
         "200+": 0.0,
         "Ukjent": 0.1
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.05,
       "operators": [],
       "types": [
         "narrow_gauge"
@@ -4177,6 +5002,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "narrow_gauge"
@@ -4202,6 +5029,8 @@
         "200+": 0.0,
         "Ukjent": 0.1
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -4227,6 +5056,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -4252,6 +5083,8 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "rail"
@@ -4277,14 +5110,16 @@
         "200+": 0.0,
         "Ukjent": 0.0
       },
+      "tunnel_km": 0.01,
+      "bridge_km": 0.0,
       "operators": [],
       "types": [
         "narrow_gauge"
       ]
     }
   ],
-  "station_count": 1261,
-  "railway_segment_count": 13180,
+  "station_count": 1260,
+  "railway_segment_count": 13184,
   "population_coverage": {
     "total_population": 5440807,
     "place_count": 1167,

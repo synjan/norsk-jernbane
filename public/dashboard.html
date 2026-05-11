@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Norsk jernbane — dashbord</title>
+  <title>Norsk jernbane — innsikt</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="page-dashboard">
@@ -17,7 +17,7 @@
 
     <nav class="topnav" aria-label="Hovednavigasjon">
       <a href="index.html" class="nav-link" data-page="index.html">Kart</a>
-      <a href="dashboard.html" class="nav-link" data-page="dashboard.html">Dashbord</a>
+      <a href="dashboard.html" class="nav-link" data-page="dashboard.html">Innsikt</a>
       <button type="button" class="nav-link nav-baner-toggle" aria-haspopup="true" aria-expanded="false">
         Baner <span aria-hidden="true">▾</span>
       </button>
@@ -34,9 +34,9 @@
     <div class="page-header-inner">
       <div class="titles">
         <nav class="breadcrumbs" aria-label="Brødsmuler">
-          <a href="index.html">Kart</a> <span class="sep">›</span> <span>Dashbord</span>
+          <a href="index.html">Kart</a> <span class="sep">›</span> <span>Innsikt</span>
         </nav>
-        <h1>Norsk jernbane — oversikt</h1>
+        <h1>Norsk jernbane — innsikt</h1>
         <p class="page-subtitle">Aggregerte tall basert på OpenStreetMap-data per <span id="data-date">—</span>.</p>
       </div>
     </div>
@@ -96,8 +96,15 @@
       </article>
 
       <article class="card dash-card">
+        <h2 class="section-title">Elektrifiserings-kandidater</h2>
+        <p class="dash-card-intro">Lange baner som fortsatt går på diesel — de største enkelt-gevinstene hvis Norge skal kutte tog-CO₂.</p>
+        <ol id="dash-elec-candidates" class="dash-link-list"></ol>
+        <p class="estimate-note" id="dash-elec-candidates-note"></p>
+      </article>
+
+      <article class="card dash-card">
         <h2 class="section-title">Til sammenligning</h2>
-        <p class="dash-card-intro">Norge mot naboland (km jernbane).</p>
+        <p class="dash-card-intro">Norge mot naboland — banelengde og elektrifiseringsrate.</p>
         <div id="dash-comparison"></div>
         <p class="estimate-note">Kilder: Trafikverket, BAV, DB Netz, Banedanmark (2023).</p>
       </article>
@@ -115,9 +122,68 @@
       </article>
 
       <article class="card dash-card">
+        <h2 class="section-title">Reiseopplevelse</h2>
+        <p class="dash-card-intro">Hva slags reise er hver topp-bane? Tunnel-andel og forholdet mellom maks og gjennomsnitt avslører om infrastrukturen utnyttes fullt ut.</p>
+        <div id="dash-experience" class="dash-experience-list"></div>
+        <p class="estimate-note">Tunnel-andel: hvor mye av lengden går under fjell. Hastighets-gap: hvor langt unna snitt-farten er fra det infrastrukturen tåler — stort gap = kurver/topografi/svake spor.</p>
+      </article>
+
+      <article class="card dash-card">
         <h2 class="section-title">Spor-kapasitet</h2>
         <div class="dash-chart"><canvas id="dash-chart-tracks"></canvas></div>
         <p id="dash-tracks-takeaway" class="dash-card-takeaway"></p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Signal- og sporveksel-tetthet</h2>
+        <p class="dash-card-intro">Antall signaler og sporveksler langs nettet — indikatorer for kontrollsystem og knutepunkt-kompleksitet.</p>
+        <div id="dash-infra-kpis" class="dash-mini-kpis"></div>
+        <p class="subhead" style="margin-top: var(--sp-3)">Signaltyper</p>
+        <ul id="dash-signal-types" class="micro-list"></ul>
+        <p class="estimate-note">OSM-tagging av signaler er ofte ufullstendig — faktisk antall hovedsignaler er sannsynligvis høyere enn det som vises her. Sporveksler er bedre dekket.</p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Dobbeltspor-gap</h2>
+        <p class="dash-card-intro">De lengste banene rangert etter dobbeltspor-andel. Enkeltspor tvinger tog til å vente på møteplasser — direkte frekvens-tak.</p>
+        <div id="dash-double-track-gap" class="dash-double-track-list"></div>
+        <p class="estimate-note">100 % dobbeltspor på Gardermobanen tillater ~6 tog/t/retning. 0 % enkeltspor som Nordlandsbanen er typisk begrenset til ~1 tog/t/retning.</p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Topografi — tunnel og bro</h2>
+        <p class="dash-card-intro">Norsk jernbane er ekstremt tunneltung — fjell og fjorder krever det. Mye tunnel betyr tunge investeringer som først betaler seg når trafikken øker.</p>
+        <div id="dash-topography-kpis" class="dash-mini-kpis"></div>
+        <div class="dash-chart"><canvas id="dash-chart-topography"></canvas></div>
+        <p class="subhead" style="margin-top: var(--sp-3)">Topp 5 baner med høyest tunnel-andel</p>
+        <ol id="dash-top-tunnel-routes" class="dash-link-list"></ol>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Historisk perspektiv</h2>
+        <p class="dash-card-intro">Norge fikk sin første jernbane i 1854 — siden har 17 tiår med utbygging skapt nettet vi har i dag. Mange av de eldste stasjonene står fortsatt og kan moderniseres.</p>
+        <div id="dash-history-kpis" class="dash-mini-kpis"></div>
+        <div class="dash-chart"><canvas id="dash-chart-history"></canvas></div>
+        <p class="subhead" style="margin-top: var(--sp-3)">Mest produktive jernbanearkitekter</p>
+        <ul id="dash-architects" class="micro-list"></ul>
+        <p class="estimate-note" id="dash-history-note"></p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Knutepunkter</h2>
+        <p class="dash-card-intro">Stasjonene som binder nettet sammen. Toppen viser hvor folk allerede bytter tog — bunnen overrasker ofte.</p>
+        <div class="dash-chart"><canvas id="dash-chart-hubs"></canvas></div>
+        <ol id="dash-hubs-list" class="dash-link-list"></ol>
+        <p class="estimate-note" id="dash-hubs-note"></p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Potensial for økt togbruk</h2>
+        <p class="dash-card-intro">Hvor er de største hullene i tilbudet? Steder med mange innbyggere men langt til nærmeste stasjon — og folk som i dag bor utenfor jernbanens rekkevidde.</p>
+        <div id="dash-potential-kpis" class="dash-mini-kpis"></div>
+        <p class="subhead" style="margin-top: var(--sp-3)">Største tettsteder uten togtilbud</p>
+        <ol id="dash-unserved-list" class="dash-link-list"></ol>
+        <p class="estimate-note" id="dash-potential-note"></p>
       </article>
 
       <article class="card dash-card">
@@ -141,7 +207,14 @@
         <h2 class="section-title">Hvem driver nettet</h2>
         <p class="dash-card-intro">Operatør-fordeling basert på tagget eierskap (km).</p>
         <div id="dash-operators"></div>
+        <div id="dash-operator-elec" style="margin-top: var(--sp-3)"></div>
         <p class="estimate-note" id="dash-operators-note"></p>
+      </article>
+
+      <article class="card dash-card">
+        <h2 class="section-title">Rekorder</h2>
+        <p class="dash-card-intro">Norsk jernbane i tallenes ekstremer.</p>
+        <ul id="dash-records" class="dash-records-list"></ul>
       </article>
 
     </section>

@@ -39,7 +39,14 @@ async function visibleSegmentCount(page) {
 }
 
 async function liveStatsText(page) {
-  return page.locator("#live-stats").innerText();
+  // Oversikt-gruppen i sidebar er nå canonical kilde for "X km synlig" —
+  // statusbaren ble slanket til kun segment-antall + filter for å unngå
+  // duplisert info. Normaliserer whitespace så innerText sin newline-mellom-
+  // noder ikke bryter substring-match (f.eks. "0 km").
+  return page.evaluate(() => {
+    const el = document.getElementById("stats-summary");
+    return el ? el.textContent.replace(/\s+/g, " ").trim() : "";
+  });
 }
 
 async function searchHintText(page) {

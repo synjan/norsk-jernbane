@@ -56,7 +56,7 @@
     }, onClick, ariaLabel || (ariaTitle && buildAriaLabel(ariaTitle, labels, data, " km")));
   }
 
-  function bar(canvasId, { labels, data, color, onClick, ariaLabel, ariaTitle } = {}) {
+  function bar(canvasId, { labels, data, color, onClick, ariaLabel, ariaTitle, unit = " km" } = {}) {
     return destroyAndCreate(canvasId, {
       type: "bar",
       data: { labels, datasets: [{ data, backgroundColor: color }] },
@@ -65,12 +65,12 @@
         maintainAspectRatio: false,
         indexAxis: "y",
         plugins: { legend: { display: false } },
-        scales: { x: { ticks: { callback: (v) => `${v} km` } } },
+        scales: { x: { ticks: { callback: (v) => `${v}${unit}` } } },
         onClick: onClick ? (_e, elements) => {
           if (elements.length) onClick(elements[0].index);
         } : undefined,
       },
-    }, onClick, ariaLabel || (ariaTitle && buildAriaLabel(ariaTitle, labels, data, " km")));
+    }, onClick, ariaLabel || (ariaTitle && buildAriaLabel(ariaTitle, labels, data, unit)));
   }
 
   window.AppCharts = { doughnut, bar, buildAriaLabel };

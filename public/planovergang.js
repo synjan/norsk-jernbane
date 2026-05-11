@@ -3,6 +3,10 @@
 //
 // Hver av de ~2086 jernbanekryssingene i NVDB får sin egen URL via ?id=,
 // uten at vi genererer statiske filer. Mønster kopiert fra stasjon.html.
+//
+// Lastes av: planovergang.html
+// Krever: Leaflet (global L), window.AppHelpers (helpers.js)
+// Data:    data/planoverganger.geojson, data/stations.geojson
 
 (function () {
   "use strict";

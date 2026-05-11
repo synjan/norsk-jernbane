@@ -7,6 +7,9 @@
 // Identifikator (?id=) er datedServiceJourney.id som er stabil for hele
 // avgangsdagen. Eksempel:
 //   tog.html?id=VYG:DatedServiceJourney:67_OSL-BRG_26-04-28
+//
+// Lastes av: tog.html
+// Krever: Leaflet (global L), window.Entur (entur.js)
 
 (function () {
   "use strict";

@@ -31,13 +31,19 @@ async function run() {
   await page.waitForFunction(() => Boolean(window.__app?.state?.railwayLayer));
   await page.waitForTimeout(500);
 
-  // --- 1. Statusbar ---
-  note("step", "Statusbar viser korrekte tall");
-  const statusKm = await page.locator("#status-km").innerText();
+  // --- 1. Statusbar + Oversikt-KPI ---
+  // Statusbaren ble slanket — km/elektrifisert% bor nå i Oversikt-gruppen
+  // i sidebar (#stats-summary). Statusbar viser kun segmenter + filter.
+  note("step", "Statusbar + Oversikt viser korrekte tall");
+  const statsText = await page.evaluate(() => {
+    const el = document.getElementById("stats-summary");
+    return el ? el.textContent.replace(/\s+/g, " ").trim() : "";
+  });
   const statusSeg = await page.locator("#status-segments").innerText();
   const statusFilter = await page.locator("#status-filter").innerText();
-  note("info", `Status: ${statusKm} km · ${statusSeg} segm · ${statusFilter}`);
-  if (!statusKm.includes("5")) note("fail", `Forventet ~5746 km i status, fikk '${statusKm}'`);
+  note("info", `Oversikt: ${statsText}`);
+  note("info", `Status: ${statusSeg} segm · ${statusFilter}`);
+  if (!statsText.includes("km")) note("fail", `Oversikt mangler km-tall: '${statsText}'`);
   if (statusFilter !== "Standardvisning") note("fail", `Filter-status burde være 'Standardvisning', fikk '${statusFilter}'`);
 
   // --- 2. URL-state etter filter-endring ---

@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leaflet plugin-demo — Norsk jernbane</title>
+
+  <!-- 1. Leaflet core CSS -->
+  <link rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+
+  <!-- 2. Plugin-CSS (rekkefølge) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-sidebar-v2@3.2.3/css/leaflet-sidebar.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.18.3/dist/leaflet-geoman.css" />
+
+  <!-- 3. Egne stiler (overstyrer plugin-defaults) -->
+  <style>
+    :root {
+      --c-elek: #1d4ed8;
+      --c-halt: #14b8a6;
+      --c-stop: #94a3b8;
+      --c-text: #0f172a;
+      --c-muted: #64748b;
+      --c-border: #cbd5e1;
+      --c-bg: #f8fafc;
+      --c-card: #ffffff;
+      --c-accent: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; color: var(--c-text); }
+
+    .demo-banner {
+      background: #0f172a;
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 13px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+    .demo-banner strong { color: var(--c-accent); }
+    .demo-banner .dot { color: #475569; }
+    .demo-banner a { color: #93c5fd; text-decoration: none; }
+    .demo-banner a:hover { text-decoration: underline; }
+
+    #map { position: absolute; top: 33px; bottom: 0; left: 0; right: 0; }
+    @media (max-width: 768px) { #map { top: 50px; } }
+
+    .station-marker {
+      background: #fff;
+      border: 2px solid var(--c-stop);
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .station-marker.is-station { border-color: var(--c-elek); width: 16px; height: 16px; }
+    .station-marker.is-halt    { border-color: var(--c-halt); }
+    .station-marker.is-stop    { border-color: var(--c-stop); }
+    .station-marker.is-search-hit { border-color: var(--c-accent); border-width: 3px; transform: scale(1.3); box-shadow: 0 0 0 4px rgba(245,158,11,0.25); }
+    .station-marker:hover { transform: scale(1.25); box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+
+    .cluster-icon {
+      background: rgba(255,255,255,0.95);
+      border: 2px solid var(--c-stop);
+      border-radius: 50%;
+      width: 36px !important;
+      height: 36px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--c-text);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .cluster-icon.dom-station { border-color: var(--c-elek); color: var(--c-elek); }
+    .cluster-icon.dom-halt    { border-color: var(--c-halt); color: var(--c-halt); }
+    .cluster-icon.dom-stop    { border-color: var(--c-stop); }
+    .cluster-icon.size-l  { width: 44px !important; height: 44px !important; font-size: 13px; }
+    .cluster-icon.size-xl { width: 52px !important; height: 52px !important; font-size: 14px; }
+
+    .leaflet-sidebar { background: var(--c-card); }
+    .leaflet-sidebar-header { background: #0f172a; color: #fff; font-weight: 600; }
+    .leaflet-sidebar-content { padding: 0; }
+    .sb-pane { padding: 16px; }
+    .sb-pane h2 { margin: 0 0 12px; font-size: 18px; }
+    .sb-pane h3 { margin: 16px 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-muted); }
+    .sb-pane p { margin: 0 0 10px; font-size: 13px; line-height: 1.5; color: var(--c-text); }
+    .sb-pane .muted { color: var(--c-muted); font-size: 12px; }
+
+    #station-search {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--c-border);
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    #station-list {
+      max-height: calc(100vh - 220px);
+      overflow-y: auto;
+      border-top: 1px solid var(--c-border);
+    }
+    .station-row {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--c-border);
+      cursor: pointer;
+      font-size: 13px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .station-row:hover { background: var(--c-bg); }
+    .station-row .swatch { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .station-row .swatch.is-station { background: var(--c-elek); }
+    .station-row .swatch.is-halt    { background: var(--c-halt); }
+    .station-row .swatch.is-stop    { background: var(--c-stop); }
+    .station-row .name { flex: 1; }
+    .station-row .type { font-size: 11px; color: var(--c-muted); }
+
+    .ctrl-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; font-size: 13px; }
+    .ctrl-row label { flex: 1; }
+    .ctrl-row select { padding: 4px 8px; border: 1px solid var(--c-border); border-radius: 4px; }
+    .ctrl-block { padding: 10px; background: var(--c-bg); border-radius: 6px; margin: 10px 0; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border: 1px solid var(--c-border);
+      background: #fff;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      color: var(--c-text);
+    }
+    .btn:hover { background: var(--c-bg); }
+    .btn-primary { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
+    .btn-primary:hover { background: #1e40af; }
+    .btn-block { display: flex; width: 100%; justify-content: center; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .plugin-card {
+      padding: 10px 12px;
+      border: 1px solid var(--c-border);
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .plugin-card .head { display: flex; justify-content: space-between; align-items: center; }
+    .plugin-card .head strong { font-size: 13px; }
+    .plugin-card .desc { color: var(--c-muted); font-size: 12px; margin-top: 4px; line-height: 1.4; }
+    .badge { padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+    .badge-on { background: #d1fae5; color: #065f46; }
+    .badge-off { background: #fee2e2; color: #991b1b; }
+    .badge-info { background: #dbeafe; color: #1e40af; }
+
+    .legend {
+      background: rgba(255,255,255,0.95);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+      line-height: 1.6;
+    }
+    .legend .row { display: flex; align-items: center; gap: 6px; }
+    .legend .swatch { width: 10px; height: 10px; border-radius: 50%; }
+
+    .leaflet-tooltip { font-size: 12px; padding: 4px 8px; }
+
+    .station-popup h4 { margin: 0 0 4px; font-size: 14px; }
+    .station-popup .meta { font-size: 12px; color: var(--c-muted); }
+
+    body:not(.is-admin) .leaflet-pm-toolbar { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <div class="demo-banner">
+    <strong>Plugin-demo</strong>
+    <span class="dot">·</span>
+    <span>Frittstående side for å evaluere 8 Leaflet-plugins før integrasjon i hovedappen</span>
+    <span class="dot">·</span>
+    <a href="index.html">← Tilbake til hovedkart</a>
+  </div>
+
+  <div id="sidebar" class="leaflet-sidebar collapsed">
+    <div class="leaflet-sidebar-tabs">
+      <ul role="tablist">
+        <li><a href="#stasjoner" role="tab" title="Stasjoner">📍</a></li>
+        <li><a href="#lag" role="tab" title="Lag og innstillinger">⚙️</a></li>
+        <li><a href="#info" role="tab" title="Plugin-info">ℹ️</a></li>
+      </ul>
+    </div>
+
+    <div class="leaflet-sidebar-content">
+
+      <!-- Stasjoner -->
+      <div class="leaflet-sidebar-pane" id="stasjoner">
+        <h1 class="leaflet-sidebar-header">
+          Stasjoner
+          <span class="leaflet-sidebar-close">»</span>
+        </h1>
+        <div class="sb-pane">
+          <input id="station-search" type="search" placeholder="Søk stasjon …" autocomplete="off" />
+          <p class="muted" id="station-count">—</p>
+          <div id="station-list"></div>
+        </div>
+      </div>
+
+      <!-- Lag og innstillinger -->
+      <div class="leaflet-sidebar-pane" id="lag">
+        <h1 class="leaflet-sidebar-header">
+          Lag
+          <span class="leaflet-sidebar-close">»</span>
+        </h1>
+        <div class="sb-pane">
+
+          <h3>Stasjonstype</h3>
+          <div class="ctrl-row"><label><input type="checkbox" data-type="station" checked> Tog-stasjon</label></div>
+          <div class="ctrl-row"><label><input type="checkbox" data-type="halt" checked> Holdeplass</label></div>
+          <div class="ctrl-row"><label><input type="checkbox" data-type="stop" checked> Stoppunkt</label></div>
+
+          <h3>Cluster</h3>
+          <div class="ctrl-row">
+            <label for="cluster-mode">Farge etter</label>
+            <select id="cluster-mode">
+              <option value="dominant-type">Dominerende type</option>
+              <option value="count-only">Bare antall (nøytral)</option>
+            </select>
+          </div>
+          <div class="ctrl-row">
+            <label for="cluster-zoom">Splittes ved zoom</label>
+            <select id="cluster-zoom">
+              <option value="8">8 (tidlig)</option>
+              <option value="10" selected>10 (standard)</option>
+              <option value="12">12 (sent)</option>
+              <option value="-1">Aldri</option>
+            </select>
+          </div>
+
+          <h3>Admin / Geoman</h3>
+          <div class="ctrl-block">
+            <div class="ctrl-row">
+              <label><input type="checkbox" id="admin-toggle"> Admin-modus (aktiver tegneverktøy)</label>
+            </div>
+            <p class="muted">Når av: ingen tegneverktøy. Når på: polygon, linje og marker — eksporter som GeoJSON.</p>
+            <button class="btn btn-block" id="export-drawn" disabled>Eksporter tegninger som GeoJSON</button>
+          </div>
+
+          <h3>Eksport</h3>
+          <button class="btn btn-block btn-primary" id="print-btn">Print/PDF (A4 liggende)</button>
+        </div>
+      </div>
+
+      <!-- Plugin-info -->
+      <div class="leaflet-sidebar-pane" id="info">
+        <h1 class="leaflet-sidebar-header">
+          Plugin-status
+          <span class="leaflet-sidebar-close">»</span>
+        </h1>
+        <div class="sb-pane">
+          <p>Hver plugin er aktiv på dette kartet. Klikk gjennom for å se hvordan den oppfører seg i tog-konteksten.</p>
+
+          <div class="plugin-card">
+            <div class="head"><strong>leaflet-sidebar-v2</strong> <span class="badge badge-on">Aktiv</span></div>
+            <div class="desc">Denne høyre-sidebaren med faner. Sidebaren overlapper kartet — active-area kompenserer slik at fitBounds ikke sentrerer bak panelet.</div>
+          </div>
+
+          <div class="plugin-card">
+            <div class="head"><strong>leaflet.markercluster</strong> <span class="badge badge-on">Aktiv</span></div>
+            <div class="desc">Stasjoner clustres når zoomet ut. Cluster-farge: dominerende type i clusteret. disableClusteringAtZoom: 10 — individuelle stasjoner ved nær-zoom.</div>
+          </div>
+
+          <div class="plugin-card">
+            <div class="head"><strong>leaflet-active-area</strong> <span class="badge badge-on">Aktiv</span></div>
+            <div class="desc">Definerer "synlig kart-område" som inset 8% på alle kanter — gir pust rundt fitBounds-kall.</div>
+          </div>
+
+          <div class="plugin-card">
+            <div class="head"><strong>Leaflet.Control.Geocoder</strong> <span class="badge badge-on">Aktiv</span></div>
+            <div class="desc">Søk øverst til venstre. Bruker Nominatim begrenset til Norge. Tog-app-bonus: nærmeste stasjon innen 5 km åpnes automatisk.</div>
+          </div>
+
+          <div class="plugin-card">
+            <div class="head"><strong>Leaflet.fullscreen</strong> <span class="badge badge-on">Aktiv</span></div>
+            <div class="desc">Knapp øverst til venstre under zoom-kontrollen.</div>
+          </div>
+
+          <div class="plugin-card">
+            <div class="head"><strong>Leaflet.locatecontrol</strong> <span class="badge badge-on">Aktiv</span></div>
+            <div class="desc">"Finn meg"-knapp. Tog-app-bonus: når posisjon er funnet åpnes nærmeste stasjon innen 10 km. Norske strings.</div>
+          </div>
+
+          <div class="plugin-card">
+            <div class="head"><strong>Leaflet-Geoman</strong> <span class="badge badge-info" id="geoman-badge">Av (admin = false)</span></div>
+            <div class="desc">Tegneverktøy. Skjult som standard — slå på Admin-modus i Lag-fanen for å aktivere polygon/linje/marker. Eksporter som GeoJSON.</div>
+          </div>
+
+          <div class="plugin-card">
+            <div class="head"><strong>leaflet-easyPrint</strong> <span class="badge badge-on">Aktiv</span></div>
+            <div class="desc">Print-knapp i Lag-fanen. A4 liggende. Print fanger nåværende zoom + filter.</div>
+          </div>
+
+          <h3>Vurdering for integrasjon</h3>
+          <p>Når du har testet: si hvilke plugins du vil ha i hovedappen. Sannsynlige kandidater: markercluster, geocoder, fullscreen, locate, easyprint. Mindre sannsynlige: sidebar-v2 (du har allerede sidebars), geoman (krever konkret use case).</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="https://unpkg.com/leaflet-sidebar-v2@3.2.3/js/leaflet-sidebar.min.js"></script>
+  <script src="https://unpkg.com/leaflet-active-area@1.2.1/src/leaflet.activearea.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.js"></script>
+  <script src="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.js"></script>
+  <script src="https://unpkg.com/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js"></script>
+  <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.18.3/dist/leaflet-geoman.min.js"></script>
+  <script src="https://unpkg.com/leaflet-easyprint@2.1.9/dist/bundle.js"></script>
+
+  <script>
+  // ============================================================
+  // Demo-konfigurasjon
+  // ============================================================
+  const NORWAY_CENTER = [64.5, 13.0];
+  const NORWAY_ZOOM = 5;
+  const TYPE_LABELS = { station: "Tog-stasjon", halt: "Holdeplass", stop: "Stoppunkt" };
+
+  const demoState = {
+    map: null,
+    stations: [],
+    cluster: null,
+    visibleTypes: new Set(["station", "halt", "stop"]),
+    clusterMode: "dominant-type",
+    isAdmin: false,
+    searchQuery: "",
+  };
+
+  // ============================================================
+  // Init: kart + bakgrunnslag
+  // ============================================================
+  const map = L.map("map", {
+    fullscreenControl: true,
+    fullscreenControlOptions: {
+      position: "topleft",
+      title: "Vis fullskjerm",
+      titleCancel: "Avslutt fullskjerm",
+    },
+  }).setView(NORWAY_CENTER, NORWAY_ZOOM);
+  demoState.map = map;
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-bidragsytere',
+  }).addTo(map);
+
+  if (typeof map.setActiveArea === "function") {
+    map.setActiveArea({
+      position: "absolute",
+      top: "8%",
+      left: "8%",
+      right: "8%",
+      bottom: "8%",
+    }, true, false);
+  }
+
+  // ============================================================
+  // Sidebar-v2
+  // ============================================================
+  const sidebar = L.control.sidebar({
+    autopan: true,
+    closeButton: true,
+    container: "sidebar",
+    position: "right",
+  }).addTo(map);
+  sidebar.open("info");
+
+  // ============================================================
+  // Markercluster
+  // ============================================================
+  function dominantType(markers) {
+    const counts = { station: 0, halt: 0, stop: 0 };
+    for (const m of markers) {
+      const t = m.options.stationType || "stop";
+      counts[t] = (counts[t] || 0) + 1;
+    }
+    let dom = "stop", best = -1;
+    for (const k of ["station", "halt", "stop"]) {
+      if (counts[k] > best) { dom = k; best = counts[k]; }
+    }
+    return dom;
+  }
+
+  function createClusterIcon(cluster) {
+    const count = cluster.getChildCount();
+    const sizeClass = count >= 100 ? "size-xl" : count >= 25 ? "size-l" : "";
+    let domClass = "";
+    if (demoState.clusterMode === "dominant-type") {
+      domClass = "dom-" + dominantType(cluster.getAllChildMarkers());
+    }
+    const div = L.DomUtil.create("div");
+    div.className = ("cluster-icon " + domClass + " " + sizeClass).trim();
+    div.textContent = String(count);
+    return L.divIcon({
+      html: div.outerHTML,
+      className: "",
+      iconSize: null,
+    });
+  }
+
+  function buildCluster(splitZoom) {
+    return L.markerClusterGroup({
+      iconCreateFunction: createClusterIcon,
+      disableClusteringAtZoom: splitZoom < 0 ? 19 : splitZoom,
+      spiderfyOnMaxZoom: true,
+      showCoverageOnHover: false,
+      maxClusterRadius: 60,
+    });
+  }
+  demoState.cluster = buildCluster(10).addTo(map);
+
+  // ============================================================
+  // divIcon for stasjon
+  // ============================================================
+  function makeStationIcon(type, isHit) {
+    const cls = "station-marker is-" + type + (isHit ? " is-search-hit" : "");
+    return L.divIcon({
+      className: cls,
+      iconSize: [16, 16],
+      iconAnchor: [8, 8],
+    });
+  }
+
+  // Bygg popup som DOM-element (ingen innerHTML med brukerdata)
+  function buildPopupNode(props) {
+    const root = L.DomUtil.create("div", "station-popup");
+    const h = L.DomUtil.create("h4", "", root);
+    h.textContent = props.name || "(uten navn)";
+    const meta = L.DomUtil.create("div", "meta", root);
+    const type = TYPE_LABELS[props.railway] || props.railway || "ukjent";
+    meta.textContent = type + (props.operator ? " · " + props.operator : "");
+    if (props.uic_ref) {
+      const uic = L.DomUtil.create("div", "meta", root);
+      uic.textContent = "UIC: " + props.uic_ref;
+    }
+    if (props.ref) {
+      const ref = L.DomUtil.create("div", "meta", root);
+      ref.textContent = "Ref: " + props.ref;
+    }
+    return root;
+  }
+
+  // ============================================================
+  // Last stasjons-data
+  // ============================================================
+  fetch("data/stations.geojson")
+    .then(r => r.json())
+    .then(geo => {
+      for (const f of geo.features) {
+        const [lon, lat] = f.geometry.coordinates;
+        const type = f.properties.railway || "stop";
+        const marker = L.marker([lat, lon], {
+          icon: makeStationIcon(type, false),
+          stationType: type,
+          stationName: f.properties.name || "",
+        });
+        marker.bindPopup(buildPopupNode(f.properties));
+        marker.bindTooltip(f.properties.name || "(uten navn)", { direction: "top", offset: [0, -8] });
+        demoState.stations.push({
+          feature: f,
+          marker,
+          type,
+          name: f.properties.name || "",
+          latlng: L.latLng(lat, lon),
+        });
+      }
+      refreshClusterFilter();
+      renderStationList();
+      const bounds = L.latLngBounds(demoState.stations.map(s => s.latlng));
+      if (bounds.isValid()) map.fitBounds(bounds, { padding: [20, 20], maxZoom: 8 });
+    })
+    .catch(err => {
+      console.error("Klarte ikke laste stations.geojson:", err);
+      const banner = L.DomUtil.create("div", "demo-banner");
+      banner.textContent = "Kunne ikke laste stasjons-data. Sørg for å serve fra public/-rota.";
+      document.body.prepend(banner);
+    });
+
+  function refreshClusterFilter() {
+    demoState.cluster.clearLayers();
+    const visible = demoState.stations.filter(s => demoState.visibleTypes.has(s.type));
+    demoState.cluster.addLayers(visible.map(s => s.marker));
+  }
+
+  // ============================================================
+  // Stasjons-liste i sidebar (DOM-bygd, ingen innerHTML)
+  // ============================================================
+  function renderStationList() {
+    const list = document.getElementById("station-list");
+    while (list.firstChild) list.removeChild(list.firstChild);
+
+    const q = demoState.searchQuery.toLowerCase();
+    const visible = demoState.stations.filter(s => demoState.visibleTypes.has(s.type));
+    const matches = visible
+      .filter(s => !q || s.name.toLowerCase().includes(q))
+      .slice(0, 200);
+
+    matches.forEach(s => {
+      const row = document.createElement("div");
+      row.className = "station-row";
+
+      const swatch = document.createElement("span");
+      swatch.className = "swatch is-" + s.type;
+      row.appendChild(swatch);
+
+      const name = document.createElement("span");
+      name.className = "name";
+      name.textContent = s.name || "(uten navn)";
+      row.appendChild(name);
+
+      const typeSpan = document.createElement("span");
+      typeSpan.className = "type";
+      typeSpan.textContent = TYPE_LABELS[s.type] || s.type;
+      row.appendChild(typeSpan);
+
+      row.addEventListener("click", () => focusStation(s));
+      list.appendChild(row);
+    });
+
+    document.getElementById("station-count").textContent =
+      matches.length + " av " + visible.length + " synlige";
+  }
+
+  function focusStation(station) {
+    map.flyTo(station.latlng, Math.max(map.getZoom(), 12), { duration: 0.6 });
+    setTimeout(() => station.marker.openPopup(), 700);
+  }
+
+  document.getElementById("station-search").addEventListener("input", e => {
+    demoState.searchQuery = e.target.value;
+    renderStationList();
+  });
+
+  document.querySelectorAll('[data-type]').forEach(cb => {
+    cb.addEventListener("change", () => {
+      const t = cb.dataset.type;
+      if (cb.checked) demoState.visibleTypes.add(t);
+      else demoState.visibleTypes.delete(t);
+      refreshClusterFilter();
+      renderStationList();
+    });
+  });
+
+  document.getElementById("cluster-mode").addEventListener("change", e => {
+    demoState.clusterMode = e.target.value;
+    demoState.cluster.refreshClusters();
+  });
+
+  document.getElementById("cluster-zoom").addEventListener("change", e => {
+    const splitZoom = parseInt(e.target.value, 10);
+    map.removeLayer(demoState.cluster);
+    demoState.cluster = buildCluster(splitZoom).addTo(map);
+    refreshClusterFilter();
+  });
+
+  // ============================================================
+  // Geocoder + nærmeste-stasjon
+  // ============================================================
+  const geocoder = L.Control.geocoder({
+    position: "topleft",
+    placeholder: "Søk adresse eller sted …",
+    errorMessage: "Ingen treff",
+    defaultMarkGeocode: false,
+    geocoder: L.Control.Geocoder.nominatim({
+      geocodingQueryParams: { countrycodes: "no", "accept-language": "no" },
+    }),
+  })
+  .on("markgeocode", e => {
+    const { center, name } = e.geocode;
+    map.flyTo(center, 12, { duration: 0.8 });
+    setTimeout(() => {
+      const nearest = findNearestStation(center, 5000);
+      if (nearest) nearest.marker.openPopup();
+    }, 900);
+  })
+  .addTo(map);
+
+  function findNearestStation(latlng, maxMeters) {
+    let best = null;
+    for (const s of demoState.stations) {
+      if (!demoState.visibleTypes.has(s.type)) continue;
+      const d = latlng.distanceTo(s.latlng);
+      if (d <= maxMeters && (!best || d < best.distance)) {
+        best = Object.assign({}, s, { distance: d });
+      }
+    }
+    return best;
+  }
+
+  // ============================================================
+  // Locatecontrol
+  // ============================================================
+  L.control.locate({
+    position: "topleft",
+    flyTo: true,
+    keepCurrentZoomLevel: false,
+    locateOptions: { enableHighAccuracy: true, maxZoom: 13 },
+    strings: {
+      title: "Vis hvor jeg er",
+      popup: "Du er innen {distance} {unit} fra dette punktet",
+      outsideMapBoundsMsg: "Du ser ut til å være utenfor kartets grenser",
+      metersUnit: "meter",
+      feetUnit: "fot",
+    },
+  }).addTo(map);
+
+  map.on("locationfound", e => {
+    const nearest = findNearestStation(e.latlng, 10000);
+    if (nearest) {
+      setTimeout(() => nearest.marker.openPopup(), 600);
+    }
+  });
+
+  // ============================================================
+  // Geoman (admin-gated)
+  // ============================================================
+  map.pm.addControls({
+    position: "topleft",
+    drawCircle: false,
+    drawCircleMarker: false,
+    drawText: false,
+  });
+  map.pm.disableDraw();
+  map.pm.disableGlobalEditMode();
+
+  document.body.classList.toggle("is-admin", demoState.isAdmin);
+
+  document.getElementById("admin-toggle").addEventListener("change", e => {
+    demoState.isAdmin = e.target.checked;
+    document.body.classList.toggle("is-admin", demoState.isAdmin);
+    document.getElementById("export-drawn").disabled = !demoState.isAdmin;
+    const badge = document.getElementById("geoman-badge");
+    badge.className = "badge " + (demoState.isAdmin ? "badge-on" : "badge-info");
+    badge.textContent = demoState.isAdmin ? "På (admin = true)" : "Av (admin = false)";
+  });
+
+  document.getElementById("export-drawn").addEventListener("click", () => {
+    const features = [];
+    map.eachLayer(l => {
+      const isStation = l instanceof L.Marker && l.options && l.options.stationType;
+      const isTile = l instanceof L.TileLayer;
+      if (l.pm && l.toGeoJSON && !isTile && !isStation) {
+        try {
+          const gj = l.toGeoJSON();
+          if (gj && gj.type === "Feature") features.push(gj);
+        } catch (_) {}
+      }
+    });
+    const fc = { type: "FeatureCollection", features };
+    const blob = new Blob([JSON.stringify(fc, null, 2)], { type: "application/geo+json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "tegninger.geojson";
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // ============================================================
+  // easyPrint
+  // ============================================================
+  const printer = L.easyPrint({
+    title: "Print kart",
+    position: "topleft",
+    sizeModes: ["A4Landscape", "A4Portrait", "Current"],
+    filename: "jernbanekart",
+    exportOnly: false,
+    hideControlContainer: true,
+    hidden: true,
+  }).addTo(map);
+
+  document.getElementById("print-btn").addEventListener("click", () => {
+    printer.printMap("A4Landscape", "jernbanekart");
+  });
+
+  // ============================================================
+  // Tegnforklaring (DOM-bygd)
+  // ============================================================
+  const legend = L.control({ position: "bottomright" });
+  legend.onAdd = () => {
+    const div = L.DomUtil.create("div", "legend");
+    const title = L.DomUtil.create("strong", "", div);
+    title.textContent = "Stasjonstype";
+    const rows = [
+      ["#1d4ed8", "Tog-stasjon"],
+      ["#14b8a6", "Holdeplass"],
+      ["#94a3b8", "Stoppunkt"],
+    ];
+    rows.forEach(([color, label]) => {
+      const row = L.DomUtil.create("div", "row", div);
+      const swatch = L.DomUtil.create("span", "swatch", row);
+      swatch.style.background = color;
+      const text = document.createTextNode(" " + label);
+      row.appendChild(text);
+    });
+    return div;
+  };
+  legend.addTo(map);
+
+  // ============================================================
+  // ESC lukker sidebar
+  // ============================================================
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") sidebar.close();
+  });
+
+  window.__demo = demoState;
+  </script>
+</body>
+</html>

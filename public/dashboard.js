@@ -120,7 +120,7 @@
     doughnut("dash-chart-electrification", {
       labels: ["Elektrifisert", "Ikke elektrifisert"],
       data: [stats.electrified_km, stats.total_km - stats.electrified_km],
-      colors: ["#2563eb", "#d23f3f"],
+      colors: ["#2563eb", "#9b2c2c"],
       ariaTitle: "Elektrifiseringsfordeling",
     });
 
@@ -197,35 +197,380 @@
     if (!el) return;
     el.replaceChildren();
 
-    const benchmarks = window.AppHelpers.BENCHMARKS.countries_km;
-    const entries = Object.entries(benchmarks).map(([country, km]) => [
+    const km = window.AppHelpers.BENCHMARKS.countries_km;
+    // Fallback til tom dict hvis helpers.js er cachet uten dette feltet.
+    const pct = window.AppHelpers.BENCHMARKS.countries_electrified_pct || {};
+    const entries = Object.entries(km).map(([country, kmVal]) => ({
       country,
-      country === "Norge" ? stats.total_km : km,
-    ]);
-    entries.sort((a, b) => b[1] - a[1]);
+      km: country === "Norge" ? stats.total_km : kmVal,
+      pct: country === "Norge" ? stats.electrified_pct : pct[country],
+    }));
+    entries.sort((a, b) => b.km - a.km);
 
-    const max = Math.max(...entries.map(([, v]) => v));
+    const maxKm = Math.max(...entries.map((e) => e.km));
     const list = document.createElement("div");
-    list.className = "compare-list";
-    for (const [country, km] of entries) {
+    list.className = "compare-list compare-list-dual";
+    for (const e of entries) {
       const row = document.createElement("div");
-      row.className = "compare-row" + (country === "Norge" ? " is-norway" : "");
+      row.className = "compare-row" + (e.country === "Norge" ? " is-norway" : "");
       const label = document.createElement("span");
       label.className = "compare-label";
-      label.textContent = country;
+      label.textContent = e.country;
       const barWrap = document.createElement("span");
       barWrap.className = "compare-bar-wrap";
       const bar = document.createElement("span");
       bar.className = "compare-bar";
-      bar.style.width = `${(km / max) * 100}%`;
+      bar.style.width = `${(e.km / maxKm) * 100}%`;
       barWrap.append(bar);
       const val = document.createElement("span");
       val.className = "compare-val";
-      val.textContent = `${fmtNum(km)} km`;
+      val.textContent = `${fmtNum(e.km)} km`;
+      const pctEl = document.createElement("span");
+      pctEl.className = "compare-pct";
+      pctEl.textContent = e.pct != null ? `${Math.round(e.pct)}% elek` : "—";
+      row.append(label, barWrap, val, pctEl);
+      list.append(row);
+    }
+    el.append(list);
+  }
+
+  // Topp ikke-elektrifiserte baner med lengde > 50 km — kandidater hvis Norge
+  // skal kutte tog-CO₂. Beregner besparelse med samme antagelse som
+  // diesel_co2_estimate i process.py (10 tog/d × 250 t × 0.05 kg/GTK).
+  function renderElecCandidates(stats) {
+    const list = document.getElementById("dash-elec-candidates");
+    const note = document.getElementById("dash-elec-candidates-note");
+    if (!list) return;
+    list.replaceChildren();
+
+    const candidates = (stats.routes || [])
+      .filter((r) => r.total_km >= 50 && r.electrified_pct < 50)
+      .sort((a, b) => {
+        const aNonElec = a.total_km * (1 - a.electrified_pct / 100);
+        const bNonElec = b.total_km * (1 - b.electrified_pct / 100);
+        return bNonElec - aNonElec;
+      })
+      .slice(0, 5);
+
+    if (candidates.length === 0) {
+      list.textContent = "Alle baner over 50 km er elektrifisert.";
+      return;
+    }
+
+    // CO2 per km — speiler co2_estimate_tonnes_per_year fra process.py.
+    // (10 × 250 × 0.05 / 1000) tonn/km/dag × 365 dager
+    const CO2_PER_KM_YEAR = 10 * 250 * 0.05 * 365 / 1000;
+
+    let totalNonElec = 0;
+    for (const r of candidates) {
+      const nonElecKm = r.total_km * (1 - r.electrified_pct / 100);
+      totalNonElec += nonElecKm;
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.className = "dash-route-link";
+      a.href = `bane.html?navn=${encodeURIComponent(r.name)}`;
+      a.textContent = r.name;
+      li.append(a);
+      const tail = document.createElement("span");
+      tail.className = "tail";
+      const co2 = Math.round(nonElecKm * CO2_PER_KM_YEAR);
+      tail.textContent = ` — ${Math.round(nonElecKm)} km diesel (${r.electrified_pct}% elek), ~${fmtNum(co2)} tonn CO₂/år`;
+      li.append(tail);
+      list.append(li);
+    }
+
+    if (note) {
+      const totalCo2 = Math.round(totalNonElec * CO2_PER_KM_YEAR);
+      note.textContent = `Total CO₂-besparelse hvis disse fem elektrifiseres: ~${fmtNum(totalCo2)} tonn/år. Tommelfingerregel — faktisk kost-nytte avhenger av trafikkvolum og kraft-kilde.`;
+    }
+  }
+
+  // Elektrifiseringsrate per operatør — hvem ligger etter?
+  // Aggregerer fra routes (ikke segment-nivå) siden operator-feltet er
+  // best tagget der.
+  function renderOperatorElectrification(stats) {
+    const el = document.getElementById("dash-operator-elec");
+    if (!el) return;
+    el.replaceChildren();
+
+    const byOp = new Map();
+    for (const r of (stats.routes || [])) {
+      for (const op of (r.operators || [])) {
+        const entry = byOp.get(op) || { totalKm: 0, elecKm: 0 };
+        entry.totalKm += r.total_km / r.operators.length;
+        entry.elecKm += r.electrified_km / r.operators.length;
+        byOp.set(op, entry);
+      }
+    }
+
+    const entries = [...byOp.entries()]
+      .filter(([, v]) => v.totalKm >= 50)
+      .map(([op, v]) => ({
+        op,
+        totalKm: v.totalKm,
+        pct: v.totalKm > 0 ? (v.elecKm / v.totalKm) * 100 : 0,
+      }))
+      .sort((a, b) => b.totalKm - a.totalKm);
+
+    if (entries.length < 2) return;
+
+    const heading = document.createElement("p");
+    heading.className = "subhead";
+    heading.style.margin = "0 0 var(--sp-2) 0";
+    heading.textContent = "Elektrifisering per operatør";
+    el.append(heading);
+
+    const list = document.createElement("div");
+    list.className = "compare-list";
+    for (const e of entries) {
+      const row = document.createElement("div");
+      row.className = "compare-row" + (e.op === "Bane NOR" ? " is-norway" : "");
+      const label = document.createElement("span");
+      label.className = "compare-label";
+      label.textContent = e.op;
+      const barWrap = document.createElement("span");
+      barWrap.className = "compare-bar-wrap";
+      const bar = document.createElement("span");
+      bar.className = "compare-bar";
+      bar.style.width = `${e.pct}%`;
+      barWrap.append(bar);
+      const val = document.createElement("span");
+      val.className = "compare-val";
+      val.textContent = `${Math.round(e.pct)}%`;
       row.append(label, barWrap, val);
       list.append(row);
     }
     el.append(list);
+  }
+
+  // Reiseopplevelse per topp-bane: tunnel-% + hastighets-gap (maks vs snitt).
+  // Stort gap = infrastrukturen utnyttes ikke fullt ut, eller topografi tvinger
+  // tog under makskapasitet på lange strekninger.
+  function renderExperience(stats) {
+    const el = document.getElementById("dash-experience");
+    if (!el) return;
+    el.replaceChildren();
+
+    const candidates = (stats.routes || [])
+      .filter((r) => r.total_km >= 100 && r.max_speed_kmh != null && r.mean_speed_kmh != null)
+      .sort((a, b) => b.total_km - a.total_km)
+      .slice(0, 6);
+
+    for (const r of candidates) {
+      const row = document.createElement("div");
+      row.className = "dash-experience-row";
+
+      const name = document.createElement("a");
+      name.className = "dash-experience-name";
+      name.href = `bane.html?navn=${encodeURIComponent(r.name)}`;
+      name.textContent = r.name;
+      row.append(name);
+
+      const stats_ = document.createElement("div");
+      stats_.className = "dash-experience-stats";
+
+      const tunnelPct = r.total_km > 0 ? Math.round(100 * r.tunnel_km / r.total_km) : 0;
+      const speedRatio = r.max_speed_kmh > 0 ? Math.round(100 * r.mean_speed_kmh / r.max_speed_kmh) : 0;
+
+      const tu = document.createElement("span");
+      tu.className = "dash-experience-stat";
+      const tuLbl = document.createElement("span"); tuLbl.className = "lbl"; tuLbl.textContent = "Tunnel";
+      const tuVal = document.createElement("span"); tuVal.className = "val"; tuVal.textContent = `${tunnelPct}%`;
+      tu.append(tuLbl, tuVal);
+
+      const sp = document.createElement("span");
+      sp.className = "dash-experience-stat";
+      const spLbl = document.createElement("span"); spLbl.className = "lbl"; spLbl.textContent = "Snitt / Maks";
+      const spVal = document.createElement("span"); spVal.className = "val"; spVal.textContent = `${Math.round(r.mean_speed_kmh)} / ${Math.round(r.max_speed_kmh)} km/t`;
+      sp.append(spLbl, spVal);
+
+      const gap = document.createElement("span");
+      gap.className = "dash-experience-stat";
+      const gapLbl = document.createElement("span"); gapLbl.className = "lbl"; gapLbl.textContent = "Utnyttelse";
+      const gapVal = document.createElement("span");
+      gapVal.className = "val" + (speedRatio < 60 ? " warn" : "");
+      gapVal.textContent = `${speedRatio}%`;
+      gap.append(gapLbl, gapVal);
+
+      stats_.append(tu, sp, gap);
+      row.append(stats_);
+      el.append(row);
+    }
+  }
+
+  // Signal/sporveksel-statistikk fra OSM-noder. Sporveksel-tellingen er
+  // forholdsvis komplett; signal-tellingen er sterkt under-tagget i OSM,
+  // så den vises mer som kuriositet enn fakta.
+  function renderInfrastructure(stats) {
+    const kpis = document.getElementById("dash-infra-kpis");
+    const list = document.getElementById("dash-signal-types");
+    if (!kpis) return;
+    kpis.replaceChildren();
+
+    const sig = stats.signals || { total: 0, per_100km: 0, by_type: {} };
+    const swi = stats.switches || { total: 0, per_100km: 0 };
+
+    kpis.append(
+      miniKpi(`${fmtNum(swi.total)}`, "Sporveksler"),
+      miniKpi(`${swi.per_100km}`, "Per 100 km bane"),
+      miniKpi(`${fmtNum(sig.total)}`, "Signaler"),
+    );
+
+    if (!list) return;
+    list.replaceChildren();
+    const labels = {
+      main: "Hovedsignal",
+      distant: "Forsignal",
+      combined: "Kombinert signal",
+      speed_limit: "Hastighetssignal",
+      form: "Semafor (form)",
+      shunting: "Skiftesignal",
+      catenary_mast: "Kontaktledningsmast",
+      whistle: "Pipesignal",
+      main_repeated: "Gjentatt hovedsignal",
+      slope: "Stigningssignal",
+    };
+    const entries = Object.entries(sig.by_type || {}).sort((a, b) => b[1] - a[1]);
+    for (const [type, count] of entries) {
+      const li = document.createElement("li");
+      const name = document.createElement("span");
+      name.textContent = labels[type] || type;
+      const num = document.createElement("span");
+      num.className = "km";
+      num.textContent = String(count);
+      li.append(name, num);
+      list.append(li);
+    }
+  }
+
+  // Dobbeltspor-gap: topp-baner sortert etter total lengde, vist som bars
+  // med dobbeltspor-andel. 0%-baner som Nordlandsbanen er åpenbare kandidater
+  // for kapasitetsutvidelse.
+  function renderDoubleTrackGap(stats) {
+    const el = document.getElementById("dash-double-track-gap");
+    if (!el) return;
+    el.replaceChildren();
+
+    const top = (stats.routes || [])
+      .filter((r) => r.total_km >= 100 && r.double_track_pct != null)
+      .sort((a, b) => b.total_km - a.total_km)
+      .slice(0, 10);
+
+    const list = document.createElement("div");
+    list.className = "compare-list";
+    for (const r of top) {
+      const row = document.createElement("div");
+      row.className = "compare-row";
+      const label = document.createElement("a");
+      label.className = "compare-label dash-route-link";
+      label.href = `bane.html?navn=${encodeURIComponent(r.name)}`;
+      label.textContent = r.name;
+      const barWrap = document.createElement("span");
+      barWrap.className = "compare-bar-wrap";
+      const bar = document.createElement("span");
+      bar.className = "compare-bar";
+      bar.style.width = `${r.double_track_pct}%`;
+      if (r.double_track_pct < 10) bar.style.background = "var(--c-danger, #dc2626)";
+      else if (r.double_track_pct < 50) bar.style.background = "var(--c-warning, #f59e0b)";
+      barWrap.append(bar);
+      const val = document.createElement("span");
+      val.className = "compare-val";
+      val.textContent = `${r.double_track_pct}%`;
+      row.append(label, barWrap, val);
+      list.append(row);
+    }
+    el.append(list);
+  }
+
+  // Rekorder — kompakt "fakta-liste" med ekstremene i datasettet.
+  function renderRecords(stats) {
+    const el = document.getElementById("dash-records");
+    if (!el) return;
+    el.replaceChildren();
+
+    const routes = stats.routes || [];
+    const fastest = stats.fastest_sections?.[0];
+    const longest = [...routes].sort((a, b) => b.total_km - a.total_km)[0];
+    const longestUnelectrified = [...routes]
+      .filter((r) => r.electrified_pct < 50)
+      .sort((a, b) => b.total_km - a.total_km)[0];
+    const mostTunnel = [...routes]
+      .filter((r) => r.total_km >= 100)
+      .map((r) => ({ ...r, tunnelPct: r.total_km > 0 ? r.tunnel_km / r.total_km : 0 }))
+      .sort((a, b) => b.tunnelPct - a.tunnelPct)[0];
+    const mostDoubleTrack = [...routes]
+      .filter((r) => r.total_km >= 50)
+      .sort((a, b) => (b.double_track_pct || 0) - (a.double_track_pct || 0))[0];
+    const oldestStation = stats.history?.oldest;
+
+    const records = [];
+    if (longest) {
+      records.push({
+        label: "Lengste bane",
+        value: `${longest.name} — ${fmtNum(longest.total_km)} km`,
+        href: `bane.html?navn=${encodeURIComponent(longest.name)}`,
+      });
+    }
+    if (fastest) {
+      records.push({
+        label: "Høyeste maks-hastighet",
+        value: `${fastest.name} — ${fastest.maxspeed_kmh} km/t`,
+        href: fastest.name && fastest.name !== "(uten navn)"
+          ? `bane.html?navn=${encodeURIComponent(fastest.name)}` : null,
+      });
+    }
+    if (longestUnelectrified) {
+      records.push({
+        label: "Lengste uten elektrifisering",
+        value: `${longestUnelectrified.name} — ${fmtNum(longestUnelectrified.total_km)} km`,
+        href: `bane.html?navn=${encodeURIComponent(longestUnelectrified.name)}`,
+      });
+    }
+    if (mostTunnel) {
+      const pct = Math.round(mostTunnel.tunnelPct * 100);
+      records.push({
+        label: "Mest tunnel (≥100 km)",
+        value: `${mostTunnel.name} — ${pct}% i tunnel`,
+        href: `bane.html?navn=${encodeURIComponent(mostTunnel.name)}`,
+      });
+    }
+    if (mostDoubleTrack && mostDoubleTrack.double_track_pct > 0) {
+      records.push({
+        label: "Mest dobbeltspor",
+        value: `${mostDoubleTrack.name} — ${mostDoubleTrack.double_track_pct}%`,
+        href: `bane.html?navn=${encodeURIComponent(mostDoubleTrack.name)}`,
+      });
+    }
+    if (stats.topography?.longest_tunnel_segment_km) {
+      records.push({
+        label: "Lengste tunnel-segment",
+        value: `${stats.topography.longest_tunnel_segment_km} km`,
+        href: null,
+      });
+    }
+    if (oldestStation?.year && oldestStation?.name) {
+      records.push({
+        label: "Eldste stasjon",
+        value: `${oldestStation.name} — ${oldestStation.year}`,
+        href: `stasjon.html?navn=${encodeURIComponent(oldestStation.name)}`,
+      });
+    }
+
+    for (const r of records) {
+      const li = document.createElement("li");
+      const lbl = document.createElement("span");
+      lbl.className = "dash-record-label";
+      lbl.textContent = r.label;
+      const val = r.href
+        ? Object.assign(document.createElement("a"), {
+            href: r.href, className: "dash-record-value dash-route-link", textContent: r.value,
+          })
+        : Object.assign(document.createElement("span"), {
+            className: "dash-record-value", textContent: r.value,
+          });
+      li.append(lbl, val);
+      el.append(li);
+    }
   }
 
   // Honest acknowledgment of OSM-tagging-hull. Bygger 4 prosentmål fra
@@ -314,7 +659,7 @@
     bar("dash-chart-types", {
       labels: types.map(([k]) => k),
       data: types.map(([, v]) => v),
-      color: "#1a3a52",
+      color: "#334155",
       ariaTitle: "Banetyper i kilometer",
     });
     const total = types.reduce((s, [, v]) => s + v, 0);
@@ -332,7 +677,7 @@
     bar("dash-chart-speed", {
       labels: sp.map(([k]) => k),
       data: sp.map(([, v]) => v),
-      color: "#3182ce",
+      color: "#2563eb",
       ariaTitle: "Hastighetsfordeling i kilometer",
     });
     const dist = stats.speed_distribution_km || {};
@@ -512,6 +857,195 @@
     return wrap;
   }
 
+  // Bygger en mini-KPI-celle ($num + $desc) til .dash-mini-kpis-griden.
+  function miniKpi(num, desc) {
+    const wrap = document.createElement("div");
+    wrap.className = "dash-mini-kpi";
+    const n = document.createElement("span");
+    n.className = "num";
+    n.textContent = num;
+    const d = document.createElement("span");
+    d.className = "desc";
+    d.textContent = desc;
+    wrap.append(n, d);
+    return wrap;
+  }
+
+  // Bygger en klikkbar lenke i .dash-link-list-format. Bruker for topp-tunnel-
+  // ruter (→ bane.html) og knutepunkt-stasjoner (→ stasjon.html).
+  function linkRow(href, name, tail) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.className = "dash-route-link";
+    a.href = href;
+    a.textContent = name;
+    li.append(a);
+    if (tail) {
+      const t = document.createElement("span");
+      t.className = "tail";
+      t.textContent = ` — ${tail}`;
+      li.append(t);
+    }
+    return li;
+  }
+
+  function renderTopography(stats) {
+    const topo = stats.topography;
+    const kpis = document.getElementById("dash-topography-kpis");
+    const list = document.getElementById("dash-top-tunnel-routes");
+    if (!topo || !kpis || !list) return;
+
+    const sumKm = topo.tunnel_km + topo.bridge_km + topo.surface_km;
+    const tunnelPct = sumKm > 0 ? Math.round(100 * topo.tunnel_km / sumKm) : 0;
+    const bridgePct = sumKm > 0 ? Math.round(100 * topo.bridge_km / sumKm) : 0;
+
+    kpis.replaceChildren(
+      miniKpi(`${fmtNum(topo.tunnel_km)} km`, `Tunnel (${tunnelPct}%)`),
+      miniKpi(`${fmtNum(topo.bridge_km)} km`, `Bro (${bridgePct}%)`),
+      miniKpi(`${topo.longest_tunnel_segment_km} km`, "Lengste tunnel-segment"),
+    );
+
+    bar("dash-chart-topography", {
+      labels: ["Åpen mark", "Tunnel", "Bro"],
+      data: [topo.surface_km, topo.tunnel_km, topo.bridge_km],
+      color: "#334155",
+      ariaTitle: "Topografi-fordeling i kilometer",
+    });
+
+    list.replaceChildren();
+    for (const r of topo.top_tunnel_routes || []) {
+      list.append(linkRow(
+        `bane.html?navn=${encodeURIComponent(r.name)}`,
+        r.name,
+        `${r.tunnel_pct}% i tunnel (${r.tunnel_km} av ${r.total_km} km)`,
+      ));
+    }
+  }
+
+  function renderHistory(stats) {
+    const h = stats.history;
+    const kpis = document.getElementById("dash-history-kpis");
+    const archList = document.getElementById("dash-architects");
+    const note = document.getElementById("dash-history-note");
+    if (!h || !kpis || !archList) {
+      if (kpis) kpis.textContent = "Ingen historiske data tilgjengelig.";
+      return;
+    }
+
+    kpis.replaceChildren(
+      miniKpi(String(h.oldest?.year ?? "—"), `Eldste: ${h.oldest?.name ?? "—"}`),
+      miniKpi(String(h.newest?.year ?? "—"), `Nyeste: ${h.newest?.name ?? "—"}`),
+      miniKpi(String(h.heritage_count ?? 0), "Fredede stasjoner"),
+      miniKpi(String(h.stations_with_year ?? 0), "Stasjoner med åpningsår"),
+    );
+
+    const decades = h.by_decade || [];
+    bar("dash-chart-history", {
+      labels: decades.map((d) => d.label),
+      data: decades.map((d) => d.count),
+      color: "#0d9488",
+      ariaTitle: "Antall stasjoner åpnet per tiår",
+      unit: " stasjoner",
+    });
+
+    archList.replaceChildren();
+    for (const a of h.top_architects || []) {
+      const li = document.createElement("li");
+      const name = document.createElement("span");
+      name.textContent = a.name;
+      const cnt = document.createElement("span");
+      cnt.className = "km";
+      cnt.textContent = `${a.count} stasjoner`;
+      li.append(name, cnt);
+      archList.append(li);
+    }
+
+    if (note && h.note) note.textContent = h.note;
+  }
+
+  function renderHubs(stats) {
+    const network = stats.network;
+    const list = document.getElementById("dash-hubs-list");
+    const note = document.getElementById("dash-hubs-note");
+    if (!network?.hubs?.length || !list) {
+      if (list) list.textContent = "Ingen knutepunkt-data tilgjengelig.";
+      return;
+    }
+
+    const top = network.hubs.slice(0, 10);
+    bar("dash-chart-hubs", {
+      labels: top.map((h) => h.name),
+      data: top.map((h) => h.route_count),
+      color: "#2563eb",
+      ariaTitle: "Antall ruter per knutepunkt",
+      unit: " ruter",
+    });
+
+    list.replaceChildren();
+    for (const h of network.hubs) {
+      list.append(linkRow(
+        `stasjon.html?navn=${encodeURIComponent(h.name)}`,
+        h.name,
+        `${h.route_count} ruter`,
+      ));
+    }
+
+    if (note && network.note) note.textContent = network.note;
+  }
+
+  function renderPotential(stats) {
+    const kpis = document.getElementById("dash-potential-kpis");
+    const list = document.getElementById("dash-unserved-list");
+    const note = document.getElementById("dash-potential-note");
+    const pc = stats.population_coverage;
+    if (!kpis || !list) return;
+    if (!pc) {
+      kpis.textContent = "Mangler befolknings-data.";
+      return;
+    }
+
+    const beyond25Pop = pc.bands_population?.[">25 km"] ?? 0;
+    const unserved = pc.largest_unserved || [];
+    const top = unserved[0];
+    const topHub = stats.network?.hubs?.[0];
+
+    kpis.replaceChildren(
+      miniKpi(
+        top ? `${fmtNum(top.population / 1000)}k` : "—",
+        top ? `${top.name} — ${top.distance_km} km til tog` : "Største ubetjente by",
+      ),
+      miniKpi(`${unserved.length}`, "Tettsteder >5k uten togtilbud"),
+      miniKpi(`${fmtNum(beyond25Pop / 1000)}k`, "Innbyggere >25 km fra tog"),
+      miniKpi(
+        topHub ? String(topHub.route_count) : "—",
+        topHub ? `Ruter via ${topHub.name}` : "Største knutepunkt",
+      ),
+    );
+
+    list.replaceChildren();
+    for (const u of unserved.slice(0, 10)) {
+      const li = document.createElement("li");
+      const name = document.createElement("span");
+      name.className = "dash-route-name";
+      name.style.fontWeight = "600";
+      name.textContent = u.name;
+      const tail = document.createElement("span");
+      tail.className = "tail";
+      tail.textContent = ` — ${fmtNum(u.population / 1000)}k innbyggere, ${u.distance_km} km til nærmeste stasjon`;
+      li.append(name, tail);
+      list.append(li);
+    }
+
+    if (note) {
+      // Størrelsesorden-illustrasjon: hvis halvparten av folk >25 km tar tog
+      // i stedet for bil, hvor mye CO2 spares? Bilsnitt ~120 g/km, antar
+      // 10 000 km/år, halvparten — gir ren tommelfingerregel for skalering.
+      const halfBeyondPop = beyond25Pop / 2;
+      const tonnesSaved = Math.round(halfBeyondPop * 10000 * 0.12 / 1000);
+      note.textContent = `Hvis halvparten av de ${fmtNum(beyond25Pop / 1000)}k innbyggerne >25 km fra tog kjørte 10 000 km mindre bil per år, ville det spart ~${fmtNum(tonnesSaved)} tonn CO₂. Tommelfingerregel — krever ny infrastruktur eller buss-mater til eksisterende stasjoner.`;
+    }
+  }
+
   function renderFastest(stats) {
     const list = document.getElementById("dash-fastest");
     list.replaceChildren();
@@ -545,15 +1079,25 @@
     renderNarrative(stats);
     renderElectrification(stats);
     renderCo2Card(stats);
+    renderElecCandidates(stats);
     renderComparison(stats);
     renderOperators(stats);
+    renderOperatorElectrification(stats);
     renderDataQuality(stats);
     renderTypes(stats);
     renderSpeed(stats);
+    renderExperience(stats);
     renderTracks(stats);
+    renderInfrastructure(stats);
+    renderDoubleTrackGap(stats);
     renderPopulation(stats);
+    renderTopography(stats);
+    renderHistory(stats);
+    renderHubs(stats);
+    renderPotential(stats);
     renderFastest(stats);
     renderLargest(stats);
+    renderRecords(stats);
 
     window.__dashboard = { ready: true, stats };
   }

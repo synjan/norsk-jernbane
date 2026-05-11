@@ -5,9 +5,188 @@
   "use strict";
 
   // Felles helpers fra helpers.js (lastes før denne).
-  const { prettyType, buildSpeedProfile, slugify } = window.AppHelpers;
+  const { prettyType, buildSpeedProfile, buildStackedBar, slugify } = window.AppHelpers;
 
   function $(sel) { return document.querySelector(sel); }
+
+  // Tall som "4. lengste" — norsk ordinaltall med punktum etter.
+  function ordinalNo(n) {
+    return `${n}.`;
+  }
+
+  // Topp-X-plassering blant `routes` etter `field`. Returnerer { rank, of }
+  // hvor 1 er best (høyest verdi). Hvis feltet er null på ruten returneres null.
+  function rankOf(routes, route, fieldFn, descending = true) {
+    const myVal = fieldFn(route);
+    if (myVal == null) return null;
+    const sorted = [...routes]
+      .map((r) => fieldFn(r))
+      .filter((v) => v != null)
+      .sort((a, b) => descending ? b - a : a - b);
+    const idx = sorted.indexOf(myVal);
+    if (idx < 0) return null;
+    return { rank: idx + 1, of: sorted.length };
+  }
+
+  // Bygger narrativ-paragraf for ruten — speiler dashboard.js:renderNarrative.
+  // 2 setninger som leser hovedtallene høyt med rangering + topografi-kontekst.
+  function buildNarrative(route, allRoutes) {
+    const p = document.createElement("p");
+    p.className = "route-narrative";
+
+    const bold = (txt) => {
+      const b = document.createElement("strong");
+      b.textContent = txt;
+      return b;
+    };
+
+    const lengthRank = rankOf(allRoutes, route, (r) => r.total_km);
+    p.append(`${route.name} er Norges `);
+    if (lengthRank) p.append(bold(`${ordinalNo(lengthRank.rank)} lengste bane`));
+    else p.append(bold("en av Norges baner"));
+    p.append(` på `, bold(`${route.total_km.toFixed(0)} km`));
+
+    if (route.electrified_pct != null) {
+      p.append(`, `, bold(`${route.electrified_pct}% elektrifisert`));
+    }
+    p.append(".");
+
+    // Andre setning: tunnel/bro/dobbeltspor-kontekst.
+    const tunnelPct = route.total_km > 0 ? Math.round(100 * (route.tunnel_km || 0) / route.total_km) : 0;
+    const dt = route.double_track_pct;
+    const fragments = [];
+    if (tunnelPct >= 15) fragments.push(`${tunnelPct} % av reisen går i tunnel`);
+    if (dt != null && dt < 10) fragments.push(`kun ${Math.round(dt)} % har dobbeltspor`);
+    else if (dt != null && dt > 50) fragments.push(`${Math.round(dt)} % har dobbeltspor`);
+
+    if (fragments.length) {
+      const second = document.createElement("span");
+      second.textContent = " " + fragments[0].charAt(0).toUpperCase() + fragments[0].slice(1);
+      for (let i = 1; i < fragments.length; i++) {
+        second.append(document.createTextNode(`, og ${fragments[i]}`));
+      }
+      second.append(document.createTextNode("."));
+      p.append(second);
+    }
+    return p;
+  }
+
+  // Tolker hastighetsprofil + snitt/maks-tall til én forklarende setning.
+  function speedProfileTakeaway(route) {
+    const dist = route.speed_distribution_km || {};
+    const total = Object.values(dist).reduce((s, v) => s + v, 0);
+    const high = (dist["200+"] || 0) + (dist["160–200"] || 0);
+    const highPct = total > 0 ? (100 * high / total) : 0;
+    const max = route.max_speed_kmh;
+    const mean = route.mean_speed_kmh;
+
+    const p = document.createElement("p");
+    p.className = "route-speed-takeaway";
+
+    if (highPct >= 50) {
+      p.textContent = `${Math.round(highPct)} % av strekningen kjører ≥160 km/t — blant Norges raskeste baner.`;
+    } else if (max && mean && mean / max < 0.6) {
+      p.textContent = `Snitt-hastighet ${Math.round(mean)} km/t på ${Math.round(max)} km/t maks — kurver og topografi tvinger ned tempo.`;
+    } else if (max && mean) {
+      p.textContent = `Snitt-hastighet ${Math.round(mean)} km/t (${Math.round(100 * mean / max)} % av maks).`;
+    } else {
+      return null;
+    }
+    return p;
+  }
+
+  // Stacked bar for topografi (åpen mark / tunnel / bro). Gjenbruker
+  // buildStackedBar-mønsteret fra befolkningsdekning på dashboardet.
+  const TOPOGRAPHY_COLORS = {
+    "Åpen mark": "#94a3b8",
+    "Tunnel": "#475569",
+    "Bro": "#0d9488",
+  };
+  function buildTopographyBar(route) {
+    const tunnel = route.tunnel_km || 0;
+    const bridge = route.bridge_km || 0;
+    const surface = Math.max(0, route.total_km - tunnel - bridge);
+    if (tunnel + bridge + surface <= 0) return null;
+    return buildStackedBar({
+      entries: [
+        ["Åpen mark", surface],
+        ["Tunnel", tunnel],
+        ["Bro", bridge],
+      ],
+      colors: TOPOGRAPHY_COLORS,
+      fmtTitle: (label, value, total) => `${label}: ${value.toFixed(1)} km (${Math.round(100 * value / total)} %)`,
+      fmtLegend: (label, value) => `${label}: ${value.toFixed(1)} km`,
+    });
+  }
+
+  // Datakvalitet-pill — vises kun når OSM-dekning er under 80 %.
+  function buildQualityPill(route) {
+    const cov = route.track_tag_coverage_pct;
+    if (cov == null || cov >= 80) return null;
+    const pill = document.createElement("span");
+    pill.className = "pill pill-warning";
+    pill.textContent = `⚠ ${Math.round(cov)} % OSM-dekning`;
+    pill.title = "Noen spor-felt (hastighet, elektrifisering, antall spor) mangler i OSM. Tallene kan være ufullstendige.";
+    return pill;
+  }
+
+  // Sammenligningskort: 4 percentil-rangeringer som plasserer ruten blant alle.
+  function buildComparisonCard(route, allRoutes) {
+    const section = document.createElement("section");
+    section.className = "card dash-card";
+    const h2 = document.createElement("h2");
+    h2.className = "section-title";
+    h2.textContent = "Hvor ligger denne ruten an?";
+    section.append(h2);
+
+    const intro = document.createElement("p");
+    intro.className = "dash-card-intro";
+    intro.textContent = `Rangert blant ${allRoutes.length} navngitte baner i Norge.`;
+    section.append(intro);
+
+    const dims = [
+      { label: "Total lengde", field: (r) => r.total_km, unit: "km", fmt: (v) => v.toFixed(0) },
+      { label: "Elektrifiseringsgrad", field: (r) => r.electrified_pct, unit: "%", fmt: (v) => `${v}` },
+      { label: "Dobbeltspor-andel", field: (r) => r.double_track_pct, unit: "%", fmt: (v) => `${v}` },
+      { label: "Tunnel-andel", field: (r) => r.total_km > 0 ? 100 * (r.tunnel_km || 0) / r.total_km : 0, unit: "%", fmt: (v) => `${Math.round(v)}` },
+    ];
+
+    const list = document.createElement("div");
+    list.className = "compare-list";
+    for (const d of dims) {
+      const rank = rankOf(allRoutes, route, d.field);
+      if (!rank) continue;
+      const myVal = d.field(route);
+      const maxVal = Math.max(...allRoutes.map(d.field).filter((v) => v != null));
+      const pct = maxVal > 0 ? (myVal / maxVal) * 100 : 0;
+
+      const row = document.createElement("div");
+      row.className = "compare-row";
+      const label = document.createElement("span");
+      label.className = "compare-label";
+      label.textContent = d.label;
+      const barWrap = document.createElement("span");
+      barWrap.className = "compare-bar-wrap";
+      const bar = document.createElement("span");
+      bar.className = "compare-bar";
+      bar.style.width = `${pct}%`;
+      // Marker topp-10 % som primær (blå), topp-25 % standard, ellers dempet
+      const topPct = (rank.rank / rank.of) * 100;
+      if (topPct <= 10) bar.style.background = "var(--c-primary)";
+      else if (topPct >= 90) bar.style.background = "var(--c-muted)";
+      barWrap.append(bar);
+      const val = document.createElement("span");
+      val.className = "compare-val";
+      val.textContent = `${d.fmt(myVal)} ${d.unit}`;
+      const rankEl = document.createElement("span");
+      rankEl.className = "compare-pct";
+      rankEl.textContent = `${rank.rank}. av ${rank.of}`;
+      row.append(label, barWrap, val, rankEl);
+      list.append(row);
+    }
+    section.append(list);
+    return section;
+  }
 
   function styleForSpeed(props) {
     const speed = props.maxspeed_kmh;
@@ -32,6 +211,14 @@
 
   // Returnerer alle stasjoner som ligger innen `thresholdKm` fra et hvilket
   // som helst koordinatpunkt på en av rutens segmenter.
+  //
+  // OSM tagger ofte samme fysiske stasjon med flere noder — én for `station`
+  // (bygningen), én for `halt` (holdeplass) og én for `stop` (platform).
+  // De har gjerne samme `name`. Vi deduper på navn og beholder den med
+  // høyest prioritet etter `STATION_TYPE_PRIORITY` (station > halt > stop).
+  // Stasjoner uten navn beholdes som-er (kan være rangerings-stopp).
+  const STATION_TYPE_PRIORITY = { station: 3, halt: 2, stop: 1 };
+
   function findStationsAlongRoute(stations, segments, thresholdKm = 0.2) {
     // Flat liste av alle [lon, lat] i rutens segmenter.
     const routeCoords = [];
@@ -55,7 +242,48 @@
         matches.push({ feature: st, distanceKm: minKm });
       }
     }
-    return matches;
+    return dedupeByName(matches);
+  }
+
+  // Dedup: samme `name` → behold høyeste-prioritet OSM-type (station > halt
+  // > stop). UIC-ref og operator merges fra alle varianter i tilfelle bare
+  // én av nodene har dem tagget.
+  function dedupeByName(matches) {
+    const byName = new Map();
+    const noNames = [];
+    for (const m of matches) {
+      const name = m.feature.properties.name;
+      if (!name) { noNames.push(m); continue; }
+      const existing = byName.get(name);
+      if (!existing) {
+        byName.set(name, m);
+        continue;
+      }
+      const existingPri = STATION_TYPE_PRIORITY[existing.feature.properties.railway] || 0;
+      const newPri = STATION_TYPE_PRIORITY[m.feature.properties.railway] || 0;
+      if (newPri > existingPri) {
+        // Merge: behold den nye som primær, men plukk operator/uic_ref fra
+        // tidligere variant hvis den nye mangler dem.
+        const merged = { ...m, feature: { ...m.feature, properties: { ...m.feature.properties } } };
+        const ep = existing.feature.properties;
+        if (!merged.feature.properties.operator && ep.operator) {
+          merged.feature.properties.operator = ep.operator;
+        }
+        if (!merged.feature.properties.uic_ref && ep.uic_ref) {
+          merged.feature.properties.uic_ref = ep.uic_ref;
+        }
+        byName.set(name, merged);
+      } else if (newPri === existingPri) {
+        // Lik prioritet: behold den nærmeste til ruten.
+        if (m.distanceKm < existing.distanceKm) byName.set(name, m);
+      } else {
+        // Lavere prioritet: ignorer, men berik eksisterende med ev. manglende felt.
+        const ep = existing.feature.properties;
+        if (!ep.operator && m.feature.properties.operator) ep.operator = m.feature.properties.operator;
+        if (!ep.uic_ref && m.feature.properties.uic_ref) ep.uic_ref = m.feature.properties.uic_ref;
+      }
+    }
+    return [...byName.values(), ...noNames];
   }
 
   function renderEmpty(navn) {
@@ -85,7 +313,7 @@
     document.title = `${route.name} — Norsk jernbane`;
     $("#crumb-current").textContent = route.name;
 
-    // Page-header: tittel + ev. type-pill ved siden
+    // Page-header: tittel + ev. type-pill + datakvalitet-pill ved siden
     const h1 = $("#route-h1");
     h1.replaceChildren(document.createTextNode(route.name));
     if (route.types?.length) {
@@ -94,12 +322,20 @@
       badge.textContent = route.types.map(prettyType).join(" · ");
       h1.append(badge);
     }
+    const qualityPill = buildQualityPill(route);
+    if (qualityPill) h1.append(qualityPill);
 
     const root = $("#route-content");
     root.replaceChildren();
 
-    // Hero-tall (matcher dashbord-mønsteret)
+    // Hero-tall (matcher innsikts-mønsteret)
     root.append(renderHero(route, stations.length));
+
+    // Narrativ-blokk: leser tallene høyt med kontekst og rangering.
+    const allRoutes = window.__route?.allRoutes || [];
+    if (allRoutes.length > 0) {
+      root.append(buildNarrative(route, allRoutes));
+    }
 
     // 2-kol grid
     const grid = document.createElement("div");
@@ -114,6 +350,11 @@
 
     grid.append(mapWrap, statsCard);
     root.append(grid);
+
+    // Sammenligningskort — hvor ligger ruten an blant alle navngitte baner?
+    if (allRoutes.length > 1) {
+      root.append(buildComparisonCard(route, allRoutes));
+    }
 
     // Stasjoner langs banen
     const stationsSection = renderStationsSection(stations);
@@ -218,6 +459,20 @@
       sub.textContent = "Hastighetsprofil";
       card.append(sub);
       card.append(buildSpeedProfile(route.speed_distribution_km));
+      const takeaway = speedProfileTakeaway(route);
+      if (takeaway) card.append(takeaway);
+    }
+
+    // Topografi-bar: åpen mark / tunnel / bro. Bygges fra eksisterende felt
+    // tunnel_km og bridge_km på ruten. Surface utledes fra total minus disse.
+    const topo = buildTopographyBar(route);
+    if (topo) {
+      const sub = document.createElement("p");
+      sub.className = "subhead";
+      sub.style.marginTop = "var(--sp-3)";
+      sub.textContent = "Topografi";
+      card.append(sub);
+      card.append(topo);
     }
     return card;
   }

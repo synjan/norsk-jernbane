@@ -50,7 +50,9 @@ async function run() {
 
   for (const [label, r] of Object.entries(results)) {
     if (!r.headerExists) note("fail", `${label}: mangler .page-header`);
-    if (!r.hasH1) note("fail", `${label}: mangler h1 i .page-header`);
+    // index har bevisst ingen H1 (kartet er innholdet, topbaren forteller hvor du er);
+    // sub-sider trenger H1 for å identifisere bane/dashbord/stasjon/tog.
+    if (label !== "index" && !r.hasH1) note("fail", `${label}: mangler h1 i .page-header`);
     if (!r.hasNav) note("fail", `${label}: mangler .topbar .topnav`);
   }
 

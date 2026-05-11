@@ -4,6 +4,10 @@
 // Stasjonsider er destinasjonen for rike per-stasjon-integrasjoner
 // (Riksantikvaren, Wikidata, MET, Frost). Slot-er er allerede plassert
 // så de kan kobles på uten layoutendringer.
+//
+// Lastes av: stasjon.html
+// Krever: Leaflet (global L), window.AppHelpers (helpers.js), window.Entur (entur.js)
+// Data:    data/stations.geojson, data/wikidata_stations.json (valgfritt)
 
 (function () {
   "use strict";

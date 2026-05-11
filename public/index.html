@@ -28,7 +28,7 @@
 
     <nav class="topnav" aria-label="Hovednavigasjon">
       <a href="index.html" class="nav-link" data-page="index.html">Kart</a>
-      <a href="dashboard.html" class="nav-link" data-page="dashboard.html">Dashbord</a>
+      <a href="dashboard.html" class="nav-link" data-page="dashboard.html">Innsikt</a>
       <button type="button" class="nav-link nav-baner-toggle" aria-haspopup="true" aria-expanded="false">
         Baner <span aria-hidden="true">▾</span>
       </button>
@@ -41,12 +41,10 @@
     <div class="topbar-spacer"></div>
   </header>
 
-  <!-- Page header: tittel + verktøyrad (søk + handlinger) -->
-  <header class="page-header page-header-full">
+  <!-- Page header: verktøyrad (søk + handlinger). Kart-siden har ingen H1 —
+       kartet selv er innholdet, og topbaren forteller hvilken side man er på. -->
+  <header class="page-header page-header-full page-header-toolbar">
     <div class="page-header-inner">
-      <div class="titles">
-        <h1>Kart</h1>
-      </div>
       <div class="search-wrap">
         <input id="search" type="search" placeholder="Søk navn eller ref … (/)" autocomplete="off" />
         <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
@@ -73,18 +71,12 @@
     <!-- Left sidebar -->
     <aside class="sidebar" aria-label="Filter">
 
-      <button class="panel-toggle" id="toggle-sidebar" title="Skjul filterpanel ([)" aria-label="Veksle filterpanel">
-        <svg class="icon-collapse" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        <svg class="icon-expand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
-
-      <div id="live-stats" class="live"></div>
-
       <details class="group" open>
         <summary>
           <span class="group-head">
             <svg class="group-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"></path></svg>
             <span class="group-label">Visning</span>
+            <span class="group-chip" data-chip="display"></span>
           </span>
         </summary>
         <div class="group-body">
@@ -115,6 +107,7 @@
           <span class="group-head">
             <svg class="group-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             <span class="group-label">Banetyper</span>
+            <span class="group-chip" data-chip="types"></span>
           </span>
         </summary>
         <div class="group-body">
@@ -133,6 +126,7 @@
           <span class="group-head">
             <svg class="group-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><line x1="9" y1="9" x2="9" y2="9"></line><line x1="9" y1="13" x2="9" y2="13"></line><line x1="9" y1="17" x2="9" y2="17"></line></svg>
             <span class="group-label">Operatører</span>
+            <span class="group-chip" data-chip="operators"></span>
           </span>
         </summary>
         <div class="group-body">
@@ -149,6 +143,7 @@
           <span class="group-head">
             <svg class="group-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             <span class="group-label">Stasjoner</span>
+            <span class="group-chip" data-chip="stations"></span>
           </span>
         </summary>
         <div class="group-body">
@@ -157,18 +152,19 @@
             <button type="button" class="btn btn-ghost btn-sm" data-bulk="stations-all">Alle</button>
             <button type="button" class="btn btn-ghost btn-sm" data-bulk="stations-none">Ingen</button>
           </div>
-          <label class="row"><input type="checkbox" data-station-type="station" checked> Tog-stasjon <small id="cnt-station"></small></label>
-          <label class="row"><input type="checkbox" data-station-type="halt" checked> Holdeplass <small id="cnt-halt"></small></label>
-          <label class="row"><input type="checkbox" data-station-type="stop"> Stoppunkt <small id="cnt-stop"></small></label>
-          <label class="row"><input type="checkbox" id="only-uic"> Bare med UIC-kode <small id="cnt-uic"></small></label>
+          <label class="row"><input type="checkbox" data-station-type="station" checked> <span class="station-swatch station-swatch-station" aria-hidden="true"></span> Tog-stasjon <small id="cnt-station"></small></label>
+          <label class="row"><input type="checkbox" data-station-type="halt" checked> <span class="station-swatch station-swatch-halt" aria-hidden="true"></span> Holdeplass <small id="cnt-halt"></small></label>
+          <label class="row"><input type="checkbox" data-station-type="stop"> <span class="station-swatch station-swatch-stop" aria-hidden="true"></span> Stoppunkt <small id="cnt-stop"></small></label>
+          <label class="row"><input type="checkbox" id="only-uic"> <span class="station-swatch station-swatch-uic" aria-hidden="true"></span> Bare med UIC-kode <small id="cnt-uic"></small></label>
         </div>
       </details>
 
       <details class="group">
         <summary>
           <span class="group-head">
-            <svg class="group-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="4" x2="20" y2="20"></line><line x1="4" y1="20" x2="20" y2="4"></line></svg>
+            <svg class="group-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>
             <span class="group-label">Tilleggslag</span>
+            <span class="group-chip" data-chip="extras"></span>
           </span>
         </summary>
         <div class="group-body">
@@ -180,10 +176,35 @@
         </div>
       </details>
 
+      <details class="group" open>
+        <summary>
+          <span class="group-head">
+            <svg class="group-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <span class="group-label">Oversikt</span>
+          </span>
+        </summary>
+        <div class="group-body">
+          <div id="stats-summary"></div>
+          <a class="dash-bridge" href="dashboard.html">
+            <span class="dash-bridge-text">
+              <strong>Se full statistikk</strong>
+              <span class="dash-bridge-sub">Charts, befolkningsdekning, topplister</span>
+            </span>
+            <span class="dash-bridge-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </details>
+
     </aside>
 
     <!-- Map -->
     <section class="map-area">
+      <!-- Sidebar-toggle sitter på selve panelkanten (Linear/VS Code-mønster).
+           Ligger i map-area så den alltid er synlig uavhengig av sidebar-scroll. -->
+      <button class="panel-toggle" id="toggle-sidebar" title="Skjul filterpanel ([)" aria-label="Veksle filterpanel">
+        <svg class="icon-collapse" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <svg class="icon-expand" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
       <div id="map"></div>
       <div id="legend" aria-label="Tegnforklaring"></div>
       <div id="filter-empty-state" class="filter-empty-state" hidden>
@@ -194,41 +215,13 @@
         </div>
       </div>
     </section>
-
-    <!-- Right stats panel -->
-    <aside class="stats-panel" aria-label="Statistikk">
-
-      <button class="panel-toggle" id="toggle-stats" title="Skjul statpanel (])" aria-label="Veksle statistikkpanel">
-        <svg class="icon-collapse" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        <svg class="icon-expand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-
-      <details class="group" open>
-        <summary>
-          <span class="group-head">
-            <svg class="group-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-            <span class="group-label">Oversikt</span>
-          </span>
-        </summary>
-        <div class="group-body">
-          <div id="stats-summary"></div>
-        </div>
-      </details>
-
-      <a class="dash-bridge" href="dashboard.html">
-        <span class="dash-bridge-text">
-          <strong>Se full statistikk</strong>
-          <span class="dash-bridge-sub">Charts, befolkningsdekning, topplister</span>
-        </span>
-        <span class="dash-bridge-arrow" aria-hidden="true">→</span>
-      </a>
-    </aside>
   </main>
 
-  <!-- Status bar -->
+  <!-- Status bar — kompleterer Oversikt-gruppen (km + elektrifisert%) ved å
+       vise antall synlige segmenter + aktivt filter. Holder seg lean så
+       brukeren ikke ser samme tall to steder. -->
   <footer class="statusbar">
     <div class="metrics">
-      <span class="metric"><strong id="status-km">—</strong> km synlig</span>
       <span class="metric"><strong id="status-segments">—</strong> segmenter</span>
       <span class="metric" id="status-filter">Standardvisning</span>
     </div>
@@ -250,15 +243,14 @@
         <tr><td><kbd>2</kbd></td><td>Fargemodus: Hastighet</td></tr>
         <tr><td><kbd>3</kbd></td><td>Fargemodus: Banetype</td></tr>
         <tr><td><kbd>E</kbd></td><td>Eksporter synlige features (GeoJSON)</td></tr>
-        <tr><td><kbd>[</kbd></td><td>Skjul/vis filterpanel (venstre kolonne)</td></tr>
-        <tr><td><kbd>]</kbd></td><td>Skjul/vis statistikkpanel (høyre kolonne)</td></tr>
+        <tr><td><kbd>[</kbd></td><td>Skjul/vis filterpanel</td></tr>
         <tr><td><kbd>?</kbd></td><td>Vis denne hjelpen</td></tr>
         <tr><td><kbd>Esc</kbd></td><td>Lukk dialog / nullstill søk</td></tr>
       </table>
       <h3 style="margin-top:var(--sp-4); font-size:var(--fs-sm); color:var(--c-muted);">Tips</h3>
       <p style="font-size:var(--fs-sm); color:var(--c-muted-strong); margin:var(--sp-2) 0;">
-        Klikk en stasjon for å se sanntids togavganger fra Entur. Klikk på diagrammene
-        i høyre kolonne for å filtrere kartet (cross-filtering).
+        Klikk en stasjon for å se sanntids togavganger fra Entur.
+        Tilbakestill-knappen i toppen nullstiller alle aktive filtre.
       </p>
       <p style="font-size:var(--fs-xs); color:var(--c-muted); margin:var(--sp-3) 0 0;">
         Filterstatus lagres i URL-en — bokmerk eller del lenker for å gjenskape visningen.

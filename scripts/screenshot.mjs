@@ -1,5 +1,5 @@
 // Capture screenshots of index.html in different collapse states.
-// Usage: BASE_URL=http://localhost:5174 node tests/screenshot.mjs
+// Usage: BASE_URL=http://localhost:5174 node scripts/screenshot.mjs
 
 import { chromium } from "playwright";
 import { fileURLToPath } from "node:url";

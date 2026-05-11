@@ -1,10 +1,14 @@
 // Reisetids-isokroner: bygg en graf fra jernbanesegmenter, kjør Dijkstra
 // fra valgt stasjon, og fargelegg sporene etter reisetid i timer.
 //
-// Eksponerer window.Isochrone med:
-//   - run(map, startLat, startLon, options) → starter analyse + tegning
-//   - clear(map) → fjerner overlay
-//   - isActive() → bool
+// Lastes av: index.html
+// Krever: Leaflet (global L), window.__app.state.railwaysData (lastes av app.js)
+// Eksponerer:
+//   window.Isochrone = {
+//     run(map, startLat, startLon, options),  // start analyse + tegning
+//     clear(map),                              // fjern overlay
+//     isActive(),                              // bool
+//   }
 
 (function () {
   "use strict";

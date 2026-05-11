@@ -16,6 +16,11 @@ area["ISO3166-1"="NO"][admin_level=2]->.norge;
   // er bevisst utelatt.
   node["railway"~"^(station|halt|stop)$"](area.norge);
 
+  // Signaler og sporveksler langs sporet. Signaler indikerer kontrollsystem-
+  // tetthet (~tusenvis i Norge); sporveksler markerer steder hvor sporet
+  // forgreines (typisk ved stasjoner og knutepunkter).
+  node["railway"~"^(signal|switch)$"](area.norge);
+
   // Togruter som relasjoner — gir oss "Bergensbanen", "L1 Spikkestad-Lillestrøm"
   // som logiske enheter, separat fra de fysiske sporene over.
   // Dette tillater visning av "ruter som stopper på X" på stasjonssiden.

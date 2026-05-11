@@ -4,6 +4,12 @@
 const NORWAY_CENTER = [64.5, 13.0];
 const NORWAY_ZOOM = 5;
 
+// Datavolum-strategi: vi laster `railways-overview.geojson` (~330 KB gzipped,
+// 100 m simplifisering) ved oppstart. Når brukeren zoomer inn til regionalt
+// nivå eller mer, henter vi fullversjonen (~1.5 MB gzipped) i bakgrunnen
+// og bytter rendring. Terskel valgt slik at simplifisering aldri er synlig.
+const ZOOM_LOAD_FULL_THRESHOLD = 10;
+
 // Banetyper i prosjektet — kun "ekte" tog/jernbane. T-bane, trikk,
 // bybane, kabelbane og monorail er filtrert bort i `data/process.py`.
 const ALL_TYPES = ["rail", "narrow_gauge", "preserved"];
@@ -16,6 +22,8 @@ const state = {
   stationLayer: null,
   planovergangerLayer: null,
   railwaysData: null,
+  railwaysIsFull: false,        // false = overview, true = full
+  railwaysFullPromise: null,    // memoisert in-flight/ferdig load
   stationsData: null,
   planovergangerData: null,
   stats: null,
@@ -65,11 +73,16 @@ function initMap() {
 
 // ---------- Stilfunksjoner ----------
 
+// Kart-fargene plukkes for at de skal sameksistere med modern-minimal UI-en
+// (lyse paneler, én blå aksent). De er hentet fra OKLch så elektrifisert/
+// ikke-elektrifisert har samme kromatiske vekt og blå ikke kolliderer med
+// UI-aksenten — disse skinnene må kunne ligge på toppen av kartet og
+// fortsatt være lesbare.
 function styleForElectrification(props) {
   const e = (props.electrified || "").toLowerCase();
   const electrified = e && e !== "no";
   return {
-    color: electrified ? "#2563eb" : "#d23f3f",
+    color: electrified ? "#2563eb" : "#9b2c2c",
     weight: 2.5,
     opacity: 0.85,
   };
@@ -77,23 +90,25 @@ function styleForElectrification(props) {
 
 function styleForSpeed(props) {
   const speed = props.maxspeed_kmh;
-  if (speed == null) return { color: "#aaa", weight: 1.5, opacity: 0.6 };
+  if (speed == null) return { color: "#bbb", weight: 1.5, opacity: 0.55 };
+  // Gradient fra dempet teal (lav fart) til varm rust (høy fart) — sterkere
+  // wave-effekt enn den gamle blå→rød (som klasjet med UI-aksenten).
   const t = Math.max(0, Math.min(1, (speed - 40) / 160));
-  const r = Math.round(43 + (229 - 43) * t);
-  const g = Math.round(108 + (62 - 108) * t);
-  const b = Math.round(176 + (62 - 176) * t);
+  const r = Math.round(56 + (200 - 56) * t);
+  const g = Math.round(132 + (84 - 132) * t);
+  const b = Math.round(148 + (52 - 148) * t);
   return { color: `rgb(${r}, ${g}, ${b})`, weight: 2.5, opacity: 0.9 };
 }
 
 const TYPE_COLORS = {
-  rail: "#1a3a52",
-  narrow_gauge: "#38a169",
+  rail: "#334155",
+  narrow_gauge: "#0d9488",
   preserved: "#9b2c2c",
 };
 
 function styleForType(props) {
   return {
-    color: TYPE_COLORS[props.railway] || "#888",
+    color: TYPE_COLORS[props.railway] || "#94a3b8",
     weight: 2.5,
     opacity: 0.85,
   };
@@ -101,10 +116,10 @@ function styleForType(props) {
 
 function styleForTracks(props) {
   const n = parseInt(props.passenger_lines, 10);
-  if (Number.isNaN(n)) return { color: "#bbb", weight: 1.5, opacity: 0.55 };
+  if (Number.isNaN(n)) return { color: "#cbd5e1", weight: 1.5, opacity: 0.55 };
   if (n >= 3) return { color: "#1d4ed8", weight: 3, opacity: 0.95 };
-  if (n === 2) return { color: "#16a34a", weight: 2.8, opacity: 0.9 };
-  return { color: "#ea580c", weight: 2.2, opacity: 0.85 };
+  if (n === 2) return { color: "#0d9488", weight: 2.8, opacity: 0.9 };
+  return { color: "#c2410c", weight: 2.2, opacity: 0.85 };
 }
 
 function currentStyleFn() {
@@ -165,35 +180,137 @@ function stationVisible(feat) {
 
 // ---------- Popups (DOM-bygging, ingen innerHTML) ----------
 
+// Sporsegment-popup: kuratert visning av nøkkelfelt (navn, hastighet, strøm,
+// spor, lengde) med rå OSM-tagger kollapset bak en <details>-toggle for
+// OSM-debugging. Brukerne ønsker primært vite hva slags spor de ser på,
+// ikke å gå gjennom 12 OSM-tags.
+const TRACK_LABELS = { 1: "Enkeltspor", 2: "Dobbeltspor" };
+
 function buildPopup(props) {
-  const wrapper = document.createElement("div");
-  wrapper.className = "popup-tags";
-  const table = document.createElement("table");
-  for (const [key, value] of Object.entries(props)) {
-    if (key === "length_km" && !value) continue;
-    const tr = document.createElement("tr");
-    const tdKey = document.createElement("td");
-    tdKey.textContent = key;
-    const tdVal = document.createElement("td");
-    tdVal.textContent = String(value);
-    tr.append(tdKey, tdVal);
-    table.append(tr);
+  const wrap = document.createElement("div");
+  wrap.className = "popup-station popup-segment";
+
+  // Header: liten "Sporsegment"-etikett over banenavnet — gjør det tydelig
+  // at brukeren har klikket ett enkelt segment, ikke hele banen. Et bane-
+  // navn som "Bergensbanen" finnes på 100+ segmenter; uten etikett blir
+  // popup-en forvirrende.
+  const head = document.createElement("div");
+  head.className = "popup-station-head";
+
+  const kicker = document.createElement("div");
+  kicker.className = "popup-segment-kicker";
+  kicker.textContent = "Sporsegment";
+  head.append(kicker);
+
+  const title = document.createElement("h3");
+  title.className = "popup-station-title";
+  title.textContent = props.name || "(uten navn)";
+  head.append(title);
+
+  const metaParts = [];
+  if (props.operator) metaParts.push(props.operator);
+  if (props.length_km) metaParts.push(`${Math.round(props.length_km * 1000).toLocaleString("nb-NO")} m`);
+  if (props.tunnel && props.tunnel !== "no") metaParts.push("tunnel");
+  if (props.bridge && props.bridge !== "no") metaParts.push("bro");
+  if (metaParts.length) {
+    const meta = document.createElement("div");
+    meta.className = "popup-station-meta";
+    meta.textContent = metaParts.join(" · ");
+    head.append(meta);
   }
-  wrapper.append(table);
-  return wrapper;
+  wrap.append(head);
+
+  // Stats-grid: maks-hastighet, spor, elektrifisering.
+  const stats = document.createElement("dl");
+  stats.className = "popup-segment-stats";
+  const addStat = (label, value) => {
+    if (value == null || value === "") return;
+    const dt = document.createElement("dt");
+    dt.textContent = label;
+    const dd = document.createElement("dd");
+    dd.textContent = value;
+    stats.append(dt, dd);
+  };
+  if (props.maxspeed_kmh) addStat("Maks-hastighet", `${props.maxspeed_kmh} km/t`);
+
+  const trackCount = parseInt(props.passenger_lines, 10);
+  if (!Number.isNaN(trackCount)) {
+    const lbl = TRACK_LABELS[trackCount] || `${trackCount} spor`;
+    addStat("Spor", lbl);
+  }
+
+  const e = (props.electrified || "").toLowerCase();
+  if (e && e !== "no") {
+    let strom = "Elektrifisert";
+    if (props.voltage) {
+      const kV = Math.round(parseInt(props.voltage, 10) / 1000);
+      if (Number.isFinite(kV)) strom = `${kV} kV`;
+      if (props.frequency) strom += ` / ${props.frequency} Hz`;
+    }
+    addStat("Strøm", strom);
+  } else if (e === "no") {
+    addStat("Strøm", "Ikke elektrifisert");
+  }
+
+  if (stats.childElementCount > 0) wrap.append(stats);
+
+  // Kollapsbar rå-tag-visning for OSM-debugging.
+  const visibleKeys = new Set([
+    "name", "operator", "maxspeed_kmh", "passenger_lines",
+    "electrified", "voltage", "frequency", "length_km", "tunnel", "bridge",
+  ]);
+  const extraEntries = Object.entries(props).filter(
+    ([k, v]) => !visibleKeys.has(k) && v != null && v !== ""
+  );
+  if (extraEntries.length > 0) {
+    const det = document.createElement("details");
+    det.className = "popup-segment-tags";
+    const sum = document.createElement("summary");
+    sum.textContent = `Vis OSM-tagger (${extraEntries.length})`;
+    det.append(sum);
+    const table = document.createElement("table");
+    table.className = "popup-tags-table";
+    for (const [k, v] of extraEntries) {
+      const tr = document.createElement("tr");
+      const tdK = document.createElement("td");
+      tdK.textContent = k;
+      const tdV = document.createElement("td");
+      tdV.textContent = String(v);
+      tr.append(tdK, tdV);
+      table.append(tr);
+    }
+    det.append(table);
+    wrap.append(det);
+  }
+
+  // Handling — lenker til full bane-side når banen har navn. Gir brukeren
+  // klar vei fra "jeg klikket et tilfeldig segment" til "se hele banen".
+  if (props.name) {
+    const actions = document.createElement("div");
+    actions.className = "popup-station-actions";
+    const link = document.createElement("a");
+    link.className = "btn btn-primary btn-sm";
+    link.href = `bane.html?navn=${encodeURIComponent(props.name)}`;
+    link.textContent = `Åpne ${props.name} →`;
+    actions.append(link);
+    wrap.append(actions);
+  }
+
+  return wrap;
 }
 
 // ---------- Datainnlasting ----------
 
 async function loadData() {
   const [railways, stations, stats, wikidata, planoverganger] = await Promise.all([
-    fetch("data/railways.geojson").then((r) => r.json()),
+    fetch("data/railways-overview.geojson").then((r) => r.json()),
     fetch("data/stations.geojson").then((r) => r.json()),
     fetch("data/stats.json").then((r) => r.json()),
     fetch("data/wikidata_stations.json").then((r) => r.ok ? r.json() : {}).catch(() => ({})),
     fetch("data/planoverganger.geojson").then((r) => r.ok ? r.json() : null).catch(() => null),
   ]);
   state.railwaysData = railways;
+  state.railwaysIsFull = false;
   state.stationsData = stations;
   state.stats = stats;
   state.wikidata = wikidata;
@@ -214,6 +331,30 @@ async function loadData() {
   state.knownOperators = new Set(sorted.map(([op]) => op));
 }
 
+// Last full-versjonen av railways.geojson ved første zoom-inn over terskelen.
+// Idempotent: parallelle kall venter på samme Promise, og senere kall etter
+// ferdig load gjør ingenting. Faller tilbake til overview hvis nettverket feiler.
+async function ensureFullRailwaysLoaded(map) {
+  if (state.railwaysIsFull) return;
+  if (!state.railwaysFullPromise) {
+    state.railwaysFullPromise = fetch("data/railways.geojson")
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .catch((err) => {
+        console.warn("Kunne ikke laste full railways.geojson:", err);
+        state.railwaysFullPromise = null;  // tillat retry ved senere zoom
+        return null;
+      });
+  }
+  const full = await state.railwaysFullPromise;
+  if (!full || state.railwaysIsFull) return;
+  state.railwaysData = full;
+  state.railwaysIsFull = true;
+  renderRailways(map);
+}
+
 // ---------- Lag-rendering ----------
 
 function renderRailways(map) {
@@ -225,6 +366,13 @@ function renderRailways(map) {
     style: (f) => styleFn(f.properties),
     onEachFeature: (f, layer) => layer.bindPopup(buildPopup(f.properties)),
   }).addTo(map);
+  // Stasjoner og live tog skal ALLTID ligge over sporlinjer for klikk-priority.
+  // Uten dette overtar jernbane-laget z-rekkefølgen ved re-render og småe
+  // markører (stoppunkt, holdeplass) blir vanskelige å treffe — særlig der
+  // linjen krysser markøren.
+  state.stationLayer?.bringToFront();
+  state.planovergangerLayer?.bringToFront();
+  state.liveTrainsLayer?.bringToFront();
   updateLiveStats(visible);
   renderStats(visible);
   toggleFilterEmptyState(visible.length === 0 && isFilterActive());
@@ -237,6 +385,70 @@ function toggleFilterEmptyState(show) {
   const el = document.getElementById("filter-empty-state");
   if (!el) return;
   el.hidden = !show;
+}
+
+// Planovergang-popup: bygges som DOM (ikke HTML-string-konkat) slik at
+// NVDB-felter `tilleggsinfo` og `fare` ikke kan smugle HTML inn. Layout
+// følger samme hierarki som stasjons-popupen: tittel → meta → varsel →
+// handling.
+function buildPlanovergangPopup(p) {
+  const wrap = document.createElement("div");
+  wrap.className = "popup-station popup-planovergang";
+
+  // Header: type som tittel + NVDB ID som meta. "I plan"-typer markeres
+  // med risiko-pill siden de er at-grade og statistisk farligere.
+  const head = document.createElement("div");
+  head.className = "popup-station-head";
+  const title = document.createElement("h3");
+  title.className = "popup-station-title";
+  title.textContent = p.type || "Jernbanekryssing";
+  head.append(title);
+
+  if (typeof p.type === "string" && p.type.toLowerCase().startsWith("i plan")) {
+    const pill = document.createElement("span");
+    pill.className = "popup-risk-pill";
+    pill.textContent = "I plan — kryssing i samme nivå";
+    head.append(pill);
+  }
+
+  if (p.id) {
+    const meta = document.createElement("div");
+    meta.className = "popup-station-meta";
+    meta.textContent = `NVDB ID ${p.id}`;
+    head.append(meta);
+  }
+  wrap.append(head);
+
+  // Fare og tilleggsinfo: varsel-styled boks når noe er satt.
+  if (p.fare || p.tilleggsinfo) {
+    const alert = document.createElement("div");
+    alert.className = "popup-alert";
+    if (p.fare) {
+      const fareEl = document.createElement("div");
+      fareEl.className = "popup-alert-line popup-alert-line-strong";
+      fareEl.textContent = `⚠ ${p.fare}`;
+      alert.append(fareEl);
+    }
+    if (p.tilleggsinfo) {
+      const info = document.createElement("div");
+      info.className = "popup-alert-line";
+      info.textContent = p.tilleggsinfo;
+      alert.append(info);
+    }
+    wrap.append(alert);
+  }
+
+  // Handling: lenk til full planovergang-side.
+  const actions = document.createElement("div");
+  actions.className = "popup-station-actions";
+  const link = document.createElement("a");
+  link.className = "btn btn-primary btn-sm";
+  link.href = `planovergang.html?id=${encodeURIComponent(p.id ?? "")}`;
+  link.textContent = "Åpne side →";
+  actions.append(link);
+  wrap.append(actions);
+
+  return wrap;
 }
 
 function renderPlanoverganger(map) {
@@ -255,30 +467,226 @@ function renderPlanoverganger(map) {
         fillColor: "#fca5a5",
         fillOpacity: 0.85,
       }),
-    onEachFeature: (f, layer) => {
-      const p = f.properties || {};
-      const lines = [];
-      if (p.type) lines.push(`<strong>${p.type}</strong>`);
-      if (p.fare) lines.push(`Særskilt fare: ${p.fare}`);
-      if (p.tilleggsinfo) lines.push(p.tilleggsinfo);
-      lines.push(`<small>NVDB ID ${p.id}</small>`);
-      lines.push(
-        `<a class="btn btn-primary btn-sm popup-action" href="planovergang.html?id=${p.id}">Åpne side →</a>`
-      );
-      layer.bindPopup(`<div class="popup-planovergang">${lines.join("<br>")}</div>`);
-    },
+    onEachFeature: (f, layer) => layer.bindPopup(buildPlanovergangPopup(f.properties || {})),
   }).addTo(map);
 }
 
 // Beregn nåværende rendret posisjon for en tween-entry.
+// Hvis entry.snap er satt (begge endepunkter projisert på samme sporsegment)
+// følges polylinjen med arc-length-parametrisering. Ellers ren LERP — visuelt
+// "rett over" mellom GPS-rapporter (kutter kurver, fjorder).
 function currentLerpLatLng(entry, now) {
   const span = entry.tEnd - entry.tStart;
-  if (span <= 0) return { lat: entry.to.lat, lon: entry.to.lon };
-  const t = Math.max(0, Math.min(1, (now - entry.tStart) / span));
+  const t = span > 0 ? Math.max(0, Math.min(1, (now - entry.tStart) / span)) : 1;
+  if (entry.snap) {
+    return interpolateAlongPath(entry.snap, t);
+  }
   return {
     lat: entry.from.lat + (entry.to.lat - entry.from.lat) * t,
     lon: entry.from.lon + (entry.to.lon - entry.from.lon) * t,
   };
+}
+
+// ---------- Snap-til-bane (live tog følger skinnegangen) ----------
+//
+// To-trinns: ved hver vehicle-update projiserer vi `from` og `to` ortogonalt
+// på nærmeste sporsegment (innen 100 m). Hvis begge treffer SAMME segment
+// lagrer vi en "path" (waypoints + kumulative meter) på entry.snap. Per
+// animasjonsramme interpolerer `interpolateAlongPath` arc-length-mette langs
+// denne pathen — så markøren krummer med banen i stedet for å kutte over
+// fjord/fjell. Hvis snap ikke er trygt (segment-grense, dårlig prosjeksjon)
+// faller vi tilbake til ren LERP — visuell degradering, ingen krasj.
+//
+// Distanseberegning bruker equirektangulær approksimasjon (cos(refLat)).
+// Vi opererer med <100 m varierende relative posisjoner; Haversine er 3×
+// tregere og overkill her.
+
+const SNAP_MAX_DIST_M = 100;
+const SNAP_GRID_CELL_DEG = 0.1;       // ~5 km × 11 km på lat 64°N
+const M_PER_DEG_LAT = 110540;
+const M_PER_DEG_LON_BASE = 111320;
+
+function llDistMeters(lat1, lon1, lat2, lon2) {
+  const refLat = (lat1 + lat2) / 2;
+  const dx = (lon2 - lon1) * M_PER_DEG_LON_BASE * Math.cos((refLat * Math.PI) / 180);
+  const dy = (lat2 - lat1) * M_PER_DEG_LAT;
+  return Math.hypot(dx, dy);
+}
+
+// Bygger grid-index én gang etter at full railways.geojson er lastet.
+// Hver celle (0.1° × 0.1°) holder en liste over feature-indekser hvis
+// bounding-box overlapper cellen. Lookup blir O(1) for nærliggende celler.
+function buildRailwayIndex(features) {
+  const cells = new Map();
+  for (let fi = 0; fi < features.length; fi++) {
+    const coords = features[fi].geometry?.coordinates;
+    if (!coords || coords.length < 2) continue;
+    let minLat = Infinity, maxLat = -Infinity, minLon = Infinity, maxLon = -Infinity;
+    for (const [lon, lat] of coords) {
+      if (lat < minLat) minLat = lat;
+      if (lat > maxLat) maxLat = lat;
+      if (lon < minLon) minLon = lon;
+      if (lon > maxLon) maxLon = lon;
+    }
+    const i0 = Math.floor(minLat / SNAP_GRID_CELL_DEG);
+    const i1 = Math.floor(maxLat / SNAP_GRID_CELL_DEG);
+    const j0 = Math.floor(minLon / SNAP_GRID_CELL_DEG);
+    const j1 = Math.floor(maxLon / SNAP_GRID_CELL_DEG);
+    for (let i = i0; i <= i1; i++) {
+      for (let j = j0; j <= j1; j++) {
+        const key = `${i}:${j}`;
+        let bucket = cells.get(key);
+        if (!bucket) { bucket = []; cells.set(key, bucket); }
+        bucket.push(fi);
+      }
+    }
+  }
+  return { cells, features };
+}
+
+// Projiser et lat/lon-punkt på en LineString-feature (alle koordinater i
+// [lon, lat]-rekkefølge). Returnerer nærmeste segment-indeks `idx`, parameter
+// `t` i [0,1] langs det segmentet, og avstand i meter. Returnerer null hvis
+// LineString har <2 punkter.
+function projectOntoLineString(lat, lon, coords) {
+  if (!coords || coords.length < 2) return null;
+  const refLat = lat;
+  const cosLat = Math.cos((refLat * Math.PI) / 180);
+  const toX = (lo) => lo * M_PER_DEG_LON_BASE * cosLat;
+  const toY = (la) => la * M_PER_DEG_LAT;
+  const px = toX(lon), py = toY(lat);
+
+  let best = null;
+  for (let i = 0; i < coords.length - 1; i++) {
+    const ax = toX(coords[i][0]),     ay = toY(coords[i][1]);
+    const bx = toX(coords[i + 1][0]), by = toY(coords[i + 1][1]);
+    const dx = bx - ax, dy = by - ay;
+    const len2 = dx * dx + dy * dy;
+    let t = 0;
+    let sx = ax, sy = ay;
+    if (len2 > 0) {
+      t = ((px - ax) * dx + (py - ay) * dy) / len2;
+      if (t < 0) t = 0;
+      else if (t > 1) t = 1;
+      sx = ax + t * dx;
+      sy = ay + t * dy;
+    }
+    const ddx = px - sx, ddy = py - sy;
+    const distSq = ddx * ddx + ddy * ddy;
+    if (best === null || distSq < best.distSq) {
+      best = { idx: i, t, distSq };
+    }
+  }
+  if (!best) return null;
+  return { idx: best.idx, t: best.t, distM: Math.sqrt(best.distSq) };
+}
+
+// Finn nærmeste sporsegment til (lat, lon) innen maxDistM. Sjekker celle
+// (i,j) + 8 nabo-celler. Returnerer `{feature, proj}` eller null.
+function findNearestRailwayFeature(index, lat, lon, maxDistM) {
+  if (!index) return null;
+  const ci = Math.floor(lat / SNAP_GRID_CELL_DEG);
+  const cj = Math.floor(lon / SNAP_GRID_CELL_DEG);
+  const seen = new Set();
+  let best = null;
+  for (let di = -1; di <= 1; di++) {
+    for (let dj = -1; dj <= 1; dj++) {
+      const bucket = index.cells.get(`${ci + di}:${cj + dj}`);
+      if (!bucket) continue;
+      for (const fi of bucket) {
+        if (seen.has(fi)) continue;
+        seen.add(fi);
+        const f = index.features[fi];
+        const proj = projectOntoLineString(lat, lon, f.geometry.coordinates);
+        if (!proj || proj.distM > maxDistM) continue;
+        if (!best || proj.distM < best.proj.distM) best = { feature: f, proj };
+      }
+    }
+  }
+  return best;
+}
+
+// Bygg en eksplisitt waypoint-liste fra (fromIdx, fromT) til (toIdx, toT)
+// langs en LineString. Returnerer [{lat, lon, cumDistM}] der første element
+// er nøyaktig snapped-fra og siste er nøyaktig snapped-til. Håndterer både
+// forover- og bakover-retning langs segmentene.
+function buildSnapPath(coords, fromProj, toProj) {
+  const pointOnSeg = (idx, t) => {
+    const [lo1, la1] = coords[idx];
+    const [lo2, la2] = coords[idx + 1];
+    return { lat: la1 + (la2 - la1) * t, lon: lo1 + (lo2 - lo1) * t };
+  };
+  const start = pointOnSeg(fromProj.idx, fromProj.t);
+  const end = pointOnSeg(toProj.idx, toProj.t);
+  const points = [start];
+
+  if (fromProj.idx === toProj.idx) {
+    // Begge på samme segment — bare endepunktene.
+  } else if (fromProj.idx < toProj.idx) {
+    // Forover: gå gjennom toppunkter fra fromIdx+1 til toIdx (inkludert).
+    for (let i = fromProj.idx + 1; i <= toProj.idx; i++) {
+      points.push({ lat: coords[i][1], lon: coords[i][0] });
+    }
+  } else {
+    // Bakover.
+    for (let i = fromProj.idx; i >= toProj.idx + 1; i--) {
+      points.push({ lat: coords[i][1], lon: coords[i][0] });
+    }
+  }
+  points.push(end);
+
+  let cum = 0;
+  const path = [{ lat: points[0].lat, lon: points[0].lon, cumDistM: 0 }];
+  for (let i = 1; i < points.length; i++) {
+    const seg = llDistMeters(points[i - 1].lat, points[i - 1].lon, points[i].lat, points[i].lon);
+    cum += seg;
+    path.push({ lat: points[i].lat, lon: points[i].lon, cumDistM: cum });
+  }
+  return path;
+}
+
+// Hovedinngang: forsøk å snappe en tween fra/til-par på et sporsegment.
+// Returnerer en path (array) for `interpolateAlongPath`, eller null hvis
+// snap ikke er trygt (ingen segment innen 100 m, eller fra/til projiserer
+// på forskjellige features).
+function computeSnapPath(from, to) {
+  const idx = state.railwayIndex;
+  if (!idx) return null;
+  // Finn nærmeste segment til midt-punktet — gir robusthet hvis ett av
+  // endepunktene tilfeldigvis ligger nærmest et helt annet (parallelt) spor.
+  const midLat = (from.lat + to.lat) / 2;
+  const midLon = (from.lon + to.lon) / 2;
+  const seg = findNearestRailwayFeature(idx, midLat, midLon, SNAP_MAX_DIST_M);
+  if (!seg) return null;
+  const coords = seg.feature.geometry.coordinates;
+  const fromProj = projectOntoLineString(from.lat, from.lon, coords);
+  const toProj = projectOntoLineString(to.lat, to.lon, coords);
+  if (!fromProj || !toProj) return null;
+  if (fromProj.distM > SNAP_MAX_DIST_M || toProj.distM > SNAP_MAX_DIST_M) return null;
+  return buildSnapPath(coords, fromProj, toProj);
+}
+
+// Interpolér en arc-length-parametrisering t∈[0,1] langs en pre-bygget path.
+// Binærsøk er overkill for korte paths (<10 punkter typisk); lineær walk
+// er enklere og raskt nok.
+function interpolateAlongPath(path, t) {
+  if (path.length === 0) return { lat: 0, lon: 0 };
+  if (path.length === 1) return { lat: path[0].lat, lon: path[0].lon };
+  const total = path[path.length - 1].cumDistM;
+  if (total <= 0) return { lat: path[0].lat, lon: path[0].lon };
+  const target = total * t;
+  for (let i = 1; i < path.length; i++) {
+    if (path[i].cumDistM >= target) {
+      const segLen = path[i].cumDistM - path[i - 1].cumDistM;
+      const local = segLen > 0 ? (target - path[i - 1].cumDistM) / segLen : 0;
+      return {
+        lat: path[i - 1].lat + (path[i].lat - path[i - 1].lat) * local,
+        lon: path[i - 1].lon + (path[i].lon - path[i - 1].lon) * local,
+      };
+    }
+  }
+  const last = path[path.length - 1];
+  return { lat: last.lat, lon: last.lon };
 }
 
 function ensureLiveTrainsRaf(map) {
@@ -301,10 +709,6 @@ function ensureLiveTrainsRaf(map) {
 function buildLiveTrainMarker(v, latLng) {
   const code = v.line?.publicCode || "?";
   const lineName = v.line?.lineName || "";
-  const tooltipHtml =
-    `<strong>${code}</strong>` +
-    (lineName ? ` — ${lineName}` : "") +
-    (v.bearing != null ? ` (${Math.round(v.bearing)}°)` : "");
 
   const marker = L.circleMarker(latLng, {
     radius: 6,
@@ -312,17 +716,51 @@ function buildLiveTrainMarker(v, latLng) {
     weight: 2,
     fillColor: "#16a34a",
     fillOpacity: 0.95,
-  }).bindTooltip(tooltipHtml, { direction: "top" });
+  });
 
+  // Tooltip: kompakt linje-info som DOM (samme XSS-trygge mønster som
+  // popupen). Bearing vises bare når Entur faktisk har det.
+  const tip = document.createElement("span");
+  const tipCode = document.createElement("strong");
+  tipCode.textContent = code;
+  tip.append(tipCode);
+  if (lineName) tip.append(document.createTextNode(` — ${lineName}`));
+  if (v.bearing != null) {
+    tip.append(document.createTextNode(` (${Math.round(v.bearing)}°)`));
+  }
+  marker.bindTooltip(tip, { direction: "top" });
+
+  // Popup med follow-knapp når vi har en datedServiceJourney-id (alltid
+  // tilgjengelig fra Entur, men vi guarder for sikkerhets skyld).
   const journeyId = v.datedServiceJourney?.id;
   if (journeyId) {
-    const popupHtml =
-      `<div class="popup-tog">` +
-        `<strong>${code}</strong>` +
-        (lineName ? `<br><small>${lineName}</small>` : "") +
-        `<br><a class="btn btn-primary btn-sm popup-action" href="tog.html?id=${encodeURIComponent(journeyId)}">Følg dette toget →</a>` +
-      `</div>`;
-    marker.bindPopup(popupHtml);
+    const popup = document.createElement("div");
+    popup.className = "popup-station popup-tog";
+
+    const head = document.createElement("div");
+    head.className = "popup-station-head";
+    const title = document.createElement("h3");
+    title.className = "popup-station-title";
+    title.textContent = code;
+    head.append(title);
+    if (lineName) {
+      const meta = document.createElement("div");
+      meta.className = "popup-station-meta";
+      meta.textContent = lineName;
+      head.append(meta);
+    }
+    popup.append(head);
+
+    const actions = document.createElement("div");
+    actions.className = "popup-station-actions";
+    const link = document.createElement("a");
+    link.className = "btn btn-primary btn-sm";
+    link.href = `tog.html?id=${encodeURIComponent(journeyId)}`;
+    link.textContent = "Følg dette toget →";
+    actions.append(link);
+    popup.append(actions);
+
+    marker.bindPopup(popup);
   }
   return marker;
 }
@@ -349,12 +787,17 @@ async function refreshLiveTrains(map) {
   const now = Date.now();
   const seen = new Set();
 
+  // Vehicles uten lastUpdated behandles som stale (Infinity), ikke som
+  // "ferskest mulig" (0). Ellers ville et tog uten timestamp aldri blitt
+  // prunet av age-filteret — den implisitte invarianten "Entur sender alltid
+  // lastUpdated" er ikke noe vi vil stole på som en sikkerhetslinje.
+  const STALE_MS = 5 * 60 * 1000;
   for (const v of vehicles) {
     const loc = v.location;
     const journeyId = v.datedServiceJourney?.id;
     if (!loc || !journeyId) continue;
-    const ageMs = v.lastUpdated ? now - Date.parse(v.lastUpdated) : 0;
-    if (ageMs > 5 * 60 * 1000) continue;
+    const ageMs = v.lastUpdated ? now - Date.parse(v.lastUpdated) : Infinity;
+    if (ageMs > STALE_MS) continue;
     seen.add(journeyId);
 
     const newPos = { lat: loc.latitude, lon: loc.longitude };
@@ -368,8 +811,11 @@ async function refreshLiveTrains(map) {
       existing.tStart = now;
       existing.tEnd = now + LIVE_LERP_MS;
       existing.bearing = v.bearing;
+      // Snap er gyldig per tween-vindu — rekompute hver gang from/to endres.
+      existing.snap = computeSnapPath(fromNow, newPos);
     } else {
-      // Ny markør — start uten animasjon.
+      // Ny markør — start uten animasjon. Snap har ingen effekt her siden
+      // tEnd === tStart (t=1 umiddelbart), men vi setter feltet for konsistens.
       const marker = buildLiveTrainMarker(v, [newPos.lat, newPos.lon]);
       state.liveTrainsLayer.addLayer(marker);
       state.liveTrainsTrains.set(journeyId, {
@@ -379,6 +825,7 @@ async function refreshLiveTrains(map) {
         tStart: now,
         tEnd: now,
         bearing: v.bearing,
+        snap: null,
       });
     }
   }
@@ -398,7 +845,7 @@ async function refreshLiveTrains(map) {
   ensureLiveTrainsRaf(map);
 }
 
-function setLiveTrains(map, on) {
+async function setLiveTrains(map, on) {
   state.showLiveTrains = on;
   if (state.liveTrainsTimer) {
     clearInterval(state.liveTrainsTimer);
@@ -414,12 +861,67 @@ function setLiveTrains(map, on) {
   }
   state.liveTrainsTrains = null;
   if (on) {
+    // Tving lasting av full railways.geojson før første poll. Overview-fila
+    // er simplifisert med 100 m toleranse — det matcher snap-distansen vår
+    // og ville gitt høy "miss"-rate. Den ekstra ~5 MB-en er akseptabelt
+    // UX-bytte når brukeren eksplisitt aktiverer live tog.
+    await ensureFullRailwaysLoaded(map);
+    // Bygg eller gjenbruk snap-index én gang etter at full data er klar.
+    if (!state.railwayIndex && state.railwaysIsFull) {
+      state.railwayIndex = buildRailwayIndex(state.railwaysData.features);
+    }
+    // Brukeren kan ha slått av igjen mens vi ventet på fullasting.
+    if (!state.showLiveTrains) return;
     refreshLiveTrains(map);
     state.liveTrainsTimer = setInterval(() => refreshLiveTrains(map), LIVE_TRAINS_INTERVAL_MS);
   } else {
     const cnt = document.getElementById("cnt-live-trains");
     if (cnt) cnt.textContent = "";
   }
+}
+
+// Visuell hierarki for stasjonsmarkører — speiler informasjons-viktighet:
+//   tog-stasjon m/ UIC > tog-stasjon > holdeplass > stoppunkt
+// Søketreff overstyrer alt med amber-aksent slik at brukeren ser dem
+// uavhengig av type.
+function styleForStation(props) {
+  if (state.searchQuery) {
+    return {
+      radius: 10, color: "#c2410c", weight: 3,
+      fillColor: "#fef3c7", fillOpacity: 1,
+    };
+  }
+  const type = props.railway;
+  const hasUic = Boolean(props.uic_ref);
+
+  if (type === "station") {
+    return {
+      radius: hasUic ? 9 : 7,
+      color: "#fff",
+      weight: hasUic ? 3 : 2,
+      fillColor: "#1d4ed8",
+      fillOpacity: 1,
+    };
+  }
+  if (type === "halt") {
+    return {
+      radius: 6,
+      color: "#0d9488",
+      weight: 2.5,
+      fillColor: "#fff",
+      fillOpacity: 1,
+    };
+  }
+  // stop (stoppunkt) — minimalt visuelt fotavtrykk siden de er tallrike (868),
+  // men stor nok klikk-flate til å unngå at brukere må zoome langt inn for
+  // å treffe markøren.
+  return {
+    radius: 5,
+    color: "#64748b",
+    weight: 1.5,
+    fillColor: "#cbd5e1",
+    fillOpacity: 0.95,
+  };
 }
 
 function renderStations(map) {
@@ -429,63 +931,62 @@ function renderStations(map) {
     features: state.stationsData.features.filter(stationVisible),
   };
   state.stationLayer = L.geoJSON(filtered, {
-    pointToLayer: (_f, latlng) =>
-      L.circleMarker(latlng, {
-        radius: state.searchQuery ? 6 : 4,
-        color: state.searchQuery ? "#f59e0b" : "#1a3a52",
-        weight: state.searchQuery ? 2 : 1,
-        fillColor: "#fff",
-        fillOpacity: 0.9,
-      }),
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, styleForStation(f.properties)),
     onEachFeature: (f, layer) => attachStationPopup(f, layer),
   }).addTo(map);
 }
 
+// Stasjons-popup: dedikert layout (ikke rå OSM-tag-tabell).
+// Hierarki: tittel → meta-chips → driftsmeldinger → avganger → handlinger.
+// Den rå tag-dumpen (som `buildPopup` bygger for sporsegmenter) er bevisst
+// utelatt her — brukere åpner en stasjons-popup for å se avganger, ikke
+// OSM-feltnavn. For full detaljer er det "Åpne stasjonsside"-knappen.
 function attachStationPopup(feature, layer) {
-  const content = buildPopup(feature.properties);
+  const props = feature.properties;
+  const wd = state.wikidata?.[props.name];
 
-  // Vernestatus-badge øverst i popupen hvis vi har en Wikidata-match
-  // med kulturminnestatus. Klikk på badgen åpner full stasjonsside.
-  const wd = state.wikidata?.[feature.properties.name];
+  const content = document.createElement("div");
+  content.className = "popup-station";
+
+  // Header: navn + meta-linje (network · operator · UIC).
+  const header = document.createElement("div");
+  header.className = "popup-station-head";
+  const title = document.createElement("h3");
+  title.className = "popup-station-title";
+  title.textContent = props.name || "(uten navn)";
+  header.append(title);
+
+  const metaParts = [];
+  if (props.network) metaParts.push(props.network);
+  if (props.operator) metaParts.push(props.operator);
+  if (props.uic_ref) metaParts.push(`UIC ${props.uic_ref}`);
+  else if (props.ref) metaParts.push(`Ref ${props.ref}`);
+  if (metaParts.length) {
+    const meta = document.createElement("div");
+    meta.className = "popup-station-meta";
+    meta.textContent = metaParts.join(" · ");
+    header.append(meta);
+  }
+
+  // Vernestatus-badge — fra Wikidata. Vises inline i headeren slik at den
+  // er knyttet til navnet, ikke til avgangs-listen.
   if (wd?.heritage?.length) {
     const badge = document.createElement("div");
     badge.className = "popup-heritage-badge";
     badge.textContent = `🏛 ${wd.heritage[0]}`;
     badge.title = wd.heritage.join(" · ");
-    content.prepend(badge);
+    header.append(badge);
   }
+  content.append(header);
 
-  // Reisetid-knapp — kjører Dijkstra fra denne stasjonen og fargelegger
-  // sporene etter reisetid. Tilgjengelig på alle stasjons-popupper siden
-  // det er et generelt analyseverktøy.
-  const isoBtn = document.createElement("button");
-  isoBtn.type = "button";
-  isoBtn.className = "btn btn-secondary btn-block iso-btn";
-  isoBtn.textContent = "Vis reisetider herfra";
-  isoBtn.addEventListener("click", () => {
-    const [lon, lat] = feature.geometry.coordinates;
-    if (window.Isochrone && window.__app?.map) {
-      window.__app.map.closePopup();
-      window.Isochrone.run(window.__app.map, lat, lon);
-    }
-  });
-  content.append(isoBtn);
-
-  // Lenke til full stasjonsside (rik popup-erstatning).
-  const name = feature.properties.name;
-  if (name) {
-    const link = document.createElement("a");
-    link.className = "btn btn-primary btn-block station-page-link";
-    link.href = `stasjon.html?navn=${encodeURIComponent(name)}`;
-    link.textContent = "Åpne stasjonsside →";
-    content.append(link);
-  }
-
+  // Driftsmeldinger (slot — fylles av loadDepartures).
   const sit = document.createElement("div");
   sit.className = "situations";
   sit.dataset.role = "situations";
   content.append(sit);
 
+  // Avgangsliste (slot — fylles av loadDepartures). Plassert FØR knappene
+  // siden det er hovedinnholdet brukeren ønsker å se.
   const dep = document.createElement("div");
   dep.className = "departures";
   dep.dataset.role = "departures";
@@ -494,6 +995,32 @@ function attachStationPopup(feature, layer) {
   placeholder.textContent = "Avganger lastes når popup åpnes…";
   dep.append(placeholder);
   content.append(dep);
+
+  // Handlinger nederst: sekundære, like vekting.
+  const actions = document.createElement("div");
+  actions.className = "popup-station-actions";
+
+  const isoBtn = document.createElement("button");
+  isoBtn.type = "button";
+  isoBtn.className = "btn btn-ghost btn-sm";
+  isoBtn.textContent = "Reisetider herfra";
+  isoBtn.addEventListener("click", () => {
+    const [lon, lat] = feature.geometry.coordinates;
+    if (window.Isochrone && window.__app?.map) {
+      window.__app.map.closePopup();
+      window.Isochrone.run(window.__app.map, lat, lon);
+    }
+  });
+  actions.append(isoBtn);
+
+  if (props.name) {
+    const link = document.createElement("a");
+    link.className = "btn btn-primary btn-sm";
+    link.href = `stasjon.html?navn=${encodeURIComponent(props.name)}`;
+    link.textContent = "Åpne stasjonsside →";
+    actions.append(link);
+  }
+  content.append(actions);
 
   layer.bindPopup(content);
   layer.on("popupopen", () => loadDepartures(feature, dep, sit));
@@ -637,6 +1164,9 @@ function renderOperatorList() {
   const topNames = new Set(top.map(([op]) => op));
   const tail = state.operators.filter(([op]) => !topNames.has(op));
   const tailKm = tail.reduce((s, [, km]) => s + km, 0);
+  // Lagre eksakt samme liste som tail-raden representerer, så bulk-toggle av
+  // "Andre (N)" treffer nøyaktig de operatørene brukeren ser slått sammen.
+  state.tailOperatorNames = tail.map(([op]) => op);
 
   for (const [op, km] of top) {
     container.append(buildOperatorRow(op, km));
@@ -668,52 +1198,17 @@ function buildOperatorRow(displayName, km) {
 }
 
 function tailOperators() {
-  return state.operators.slice(12).map(([op]) => op);
+  return state.tailOperatorNames || [];
 }
 
 // ---------- Live statistikk i filterpanelet ----------
 
+// Oppdaterer statusbaren med segment-antall + filter-beskrivelse.
+// KM og elektrifisert% rendres i Oversikt-gruppen via renderStatsSummary —
+// statusbaren skal være lean nok til ikke å gjenta de samme tallene.
 function updateLiveStats(visible) {
   if (!visible) visible = state.railwaysData.features.filter(featureVisible);
-  const totalKm = visible.reduce((s, f) => s + (f.properties.length_km || 0), 0);
-  const elecKm = visible.reduce((s, f) =>
-    s + (isElectrified(f.properties) ? (f.properties.length_km || 0) : 0), 0);
-  const all = state.stats.total_km;
-  const pctOfAll = all > 0 ? (totalKm / all) * 100 : 0;
-  const pctElec = totalKm > 0 ? (elecKm / totalKm) * 100 : 0;
-
-  const el = document.getElementById("live-stats");
-  el.replaceChildren();
-
-  const labelEl = document.createElement("div");
-  labelEl.className = "label";
-  labelEl.textContent = "Synlig utvalg";
-  el.append(labelEl);
-
-  const big = document.createElement("div");
-  big.className = "big";
-  big.textContent = `${Math.round(totalKm).toLocaleString("nb-NO")} km`;
-  el.append(big);
-
-  const meter = document.createElement("div");
-  meter.className = "meter";
-  const fill = document.createElement("div");
-  fill.style.width = `${Math.min(100, pctOfAll)}%`;
-  meter.append(fill);
-  el.append(meter);
-
-  const sec = document.createElement("div");
-  sec.className = "secondary";
-  sec.textContent = `${pctOfAll.toFixed(1)}% av total · ${pctElec.toFixed(1)}% elektrifisert`;
-  el.append(sec);
-
-  const seg = document.createElement("div");
-  seg.className = "secondary";
-  seg.style.opacity = "0.75";
-  seg.textContent = `${visible.length.toLocaleString("nb-NO")} segmenter`;
-  el.append(seg);
-
-  updateStatusBar(visible, totalKm);
+  updateStatusBar(visible);
 }
 
 function isElectrified(props) {
@@ -829,7 +1324,7 @@ function renderLegend() {
   switch (state.colorMode) {
     case "electrification":
       el.append(swatchRow("#2563eb", "Elektrifisert"));
-      el.append(swatchRow("#d23f3f", "Ikke elektrifisert"));
+      el.append(swatchRow("#9b2c2c", "Ikke elektrifisert"));
       break;
     case "speed": {
       const grad = document.createElement("div");
@@ -841,7 +1336,7 @@ function renderLegend() {
       const hi = document.createElement("span"); hi.textContent = "200+ km/h";
       labels.append(lo, hi);
       el.append(labels);
-      el.append(swatchRow("#aaa", "Ukjent hastighet"));
+      el.append(swatchRow("#bbb", "Ukjent hastighet"));
       break;
     }
     case "type":
@@ -850,10 +1345,10 @@ function renderLegend() {
       }
       break;
     case "tracks":
-      el.append(swatchRow("#ea580c", "Enkeltspor"));
-      el.append(swatchRow("#16a34a", "Dobbeltspor"));
+      el.append(swatchRow("#c2410c", "Enkeltspor"));
+      el.append(swatchRow("#0d9488", "Dobbeltspor"));
       el.append(swatchRow("#1d4ed8", "Multispor (3+)"));
-      el.append(swatchRow("#bbb", "Ikke tagget"));
+      el.append(swatchRow("#cbd5e1", "Ikke tagget"));
       break;
   }
 
@@ -922,6 +1417,9 @@ function applySearch(map, query) {
   state.searchQuery = query;
   renderRailways(map);
   renderStations(map);
+  // applySearch er eneste vei søk når inn i URL-state — andre filter-endringer
+  // går via applyFilterChange som også kaller updateUrl.
+  updateUrl();
 
   const hint = document.getElementById("search-result");
   if (!query) { hint.textContent = ""; return; }
@@ -985,6 +1483,7 @@ function wireFilters(map) {
         applyFilterChange(map, { railways: true, stations: false, legend: true });
       });
     });
+
 
   // Operatør-checkboxes (delegated, fordi de bygges dynamisk)
   document.getElementById("operator-list").addEventListener("change", (e) => {
@@ -1133,11 +1632,12 @@ function showLoadError(message) {
 
 // ---------- Statusbar ----------
 
-function updateStatusBar(visible, totalKm) {
-  document.getElementById("status-km").textContent =
-    Math.round(totalKm).toLocaleString("nb-NO");
-  document.getElementById("status-segments").textContent =
-    visible.length.toLocaleString("nb-NO");
+// Oppdaterer kun det som finnes i den slanke statusbaren: segment-antall
+// + filter-beskrivelse. KM og elektrifisert%-tall vises i Oversikt-gruppen
+// i sidebar — denne fila er bevisst tøm for redundante tall.
+function updateStatusBar(visible) {
+  const segEl = document.getElementById("status-segments");
+  if (segEl) segEl.textContent = visible.length.toLocaleString("nb-NO");
   refreshFilterStatus();
 }
 
@@ -1146,6 +1646,62 @@ function updateStatusBar(visible, totalKm) {
 function refreshFilterStatus() {
   const el = document.getElementById("status-filter");
   if (el) el.textContent = isFilterActive() ? filterSummary() : "Standardvisning";
+  refreshGroupChips();
+}
+
+// Hver sidebar-gruppe får en kompakt chip i sin <summary> som viser
+// nåværende tilstand når gruppen er lukket. Sparer brukeren for å åpne
+// hver enkelt for å se hva som er valgt. CSS skjuler chip-en automatisk
+// når <details> er åpen (innholdet er da canonical kilde).
+function refreshGroupChips() {
+  const cmLabel = {
+    electrification: "Elektrifisering",
+    speed: "Hastighet",
+    type: "Banetype",
+    tracks: "Spor",
+  }[state.colorMode] || state.colorMode;
+  const efSuffix = state.electrificationFilter === "yes" ? " · elek."
+    : state.electrificationFilter === "no" ? " · ikke-elek." : "";
+  setChip("display", `${cmLabel}${efSuffix}`,
+    state.electrificationFilter !== "all" || state.colorMode !== "electrification");
+
+  const allTypes = ALL_TYPES.length;
+  const onTypes = state.enabledTypes.size;
+  setChip("types",
+    onTypes === allTypes ? `Alle ${allTypes}` : `${onTypes} av ${allTypes}`,
+    onTypes !== allTypes);
+
+  const allOps = (state.operators || []).length;
+  const onOps = state.enabledOperators ? state.enabledOperators.size : allOps;
+  if (allOps > 0) {
+    setChip("operators",
+      onOps === allOps ? `Alle ${allOps}` : `${onOps} av ${allOps}`,
+      onOps !== allOps);
+  } else {
+    setChip("operators", "", false);
+  }
+
+  const defaultSt = new Set(DEFAULT_STATION_TYPES);
+  const stDiffers = state.enabledStationTypes.size !== defaultSt.size
+    || [...state.enabledStationTypes].some((t) => !defaultSt.has(t));
+  const stSize = state.enabledStationTypes.size;
+  let stTxt;
+  if (stSize === 0) stTxt = "Av";
+  else if (state.onlyUicStations) stTxt = `${stSize} typer · UIC`;
+  else stTxt = `${stSize} av ${ALL_STATION_TYPES.length} typer`;
+  setChip("stations", stTxt, stDiffers || state.onlyUicStations);
+
+  const extras = [];
+  if (state.showPlanoverganger) extras.push("Kryssinger");
+  if (state.showLiveTrains) extras.push("Live tog");
+  setChip("extras", extras.length ? extras.join(" + ") : "", extras.length > 0);
+}
+
+function setChip(name, text, isActive) {
+  const el = document.querySelector(`[data-chip="${name}"]`);
+  if (!el) return;
+  el.textContent = text;
+  el.classList.toggle("is-active", Boolean(isActive));
 }
 
 function filterSummary() {
@@ -1209,7 +1765,6 @@ function updateUrl() {
   if (state.onlyUicStations) p.set("uic", "1");
   if (state.searchQuery) p.set("q", state.searchQuery);
   if (document.body.classList.contains("sidebar-hidden")) p.set("sb", "0");
-  if (document.body.classList.contains("stats-hidden")) p.set("sp", "0");
 
   const hash = p.toString();
   const target = hash ? `#${hash}` : "";
@@ -1233,7 +1788,6 @@ function restoreFromUrl() {
   if (p.has("uic")) state.onlyUicStations = p.get("uic") === "1";
   if (p.has("q")) state.searchQuery = p.get("q");
   if (p.get("sb") === "0") document.body.classList.add("sidebar-hidden");
-  if (p.get("sp") === "0") document.body.classList.add("stats-hidden");
 
   // Sync UI to restored state
   document.getElementById("color-mode").value = state.colorMode;
@@ -1281,7 +1835,6 @@ function setupKeyboard(map) {
     if (e.key === "3") setColorModeFromKey(map, "type");
     if (e.key === "e" || e.key === "E") exportGeoJSON();
     if (e.key === "[") { e.preventDefault(); togglePanel(map, "sidebar"); return; }
-    if (e.key === "]") { e.preventDefault(); togglePanel(map, "stats"); return; }
   });
 }
 
@@ -1354,20 +1907,17 @@ function exportGeoJSON() {
   wireFilters(map);
   setupKeyboard(map);
 
-  // URL-oppdatering: kjør etter hvert renderRailways/renderStations.
-  // Wrap originale handler-utløsende renders ved å lytte på state-endring
-  // via en MutationObserver-lignende variant. Enklere: bare oppdater URL i
-  // wireFilters-callbackene. Lapper det her ved å etterhåndtere alle filter-events.
-  document.querySelectorAll(
-    '.sidebar input, .sidebar select, .sidebar button[data-bulk], #electrification-filter, #color-mode'
-  ).forEach((el) => el.addEventListener("change", updateUrl));
-  document.getElementById("search").addEventListener("input", () => {
-    // Litt forsinket for at debounce-applySearch får oppdatere state først.
-    setTimeout(updateUrl, 250);
-  });
-  document.querySelectorAll('.sidebar button[data-bulk]').forEach((b) =>
-    b.addEventListener("click", updateUrl));
-  document.getElementById("reset-filter").addEventListener("click", updateUrl);
+  // Bytt til full railways.geojson når brukeren zoomer inn til regionalt nivå.
+  // Sjekk også her, ikke bare ved zoomend, for å dekke deep-link-URL-er
+  // (?z=12&...) som åpner kartet allerede zoomet inn.
+  const maybeLoadFull = () => {
+    if (map.getZoom() >= ZOOM_LOAD_FULL_THRESHOLD) ensureFullRailwaysLoaded(map);
+  };
+  map.on("zoomend", maybeLoadFull);
+  maybeLoadFull();
+
+  // URL-oppdatering kjøres nå inline via applyFilterChange (alle filter-handlers)
+  // og applySearch (søk). Tidligere lå det duplikate listeners her — fjernet.
 
   // Top-bar-knapper
   document.getElementById("btn-export").addEventListener("click", exportGeoJSON);
@@ -1378,20 +1928,18 @@ function exportGeoJSON() {
   });
 
   document.getElementById("toggle-sidebar").addEventListener("click", () => togglePanel(map, "sidebar"));
-  document.getElementById("toggle-stats").addEventListener("click", () => togglePanel(map, "stats"));
 
   // Icon-rail: klikk på en seksjons-ikon mens panelet er kollapset skal
   // ekspandere panelet og åpne den seksjonen — i stedet for å bare toggle
   // den (som er default <details>-oppførsel).
   bindRailClicks(map, document.querySelector(".sidebar"), "sidebar-hidden");
-  bindRailClicks(map, document.querySelector(".stats-panel"), "stats-hidden");
 
   document.getElementById("loading").classList.add("hidden");
 })();
 
 function togglePanel(map, which) {
-  const cls = which === "sidebar" ? "sidebar-hidden" : "stats-hidden";
-  document.body.classList.toggle(cls);
+  if (which !== "sidebar") return;
+  document.body.classList.toggle("sidebar-hidden");
   updateUrl();
   // Leaflet må få vite at containeren har endret bredde, ellers blir kartet
   // klippet eller blankt til neste resize-event.
@@ -1425,6 +1973,7 @@ function renderStationCategoryCounts() {
     if (el) el.textContent = `(${n})`;
   }
 }
+
 
 // ---------- Felles helpers eksponert til andre sider (bane.html, dashboard.html) ----------
 // Vanilla JS uten build-step → vi henger Leaflet-stilfunksjonene på

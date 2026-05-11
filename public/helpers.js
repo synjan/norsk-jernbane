@@ -124,6 +124,15 @@
       "Danmark": 3000,     // Banedanmark, 2023
       "Norge": null,       // settes til stats.total_km ved bruk
     },
+    // Elektrifiseringsrate per land (%). Brukes i sammenligningskortet.
+    // Kilder: nasjonale jernbanestatistikker, 2023.
+    countries_electrified_pct: {
+      "Sverige": 75,       // Trafikverket
+      "Sveits": 100,       // BAV (nær 100 % siden 1960-tallet)
+      "Tyskland": 62,      // DB Netz
+      "Danmark": 30,       // Banedanmark (mye av-elektrifisering på sidebaner)
+      "Norge": null,       // settes til stats.electrified_pct ved bruk
+    },
     norway_road_km: 94000, // SSB offentlig vei, 2023
   });
 
