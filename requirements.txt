@@ -1,4 +1,4 @@
-requests>=2.31
+requests>=2.34.0
 osm2geojson>=0.3.2
 shapely>=2.0
 pyproj>=3.6
