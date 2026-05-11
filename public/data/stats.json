@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-11T19:08:48+00:00",
-  "total_km": 5376.5,
+  "generated_at": "2026-05-11T21:45:45+00:00",
+  "total_km": 5375.7,
   "electrified_km": 3532.3,
   "electrified_pct": 65.7,
-  "non_electrified_km": 1844.1,
+  "non_electrified_km": 1843.4,
   "diesel_co2_estimate": {
-    "tonnes_per_year": 84138,
+    "tonnes_per_year": 84104,
     "assumption_text": "10 tog/døgn × 250 t × 0.05 kg CO₂/GTK"
   },
   "voltage_breakdown_km": {
@@ -17,7 +17,7 @@
   },
   "operator_breakdown_km": {
     "Bane NOR": 4358.1,
-    "ukjent": 998.4,
+    "ukjent": 997.7,
     "Norske Skog": 6.5,
     "(Private)": 4.3,
     "Trafikverket": 3.2,
@@ -27,7 +27,7 @@
     "Auto Transport Service": 0.7
   },
   "type_breakdown_km": {
-    "rail": 5314.7,
+    "rail": 5313.9,
     "narrow_gauge": 58.2,
     "preserved": 3.6
   },
@@ -211,7 +211,7 @@
       {
         "decade": 1880,
         "label": "1880-tallet",
-        "count": 37
+        "count": 38
       },
       {
         "decade": 1890,
@@ -271,7 +271,7 @@
       {
         "decade": 2000,
         "label": "2000-tallet",
-        "count": 3
+        "count": 2
       },
       {
         "decade": 2010,
@@ -306,7 +306,7 @@
         "count": 24
       },
       {
-        "name": "Georg Andreas Bull",
+        "name": "Balthazar Lange",
         "count": 18
       }
     ],
@@ -842,13 +842,13 @@
     {
       "name": "Vestfoldbanen",
       "slug": "vestfoldbanen",
-      "total_km": 200.26,
+      "total_km": 200.27,
       "segments": 332,
       "electrified_km": 199.17,
       "electrified_pct": 99.5,
       "max_speed_kmh": 200.0,
       "mean_speed_kmh": 142.2,
-      "double_track_km": 117.53,
+      "double_track_km": 117.54,
       "double_track_pct": 66.3,
       "track_tag_coverage_pct": 91.9,
       "speed_distribution_km": {
@@ -966,7 +966,7 @@
       "electrified_pct": 100.0,
       "max_speed_kmh": 210.0,
       "mean_speed_kmh": 169.1,
-      "double_track_km": 92.58,
+      "double_track_km": 92.59,
       "double_track_pct": 95.6,
       "track_tag_coverage_pct": 96.6,
       "speed_distribution_km": {
@@ -990,9 +990,9 @@
     {
       "name": "Hovedbanen",
       "slug": "hovedbanen",
-      "total_km": 100.52,
+      "total_km": 100.51,
       "segments": 253,
-      "electrified_km": 100.52,
+      "electrified_km": 100.51,
       "electrified_pct": 100.0,
       "max_speed_kmh": 130.0,
       "mean_speed_kmh": 96.2,
@@ -1554,9 +1554,9 @@
     {
       "name": "Spikkestadbanen",
       "slug": "spikkestadbanen",
-      "total_km": 14.27,
+      "total_km": 14.26,
       "segments": 33,
-      "electrified_km": 14.27,
+      "electrified_km": 14.26,
       "electrified_pct": 100.0,
       "max_speed_kmh": 110.0,
       "mean_speed_kmh": 81.2,
@@ -3083,9 +3083,9 @@
     {
       "name": "Øvre bakkespor",
       "slug": "ovre-bakkespor",
-      "total_km": 0.52,
+      "total_km": 0.51,
       "segments": 3,
-      "electrified_km": 0.52,
+      "electrified_km": 0.51,
       "electrified_pct": 100.0,
       "max_speed_kmh": null,
       "mean_speed_kmh": null,
@@ -5119,7 +5119,7 @@
     }
   ],
   "station_count": 1260,
-  "railway_segment_count": 13184,
+  "railway_segment_count": 13181,
   "population_coverage": {
     "total_population": 5440807,
     "place_count": 1167,
