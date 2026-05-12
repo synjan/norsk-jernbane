@@ -112,12 +112,14 @@
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 80ms;
 }
 .btn:focus-visible {
   outline: 2px solid var(--c-accent);
   outline-offset: 2px;
 }
+/* Taktil feedback ved trykk — kort, subtil scale-ned uten visuell støy. */
+.btn:active { transform: scale(0.98); }
 
 .btn-primary {
   background: var(--c-accent);
@@ -144,8 +146,10 @@
   color: var(--c-text);
 }
 
+/* btn-sm: tidligere 3px-padding ga ~22 px høyde — under 32 px minimum.
+   Bumper til 6px så samlet høyde blir ~32 px, fortsatt klart kompakt. */
 .btn-sm {
-  padding: 3px var(--sp-2);
+  padding: 6px var(--sp-3);
   font-size: var(--fs-xs);
 }
 
@@ -200,20 +204,23 @@ button.card:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
+  /* 20×20 px treff-flate (var 16×16) — bedre touch-target uten å bli
+     visuelt dominant. Font-størrelse holdes liten så innholdet ikke vokser. */
+  width: 20px;
+  height: 20px;
   padding: 0;
   border: 1px solid var(--c-border-strong);
   border-radius: 50%;
   background: var(--c-surface);
   color: var(--c-muted-strong);
   font: inherit;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   line-height: 1;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 80ms;
 }
+.info-tip:active { transform: scale(0.95); }
 .info-tip:hover,
 .info-tip[aria-expanded="true"] {
   background: var(--c-accent);
@@ -949,7 +956,7 @@ body.sidebar-hidden .group-chip { display: none; }
 }
 .dash-bridge-text strong {
   font-size: var(--fs-sm);
-  color: var(--c-primary);
+  color: var(--c-accent);
 }
 .dash-bridge-sub {
   font-size: var(--fs-xs);
@@ -957,7 +964,7 @@ body.sidebar-hidden .group-chip { display: none; }
 }
 .dash-bridge-arrow {
   font-size: var(--fs-lg);
-  color: var(--c-primary);
+  color: var(--c-accent);
 }
 
 .sidebar h3 {
@@ -1111,7 +1118,9 @@ kbd {
 .loading.hidden { display: none; }
 
 /* Inline-variant: fyller container i stedet for å overdekke skjermen.
-   Brukes der vi venter på data inne i en page-container. */
+   Brukes der vi venter på data inne i en page-container. Får card-aktig
+   styling så det visuelt "tar plassen" hvor innholdet kommer til å vises
+   — i stedet for å flyte fritt på siden som om noe mangler. */
 .loading-inline {
   display: flex;
   flex-direction: column;
@@ -1119,6 +1128,10 @@ kbd {
   justify-content: center;
   gap: var(--sp-3);
   padding: var(--sp-6) var(--sp-4);
+  margin: var(--sp-4) 0;
+  background: var(--c-surface-alt);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
   color: var(--c-muted-strong);
 }
 .spinner {
@@ -1239,7 +1252,7 @@ kbd {
 .popup-segment-kicker {
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;  /* matcher .section-title for konsistens */
   color: var(--c-muted);
   font-weight: 600;
   margin-bottom: 2px;
@@ -1334,6 +1347,8 @@ kbd {
   vertical-align: top;
   border-bottom: 1px dashed var(--c-border);
 }
+.dep-list tr { transition: background 100ms ease; }
+.dep-list tr:hover td { background: var(--c-surface-alt); }
 .dep-list tr:last-child td { border-bottom: none; }
 .dep-list .dep-line { font-weight: 600; color: var(--c-primary); white-space: nowrap; }
 .dep-list .dep-quay {
@@ -2115,15 +2130,15 @@ a.dash-record-value:hover { color: var(--c-primary); }
 }
 
 /* Takeaway-setning under chart — leser dataene høyt og gir kontekst.
-   Litt mer fremtredende enn estimate-note (mørkere farge), men ikke
-   like dominerende som narrativ-paragrafen øverst. */
+   Demper teksten et hakk under intro slik at visuell hierarki blir
+   tydelig: tittel > intro > [innhold] > takeaway. */
 .dash-card-takeaway {
   margin: var(--sp-3) 0 0;
   padding: var(--sp-2) 0 0;
   border-top: 1px solid var(--c-border);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   line-height: 1.5;
-  color: var(--c-text);
+  color: var(--c-muted-strong);
 }
 
 .dash-card {
@@ -2409,7 +2424,10 @@ a.dash-record-value:hover { color: var(--c-primary); }
   }
 
   .dashboard-grid { grid-template-columns: 1fr; }
-  .dash-hero { grid-template-columns: 1fr 1fr; }
+  /* auto-fit gjør at hero-kortene flyter naturlig: 1 kolonne på iPhone-
+     smale skjermer, 2 på litt bredere, 4-5 på desktop — uten hardkodede
+     breakpoints som tvinger 2 kolonner selv på 390 px. */
+  .dash-hero { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
   .dash-hero-card .num { font-size: var(--fs-2xl); }
   .page-container { padding: var(--sp-2); }
   .route-grid { grid-template-columns: 1fr; }
