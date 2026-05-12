@@ -1058,6 +1058,26 @@
     }
   }
 
+  // Topp 5 etter snittfart (mean_speed_kmh). Snittfart = lengde-vektet
+  // gjennomsnitt over banens segmenter, så den dempes av sakte partier
+  // (kurver, sidespor). Sier mer om reisetid enn ren maks-hastighet.
+  function renderMeanSpeed(stats) {
+    const list = document.getElementById("dash-mean-speed");
+    if (!list) return;
+    list.replaceChildren();
+    const rows = (stats.routes || [])
+      .filter((r) => r.mean_speed_kmh != null && r.total_km >= 50)
+      .sort((a, b) => b.mean_speed_kmh - a.mean_speed_kmh)
+      .slice(0, 5);
+    for (const r of rows) {
+      list.append(linkRow(
+        `bane.html?navn=${encodeURIComponent(r.name)}`,
+        r.name,
+        `${Math.round(r.mean_speed_kmh)} km/t snitt (maks ${r.max_speed_kmh} km/t)`,
+      ));
+    }
+  }
+
   function renderLargest(stats) {
     const list = document.getElementById("dash-largest");
     list.replaceChildren();
@@ -1096,6 +1116,7 @@
     renderHubs(stats);
     renderPotential(stats);
     renderFastest(stats);
+    renderMeanSpeed(stats);
     renderLargest(stats);
     renderRecords(stats);
 
