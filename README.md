@@ -108,12 +108,18 @@ Alle data er åpne og kan brukes — kildene har bare ulike attribusjons-krav. A
 
 ## 📚 For AI-assistenter (teknisk)
 
-Hvis du er en AI som leser dette: hovedkonteksten ligger i to filer:
+Hvis du er en AI som leser dette: hovedkonteksten ligger i tre filer:
 
 - [`CLAUDE.md`](CLAUDE.md) — invarianter, navnekonvensjoner, hvor logikk bor
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — modulkart og data-flyt
+- [`docs/data-sources-roadmap.md`](docs/data-sources-roadmap.md) — planlagte nye datakilder (MET vær, Wikipedia, Kartverket DEM, Entur GTFS m.fl.) med implementasjonsstrategi per kilde
 
 Hvis brukeren beskriver en feil eller ny feature, sjekk disse først for kontekst.
+
+Prosjektet har også **tre dedikerte sub-agenter** i `.claude/agents/` som auto-trigges på relevante oppgaver:
+- `innsikt-explorer` — naturlig Q&A over jernbanedata
+- `innsikt-card-builder` — lager nye kort på innsikt-siden
+- `innsikt-validator` — sanity-sjekker `stats.json` etter data-refresh
 
 ---
 
