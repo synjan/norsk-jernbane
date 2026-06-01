@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-05-11T21:45:45+00:00",
-  "total_km": 5375.7,
-  "electrified_km": 3532.3,
+  "generated_at": "2026-06-01T05:45:26+00:00",
+  "total_km": 5376.6,
+  "electrified_km": 3532.7,
   "electrified_pct": 65.7,
-  "non_electrified_km": 1843.4,
+  "non_electrified_km": 1843.9,
   "diesel_co2_estimate": {
-    "tonnes_per_year": 84104,
+    "tonnes_per_year": 84128,
     "assumption_text": "10 tog/døgn × 250 t × 0.05 kg CO₂/GTK"
   },
   "voltage_breakdown_km": {
     "15000 V / 16.67 Hz": 3502.3,
-    "6800 V / 25 Hz": 21.6,
+    "6800 V / 25 Hz": 21.9,
     "ukjent V": 8.1,
     "ukjent V / 16.67 Hz": 0.3,
     "15000 V": 0.0
   },
   "operator_breakdown_km": {
-    "Bane NOR": 4358.1,
-    "ukjent": 997.7,
+    "Bane NOR": 4355.6,
+    "ukjent": 1001.1,
     "Norske Skog": 6.5,
     "(Private)": 4.3,
     "Trafikverket": 3.2,
@@ -27,8 +27,8 @@
     "Auto Transport Service": 0.7
   },
   "type_breakdown_km": {
-    "rail": 5313.9,
-    "narrow_gauge": 58.2,
+    "rail": 5314.5,
+    "narrow_gauge": 58.6,
     "preserved": 3.6
   },
   "fastest_sections": [
@@ -134,23 +134,23 @@
     }
   ],
   "speed_distribution_km": {
-    "<80": 532.0,
-    "80–130": 2423.0,
-    "130–160": 739.3,
+    "<80": 530.9,
+    "80–130": 2421.2,
+    "130–160": 741.7,
     "160–200": 164.9,
     "200+": 272.8,
-    "Ukjent": 432.4
+    "Ukjent": 433.3
   },
   "track_capacity_km": {
-    "Enkeltspor": 3439.5,
-    "Dobbeltspor": 654.2,
+    "Enkeltspor": 3438.8,
+    "Dobbeltspor": 654.8,
     "Multispor (3+)": 65.4,
-    "Ikke tagget": 405.3
+    "Ikke tagget": 405.6
   },
   "topography": {
     "tunnel_km": 525.1,
     "bridge_km": 62.1,
-    "surface_km": 3977.2,
+    "surface_km": 3977.4,
     "longest_tunnel_segment_km": 12.13,
     "top_tunnel_routes": [
       {
@@ -185,7 +185,7 @@
         "name": "Nordlandsbanen",
         "slug": "nordlandsbanen",
         "tunnel_km": 53.2,
-        "total_km": 726.1,
+        "total_km": 725.4,
         "tunnel_pct": 7.3
       }
     ]
@@ -211,7 +211,7 @@
       {
         "decade": 1880,
         "label": "1880-tallet",
-        "count": 38
+        "count": 37
       },
       {
         "decade": 1890,
@@ -271,7 +271,7 @@
       {
         "decade": 2000,
         "label": "2000-tallet",
-        "count": 2
+        "count": 3
       },
       {
         "decade": 2010,
@@ -306,7 +306,7 @@
         "count": 24
       },
       {
-        "name": "Balthazar Lange",
+        "name": "Georg Andreas Bull",
         "count": 18
       }
     ],
@@ -647,46 +647,45 @@
     "note": "Knutepunkt-score teller unike rutenavn fra OSM route=train-relasjoner."
   },
   "signals": {
-    "total": 1067,
-    "per_100km": 19.8,
+    "total": 1017,
+    "per_100km": 18.9,
     "by_type": {
-      "distant": 248,
-      "speed_limit": 95,
+      "distant": 206,
+      "speed_limit": 87,
       "form": 77,
-      "main": 51,
+      "main": 49,
       "combined": 13,
       "catenary_mast": 13,
-      "whistle": 2,
       "main_repeated": 1
     }
   },
   "switches": {
-    "total": 4202,
+    "total": 4203,
     "per_100km": 78.2
   },
   "routes": [
     {
       "name": "Nordlandsbanen",
       "slug": "nordlandsbanen",
-      "total_km": 756.93,
-      "segments": 1154,
+      "total_km": 756.31,
+      "segments": 1149,
       "electrified_km": 33.26,
       "electrified_pct": 4.4,
       "max_speed_kmh": 130.0,
-      "mean_speed_kmh": 95.3,
+      "mean_speed_kmh": 95.9,
       "double_track_km": 4.13,
       "double_track_pct": 0.6,
       "track_tag_coverage_pct": 99.8,
       "speed_distribution_km": {
-        "<80": 17.8,
-        "80–130": 588.9,
-        "130–160": 118.3,
+        "<80": 16.6,
+        "80–130": 587.1,
+        "130–160": 120.6,
         "160–200": 0.0,
         "200+": 0.0,
         "Ukjent": 1.1
       },
       "tunnel_km": 53.16,
-      "bridge_km": 6.63,
+      "bridge_km": 6.62,
       "operators": [
         "Bane NOR"
       ],
@@ -755,12 +754,12 @@
     {
       "name": "Bergensbanen",
       "slug": "bergensbanen",
-      "total_km": 398.89,
-      "segments": 937,
+      "total_km": 398.88,
+      "segments": 935,
       "electrified_km": 398.44,
       "electrified_pct": 99.9,
       "max_speed_kmh": 160.0,
-      "mean_speed_kmh": 82.8,
+      "mean_speed_kmh": 82.6,
       "double_track_km": 7.12,
       "double_track_pct": 2.1,
       "track_tag_coverage_pct": 87.9,
@@ -773,7 +772,7 @@
         "Ukjent": 11.8
       },
       "tunnel_km": 102.76,
-      "bridge_km": 2.06,
+      "bridge_km": 2.04,
       "operators": [
         "Bane NOR"
       ],
@@ -996,16 +995,16 @@
       "electrified_pct": 100.0,
       "max_speed_kmh": 130.0,
       "mean_speed_kmh": 96.2,
-      "double_track_km": 56.07,
-      "double_track_pct": 59.6,
-      "track_tag_coverage_pct": 95.5,
+      "double_track_km": 56.7,
+      "double_track_pct": 59.8,
+      "track_tag_coverage_pct": 95.6,
       "speed_distribution_km": {
         "<80": 9.5,
         "80–130": 52.1,
         "130–160": 32.7,
         "160–200": 0.0,
         "200+": 0.0,
-        "Ukjent": 4.3
+        "Ukjent": 4.9
       },
       "tunnel_km": 0.83,
       "bridge_km": 2.0,
@@ -1446,9 +1445,9 @@
     {
       "name": "Thamshavnbanen",
       "slug": "thamshavnbanen",
-      "total_km": 21.72,
-      "segments": 30,
-      "electrified_km": 21.56,
+      "total_km": 22.11,
+      "segments": 31,
+      "electrified_km": 21.95,
       "electrified_pct": 99.3,
       "max_speed_kmh": null,
       "mean_speed_kmh": null,
@@ -1461,7 +1460,7 @@
         "130–160": 0.0,
         "160–200": 0.0,
         "200+": 0.0,
-        "Ukjent": 21.7
+        "Ukjent": 22.1
       },
       "tunnel_km": 0.15,
       "bridge_km": 0.15,
@@ -2558,8 +2557,8 @@
       "segments": 3,
       "electrified_km": 0,
       "electrified_pct": 0.0,
-      "max_speed_kmh": 60.0,
-      "mean_speed_kmh": 60.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
       "double_track_km": 0,
       "double_track_pct": null,
       "track_tag_coverage_pct": 0,
@@ -5118,8 +5117,8 @@
       ]
     }
   ],
-  "station_count": 1260,
-  "railway_segment_count": 13181,
+  "station_count": 1261,
+  "railway_segment_count": 13177,
   "population_coverage": {
     "total_population": 5440807,
     "place_count": 1167,
