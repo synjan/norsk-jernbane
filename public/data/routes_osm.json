@@ -168,9 +168,9 @@
       "Narvik"
     ]
   },
-  "RE20": {
+  "RE20 Halden → Oslo S": {
     "id": 2438823,
-    "name": "RE20",
+    "name": "RE20 Halden → Oslo S",
     "ref": "RE20",
     "operator": "Vy Tog",
     "network": null,
@@ -184,15 +184,12 @@
       "Rygge",
       "Moss",
       "Ski",
-      "Oslo S",
-      "Ed",
-      "Öxnered",
-      "Trollhättan"
+      "Oslo S"
     ]
   },
-  "L2": {
+  "L2 Stabekk → Ski": {
     "id": 2568856,
-    "name": "L2",
+    "name": "L2 Stabekk → Ski",
     "ref": "L2",
     "operator": "Vy Tog",
     "network": null,
@@ -214,7 +211,61 @@
       "Oppegård",
       "Vevelstad",
       "Langhus",
+      "Ski"
+    ]
+  },
+  "L2 Ski → Stabekk": {
+    "id": 2568857,
+    "name": "L2 Ski → Stabekk",
+    "ref": "L2",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Ski",
+    "to": "Stabekk",
+    "stations": [
       "Ski",
+      "Langhus",
+      "Vevelstad",
+      "Oppegård",
+      "Greverud",
+      "Myrvoll",
+      "Solbråtan",
+      "Rosenholm",
+      "Holmlia",
+      "Hauketo",
+      "Ljan",
+      "Nordstrand",
+      "Oslo S",
+      "Nationaltheatret",
+      "Skøyen",
+      "Lysaker",
+      "Stabekk"
+    ]
+  },
+  "L2 Ski → Lysaker": {
+    "id": 2568860,
+    "name": "L2 Ski → Lysaker",
+    "ref": "L2",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Ski",
+    "to": "Lysaker",
+    "stations": [
+      "Ski",
+      "Langhus",
+      "Vevelstad",
+      "Oppegård",
+      "Greverud",
+      "Myrvoll",
+      "Solbråtan",
+      "Rosenholm",
+      "Holmlia",
+      "Hauketo",
+      "Ljan",
+      "Nordstrand",
+      "Oslo S",
+      "Nationaltheatret",
+      "Skøyen",
       "Lysaker"
     ]
   },
@@ -366,9 +417,9 @@
       "Lillestrøm"
     ]
   },
-  "R21": {
+  "R21 Oslo S → Moss": {
     "id": 2584423,
-    "name": "R21",
+    "name": "R21 Oslo S → Moss",
     "ref": "R21",
     "operator": "Vy Tog",
     "network": null,
@@ -384,9 +435,27 @@
       "Moss"
     ]
   },
-  "R22": {
+  "R21 Moss → Oslo S": {
+    "id": 3061372,
+    "name": "R21 Moss → Oslo S",
+    "ref": "R21",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Moss",
+    "to": "Oslo S",
+    "stations": [
+      "Moss",
+      "Kambo",
+      "Sonsveien",
+      "Vestby",
+      "Ås",
+      "Ski",
+      "Oslo S"
+    ]
+  },
+  "R22 Rakkestad → Oslo S": {
     "id": 3067034,
-    "name": "R22",
+    "name": "R22 Rakkestad → Oslo S",
     "ref": "R22",
     "operator": "Vy Tog",
     "network": null,
@@ -404,6 +473,137 @@
       "Tomter",
       "Skotbu",
       "Kråkstad",
+      "Ski",
+      "Oslo S"
+    ]
+  },
+  "R22 Oslo S → Rakkestad": {
+    "id": 3067035,
+    "name": "R22 Oslo S → Rakkestad",
+    "ref": "R22",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Oslo S",
+    "to": "Rakkestad",
+    "stations": [
+      "Oslo S",
+      "Ski",
+      "Kråkstad",
+      "Skotbu",
+      "Tomter",
+      "Knapstad",
+      "Spydeberg",
+      "Askim",
+      "Slitu",
+      "Mysen",
+      "Eidsberg",
+      "Heia",
+      "Rakkestad"
+    ]
+  },
+  "R22 Mysen → Oslo S": {
+    "id": 3067036,
+    "name": "R22 Mysen → Oslo S",
+    "ref": "R22",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Mysen",
+    "to": "Oslo S",
+    "stations": [
+      "Mysen",
+      "Slitu",
+      "Askim",
+      "Spydeberg",
+      "Knapstad",
+      "Tomter",
+      "Skotbu",
+      "Kråkstad",
+      "Ski",
+      "Oslo S"
+    ]
+  },
+  "R22 Oslo S → Mysen": {
+    "id": 3067037,
+    "name": "R22 Oslo S → Mysen",
+    "ref": "R22",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Oslo S",
+    "to": "Mysen",
+    "stations": [
+      "Oslo S",
+      "Ski",
+      "Kråkstad",
+      "Skotbu",
+      "Tomter",
+      "Knapstad",
+      "Spydeberg",
+      "Askim",
+      "Slitu",
+      "Mysen"
+    ]
+  },
+  "RE20 Oslo S → Halden": {
+    "id": 3121884,
+    "name": "RE20 Oslo S → Halden",
+    "ref": "RE20",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Oslo S",
+    "to": "Halden",
+    "stations": [
+      "Oslo S",
+      "Ski",
+      "Moss",
+      "Rygge",
+      "Råde",
+      "Fredrikstad",
+      "Sarpsborg",
+      "Halden"
+    ]
+  },
+  "RE20 Oslo S → Göteborg": {
+    "id": 3121885,
+    "name": "RE20 Oslo S → Göteborg",
+    "ref": "RE20",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Oslo S",
+    "to": "Göteborg",
+    "stations": [
+      "Oslo S",
+      "Ski",
+      "Moss",
+      "Rygge",
+      "Råde",
+      "Fredrikstad",
+      "Sarpsborg",
+      "Halden",
+      "Ed",
+      "Öxnered",
+      "Trollhättan",
+      "Göteborg C"
+    ]
+  },
+  "RE20 Göteborg → Oslo S": {
+    "id": 3121886,
+    "name": "RE20 Göteborg → Oslo S",
+    "ref": "RE20",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Göteborg C",
+    "to": "Oslo S",
+    "stations": [
+      "Göteborg C",
+      "Trollhättan",
+      "Öxnered",
+      "Ed",
+      "Halden",
+      "Sarpsborg",
+      "Fredrikstad",
+      "Råde",
+      "Rygge",
+      "Moss",
       "Ski",
       "Oslo S"
     ]
@@ -1217,9 +1417,83 @@
       "Hokksund"
     ]
   },
-  "R23": {
+  "L2x Ski → Oslo S": {
+    "id": 14987101,
+    "name": "L2x Ski → Oslo S",
+    "ref": "L2x",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Ski",
+    "to": "Oslo S",
+    "stations": [
+      "Ski",
+      "Langhus",
+      "Vevelstad",
+      "Oppegård",
+      "Greverud",
+      "Myrvoll",
+      "Solbråtan",
+      "Rosenholm",
+      "Holmlia",
+      "Hauketo",
+      "Ljan",
+      "Nordstrand",
+      "Oslo S"
+    ]
+  },
+  "L2x Oslo S → Ski": {
+    "id": 14987102,
+    "name": "L2x Oslo S → Ski",
+    "ref": "L2x",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Oslo S",
+    "to": "Ski",
+    "stations": [
+      "Oslo S",
+      "Nordstrand",
+      "Ljan",
+      "Hauketo",
+      "Holmlia",
+      "Rosenholm",
+      "Solbråtan",
+      "Myrvoll",
+      "Greverud",
+      "Oppegård",
+      "Vevelstad",
+      "Langhus",
+      "Ski"
+    ]
+  },
+  "L2 Lysaker → Ski": {
+    "id": 14987103,
+    "name": "L2 Lysaker → Ski",
+    "ref": "L2",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Lysaker",
+    "to": "Ski",
+    "stations": [
+      "Skøyen",
+      "Nationaltheatret",
+      "Oslo S",
+      "Nordstrand",
+      "Ljan",
+      "Hauketo",
+      "Holmlia",
+      "Rosenholm",
+      "Solbråtan",
+      "Myrvoll",
+      "Greverud",
+      "Oppegård",
+      "Vevelstad",
+      "Langhus",
+      "Ski"
+    ]
+  },
+  "R23 Ski - Oslo S": {
     "id": 14987160,
-    "name": "R23",
+    "name": "R23 Ski - Oslo S",
     "ref": "R23",
     "operator": "Vy Tog",
     "network": null,
@@ -1228,6 +1502,19 @@
     "stations": [
       "Ski",
       "Oslo S"
+    ]
+  },
+  "R23 Oslo S → Ski": {
+    "id": 14987161,
+    "name": "R23 Oslo S → Ski",
+    "ref": "R23",
+    "operator": "Vy Tog",
+    "network": null,
+    "from": "Oslo S",
+    "to": "Ski",
+    "stations": [
+      "Oslo S",
+      "Ski"
     ]
   },
   "RE10": {

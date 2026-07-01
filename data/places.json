@@ -2,7 +2,7 @@
   "version": 0.6,
   "generator": "Overpass API 0.7.62.11 87bfad18",
   "osm3s": {
-    "timestamp_osm_base": "2026-06-01T05:42:36Z",
+    "timestamp_osm_base": "2026-07-01T05:32:00Z",
     "timestamp_areas_base": "2026-05-12T07:36:16Z",
     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
   },
@@ -1822,6 +1822,7 @@
     "name:bg": "Тронхайм",
     "name:bpy": "ট্রোনডেহিম",
     "name:ce": "Тронхейм",
+    "name:da": "Trondhjem",
     "name:de": "Trondheim",
     "name:el": "Τρόντχαϊμ",
     "name:fa": "تروندهایم",
@@ -2774,7 +2775,9 @@
     "population:date": "2025-01-01",
     "ref:ssb_tettsted": "6112",
     "source:population": "SSB - befolkning i tettsteder",
-    "ssr:stedsnr": "10385"
+    "ssr:stedsnr": "10385",
+    "wikidata": "Q1602840",
+    "wikipedia": "no:Hellesylt"
   }
 },
 {
@@ -18512,7 +18515,8 @@
     "population": "36",
     "population:date": "2016",
     "population:source": "SSB",
-    "ssr:stedsnr": "558874"
+    "ssr:stedsnr": "558874",
+    "start_date": "before 1610"
   }
 },
 {
@@ -18624,7 +18628,8 @@
     "population": "31",
     "population:date": "2016",
     "population:source": "SSB",
-    "ssr:stedsnr": "680692"
+    "ssr:stedsnr": "680692",
+    "start_date": "600..1000"
   }
 },
 {

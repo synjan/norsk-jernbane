@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-06-01T05:45:26+00:00",
-  "total_km": 5376.6,
-  "electrified_km": 3532.7,
+  "generated_at": "2026-07-01T05:34:27+00:00",
+  "total_km": 5376.8,
+  "electrified_km": 3534.3,
   "electrified_pct": 65.7,
-  "non_electrified_km": 1843.9,
+  "non_electrified_km": 1842.5,
   "diesel_co2_estimate": {
-    "tonnes_per_year": 84128,
+    "tonnes_per_year": 84064,
     "assumption_text": "10 tog/døgn × 250 t × 0.05 kg CO₂/GTK"
   },
   "voltage_breakdown_km": {
-    "15000 V / 16.67 Hz": 3502.3,
-    "6800 V / 25 Hz": 21.9,
-    "ukjent V": 8.1,
+    "15000 V / 16.67 Hz": 3503.7,
+    "6800 V / 25 Hz": 21.6,
+    "ukjent V": 8.7,
     "ukjent V / 16.67 Hz": 0.3,
     "15000 V": 0.0
   },
   "operator_breakdown_km": {
-    "Bane NOR": 4355.6,
-    "ukjent": 1001.1,
+    "Bane NOR": 4360.6,
+    "ukjent": 996.2,
     "Norske Skog": 6.5,
     "(Private)": 4.3,
     "Trafikverket": 3.2,
     "Flytoget": 2.7,
-    "Vy": 1.5,
+    "Vy": 1.6,
     "Borregaard": 1.1,
     "Auto Transport Service": 0.7
   },
   "type_breakdown_km": {
-    "rail": 5314.5,
-    "narrow_gauge": 58.6,
+    "rail": 5315.0,
+    "narrow_gauge": 58.3,
     "preserved": 3.6
   },
   "fastest_sections": [
@@ -134,23 +134,23 @@
     }
   ],
   "speed_distribution_km": {
-    "<80": 530.9,
-    "80–130": 2421.2,
-    "130–160": 741.7,
+    "<80": 530.8,
+    "80–130": 2422.0,
+    "130–160": 739.3,
     "160–200": 164.9,
     "200+": 272.8,
-    "Ukjent": 433.3
+    "Ukjent": 434.2
   },
   "track_capacity_km": {
-    "Enkeltspor": 3438.8,
-    "Dobbeltspor": 654.8,
+    "Enkeltspor": 3438.4,
+    "Dobbeltspor": 654.2,
     "Multispor (3+)": 65.4,
-    "Ikke tagget": 405.6
+    "Ikke tagget": 406.0
   },
   "topography": {
     "tunnel_km": 525.1,
-    "bridge_km": 62.1,
-    "surface_km": 3977.4,
+    "bridge_km": 62.2,
+    "surface_km": 3976.7,
     "longest_tunnel_segment_km": 12.13,
     "top_tunnel_routes": [
       {
@@ -185,13 +185,13 @@
         "name": "Nordlandsbanen",
         "slug": "nordlandsbanen",
         "tunnel_km": 53.2,
-        "total_km": 725.4,
+        "total_km": 725.0,
         "tunnel_pct": 7.3
       }
     ]
   },
   "history": {
-    "stations_with_year": 306,
+    "stations_with_year": 307,
     "by_decade": [
       {
         "decade": 1850,
@@ -211,7 +211,7 @@
       {
         "decade": 1880,
         "label": "1880-tallet",
-        "count": 37
+        "count": 38
       },
       {
         "decade": 1890,
@@ -226,7 +226,7 @@
       {
         "decade": 1910,
         "label": "1910-tallet",
-        "count": 18
+        "count": 19
       },
       {
         "decade": 1920,
@@ -271,7 +271,7 @@
       {
         "decade": 2000,
         "label": "2000-tallet",
-        "count": 3
+        "count": 2
       },
       {
         "decade": 2010,
@@ -316,7 +316,7 @@
     "hubs": [
       {
         "name": "Oslo S",
-        "route_count": 42,
+        "route_count": 55,
         "routes": [
           "F1;70",
           "F4 Bergen→Oslo S",
@@ -340,15 +340,25 @@
           "L1 Lillestrøm → Oslo S → Asker",
           "L1 Lillestrøm → Oslo S → Spikkestad",
           "L1 Spikkestad → Oslo S → Lillestrøm",
-          "L2",
+          "L2 Lysaker → Ski",
+          "L2 Ski → Lysaker",
+          "L2 Ski → Stabekk",
+          "L2 Stabekk → Ski",
+          "L2x Oslo S → Ski",
+          "L2x Ski → Oslo S",
           "R12 Eidsvoll → Kongsberg",
           "R12 Kongsberg → Eidsvoll",
           "R13 Dal → Oslo S → Drammen",
           "R13 Drammen → Oslo S → Dal",
           "R14",
-          "R21",
-          "R22",
-          "R23",
+          "R21 Moss → Oslo S",
+          "R21 Oslo S → Moss",
+          "R22 Mysen → Oslo S",
+          "R22 Oslo S → Mysen",
+          "R22 Oslo S → Rakkestad",
+          "R22 Rakkestad → Oslo S",
+          "R23 Oslo S → Ski",
+          "R23 Ski - Oslo S",
           "R31",
           "RE10",
           "RE10 Drammen - Oslo S - Lillehammer",
@@ -358,13 +368,16 @@
           "RE11 Skien → Oslo S",
           "RE11 Skien → Oslo S → Eidsvoll",
           "RE11 Skien → Oslo S → Lillestrøm",
-          "RE20",
+          "RE20 Göteborg → Oslo S",
+          "RE20 Halden → Oslo S",
+          "RE20 Oslo S → Göteborg",
+          "RE20 Oslo S → Halden",
           "RE30"
         ]
       },
       {
         "name": "Nationaltheatret",
-        "route_count": 23,
+        "route_count": 26,
         "routes": [
           "FLY1 Drammen → Oslo S → Oslo Lufthavn",
           "FLY1 Oslo Lufthavn → Oslo S → Drammen",
@@ -376,7 +389,10 @@
           "L1 Lillestrøm → Oslo S → Asker",
           "L1 Lillestrøm → Oslo S → Spikkestad",
           "L1 Spikkestad → Oslo S → Lillestrøm",
-          "L2",
+          "L2 Lysaker → Ski",
+          "L2 Ski → Lysaker",
+          "L2 Ski → Stabekk",
+          "L2 Stabekk → Ski",
           "R12 Eidsvoll → Kongsberg",
           "R12 Kongsberg → Eidsvoll",
           "R13 Dal → Oslo S → Drammen",
@@ -389,6 +405,63 @@
           "RE11 Skien → Oslo S",
           "RE11 Skien → Oslo S → Eidsvoll",
           "RE11 Skien → Oslo S → Lillestrøm"
+        ]
+      },
+      {
+        "name": "Skøyen",
+        "route_count": 23,
+        "routes": [
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "FLY2 Oslo Lufthavn → Skøyen",
+          "FLY2 Oslo Lufthavn → Stabekk",
+          "FLY2 Skøyen → Oslo Lufthavn",
+          "FLY2 Stabekk → Oslo Lufthavn",
+          "L1 Asker → Oslo S → Lillestrøm",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L1 Spikkestad → Oslo S → Lillestrøm",
+          "L2 Lysaker → Ski",
+          "L2 Ski → Lysaker",
+          "L2 Ski → Stabekk",
+          "L2 Stabekk → Ski",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "R14",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Skien → Oslo S → Eidsvoll"
+        ]
+      },
+      {
+        "name": "Lysaker",
+        "route_count": 22,
+        "routes": [
+          "F5 Kristiansand → Oslo sentralstasjon",
+          "F5 Oslo sentralstasjon → Kristiansand",
+          "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
+          "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
+          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
+          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
+          "FLY2 Oslo Lufthavn → Stabekk",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L2 Ski → Lysaker",
+          "L2 Ski → Stabekk",
+          "R12 Eidsvoll → Kongsberg",
+          "R12 Kongsberg → Eidsvoll",
+          "R13 Dal → Oslo S → Drammen",
+          "R13 Drammen → Oslo S → Dal",
+          "R14",
+          "RE10 Drammen - Oslo S - Lillehammer",
+          "RE10 Lillehammer - Oslo S - Drammen",
+          "RE11 Eidsvoll → Oslo S → Skien",
+          "RE11 Oslo S → Skien",
+          "RE11 Skien → Oslo S",
+          "RE11 Skien → Oslo S → Eidsvoll"
         ]
       },
       {
@@ -407,59 +480,6 @@
           "L1 Lillestrøm → Oslo S → Asker",
           "L1 Lillestrøm → Oslo S → Spikkestad",
           "L1 Spikkestad → Oslo S → Lillestrøm",
-          "R12 Eidsvoll → Kongsberg",
-          "R12 Kongsberg → Eidsvoll",
-          "R13 Dal → Oslo S → Drammen",
-          "R13 Drammen → Oslo S → Dal",
-          "R14",
-          "RE10 Drammen - Oslo S - Lillehammer",
-          "RE10 Lillehammer - Oslo S - Drammen",
-          "RE11 Eidsvoll → Oslo S → Skien",
-          "RE11 Skien → Oslo S → Eidsvoll"
-        ]
-      },
-      {
-        "name": "Lysaker",
-        "route_count": 21,
-        "routes": [
-          "F5 Kristiansand → Oslo sentralstasjon",
-          "F5 Oslo sentralstasjon → Kristiansand",
-          "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
-          "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
-          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
-          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
-          "FLY2 Oslo Lufthavn → Stabekk",
-          "L1 Lillestrøm → Oslo S → Asker",
-          "L1 Lillestrøm → Oslo S → Spikkestad",
-          "L2",
-          "R12 Eidsvoll → Kongsberg",
-          "R12 Kongsberg → Eidsvoll",
-          "R13 Dal → Oslo S → Drammen",
-          "R13 Drammen → Oslo S → Dal",
-          "R14",
-          "RE10 Drammen - Oslo S - Lillehammer",
-          "RE10 Lillehammer - Oslo S - Drammen",
-          "RE11 Eidsvoll → Oslo S → Skien",
-          "RE11 Oslo S → Skien",
-          "RE11 Skien → Oslo S",
-          "RE11 Skien → Oslo S → Eidsvoll"
-        ]
-      },
-      {
-        "name": "Skøyen",
-        "route_count": 20,
-        "routes": [
-          "FLY1 Drammen → Oslo S → Oslo Lufthavn",
-          "FLY1 Oslo Lufthavn → Oslo S → Drammen",
-          "FLY2 Oslo Lufthavn → Skøyen",
-          "FLY2 Oslo Lufthavn → Stabekk",
-          "FLY2 Skøyen → Oslo Lufthavn",
-          "FLY2 Stabekk → Oslo Lufthavn",
-          "L1 Asker → Oslo S → Lillestrøm",
-          "L1 Lillestrøm → Oslo S → Asker",
-          "L1 Lillestrøm → Oslo S → Spikkestad",
-          "L1 Spikkestad → Oslo S → Lillestrøm",
-          "L2",
           "R12 Eidsvoll → Kongsberg",
           "R12 Kongsberg → Eidsvoll",
           "R13 Dal → Oslo S → Drammen",
@@ -546,6 +566,30 @@
         ]
       },
       {
+        "name": "Ski",
+        "route_count": 18,
+        "routes": [
+          "L2 Lysaker → Ski",
+          "L2 Ski → Lysaker",
+          "L2 Ski → Stabekk",
+          "L2 Stabekk → Ski",
+          "L2x Oslo S → Ski",
+          "L2x Ski → Oslo S",
+          "R21 Moss → Oslo S",
+          "R21 Oslo S → Moss",
+          "R22 Mysen → Oslo S",
+          "R22 Oslo S → Mysen",
+          "R22 Oslo S → Rakkestad",
+          "R22 Rakkestad → Oslo S",
+          "R23 Oslo S → Ski",
+          "R23 Ski - Oslo S",
+          "RE20 Göteborg → Oslo S",
+          "RE20 Halden → Oslo S",
+          "RE20 Oslo S → Göteborg",
+          "RE20 Oslo S → Halden"
+        ]
+      },
+      {
         "name": "Oslo Lufthavn",
         "route_count": 16,
         "routes": [
@@ -582,6 +626,20 @@
         ]
       },
       {
+        "name": "Stabekk",
+        "route_count": 8,
+        "routes": [
+          "FLY2 Oslo Lufthavn → Stabekk",
+          "FLY2 Stabekk → Oslo Lufthavn",
+          "L1 Asker → Oslo S → Lillestrøm",
+          "L1 Lillestrøm → Oslo S → Asker",
+          "L1 Lillestrøm → Oslo S → Spikkestad",
+          "L1 Spikkestad → Oslo S → Lillestrøm",
+          "L2 Ski → Stabekk",
+          "L2 Stabekk → Ski"
+        ]
+      },
+      {
         "name": "Eidsvoll",
         "route_count": 7,
         "routes": [
@@ -595,97 +653,75 @@
         ]
       },
       {
-        "name": "Stabekk",
-        "route_count": 7,
+        "name": "Greverud",
+        "route_count": 6,
         "routes": [
-          "FLY2 Oslo Lufthavn → Stabekk",
-          "FLY2 Stabekk → Oslo Lufthavn",
-          "L1 Asker → Oslo S → Lillestrøm",
-          "L1 Lillestrøm → Oslo S → Asker",
-          "L1 Lillestrøm → Oslo S → Spikkestad",
-          "L1 Spikkestad → Oslo S → Lillestrøm",
-          "L2"
+          "L2 Lysaker → Ski",
+          "L2 Ski → Lysaker",
+          "L2 Ski → Stabekk",
+          "L2 Stabekk → Ski",
+          "L2x Oslo S → Ski",
+          "L2x Ski → Oslo S"
         ]
       },
       {
-        "name": "Kongsberg",
+        "name": "Hauketo",
         "route_count": 6,
         "routes": [
-          "F5 Kristiansand → Oslo sentralstasjon",
-          "F5 Oslo sentralstasjon → Kristiansand",
-          "F5 Oslo sentralstasjon → Kristiansand → Stavanger",
-          "F5 Stavanger → Kristiansand → Oslo Sentralstasjon",
-          "R12 Eidsvoll → Kongsberg",
-          "R12 Kongsberg → Eidsvoll"
-        ]
-      },
-      {
-        "name": "Porsgrunn",
-        "route_count": 6,
-        "routes": [
-          "52",
-          "RE11 Eidsvoll → Oslo S → Skien",
-          "RE11 Oslo S → Skien",
-          "RE11 Skien → Oslo S",
-          "RE11 Skien → Oslo S → Eidsvoll",
-          "RE11 Skien → Oslo S → Lillestrøm"
-        ]
-      },
-      {
-        "name": "Skien",
-        "route_count": 6,
-        "routes": [
-          "52",
-          "RE11 Eidsvoll → Oslo S → Skien",
-          "RE11 Oslo S → Skien",
-          "RE11 Skien → Oslo S",
-          "RE11 Skien → Oslo S → Eidsvoll",
-          "RE11 Skien → Oslo S → Lillestrøm"
+          "L2 Lysaker → Ski",
+          "L2 Ski → Lysaker",
+          "L2 Ski → Stabekk",
+          "L2 Stabekk → Ski",
+          "L2x Oslo S → Ski",
+          "L2x Ski → Oslo S"
         ]
       }
     ],
     "note": "Knutepunkt-score teller unike rutenavn fra OSM route=train-relasjoner."
   },
   "signals": {
-    "total": 1017,
-    "per_100km": 18.9,
+    "total": 1169,
+    "per_100km": 21.7,
     "by_type": {
-      "distant": 206,
-      "speed_limit": 87,
+      "distant": 310,
+      "speed_limit": 118,
       "form": 77,
-      "main": 49,
+      "main": 45,
+      "whistle": 36,
       "combined": 13,
       "catenary_mast": 13,
-      "main_repeated": 1
+      "crossing_distant": 2,
+      "main_repeated": 1,
+      "train_protection": 1
     }
   },
   "switches": {
-    "total": 4203,
-    "per_100km": 78.2
+    "total": 4186,
+    "per_100km": 77.9
   },
   "routes": [
     {
       "name": "Nordlandsbanen",
       "slug": "nordlandsbanen",
-      "total_km": 756.31,
-      "segments": 1149,
+      "total_km": 757.65,
+      "segments": 1197,
       "electrified_km": 33.26,
       "electrified_pct": 4.4,
       "max_speed_kmh": 130.0,
-      "mean_speed_kmh": 95.9,
+      "mean_speed_kmh": 95.5,
       "double_track_km": 4.13,
       "double_track_pct": 0.6,
       "track_tag_coverage_pct": 99.8,
       "speed_distribution_km": {
         "<80": 16.6,
-        "80–130": 587.1,
-        "130–160": 120.6,
+        "80–130": 587.9,
+        "130–160": 118.3,
         "160–200": 0.0,
         "200+": 0.0,
-        "Ukjent": 1.1
+        "Ukjent": 2.2
       },
       "tunnel_km": 53.16,
-      "bridge_km": 6.62,
+      "bridge_km": 6.71,
       "operators": [
         "Bane NOR"
       ],
@@ -726,7 +762,7 @@
       "name": "Dovrebanen",
       "slug": "dovrebanen",
       "total_km": 535.17,
-      "segments": 974,
+      "segments": 975,
       "electrified_km": 533.48,
       "electrified_pct": 99.7,
       "max_speed_kmh": 200.0,
@@ -743,7 +779,7 @@
         "Ukjent": 12.8
       },
       "tunnel_km": 18.84,
-      "bridge_km": 6.39,
+      "bridge_km": 6.38,
       "operators": [
         "Bane NOR"
       ],
@@ -754,12 +790,12 @@
     {
       "name": "Bergensbanen",
       "slug": "bergensbanen",
-      "total_km": 398.88,
-      "segments": 935,
+      "total_km": 398.89,
+      "segments": 937,
       "electrified_km": 398.44,
       "electrified_pct": 99.9,
       "max_speed_kmh": 160.0,
-      "mean_speed_kmh": 82.6,
+      "mean_speed_kmh": 82.8,
       "double_track_km": 7.12,
       "double_track_pct": 2.1,
       "track_tag_coverage_pct": 87.9,
@@ -772,7 +808,7 @@
         "Ukjent": 11.8
       },
       "tunnel_km": 102.76,
-      "bridge_km": 2.04,
+      "bridge_km": 2.06,
       "operators": [
         "Bane NOR"
       ],
@@ -841,12 +877,12 @@
     {
       "name": "Vestfoldbanen",
       "slug": "vestfoldbanen",
-      "total_km": 200.27,
-      "segments": 332,
-      "electrified_km": 199.17,
+      "total_km": 200.26,
+      "segments": 333,
+      "electrified_km": 199.16,
       "electrified_pct": 99.5,
       "max_speed_kmh": 200.0,
-      "mean_speed_kmh": 142.2,
+      "mean_speed_kmh": 141.4,
       "double_track_km": 117.54,
       "double_track_pct": 66.3,
       "track_tag_coverage_pct": 91.9,
@@ -995,16 +1031,16 @@
       "electrified_pct": 100.0,
       "max_speed_kmh": 130.0,
       "mean_speed_kmh": 96.2,
-      "double_track_km": 56.7,
-      "double_track_pct": 59.8,
-      "track_tag_coverage_pct": 95.6,
+      "double_track_km": 56.07,
+      "double_track_pct": 59.6,
+      "track_tag_coverage_pct": 95.5,
       "speed_distribution_km": {
         "<80": 9.5,
         "80–130": 52.1,
         "130–160": 32.7,
         "160–200": 0.0,
         "200+": 0.0,
-        "Ukjent": 4.9
+        "Ukjent": 4.3
       },
       "tunnel_km": 0.83,
       "bridge_km": 2.0,
@@ -1445,9 +1481,9 @@
     {
       "name": "Thamshavnbanen",
       "slug": "thamshavnbanen",
-      "total_km": 22.11,
-      "segments": 31,
-      "electrified_km": 21.95,
+      "total_km": 21.72,
+      "segments": 30,
+      "electrified_km": 21.56,
       "electrified_pct": 99.3,
       "max_speed_kmh": null,
       "mean_speed_kmh": null,
@@ -1460,7 +1496,7 @@
         "130–160": 0.0,
         "160–200": 0.0,
         "200+": 0.0,
-        "Ukjent": 22.1
+        "Ukjent": 21.7
       },
       "tunnel_km": 0.15,
       "bridge_km": 0.15,
@@ -1634,34 +1670,6 @@
       ]
     },
     {
-      "name": "Setesdalsbanen",
-      "slug": "setesdalsbanen",
-      "total_km": 8.47,
-      "segments": 16,
-      "electrified_km": 0,
-      "electrified_pct": 0.0,
-      "max_speed_kmh": null,
-      "mean_speed_kmh": null,
-      "double_track_km": 0,
-      "double_track_pct": null,
-      "track_tag_coverage_pct": 0.0,
-      "speed_distribution_km": {
-        "<80": 0.0,
-        "80–130": 0.0,
-        "130–160": 0.0,
-        "160–200": 0.0,
-        "200+": 0.0,
-        "Ukjent": 8.2
-      },
-      "tunnel_km": 0.0,
-      "bridge_km": 0.03,
-      "operators": [],
-      "types": [
-        "narrow_gauge",
-        "rail"
-      ]
-    },
-    {
       "name": "Treungenbanen",
       "slug": "treungenbanen",
       "total_km": 8.43,
@@ -1685,6 +1693,34 @@
       "bridge_km": 0.04,
       "operators": [],
       "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Setesdalsbanen",
+      "slug": "setesdalsbanen",
+      "total_km": 8.41,
+      "segments": 15,
+      "electrified_km": 0,
+      "electrified_pct": 0.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 8.1
+      },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.03,
+      "operators": [],
+      "types": [
+        "narrow_gauge",
         "rail"
       ]
     },
@@ -1998,8 +2034,7 @@
       "bridge_km": 0.01,
       "operators": [],
       "types": [
-        "narrow_gauge",
-        "preserved"
+        "narrow_gauge"
       ]
     },
     {
@@ -2557,8 +2592,8 @@
       "segments": 3,
       "electrified_km": 0,
       "electrified_pct": 0.0,
-      "max_speed_kmh": null,
-      "mean_speed_kmh": null,
+      "max_speed_kmh": 60.0,
+      "mean_speed_kmh": 60.0,
       "double_track_km": 0,
       "double_track_pct": null,
       "track_tag_coverage_pct": 0,
@@ -2959,6 +2994,35 @@
         "160–200": 0.0,
         "200+": 0.0,
         "Ukjent": 0.0
+      },
+      "tunnel_km": 0.0,
+      "bridge_km": 0.0,
+      "operators": [
+        "Bane NOR"
+      ],
+      "types": [
+        "rail"
+      ]
+    },
+    {
+      "name": "Temporary track",
+      "slug": "temporary-track",
+      "total_km": 0.58,
+      "segments": 1,
+      "electrified_km": 0.58,
+      "electrified_pct": 100.0,
+      "max_speed_kmh": null,
+      "mean_speed_kmh": null,
+      "double_track_km": 0,
+      "double_track_pct": null,
+      "track_tag_coverage_pct": 0.0,
+      "speed_distribution_km": {
+        "<80": 0.0,
+        "80–130": 0.0,
+        "130–160": 0.0,
+        "160–200": 0.0,
+        "200+": 0.0,
+        "Ukjent": 0.6
       },
       "tunnel_km": 0.0,
       "bridge_km": 0.0,
@@ -5117,8 +5181,8 @@
       ]
     }
   ],
-  "station_count": 1261,
-  "railway_segment_count": 13177,
+  "station_count": 1258,
+  "railway_segment_count": 13234,
   "population_coverage": {
     "total_population": 5440807,
     "place_count": 1167,

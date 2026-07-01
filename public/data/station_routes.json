@@ -758,86 +758,256 @@
   ],
   "Halden": [
     {
-      "name": "RE20",
+      "name": "RE20 Halden → Oslo S",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Halden",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
       "ref": "RE20",
       "operator": "Vy Tog"
     }
   ],
   "Sarpsborg": [
     {
-      "name": "RE20",
+      "name": "RE20 Halden → Oslo S",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Halden",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
       "ref": "RE20",
       "operator": "Vy Tog"
     }
   ],
   "Fredrikstad": [
     {
-      "name": "RE20",
+      "name": "RE20 Halden → Oslo S",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Halden",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
       "ref": "RE20",
       "operator": "Vy Tog"
     }
   ],
   "Råde": [
     {
-      "name": "RE20",
+      "name": "RE20 Halden → Oslo S",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Halden",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
       "ref": "RE20",
       "operator": "Vy Tog"
     }
   ],
   "Rygge": [
     {
-      "name": "RE20",
+      "name": "RE20 Halden → Oslo S",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Halden",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
       "ref": "RE20",
       "operator": "Vy Tog"
     }
   ],
   "Moss": [
     {
-      "name": "RE20",
+      "name": "RE20 Halden → Oslo S",
       "ref": "RE20",
       "operator": "Vy Tog"
     },
     {
-      "name": "R21",
+      "name": "R21 Oslo S → Moss",
       "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R21 Moss → Oslo S",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Halden",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
+      "ref": "RE20",
       "operator": "Vy Tog"
     }
   ],
   "Ski": [
     {
-      "name": "RE20",
+      "name": "RE20 Halden → Oslo S",
       "ref": "RE20",
       "operator": "Vy Tog"
     },
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     },
     {
-      "name": "R21",
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R21 Oslo S → Moss",
       "ref": "R21",
       "operator": "Vy Tog"
     },
     {
-      "name": "R22",
+      "name": "R21 Moss → Oslo S",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Rakkestad → Oslo S",
       "ref": "R22",
       "operator": "Vy Tog"
     },
     {
-      "name": "R23",
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Halden",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R23 Ski - Oslo S",
+      "ref": "R23",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R23 Oslo S → Ski",
       "ref": "R23",
       "operator": "Vy Tog"
     }
   ],
   "Oslo S": [
     {
-      "name": "RE20",
+      "name": "RE20 Halden → Oslo S",
       "ref": "RE20",
       "operator": "Vy Tog"
     },
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
       "ref": "L2",
       "operator": "Vy Tog"
     },
@@ -862,13 +1032,48 @@
       "operator": "Vy Tog"
     },
     {
-      "name": "R21",
+      "name": "R21 Oslo S → Moss",
       "ref": "R21",
       "operator": "Vy Tog"
     },
     {
-      "name": "R22",
+      "name": "R21 Moss → Oslo S",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Rakkestad → Oslo S",
       "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Halden",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
+      "ref": "RE20",
       "operator": "Vy Tog"
     },
     {
@@ -1012,7 +1217,27 @@
       "operator": "Vy Tog"
     },
     {
-      "name": "R23",
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R23 Ski - Oslo S",
+      "ref": "R23",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R23 Oslo S → Ski",
       "ref": "R23",
       "operator": "Vy Tog"
     },
@@ -1042,30 +1267,14 @@
       "operator": "Vy Tog"
     }
   ],
-  "Ed": [
-    {
-      "name": "RE20",
-      "ref": "RE20",
-      "operator": "Vy Tog"
-    }
-  ],
-  "Öxnered": [
-    {
-      "name": "RE20",
-      "ref": "RE20",
-      "operator": "Vy Tog"
-    }
-  ],
-  "Trollhättan": [
-    {
-      "name": "RE20",
-      "ref": "RE20",
-      "operator": "Vy Tog"
-    }
-  ],
   "Stabekk": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
       "ref": "L2",
       "operator": "Vy Tog"
     },
@@ -1102,7 +1311,17 @@
   ],
   "Skøyen": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
       "ref": "L2",
       "operator": "Vy Tog"
     },
@@ -1192,6 +1411,11 @@
       "operator": "Flytoget"
     },
     {
+      "name": "L2 Lysaker → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
       "name": "FLY2 Oslo Lufthavn → Skøyen",
       "ref": "FLY2",
       "operator": "Flytoget"
@@ -1204,7 +1428,17 @@
   ],
   "Nationaltheatret": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
       "ref": "L2",
       "operator": "Vy Tog"
     },
@@ -1309,6 +1543,11 @@
       "operator": "Vy Tog"
     },
     {
+      "name": "L2 Lysaker → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
       "name": "FLY2 Oslo Lufthavn → Skøyen",
       "ref": "FLY2",
       "operator": "Flytoget"
@@ -1321,84 +1560,364 @@
   ],
   "Nordstrand": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Ljan": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Hauketo": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Holmlia": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Rosenholm": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Solbråtan": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Myrvoll": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Greverud": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Oppegård": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Vevelstad": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Langhus": [
     {
-      "name": "L2",
+      "name": "L2 Stabekk → Ski",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Ski → Oslo S",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2x Oslo S → Ski",
+      "ref": "L2x",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Lysaker → Ski",
       "ref": "L2",
       "operator": "Vy Tog"
     }
   ],
   "Lysaker": [
     {
-      "name": "L2",
+      "name": "L2 Ski → Stabekk",
+      "ref": "L2",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "L2 Ski → Lysaker",
       "ref": "L2",
       "operator": "Vy Tog"
     },
@@ -2220,106 +2739,309 @@
   ],
   "Ås": [
     {
-      "name": "R21",
+      "name": "R21 Oslo S → Moss",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R21 Moss → Oslo S",
       "ref": "R21",
       "operator": "Vy Tog"
     }
   ],
   "Vestby": [
     {
-      "name": "R21",
+      "name": "R21 Oslo S → Moss",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R21 Moss → Oslo S",
       "ref": "R21",
       "operator": "Vy Tog"
     }
   ],
   "Sonsveien": [
     {
-      "name": "R21",
+      "name": "R21 Oslo S → Moss",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R21 Moss → Oslo S",
       "ref": "R21",
       "operator": "Vy Tog"
     }
   ],
   "Kambo": [
     {
-      "name": "R21",
+      "name": "R21 Oslo S → Moss",
+      "ref": "R21",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R21 Moss → Oslo S",
       "ref": "R21",
       "operator": "Vy Tog"
     }
   ],
   "Rakkestad": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Heia": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Eidsberg": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Mysen": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Slitu": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Askim": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Spydeberg": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Knapstad": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Tomter": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Skotbu": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
       "ref": "R22",
       "operator": "Vy Tog"
     }
   ],
   "Kråkstad": [
     {
-      "name": "R22",
+      "name": "R22 Rakkestad → Oslo S",
       "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Rakkestad",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Mysen → Oslo S",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "R22 Oslo S → Mysen",
+      "ref": "R22",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Ed": [
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Öxnered": [
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Trollhättan": [
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    }
+  ],
+  "Göteborg C": [
+    {
+      "name": "RE20 Oslo S → Göteborg",
+      "ref": "RE20",
+      "operator": "Vy Tog"
+    },
+    {
+      "name": "RE20 Göteborg → Oslo S",
+      "ref": "RE20",
       "operator": "Vy Tog"
     }
   ],
