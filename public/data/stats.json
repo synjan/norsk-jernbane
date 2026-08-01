@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-07-01T05:34:27+00:00",
-  "total_km": 5376.8,
-  "electrified_km": 3534.3,
+  "generated_at": "2026-08-01T05:07:06+00:00",
+  "total_km": 5375.4,
+  "electrified_km": 3533.5,
   "electrified_pct": 65.7,
-  "non_electrified_km": 1842.5,
+  "non_electrified_km": 1841.9,
   "diesel_co2_estimate": {
-    "tonnes_per_year": 84064,
+    "tonnes_per_year": 84036,
     "assumption_text": "10 tog/døgn × 250 t × 0.05 kg CO₂/GTK"
   },
   "voltage_breakdown_km": {
-    "15000 V / 16.67 Hz": 3503.7,
+    "15000 V / 16.67 Hz": 3502.9,
     "6800 V / 25 Hz": 21.6,
     "ukjent V": 8.7,
     "ukjent V / 16.67 Hz": 0.3,
     "15000 V": 0.0
   },
   "operator_breakdown_km": {
-    "Bane NOR": 4360.6,
-    "ukjent": 996.2,
+    "Bane NOR": 4359.3,
+    "ukjent": 996.1,
     "Norske Skog": 6.5,
     "(Private)": 4.3,
     "Trafikverket": 3.2,
@@ -27,7 +27,7 @@
     "Auto Transport Service": 0.7
   },
   "type_breakdown_km": {
-    "rail": 5315.0,
+    "rail": 5313.5,
     "narrow_gauge": 58.3,
     "preserved": 3.6
   },
@@ -134,18 +134,18 @@
     }
   ],
   "speed_distribution_km": {
-    "<80": 530.8,
-    "80–130": 2422.0,
-    "130–160": 739.3,
+    "<80": 528.8,
+    "80–130": 2408.2,
+    "130–160": 741.9,
     "160–200": 164.9,
     "200+": 272.8,
-    "Ukjent": 434.2
+    "Ukjent": 447.6
   },
   "track_capacity_km": {
-    "Enkeltspor": 3438.4,
+    "Enkeltspor": 3439.1,
     "Dobbeltspor": 654.2,
     "Multispor (3+)": 65.4,
-    "Ikke tagget": 406.0
+    "Ikke tagget": 405.3
   },
   "topography": {
     "tunnel_km": 525.1,
@@ -185,7 +185,7 @@
         "name": "Nordlandsbanen",
         "slug": "nordlandsbanen",
         "tunnel_km": 53.2,
-        "total_km": 725.0,
+        "total_km": 726.3,
         "tunnel_pct": 7.3
       }
     ]
@@ -211,7 +211,7 @@
       {
         "decade": 1880,
         "label": "1880-tallet",
-        "count": 38
+        "count": 37
       },
       {
         "decade": 1890,
@@ -271,7 +271,7 @@
       {
         "decade": 2000,
         "label": "2000-tallet",
-        "count": 2
+        "count": 3
       },
       {
         "decade": 2010,
@@ -281,7 +281,7 @@
     ],
     "oldest": {
       "year": 1854,
-      "name": "Oslo S"
+      "name": "Dal"
     },
     "newest": {
       "year": 2016,
@@ -680,45 +680,45 @@
     "note": "Knutepunkt-score teller unike rutenavn fra OSM route=train-relasjoner."
   },
   "signals": {
-    "total": 1169,
-    "per_100km": 21.7,
+    "total": 1242,
+    "per_100km": 23.1,
     "by_type": {
-      "distant": 310,
-      "speed_limit": 118,
+      "distant": 346,
+      "speed_limit": 121,
       "form": 77,
-      "main": 45,
-      "whistle": 36,
-      "combined": 13,
+      "main": 63,
+      "whistle": 37,
+      "combined": 30,
       "catenary_mast": 13,
+      "main_repeated": 5,
       "crossing_distant": 2,
-      "main_repeated": 1,
       "train_protection": 1
     }
   },
   "switches": {
-    "total": 4186,
+    "total": 4185,
     "per_100km": 77.9
   },
   "routes": [
     {
       "name": "Nordlandsbanen",
       "slug": "nordlandsbanen",
-      "total_km": 757.65,
-      "segments": 1197,
-      "electrified_km": 33.26,
-      "electrified_pct": 4.4,
+      "total_km": 756.92,
+      "segments": 1222,
+      "electrified_km": 33.84,
+      "electrified_pct": 4.5,
       "max_speed_kmh": 130.0,
-      "mean_speed_kmh": 95.5,
+      "mean_speed_kmh": 95.8,
       "double_track_km": 4.13,
       "double_track_pct": 0.6,
-      "track_tag_coverage_pct": 99.8,
+      "track_tag_coverage_pct": 99.7,
       "speed_distribution_km": {
-        "<80": 16.6,
-        "80–130": 587.9,
-        "130–160": 118.3,
+        "<80": 14.0,
+        "80–130": 580.1,
+        "130–160": 121.4,
         "160–200": 0.0,
         "200+": 0.0,
-        "Ukjent": 2.2
+        "Ukjent": 10.8
       },
       "tunnel_km": 53.16,
       "bridge_km": 6.71,
@@ -762,8 +762,8 @@
       "name": "Dovrebanen",
       "slug": "dovrebanen",
       "total_km": 535.17,
-      "segments": 975,
-      "electrified_km": 533.48,
+      "segments": 976,
+      "electrified_km": 533.47,
       "electrified_pct": 99.7,
       "max_speed_kmh": 200.0,
       "mean_speed_kmh": 100.9,
@@ -773,10 +773,10 @@
       "speed_distribution_km": {
         "<80": 37.2,
         "80–130": 295.1,
-        "130–160": 127.7,
+        "130–160": 127.2,
         "160–200": 0.0,
         "200+": 44.0,
-        "Ukjent": 12.8
+        "Ukjent": 13.3
       },
       "tunnel_km": 18.84,
       "bridge_km": 6.38,
@@ -1142,24 +1142,24 @@
       "name": "Meråkerbanen",
       "slug": "merakerbanen",
       "total_km": 72.44,
-      "segments": 113,
-      "electrified_km": 71.55,
-      "electrified_pct": 98.8,
-      "max_speed_kmh": 90.0,
-      "mean_speed_kmh": 82.6,
+      "segments": 128,
+      "electrified_km": 72.04,
+      "electrified_pct": 99.5,
+      "max_speed_kmh": 100.0,
+      "mean_speed_kmh": 83.3,
       "double_track_km": 0.22,
       "double_track_pct": 0.3,
       "track_tag_coverage_pct": 99.0,
       "speed_distribution_km": {
-        "<80": 11.0,
-        "80–130": 54.9,
+        "<80": 11.6,
+        "80–130": 48.9,
         "130–160": 0.0,
         "160–200": 0.0,
         "200+": 0.0,
-        "Ukjent": 5.6
+        "Ukjent": 11.1
       },
       "tunnel_km": 0.11,
-      "bridge_km": 0.53,
+      "bridge_km": 0.56,
       "operators": [
         "Bane NOR"
       ],
@@ -2041,7 +2041,7 @@
       "name": "Muruvik sidespor",
       "slug": "muruvik-sidespor",
       "total_km": 3.39,
-      "segments": 5,
+      "segments": 7,
       "electrified_km": 0,
       "electrified_pct": 0.0,
       "max_speed_kmh": null,
@@ -2210,8 +2210,8 @@
       "segments": 3,
       "electrified_km": 0,
       "electrified_pct": 0.0,
-      "max_speed_kmh": null,
-      "mean_speed_kmh": null,
+      "max_speed_kmh": 20.0,
+      "mean_speed_kmh": 20.0,
       "double_track_km": 0,
       "double_track_pct": null,
       "track_tag_coverage_pct": 0,
@@ -2994,35 +2994,6 @@
         "160–200": 0.0,
         "200+": 0.0,
         "Ukjent": 0.0
-      },
-      "tunnel_km": 0.0,
-      "bridge_km": 0.0,
-      "operators": [
-        "Bane NOR"
-      ],
-      "types": [
-        "rail"
-      ]
-    },
-    {
-      "name": "Temporary track",
-      "slug": "temporary-track",
-      "total_km": 0.58,
-      "segments": 1,
-      "electrified_km": 0.58,
-      "electrified_pct": 100.0,
-      "max_speed_kmh": null,
-      "mean_speed_kmh": null,
-      "double_track_km": 0,
-      "double_track_pct": null,
-      "track_tag_coverage_pct": 0.0,
-      "speed_distribution_km": {
-        "<80": 0.0,
-        "80–130": 0.0,
-        "130–160": 0.0,
-        "160–200": 0.0,
-        "200+": 0.0,
-        "Ukjent": 0.6
       },
       "tunnel_km": 0.0,
       "bridge_km": 0.0,
@@ -5182,7 +5153,7 @@
     }
   ],
   "station_count": 1258,
-  "railway_segment_count": 13234,
+  "railway_segment_count": 13277,
   "population_coverage": {
     "total_population": 5440807,
     "place_count": 1167,
