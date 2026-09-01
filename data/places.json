@@ -2,8 +2,8 @@
   "version": 0.6,
   "generator": "Overpass API 0.7.62.11 87bfad18",
   "osm3s": {
-    "timestamp_osm_base": "2026-08-01T05:04:24Z",
-    "timestamp_areas_base": "2026-07-31T11:27:02Z",
+    "timestamp_osm_base": "2026-09-01T09:02:01Z",
+    "timestamp_areas_base": "2026-08-31T18:31:53Z",
     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
   },
   "elements": [
@@ -1556,6 +1556,7 @@
   "tags": {
     "name": "Otta",
     "name:ru": "Утта",
+    "name:uk": "Утта",
     "place": "town",
     "population": "2313",
     "population:date": "2025-01-01",
@@ -14016,6 +14017,7 @@
   "lon": 6.7236373,
   "tags": {
     "name": "Stryn",
+    "name:uk": "Стрюн",
     "place": "village",
     "population": "2696",
     "population:date": "2025-01-01",

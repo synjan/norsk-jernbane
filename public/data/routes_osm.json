@@ -46,17 +46,16 @@
       "Hamar"
     ]
   },
-  "Trønderbanen": {
+  "R70 Steinkjer - Lerkendal": {
     "id": 1452689,
-    "name": "Trønderbanen",
-    "ref": "R 70",
+    "name": "R70 Steinkjer - Lerkendal",
+    "ref": "R70",
     "operator": "SJ Nord",
     "network": null,
-    "from": "Støren",
-    "to": "Steinkjer",
+    "from": "Steinkjer",
+    "to": "Lerkendal",
     "stations": [
       "Lerkendal",
-      "Skansen",
       "Trondheim",
       "Lademoen",
       "Lilleby",
@@ -1810,6 +1809,49 @@
       "Nesbyen",
       "Hønefoss",
       "Oslo S"
+    ]
+  },
+  "R70 Steinkjer - Støren": {
+    "id": 21236676,
+    "name": "R70 Steinkjer - Støren",
+    "ref": "R70",
+    "operator": "SJ Norge",
+    "network": null,
+    "from": "Steinkjer",
+    "to": "Støren",
+    "stations": [
+      "Steinkjer",
+      "Sparbu",
+      "Røra",
+      "Verdal",
+      "Bergsgrav",
+      "Røstad",
+      "Levanger",
+      "Skogn",
+      "Ronglan",
+      "Åsen",
+      "Skatval",
+      "Stjørdal",
+      "Trondheim lufthavn (Værnes)",
+      "Hell",
+      "Hommelvik",
+      "Vikhammer",
+      "Ranheim",
+      "Rotvoll",
+      "Leangen",
+      "Lilleby",
+      "Lademoen",
+      "Trondheim",
+      "Skansen",
+      "Marienborg",
+      "Selsbakk",
+      "Heimdal",
+      "Melhus",
+      "Kvål",
+      "Ler",
+      "Lundamo",
+      "Hovin",
+      "Støren"
     ]
   }
 }

@@ -175,6 +175,11 @@
       "name": "F6",
       "ref": "F6",
       "operator": "SJ"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Hamar": [
@@ -206,22 +211,15 @@
   ],
   "Lerkendal": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
-      "operator": "SJ Nord"
-    }
-  ],
-  "Skansen": [
-    {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     }
   ],
   "Trondheim": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     },
     {
@@ -238,165 +236,255 @@
       "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
       "ref": "F7",
       "operator": "SJ Norge"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Lademoen": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Lilleby": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Leangen": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Rotvoll": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Vikhammer": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     },
     {
       "name": "R71 Trondheim S => Storlien",
       "ref": "R71",
       "operator": "Vy Tåg"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Hommelvik": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     },
     {
       "name": "R71 Trondheim S => Storlien",
       "ref": "R71",
       "operator": "Vy Tåg"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Trondheim lufthavn (Værnes)": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     },
     {
       "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
       "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
       "operator": "SJ Norge"
     }
   ],
   "Stjørdal": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     },
     {
       "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
       "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
       "operator": "SJ Norge"
     }
   ],
   "Skatval": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Åsen": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Ronglan": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Skogn": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Levanger": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     },
     {
       "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
       "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
       "operator": "SJ Norge"
     }
   ],
   "Verdal": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     },
     {
       "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
       "ref": "F7",
+      "operator": "SJ Norge"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
       "operator": "SJ Norge"
     }
   ],
   "Steinkjer": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     },
     {
       "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
       "ref": "F7",
       "operator": "SJ Norge"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Røstad": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Hell": [
     {
-      "name": "Trønderbanen",
-      "ref": "R 70",
+      "name": "R70 Steinkjer - Lerkendal",
+      "ref": "R70",
       "operator": "SJ Nord"
     },
     {
       "name": "R71 Trondheim S => Storlien",
       "ref": "R71",
       "operator": "Vy Tåg"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Hegra": [
@@ -4404,6 +4492,11 @@
       "name": "F6",
       "ref": "F6",
       "operator": "SJ"
+    },
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
     }
   ],
   "Stavanger": [
@@ -5685,6 +5778,90 @@
     {
       "name": "F7 Trondheim S - Bodø, Nordlandsbanen",
       "ref": "F7",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Sparbu": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Røra": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Bergsgrav": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Ranheim": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Skansen": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Marienborg": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Selsbakk": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Melhus": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Kvål": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Ler": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Lundamo": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
+      "operator": "SJ Norge"
+    }
+  ],
+  "Hovin": [
+    {
+      "name": "R70 Steinkjer - Støren",
+      "ref": "R70",
       "operator": "SJ Norge"
     }
   ]
